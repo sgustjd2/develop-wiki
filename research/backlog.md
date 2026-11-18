@@ -1,19 +1,17 @@
 # 백로그
 
-이전 백로그는 2026-11-18 에 모두 처리했다(추가 또는 excluded.md 로 이동). 아래는 그 과정에서 새로 나온 다음 후보다.
+2026-11-19 에 이전 백로그를 모두 처리했다. 아래는 그 과정에서 새로 나온 다음 후보다.
 
 | 항목 | 영역/카테고리 | 메모 | 날짜 |
 | --- | --- | --- | --- |
-| Fresh (freshframework/fresh) | frontend/meta-framework | 저장소·사이트 이전, 2026-04 이후 릴리스 없음 — 유지보수 지속성 확인 후 판단 | 2026-11-18 |
-| MiniMax-H3-Image | models/image-gen | PE 가 아닌 본체 모델 — 라이선스 확인 | 2026-11-18 |
-| Chi, Litestar, Rocket, Loco, Micronaut, Helidon, Elysia, AdonisJS | backend/web-framework | 언어별 추가 후보 | 2026-11-18 |
-| Diesel, jOOQ, GraphQL.NET, Ariadne/Graphene, joserfc, openid-client | backend | ORM·GraphQL·인증 추가 후보 | 2026-11-18 |
-| VictoriaMetrics, Thanos, Hera, Argo Events, Argo Rollouts, Podman Desktop | backend·data-ml | 인프라·관측성 후보 | 2026-11-18 |
-| 객체 풀, Null Object, 서비스 로케이터, GoF 23 패턴 비교 | knowledge/design-patterns | 다음 노트 | 2026-11-18 |
-| 쿠쿠 필터, 세그먼트·펜윅 트리, 최대 유량, 단절점·다리, Top-K·heavy hitters, 해시 함수 선택(HashDoS), 외부 정렬, 랑데부 해싱 | knowledge/algorithms | 다음 노트 | 2026-11-18 |
-| Raft 합의, 논리 시계(Lamport·벡터·HLC), CRDT, 복제와 쿼럼, gossip | knowledge/distributed-systems | 다음 노트 | 2026-11-18 |
-| 벌크헤드, OAuth·OIDC 흐름(PKCE), MFA·패스키, 파일 업로드 보안, MVCC·VACUUM, DB 기반 잡 큐(SKIP LOCKED) | knowledge | 성능·보안·데이터 다음 노트 | 2026-11-18 |
-| Web Worker·SharedArrayBuffer, HTTP/3·QUIC·WebTransport, 파일 디스크립터·epoll | knowledge/cs-fundamentals | 다음 노트 | 2026-11-18 |
-| ComposioHQ/awesome-claude-skills, hesreallyhim/awesome-claude-code, VoltAgent/awesome-agent-skills, Shubhamsaboo/awesome-llm-apps | oss/awesome-lists | 에이전트·LLM 관련 큐레이션 저장소 | 2026-11-18 |
-| huggingface/skills, anthropics/knowledge-work-plugins, trailofbits/skills, grafana/mcp-grafana, Notion·Cloudflare·MongoDB·Terraform·Stripe·Atlassian MCP, Docker MCP gateway | oss | 스킬·MCP 서버 추가 후보 | 2026-11-18 |
-| ToolJet, boost-devs/ai-tech-interview, ksundong/backend-interview-question | oss | 셀프 호스팅·학습 저장소 후보 | 2026-11-18 |
+| Foxglove, rosbridge_suite, MediaPipe | robotics | ros·perception 카테고리 추가 후보 | 2026-11-19 |
+| Nav2 구조, Pure Pursuit·DWA, IMU 보정(Madgwick), ICP·NDT 정합, 계산 토크 제어, 로봇 안전(ISO 10218), URDF·Xacro, sim-to-real | knowledge/robotics | 다음 노트 | 2026-11-19 |
+| 그림자 매핑·SSAO, IBL, glTF·USD 에셋 파이프라인, XR 컴포지터 레이어, 공간 오디오, 패스스루 깊이 가림 | knowledge/graphics-xr | 다음 노트 | 2026-11-19 |
+| 크로스플랫폼 아키텍처 비교, 인앱 결제·구독 설계, 모바일 보안(Keychain·Keystore), 모바일 네트워킹, 위젯·Live Activities, 모바일 CI/CD | knowledge/mobile-dev | 다음 노트 | 2026-11-19 |
+| Paxos vs Raft, 분산 락·펜싱 토큰, Spanner·TrueTime, Merkle tree, CDC | knowledge/distributed-systems | 다음 노트 | 2026-11-19 |
+| Jump hash·Maglev, 최소 비용 흐름, 희소 테이블, 쿼션트·XOR 필터, 메모리 풀·아레나 | knowledge/algorithms | 다음 노트 | 2026-11-19 |
+| Repository·Unit of Work, Result/Option 패턴, 의존성 역전과 컴포지션 루트 | knowledge/design-patterns·principles | 다음 노트 | 2026-11-19 |
+| DPoP, JWT 키 회전, 동시성 제한(Little's law), 셀 기반 아키텍처, 테이블 bloat, 어드바이저리 락 | knowledge | 보안·성능·데이터 다음 노트 | 2026-11-19 |
+| Cosmos3 변형(Super/Edge-Policy-DROID), GR00T N1.x, π0, Cosmos-Reason2 | models | VLA·월드 모델 추가 후보 | 2026-11-19 |
+| Paparazzi, Bitrise, Appium 4 마이그레이션 | mobile | 테스트·CI 후보 | 2026-11-19 |
+| Chi 외 Kotlin·C# 프레임워크 추가, TanStack Start 외 | backend | 언어 균형 점검 | 2026-11-19 |

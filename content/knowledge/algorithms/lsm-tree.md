@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: 쓰기를 메모리에 모았다가 정렬된 불변 파일로 한꺼번에 내리고, 백그라운드 병합(컴팩션)으로 정리하는 저장 구조. 무작위 쓰기를 순차 쓰기로 바꿔 쓰기 처리량을 높이는 대신 읽기·공간 비용을 낸다.
 tags: [lsm-tree, storage, database, compaction, write-amplification]
-related: [algorithms/b-tree, algorithms/bloom-filter, algorithms/skip-list, algorithms/space-time-tradeoff, algorithms/binary-search, data-modeling/index-design, data-modeling/sharding-partitioning]
+related: [algorithms/b-tree, algorithms/bloom-filter, algorithms/skip-list, algorithms/space-time-tradeoff, algorithms/binary-search, data-modeling/index-design, data-modeling/sharding-partitioning, algorithms/external-sort]
 sources:
   - https://en.wikipedia.org/wiki/Log-structured_merge-tree
   - https://github.com/facebook/rocksdb/wiki/RocksDB-Overview

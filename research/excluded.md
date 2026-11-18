@@ -34,3 +34,10 @@
 | openai/skills | oss/agent-skills | README 상 deprecated, openai/plugins 로 이전 | 2026-11-18 |
 | browserbase/mcp-server-browserbase | oss/mcp-servers | 저장소 archived | 2026-11-18 |
 | gyoogle/tech-interview-for-developer 외 한국어 면접 저장소 3개 | oss/learning-repos | 2024~2025 이후 갱신 정체 | 2026-11-18 |
+| Graphene (graphql-python) | backend/api | 마지막 릴리스 2024-11, push 2025-09 — 대체: Ariadne, Strawberry | 2026-11-19 |
+| PyBullet | robotics/simulation | PyPI 최신 2025-01, bullet3 릴리스 2022 — 사실상 유지보수 모드 | 2026-11-19 |
+| Diffusion Policy (real-stanford) | robotics/robot-learning | 마지막 push 2024-12, LeRobot 에 포함 | 2026-11-19 |
+| CoppeliaSim | robotics/simulation | 릴리스·라이선스 정보 불명확(듀얼 라이선스 미확인) | 2026-11-19 |
+| Cartographer, ORB-SLAM3 | robotics/perception | 마지막 push 2024 — slam_toolbox 항목에서 언급 | 2026-11-19 |
+| OpenXR Toolkit (mbucchia) | xr/standards-runtimes | 마지막 push 2025-10, 정체 | 2026-11-19 |
+| boost-devs/ai-tech-interview, ksundong/backend-interview-question | oss/learning-repos | 갱신 8~10개월 정체 | 2026-11-19 |

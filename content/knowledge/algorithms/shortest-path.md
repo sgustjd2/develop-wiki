@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 가중치 그래프에서 한 출발점으로부터 모든 정점까지의 최단 거리를 구하는 대표 알고리즘. 음수 간선이 없으면 다익스트라, 음수 간선이나 음수 사이클 검출이 필요하면 벨만-포드를 쓴다.
 tags: [graph, shortest-path, dijkstra, bellman-ford, routing]
-related: [algorithms/bfs-dfs, algorithms/heap-priority-queue, algorithms/graph-representation, algorithms/greedy, algorithms/dynamic-programming]
+related: [algorithms/bfs-dfs, algorithms/heap-priority-queue, algorithms/graph-representation, algorithms/greedy, algorithms/dynamic-programming, algorithms/max-flow-bipartite-matching]
 sources:
   - https://cp-algorithms.com/graph/dijkstra.html
   - https://cp-algorithms.com/graph/dijkstra_sparse.html

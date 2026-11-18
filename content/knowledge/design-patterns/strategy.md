@@ -6,7 +6,7 @@ group: behavioral
 level: beginner
 summary: 알고리즘군을 인터페이스 뒤에 캡슐화해 실행 중에 교체할 수 있게 하는 행위 패턴.
 tags: [gof, oop, composition]
-related: [principles/solid, design-patterns/state, design-patterns/command, design-patterns/template-method, design-patterns/bridge]
+related: [principles/solid, design-patterns/state, design-patterns/command, design-patterns/template-method, design-patterns/bridge, design-patterns/null-object, design-patterns/gof-23-overview]
 sources:
   - https://refactoring.guru/design-patterns/strategy
 updatedAt: 2026-11-18

@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 키와 서버를 같은 원형 해시 공간에 놓고 키를 시계 방향 첫 서버에 배정하는 분산 기법. 서버가 늘거나 줄 때 전체 키의 약 1/n 만 옮겨져, 캐시·분산 DB 의 샤딩에 쓴다.
 tags: [consistent-hashing, hash, distributed-systems, sharding, caching, load-balancing]
-related: [algorithms/hash-table, algorithms/binary-search, data-modeling/sharding-partitioning, performance/load-balancing, performance/caching-strategies, algorithms/lsm-tree]
+related: [algorithms/hash-table, algorithms/binary-search, data-modeling/sharding-partitioning, performance/load-balancing, performance/caching-strategies, algorithms/lsm-tree, algorithms/rendezvous-hashing, algorithms/hash-functions-hashdos]
 sources:
   - https://en.wikipedia.org/wiki/Consistent_hashing
   - https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html

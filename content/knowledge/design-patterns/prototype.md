@@ -6,7 +6,7 @@ group: creational
 level: beginner
 summary: 이미 설정을 마친 객체를 복제해 새 객체를 만드는 생성 패턴. 구체 클래스를 몰라도 복사할 수 있고, 초기화만 다른 서브클래스를 미리 만든 원본 몇 개로 대신한다.
 tags: [gof, oop, clone, creational]
-related: [design-patterns/factory-method, design-patterns/abstract-factory, design-patterns/builder, design-patterns/memento, design-patterns/command, design-patterns/flyweight]
+related: [design-patterns/factory-method, design-patterns/abstract-factory, design-patterns/builder, design-patterns/memento, design-patterns/command, design-patterns/flyweight, design-patterns/object-pool]
 sources:
   - https://refactoring.guru/design-patterns/prototype
   - https://en.wikipedia.org/wiki/Design_Patterns

@@ -115,6 +115,31 @@ export const DOMAINS = {
       'self-hosted': { label: '셀프 호스팅', desc: '개발자가 직접 띄워 쓰는 오픈소스 서비스 (자동화, 모니터링, 협업 등)' },
     },
   },
+  robotics: {
+    label: '로보틱스',
+    desc: 'ROS 2, 내비게이션·모션 플래닝, 시뮬레이션, SLAM·인식, 로봇 학습, 임베디드까지 로봇 개발 스택',
+    categories: {
+      ros: { label: 'ROS·미들웨어', desc: 'ROS 2 코어, DDS 미들웨어, 빌드·브리지 도구' },
+      'navigation-planning': { label: '내비게이션·모션 플래닝', desc: 'Nav2, MoveIt, OMPL 등 경로·동작 계획' },
+      simulation: { label: '시뮬레이션', desc: 'Gazebo, Isaac Sim, MuJoCo, Webots 같은 물리 시뮬레이터' },
+      perception: { label: '인식·SLAM', desc: '컴퓨터 비전, 포인트 클라우드, SLAM·위치 추정' },
+      'robot-learning': { label: '로봇 학습', desc: '강화학습·모방학습 프레임워크와 로봇 데이터 도구' },
+      embedded: { label: '임베디드·마이크로컨트롤러', desc: 'micro-ROS, RTOS, 펌웨어 빌드·플래시 도구' },
+      learning: { label: '레퍼런스·학습', desc: '공식 튜토리얼, 강의, 교재' },
+    },
+  },
+  xr: {
+    label: 'XR (VR·AR)',
+    desc: '가상·증강·혼합현실 개발: 엔진, OpenXR·WebXR 표준, AR 프레임워크, 헤드셋 SDK, 3D 콘텐츠 도구',
+    categories: {
+      engines: { label: '엔진·3D 런타임', desc: 'Unity, Unreal, Godot, Babylon.js 등 XR 앱을 만드는 엔진' },
+      'standards-runtimes': { label: '표준·런타임', desc: 'OpenXR, WebXR, Monado 같은 개방 표준과 런타임' },
+      'ar-sdk': { label: 'AR 프레임워크', desc: 'ARKit, ARCore, RealityKit, Vuforia 등 모바일·스페이셜 AR' },
+      'vr-platform': { label: 'VR·MR 플랫폼 SDK', desc: 'Meta Quest, Apple Vision Pro, Android XR, SteamVR, PICO 개발' },
+      'content-tools': { label: '3D 콘텐츠·포맷', desc: 'Blender, glTF, OpenUSD 등 3D 제작·교환 도구' },
+      learning: { label: '레퍼런스·학습', desc: '공식 가이드, 디자인 가이드라인, 강의' },
+    },
+  },
 } as const satisfies Record<string, { label: string; desc: string; categories: Record<string, Cat> }>;
 
 export type DomainId = keyof typeof DOMAINS;
@@ -213,6 +238,21 @@ export const KNOWLEDGE = {
     desc: '운영체제, 네트워크, 웹 동작 원리, 동시성, 컴퓨터 구조',
     groups: { os: '운영체제', network: '네트워크', web: '웹 동작 원리', concurrency: '동시성', architecture: '컴퓨터 구조', compiler: '언어·컴파일러' },
   },
+  robotics: {
+    label: '로보틱스 기초',
+    desc: '좌표계·기구학, 제어, 경로 계획, 상태 추정, 로봇 소프트웨어 구조',
+    groups: { kinematics: '좌표계·기구학', control: '제어', planning: '경로·동작 계획', estimation: '상태 추정·SLAM', software: '로봇 소프트웨어' },
+  },
+  'graphics-xr': {
+    label: '3D 그래픽스·XR 기초',
+    desc: '렌더링 파이프라인, 좌표 변환, 셰이더, 공간 추적, XR 지연·성능',
+    groups: { rendering: '렌더링', math: '3D 수학', tracking: '공간 추적', xr: 'XR 설계' },
+  },
+  'mobile-dev': {
+    label: '모바일 앱 설계',
+    desc: '앱 아키텍처, 상태 관리, 생명주기, 오프라인·동기화, 푸시, 스토어 배포',
+    groups: { architecture: '아키텍처', platform: '플랫폼 동작', delivery: '배포·운영' },
+  },
 } as const satisfies Record<string, { label: string; desc: string; groups: Record<string, string> }>;
 
 export type KnowledgeCategory = keyof typeof KNOWLEDGE;
@@ -276,6 +316,13 @@ export const MODEL_GROUPS = {
       'audio-gen': { label: '음악·오디오 생성', desc: '텍스트 → 음악·효과음' },
     },
   },
+  robotics: {
+    label: '로보틱스',
+    desc: '카메라 영상과 언어 지시를 받아 로봇 행동을 출력',
+    types: {
+      vla: { label: 'VLA (비전-언어-행동)', desc: '이미지·언어 입력 → 로봇 액션 출력 정책 모델' },
+    },
+  },
 } as const satisfies Record<string, { label: string; desc: string; types: Record<string, Cat> }>;
 
 export type ModelGroupId = keyof typeof MODEL_GROUPS;
@@ -290,7 +337,7 @@ export const THINKING = { none: '없음', hybrid: '하이브리드(온/오프)',
 export const ARCHITECTURES = { dense: 'Dense', moe: 'MoE', hybrid: '하이브리드(SSM 등)', diffusion: '디퓨전', other: '기타' } as const;
 export const COMMERCIAL = { allowed: '상업 이용 가능', restricted: '조건부 허용', 'not-allowed': '비상업' } as const;
 export const KOREAN = { good: '좋음', basic: '보통', none: '미지원', unknown: '미확인' } as const;
-export const MODALITIES = ['text', 'image', 'audio', 'video', 'vector'] as const; // vector: 임베딩 출력
+export const MODALITIES = ['text', 'image', 'audio', 'video', 'vector', 'action'] as const; // vector: 임베딩 출력, action: 로봇 제어 출력
 
 /** 파라미터 규모 구간 (총 파라미터, 단위 B) */
 export function sizeBucket(paramsB?: number) {

@@ -6,7 +6,7 @@ group: creational
 level: beginner
 summary: 클래스의 인스턴스가 하나만 존재하도록 보장하고 그 인스턴스에 전역 접근점을 주는 생성 패턴. 숨은 전역 상태와 테스트 어려움 때문에 대안을 먼저 검토한다.
 tags: [gof, oop, global-state, anti-pattern, dependency-injection]
-related: [design-patterns/facade, design-patterns/abstract-factory, principles/solid, principles/coupling-and-cohesion, design-patterns/flyweight, design-patterns/prototype]
+related: [design-patterns/facade, design-patterns/abstract-factory, principles/solid, principles/coupling-and-cohesion, design-patterns/flyweight, design-patterns/prototype, design-patterns/service-locator-vs-dependency-injection, design-patterns/object-pool]
 sources:
   - https://refactoring.guru/design-patterns/singleton
   - https://en.wikipedia.org/wiki/Design_Patterns

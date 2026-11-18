@@ -6,7 +6,7 @@ group: data-structure
 level: intermediate
 summary: 원소들을 겹치지 않는 그룹으로 나누고 "두 원소가 같은 그룹인가"와 "두 그룹 합치기"를 거의 상수 시간에 처리하는 자료구조. 연결 요소, 크루스칼 MST, 중복 묶기에 쓴다.
 tags: [union-find, dsu, connectivity, kruskal, amortized]
-related: [algorithms/graph-representation, algorithms/greedy, algorithms/amortized-analysis, algorithms/bfs-dfs, algorithms/minimum-spanning-tree]
+related: [algorithms/graph-representation, algorithms/greedy, algorithms/amortized-analysis, algorithms/bfs-dfs, algorithms/minimum-spanning-tree, algorithms/articulation-points-bridges]
 sources:
   - https://cp-algorithms.com/data_structures/disjoint_set_union.html
   - https://cp-algorithms.com/graph/mst_kruskal_with_dsu.html

@@ -5,15 +5,23 @@ import { ROOT, daysAgo, gh, json, parseMd, walk } from './lib.mjs';
 
 const ORGS = ['deepseek-ai', 'Qwen', 'meta-llama', 'google', 'mistralai', 'openai', 'nvidia', 'zai-org', 'LiquidAI', 'microsoft',
   'ibm-granite', 'allenai', 'BAAI', 'moonshotai', 'MiniMaxAI', 'tencent', 'baidu', 'CohereLabs', 'HuggingFaceTB', 'stepfun-ai',
-  'LGAI-EXAONE', 'upstage', 'naver-hyperclovax', 'kakaocorp', 'skt', 'jinaai', 'nomic-ai', 'Alibaba-NLP'];
+  'LGAI-EXAONE', 'upstage', 'naver-hyperclovax', 'kakaocorp', 'skt', 'jinaai', 'nomic-ai', 'Alibaba-NLP',
+  'lerobot', 'physical-intelligence', 'openvla']; // 로보틱스 정책 모델 조직 포함
 const SKIP = /gguf|awq|gptq|fp8|nvfp4|fp4|w4a16|mlx|bnb|int4|int8|-base$|eagle|draft|onnx|dspine|distill-spec|nfe\d/i;
 const HINT = {
   'text-generation': 'language(text/code/reasoning)', 'image-text-to-text': 'text-llm 또는 vlm', 'text-to-image': 'image-gen', 'image-to-image': 'image-gen',
   'text-to-video': 'video-gen', 'automatic-speech-recognition': 'asr', 'text-to-speech': 'tts', 'feature-extraction': 'embedding',
   'sentence-similarity': 'embedding', 'text-ranking': 'reranker', 'text-classification': 'classifier/guard/reward',
+  robotics: 'vla (로보틱스 정책 모델; modalities.output 에 action)',
 };
-const IGNORE_PIPELINES = new Set(['robotics', 'reinforcement-learning', 'other']);
-const TOPICS = ['llm', 'ai-agents', 'mcp', 'react', 'typescript', 'database', 'rust', 'golang', 'python'];
+const IGNORE_PIPELINES = new Set(['reinforcement-learning', 'other']);
+// 신규 라이브러리 후보를 찾는 GitHub 토픽 (영역별). 새 영역을 추가하면 여기에도 토픽을 넣는다.
+const TOPICS = [
+  'llm', 'ai-agents', 'mcp', 'react', 'typescript', 'database', 'rust', 'golang', 'python',
+  'ros2', 'robotics', 'slam', 'robot-learning', 'embodied-ai', 'mujoco',          // 로보틱스
+  'openxr', 'webxr', 'augmented-reality', 'virtual-reality', 'unity3d', 'godot',  // XR
+  'swiftui', 'jetpack-compose', 'flutter', 'react-native', 'kotlin-multiplatform', // 모바일
+];
 
 const text = (...p) => { try { return readFileSync(join(ROOT, ...p), 'utf8'); } catch { return ''; } };
 
@@ -22,7 +30,12 @@ export async function collectCandidates() {
   const resources = walk(join(ROOT, 'content/resources')).map((p) => parseMd(readFileSync(p, 'utf8')).fm);
   const known = new Set(models.map((m) => (m.huggingface ?? '').replace('https://huggingface.co/', '').toLowerCase()));
   const knownRepos = new Set(resources.map((r) => (r.repo ?? '').toLowerCase().replace(/\/$/, '')));
-  const seen = (key) => (text('research/backlog.md') + text('research/excluded.md')).toLowerCase().includes(key.toLowerCase());
+  // 이미 백로그·제외 목록에 있는지: 전체 키뿐 아니라 owner/repo, repo 이름만 적힌 경우도 걸러낸다
+const seen = (key) => {
+  const hay = (text('research/backlog.md') + text('research/excluded.md')).toLowerCase();
+  const k = key.toLowerCase().replace('https://github.com/', '');
+  return hay.includes(k) || hay.includes(k.split('/').pop());
+};
 
   const mods = [];
   for (const org of ORGS) {
@@ -50,8 +63,8 @@ export async function collectCandidates() {
     try {
       for (const it of gh(`search/repositories?q=topic:${t}+created:>${daysAgo(45)}+stars:>1000&sort=stars&per_page=5`).items) {
         const d = it.description ?? '';
-        const libLike = /(library|framework|sdk|toolkit|cli\b|server|engine|runtime|orm\b|database|protocol|agent)/i.test(d);
-        const appLike = /(desktop app|application|\bgame\b|\bIDE\b|\bCAD\b|editor|download manager|android|\bios\b|extension for)/i.test(d);
+        const libLike = /(library|framework|sdk|toolkit|cli\b|server|engine|runtime|orm\b|database|protocol|agent|simulator|simulation|slam|\bros\b|openxr|webxr|controller|planner|driver)/i.test(d);
+        const appLike = /(desktop app|application|\bgame\b|\bIDE\b|\bCAD\b|editor|download manager|extension for)/i.test(d) && !/(sdk|framework|library|toolkit|engine)/i.test(d);
         if (!knownRepos.has(it.html_url.toLowerCase()) && !it.archived && libLike && !appLike && !/awesome|^learn-/i.test(it.name) && !seen(it.html_url)) repos.set(it.full_name, it);
       }
     } catch { /* 주제 하나 실패는 무시 */ }

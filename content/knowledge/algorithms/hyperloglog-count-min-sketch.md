@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: 스트림 전체를 저장하지 않고 고정된 작은 메모리로 근사 답을 내는 확률적 스케치 둘. HyperLogLog 는 서로 다른 원소 수를, Count-Min Sketch 는 원소별 빈도를 추정하며 둘 다 병합할 수 있다.
 tags: [probabilistic, sketch, streaming, hash, cardinality, frequency, analytics]
-related: [algorithms/bloom-filter, algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/heap-priority-queue, algorithms/big-o-complexity]
+related: [algorithms/bloom-filter, algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/heap-priority-queue, algorithms/big-o-complexity, algorithms/top-k-heavy-hitters-space-saving, algorithms/cuckoo-counting-bloom-filter]
 sources:
   - https://en.wikipedia.org/wiki/HyperLogLog
   - https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch

@@ -23,7 +23,7 @@ const KEYS = {
 const PERMISSIVE = /^(apache[- ]?2(\.0)?|mit|bsd[- ]?\d?(-clause)?|isc|cc0|unlicense|0bsd|mpl[- ]?2(\.0)?|openmdw[- ]?1(\.\d)?|cc[- ]by[- ]4\.0)$/i;
 const hangul = (s) => (String(s).match(/[가-힣]/g) ?? []).length;
 // 판단형(guard/classifier/reward)은 추론 모드가 있는 모델이 있어 제외
-const NON_LANGUAGE_TYPES = /^(image-gen|video-gen|audio-gen|asr|tts|embedding|reranker)$/;
+const NON_LANGUAGE_TYPES = /^(image-gen|video-gen|audio-gen|asr|tts|embedding|reranker|vla)$/;
 const NOT_LIBRARY = /(desktop app|\bgame\b|\bIDE\b|\bCAD\b|download manager|android app|ios app|browser extension)/i;
 
 const bad = [];
@@ -44,8 +44,8 @@ for (const f of files) {
 
   if (coll === 'resources') {
     if (hangul(fm.description) < 8) fail(rel, 'description 이 한국어가 아님 (한국어 1~2문장으로)');
-    // 개발 도구(devtools)·모바일 도메인은 IDE·앱이 정상 대상이므로 제외
-    if (!['devtools', 'mobile'].includes(fm.domain) && NOT_LIBRARY.test(`${fm.description} ${(fm.tags ?? []).join(' ')}`)) fail(rel, '개발 라이브러리가 아닌 앱/도구로 보임 (포함 기준 위반 → research/excluded.md 에 기록)');
+    // 개발 도구·모바일·로보틱스·XR 도메인은 IDE·앱·게임 엔진이 정상 대상이므로 제외
+    if (!['devtools', 'mobile', 'robotics', 'xr'].includes(fm.domain) && NOT_LIBRARY.test(`${fm.description} ${(fm.tags ?? []).join(' ')}`)) fail(rel, '개발 라이브러리가 아닌 앱/도구로 보임 (포함 기준 위반 → research/excluded.md 에 기록)');
     if (fm.addedAt && String(fm.addedAt).slice(0, 4) < '2020') fail(rel, 'addedAt 이상함');
   }
   if (coll === 'models') {

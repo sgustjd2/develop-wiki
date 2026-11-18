@@ -83,6 +83,8 @@ npm run build      # 정적 빌드 → dist/
 Hermes cron(매일 03:00, `--no-agent`)이 `hermes/run.sh` → `hermes/daily.mjs` 를 실행한다. **로컬 모델은 도구를 쓰는 에이전트가 아니라 "릴리스 노트 한 문장 요약 함수"로만 쓰인다**(파일은 스크립트가 쓴다). 이전에 로컬 모델이 파일을 직접 편집하게 했을 때 frontmatter 손상·규칙 위반이 반복돼 이 구조로 바꿨다.
 - 버전·보안 이슈: 저장소 5개의 GitHub Releases·Security Advisories 를 `content/advisories/` 에 병합(보안 권고 제목은 원문 그대로, 릴리스 요약만 한국어 한 문장).
 - 재검증: 저장소가 정상(archived 아님)이면 `verifiedAt` 만 갱신. archived·조회 실패는 로그에만.
+- 후보 탐색 범위: GitHub 토픽(llm·ros2·slam·openxr·webxr·swiftui·flutter 등)과 Hugging Face 조직(로봇 정책 모델 포함). 새 영역을 추가하면 `hermes/candidates.mjs` 의 TOPICS 에도 넣는다.
+- GitHub ★: `stars` 필드가 있는 항목은 매일 갱신.
 - 신규 모델·라이브러리: **항목을 만들지 않고** `research/backlog.md` 에 후보로 적립. 실제 추가는 Claude Code `/refresh-hub`(또는 `/add-model`, `/add-resource`)가 검증 후 수행.
 - `hermes/publish.sh` 가 변경 범위(`content/`, `research/`) → `hermes/lint.mjs` → `npm run validate` → 빌드를 통과해야만 main 에 push(→ Pages 자동 배포). 실패하면 변경을 `hermes/.failed/<날짜>/` 에 보관하고 작업 트리를 되돌린다.
 - 로컬 모델 요약은 오류 가능성이 있어, `/refresh-hub` 때 `research/log/*-hermes.md` 의 변경 파일을 `fact-checker` 로 재검증한다.

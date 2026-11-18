@@ -6,7 +6,7 @@ group: data-structure
 level: intermediate
 summary: 가장 작은(또는 큰) 원소를 O(1)에 보고 O(log n)에 꺼내는 완전 이진 트리. 배열 하나로 구현하며 우선순위 큐, 다익스트라, Top-K, 타이머에 쓴다.
 tags: [heap, priority-queue, top-k, scheduling]
-related: [algorithms/array-dynamic-array, algorithms/shortest-path, algorithms/sorting-comparison, algorithms/greedy, algorithms/bst-balanced-tree, algorithms/minimum-spanning-tree]
+related: [algorithms/array-dynamic-array, algorithms/shortest-path, algorithms/sorting-comparison, algorithms/greedy, algorithms/bst-balanced-tree, algorithms/minimum-spanning-tree, algorithms/top-k-heavy-hitters-space-saving, algorithms/external-sort]
 sources:
   - https://docs.python.org/3/library/heapq.html
   - https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/PriorityQueue.html

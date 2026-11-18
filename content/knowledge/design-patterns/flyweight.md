@@ -6,7 +6,7 @@ group: structural
 level: intermediate
 summary: 수많은 비슷한 객체가 똑같이 들고 있는 불변 상태(내재 상태)를 공유 객체 하나로 모으고, 객체마다 다른 상태(외재 상태)는 밖에 두어 메모리를 줄이는 구조 패턴.
 tags: [gof, oop, memory, caching, structural]
-related: [design-patterns/singleton, design-patterns/composite, design-patterns/facade, design-patterns/prototype, design-patterns/interpreter, algorithms/hash-table, algorithms/space-time-tradeoff]
+related: [design-patterns/singleton, design-patterns/composite, design-patterns/facade, design-patterns/prototype, design-patterns/interpreter, algorithms/hash-table, algorithms/space-time-tradeoff, design-patterns/object-pool]
 sources:
   - https://refactoring.guru/design-patterns/flyweight
   - https://en.wikipedia.org/wiki/Flyweight_pattern

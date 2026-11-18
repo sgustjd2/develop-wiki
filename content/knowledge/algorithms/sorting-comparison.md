@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 대표 비교 정렬 네 가지의 시간·공간·안정성·실제 성능을 비교하고, 언어 표준 라이브러리가 왜 그 알고리즘을 골랐는지 정리한다.
 tags: [sorting, quicksort, mergesort, heapsort, timsort, stability]
-related: [algorithms/big-o-complexity, algorithms/heap-priority-queue, algorithms/binary-search, algorithms/two-pointers-sliding-window, algorithms/array-dynamic-array]
+related: [algorithms/big-o-complexity, algorithms/heap-priority-queue, algorithms/binary-search, algorithms/two-pointers-sliding-window, algorithms/array-dynamic-array, algorithms/external-sort]
 sources:
   - https://v8.dev/blog/array-sort
   - https://github.com/python/cpython/blob/main/Objects/listsort.txt

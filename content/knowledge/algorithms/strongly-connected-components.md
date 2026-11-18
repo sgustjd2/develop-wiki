@@ -6,7 +6,7 @@ group: algorithm
 level: advanced
 summary: 방향 그래프에서 서로가 서로에게 도달 가능한 정점들의 최대 묶음. DFS 한 번의 Tarjan, DFS 두 번의 Kosaraju 로 선형 시간에 찾고, 묶음을 점 하나로 줄이면 사이클 없는 DAG 가 된다.
 tags: [graph, scc, dfs, tarjan, kosaraju, dag, cycle-detection]
-related: [algorithms/bfs-dfs, algorithms/topological-sort, algorithms/graph-representation, algorithms/union-find, algorithms/stack-queue-deque, algorithms/dynamic-programming]
+related: [algorithms/bfs-dfs, algorithms/topological-sort, algorithms/graph-representation, algorithms/union-find, algorithms/stack-queue-deque, algorithms/dynamic-programming, algorithms/articulation-points-bridges]
 sources:
   - https://en.wikipedia.org/wiki/Strongly_connected_component
   - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm

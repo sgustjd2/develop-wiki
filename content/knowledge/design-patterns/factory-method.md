@@ -6,7 +6,7 @@ group: creational
 level: beginner
 summary: 객체 생성을 별도 메서드로 분리해 어떤 구체 클래스를 생성할지는 하위 클래스나 구현체가 정하게 하는 생성 패턴.
 tags: [gof, oop, creation]
-related: [design-patterns/builder, design-patterns/strategy, principles/solid, design-patterns/abstract-factory, design-patterns/template-method, design-patterns/prototype]
+related: [design-patterns/builder, design-patterns/strategy, principles/solid, design-patterns/abstract-factory, design-patterns/template-method, design-patterns/prototype, design-patterns/service-locator-vs-dependency-injection]
 sources:
   - https://refactoring.guru/design-patterns/factory-method
   - https://en.wikipedia.org/wiki/Design_Patterns

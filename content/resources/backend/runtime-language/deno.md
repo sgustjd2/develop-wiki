@@ -18,7 +18,7 @@ verifiedAt: 2026-11-18
 ## 개요
 Deno 는 Node.js 를 만든 Ryan Dahl 이 시작한 Rust·V8 기반 런타임이다. 파일·네트워크·환경 변수 접근을 기본적으로 막고 `--allow-*` 플래그로 명시적으로 허용하는 **권한 모델**, 설정 없는 TypeScript 실행, `deno fmt`·`deno lint`·`deno test` 같은 내장 도구가 특징이다. Deno 2 부터 `package.json`·`node_modules`·`npm:` 지정자를 지원해 npm 생태계와 호환된다.
 
-2026-11 기준 최신 안정판은 **2.9.8**(2026-10-21). 자체 패키지 레지스트리 **JSR**(jsr.io)과 서버리스 호스팅 Deno Deploy 를 함께 운영한다.
+2026-11 기준 최신 안정판은 **2.9.8**(2026-10-21). 자체 패키지 레지스트리 **JSR**(jsr.io)과 서버리스 호스팅 Deno Deploy 를 함께 운영해 왔다. 2026-10-09 Deno 팀이 Cloudflare 에 합류한다고 발표했고, Deno 런타임은 1년간 월간 릴리스(버그·보안 수정)를 낸 뒤 개발을 종료한다(오픈소스로는 유지). Deno Deploy 는 6개월 뒤 종료되며 JSR 은 Cloudflare 로 인프라를 옮겨 계속 운영한다.
 
 ## 설치
 ```bash

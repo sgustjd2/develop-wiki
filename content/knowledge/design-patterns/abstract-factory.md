@@ -6,7 +6,7 @@ group: creational
 level: intermediate
 summary: 서로 어울려야 하는 관련 객체들의 묶음(제품군)을 구체 클래스를 지정하지 않고 생성하는 인터페이스를 제공하는 생성 패턴.
 tags: [gof, oop, factory, product-family]
-related: [design-patterns/factory-method, design-patterns/builder, design-patterns/singleton, principles/solid, design-patterns/prototype, design-patterns/bridge]
+related: [design-patterns/factory-method, design-patterns/builder, design-patterns/singleton, principles/solid, design-patterns/prototype, design-patterns/bridge, design-patterns/service-locator-vs-dependency-injection]
 sources:
   - https://refactoring.guru/design-patterns/abstract-factory
   - https://en.wikipedia.org/wiki/Design_Patterns

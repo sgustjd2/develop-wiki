@@ -6,7 +6,7 @@ group: algorithm
 level: beginner
 summary: 그래프의 모든 도달 가능한 정점을 O(V+E)에 방문하는 두 기본 순회. BFS 는 가까운 순서로 퍼져 무가중치 최단 경로를 주고, DFS 는 끝까지 파고들어 사이클·위상 순서·연결 구조를 드러낸다.
 tags: [graph, bfs, dfs, traversal, shortest-path]
-related: [algorithms/graph-representation, algorithms/stack-queue-deque, algorithms/shortest-path, algorithms/topological-sort, algorithms/backtracking, algorithms/union-find, algorithms/strongly-connected-components]
+related: [algorithms/graph-representation, algorithms/stack-queue-deque, algorithms/shortest-path, algorithms/topological-sort, algorithms/backtracking, algorithms/union-find, algorithms/strongly-connected-components, algorithms/articulation-points-bridges, algorithms/max-flow-bipartite-matching]
 sources:
   - https://cp-algorithms.com/graph/breadth-first-search.html
   - https://cp-algorithms.com/graph/depth-first-search.html

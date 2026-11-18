@@ -6,7 +6,7 @@ group: behavioral
 level: intermediate
 summary: 상태별 동작을 별도 객체로 나누고 현재 상태 객체에 위임해, 상태가 바뀌면 객체의 행동도 바뀌게 하는 행위 패턴.
 tags: [gof, oop, state-machine]
-related: [design-patterns/strategy, design-patterns/command, principles/solid, design-patterns/bridge, design-patterns/memento]
+related: [design-patterns/strategy, design-patterns/command, principles/solid, design-patterns/bridge, design-patterns/memento, design-patterns/null-object]
 sources:
   - https://refactoring.guru/design-patterns/state
   - https://en.wikipedia.org/wiki/Design_Patterns

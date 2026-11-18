@@ -6,7 +6,7 @@ group: data-structure
 level: beginner
 summary: 원소를 메모리에 연속으로 놓아 인덱스로 O(1) 접근하는 기본 자료구조와, 용량을 배수로 늘려 끝 추가를 상각 O(1)로 만드는 동적 배열.
 tags: [array, dynamic-array, memory, cache-locality]
-related: [algorithms/amortized-analysis, algorithms/linked-list, algorithms/stack-queue-deque, algorithms/binary-search, algorithms/heap-priority-queue]
+related: [algorithms/amortized-analysis, algorithms/linked-list, algorithms/stack-queue-deque, algorithms/binary-search, algorithms/heap-priority-queue, algorithms/segment-tree-fenwick-tree]
 sources:
   - https://en.wikipedia.org/wiki/Dynamic_array
   - https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html

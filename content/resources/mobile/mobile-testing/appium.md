@@ -18,8 +18,25 @@ verifiedAt: 2026-11-19
 ## 개요
 Appium은 HTTP 서버로 동작하며, 테스트 코드는 WebDriver 프로토콜로 요청을 보내고 Appium이 플랫폼별 **드라이버**(Android는 UiAutomator2, iOS는 XCUITest)를 통해 실제 앱을 조작한다. 앱 코드를 수정하거나 테스트용 SDK를 넣지 않고, 네이티브·하이브리드·모바일 웹을 같은 API로 자동화한다는 점이 특징이다.
 
-- 이 문서는 **Appium 4.0.0**(npm `latest`, 2026-11-15 발행) 기준이다. 직전 3.x 마지막은 3.9.1이다. 패키지 `engines`는 Node `^22.22.2 || ^24.15.0 || >=26.0.0`이다. 4.0은 출시 직후라 [공식 마이그레이션 가이드("Migrating to Appium 4")](https://appium.io/docs/en/latest/)로 변경점을 확인하고 도입한다. Apache-2.0.
+- 이 문서는 **Appium 4.0.0**(npm `latest`, 2026-11-15 발행) 기준이다. 직전 3.x 마지막은 3.9.1(2026-11-14)이다. 패키지 `engines`는 Node `^22.22.2 || ^24.15.0 || >=26.0.0`, npm `>=10`이다. Apache-2.0.
+- 3→4 변경점은 아래 "Appium 3 → 4 마이그레이션" 절에 정리했다. 원문은 [Migrating to Appium 4](https://appium.io/docs/en/latest/guides/migrating-3-to-4/).
 - 대안: 앱 내부에서 동작하는 [Espresso](/develop-wiki/mobile/mobile-testing/espresso/)(Android), [XCTest](/develop-wiki/mobile/mobile-testing/xctest/)(iOS)는 더 빠르고 안정적이지만 플랫폼별로 따로 작성한다. 선언형 YAML은 [Maestro](/develop-wiki/mobile/mobile-testing/maestro/), React Native는 [Detox](/develop-wiki/mobile/mobile-testing/detox/).
+
+## Appium 3 → 4 마이그레이션
+공식 마이그레이션 가이드 기준 주요 변경이다. 업그레이드 전에 서버 인자·클라이언트 코드·플러그인·드라이버를 점검한다.
+
+| 영역 | 변경 |
+| --- | --- |
+| 런타임 | Node 20 지원 중단(22.22.2+ / 24.15+ / 26+). 모든 패키지가 ESM 전용이라 `require()` 사용 불가 |
+| 프로토콜 | JSONWP/MJSONWP 내부 제거(의존하는 드라이버는 비호환). 폐기 엔드포인트 12개 제거, 나머지 7개(주로 컨텍스트 관리)는 다음 메이저에서 제거 예정 |
+| 서버 | SPDY·HTTP/2 제거(TLS 는 HTTP/1.1 HTTPS), Selenium Grid 3 허브·`--nodeconfig` 제거(Grid 4 는 유지), npm postinstall 드라이버 설치 훅 제거 |
+| CLI | `--allow-cors` 는 `--allow-insecure=*:cors` 또는 `--relaxed-security` 로 대체, 기본 로그 레벨 `info`, `driver`/`plugin`/`setup` 의 비오류 출력이 stdout 으로 이동 |
+| 제거된 인자 | `--callback-address`, `--callback-port`, `--debug-log-spacing`, `--shell`, `--strict-caps`, `--trace-dir`, 캡빌리티 `appium:eventTimings` |
+| 클라이언트 | `Origin` 헤더가 있는 상태 변경 요청은 CORS 비활성 시 403, POST 본문은 JSON 객체여야 함(빈 본문·`[]` 는 400), 캡빌리티 이름은 대소문자 구분, `GET /` 는 404 |
+| 드라이버 | Windows 드라이버 미지원 → WinCore 드라이버(`appium driver install wincore`)로 이전 |
+| 플러그인 | `Plugin#logger` → `Plugin#log`, `@appium/base-plugin` 기본 export 제거 |
+
+Windows 드라이버를 쓰는 경우 공식 순서는 Appium 3 에서 `appium-wincore-driver@3` 설치 → 테스트 이전 → 기존 Windows 드라이버 제거 → Appium 4 로 업그레이드 → `appium driver update wincore --unsafe` 다. 스크립트가 CLI 출력을 stderr 로 가정했다면 stdout 이동에 맞게 고친다.
 
 ## 설치
 ```bash

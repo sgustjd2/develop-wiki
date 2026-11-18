@@ -41,3 +41,16 @@
 | Cartographer, ORB-SLAM3 | robotics/perception | 마지막 push 2024 — slam_toolbox 항목에서 언급 | 2026-11-19 |
 | OpenXR Toolkit (mbucchia) | xr/standards-runtimes | 마지막 push 2025-10, 정체 | 2026-11-19 |
 | boost-devs/ai-tech-interview, ksundong/backend-interview-question | oss/learning-repos | 갱신 8~10개월 정체 | 2026-11-19 |
+| allenai/maniflow-tb | models/vla | ToyBlocks 블록 쌓기 시뮬레이션 전용 저수준 정책 체크포인트(322M, 연구 프로토콜 한정), 범용 모델 아님 | 2026-11-19 |
+| allenai/Molmo2-4B-tb | models/vlm | Molmo2-4B 를 ToyBlocks 블록 쌓기에 파인튜닝한 파생 체크포인트(model.pt 네이티브 포맷), 범위가 블록 이동으로 한정 — 범용 항목은 Molmo2 계열에서 다룸 | 2026-11-19 |
+| lerobot/asimov-mujoco | models | 모델이 아니라 Asimov 1 로봇 MuJoCo 시뮬레이션 코드 저장소(가중치 없음, 라이선스 미표기) | 2026-11-19 |
+| lerobot/RynnValue-4B | models | Alibaba-DAMO-Academy/RynnValue-4B 의 LeRobot 변환 포팅본 — 원본(alibaba-damo/rynnvalue-4b)으로 등록 | 2026-11-19 |
+| nvidia/Cosmos-Reason2-2B, nvidia/Cosmos-Reason2-8B | models/vlm | HF 에서 약관 동의가 필요한 게이트 저장소(gated=auto) — 게이트 없는 Cosmos-Reason2-32B 만 등록 | 2026-11-19 |
+| nvidia/Cosmos3-Nano-Policy-DROID, Cosmos3-Nano-Sim-*, Cosmos3-H-*, cosmos3-nano-libero10-sdg-export-*, *-FP8, *-4Step | models | Cosmos3 파생·양자화·시뮬/데이터 내보내기 변형 — 대표 변형(Super·Edge·Edge-Policy-DROID)만 등록 | 2026-11-19 |
+| nvidia/GR00T-N1.5-3B, GR00T-N1-2B, GR00T-N1.6-*(bridge·fractal·DROID 등) | models/vla | 이전 세대·후속학습 체크포인트 — N1.7 과 N1.6 만 등록 | 2026-11-19 |
+| wangzan101/Mika | oss | Android 에이전트 앱(최종 사용자용 APK), 개발 도구·라이브러리 아님. 생성 3주 만에 ★9천·star 요청 배너·트렌딩 배지 중심 README | 2026-11-19 |
+| qybaihe/bla | oss | 생성 3주, 홍보성 README(트렌딩 배지·"Poison/Hallucinate" 문구), 분석 도구를 오도하는 난독화 성격이며 효과 주장이 자체 벤치마크뿐 — 신뢰할 근거 부족 | 2026-11-19 |
+| expo/exact | frontend·mobile/cross-platform | Expo 조직 저장소이나 pre-1.0, 패키지 릴리스 없이 체크아웃으로만 사용, "API 안정성·마이그레이션 없음"을 명시, 생성 3주 — 정식 릴리스 후 재검토 | 2026-11-19 |
+| erkamyaman/rust-anything | devtools | 개인 저장소, 생성 3일에 ★3천, 수치형 홍보 문구(최대 20배 등)와 자체 벤치마크만 근거 — 신뢰할 근거 부족 | 2026-11-19 |
+| mdiri-ai/SoduWork | oss/self-hosted | 개발 라이브러리가 아닌 AI 팀 협업 제품(데스크톱 앱 중심), 생성 3주, 열린 이슈·PR 141건 — 성숙 후 재검토 | 2026-11-19 |
+| MassTransit | backend/messaging | v9 부터 상용 제품 전환(공식 사이트 안내), v8 만 Apache-2.0 이라 현행 기준 오픈소스로 부적합 | 2026-11-19 |

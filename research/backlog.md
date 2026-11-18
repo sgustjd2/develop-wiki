@@ -21,3 +21,10 @@
 | DRY/KISS/YAGNI, 상속보다 합성, 결합도·응집도 | knowledge/principles | 제안 | 2026-11-18 |
 | 레이어드 vs 클린 vs 헥사고날 비교, CQRS, 이벤트 드리븐 | knowledge/architecture | 제안 | 2026-11-18 |
 | 사가, 멱등성, 아웃박스 | knowledge/distributed-systems | 제안 | 2026-11-18 |
+| MiniMaxAI/MiniMax-H3-Image-PE | models/language(text/code/reasoning) | https://huggingface.co/MiniMaxAI/MiniMax-H3-Image-PE · 2026-11-08 · license=other · params=27.4B · ♥125 ↓3181 (Hermes 후보, 검증 전) | 2026-11-18 |
+| tencent/Hy4-flash | models/text-llm 또는 vlm | https://huggingface.co/tencent/Hy4-flash · 2026-11-17 · license=other · params=220.3B · ♥105 ↓0 (Hermes 후보, 검증 전) | 2026-11-18 |
+| https://github.com/microsoft/TokenEconomizer | resources/Python | ★7571 · license=MIT · Experience-Driven Black-Box Cost Control for Coding Agents (Hermes 후보, 검증 전) | 2026-11-18 |
+| https://github.com/KKKKhazix/agent-autoloop | resources/TypeScript | ★5841 · license=MIT · 让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。 (Hermes 후보, 검증 전) | 2026-11-18 |
+| https://github.com/vercel-labs/ui | resources/TypeScript | ★5622 · license=Apache-2.0 · A library of behaviors for agents to build the next generation of user interfaces. (Hermes 후보, 검증 전) | 2026-11-18 |
+| https://github.com/Leonxlnx/earshot | resources/Python | ★5119 · license=MIT · Ears for coding agents: let AI hear, review and make sound. CPU-only, open source. (Hermes 후보, 검증 전) | 2026-11-18 |
+| https://github.com/mw00/project-maya | resources/C++ | ★3005 · license=MIT · Run GLM-5.3 (744B), GLM-5.3-Flash (321B), DeepSeek-V4.1-Flash (748B) and MiniMax-M3.1-Flash (428B) o (Hermes 후보, 검증 전) | 2026-11-18 |

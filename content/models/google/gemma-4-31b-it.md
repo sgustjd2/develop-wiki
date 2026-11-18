@@ -1,0 +1,32 @@
+---
+name: Gemma 4 31B IT
+org: Google DeepMind
+family: Gemma 4
+type: text-llm
+thinking: hybrid
+modalities: { input: [text, image, video], output: [text] }
+architecture: dense
+paramsB: 30.7
+contextLength: 262144
+license: Apache-2.0
+commercialUse: allowed
+korean: unknown
+releaseDate: 2026-04-02
+huggingface: https://huggingface.co/google/gemma-4-31B-it
+summary: Gemma 4 패밀리의 최대 dense 모델. 텍스트·이미지(영상 프레임)를 입력받고 thinking 모드를 켜고 끌 수 있다.
+useCases:
+  - 워크스테이션 GPU에서 돌리는 문서·차트·UI 스크린샷 이해
+  - 함수 호출을 쓰는 온프레미스 멀티모달 에이전트
+strengths:
+  - Apache-2.0 라이선스
+  - 256K 컨텍스트, 네이티브 system 역할·함수 호출 지원
+  - 26B A4B(MoE, 활성 3.8B), 12B, E4B, E2B 크기도 함께 공개
+limitations:
+  - 31B 는 오디오 입력을 지원하지 않음(E2B·E4B·12B 만 지원)
+capabilities: [tool-calling, long-context, multilingual, grounding]
+sources:
+  - https://huggingface.co/google/gemma-4-31B-it
+  - https://huggingface.co/api/models/google/gemma-4-31B-it
+  - https://ai.google.dev/gemma/docs/gemma_4_license
+verifiedAt: 2026-11-18
+---

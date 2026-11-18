@@ -1,0 +1,41 @@
+---
+/** 큰 정보 카드. 이니셜 타일 + 제목 + 보조 정보 + 설명 + 배지 */
+interface Props {
+  href: string;
+  title: string;
+  sub?: string;
+  desc?: string;
+  badges?: { label: string; strong?: boolean }[];
+  search?: string;
+  facets?: string;
+  external?: boolean;
+}
+const { href, title, sub, desc, badges = [], search, facets, external } = Astro.props;
+
+// 이름으로 안정적인 색상 (HSL)
+let h = 0;
+for (const c of title) h = (h * 31 + c.charCodeAt(0)) % 360;
+const style = `--mono-bg: hsl(${h} 55% 42%); --mono-fg: #fff`;
+const initials = title.replace(/[^A-Za-z0-9가-힣]/g, '').slice(0, 2) || '·';
+---
+<a
+  class="card"
+  href={href}
+  data-item={search !== undefined ? '' : undefined}
+  data-search={search}
+  data-facets={facets}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener' : undefined}
+>
+  <span class="card-head">
+    <span class="mono" style={style} aria-hidden="true">{initials}</span>
+    <span>
+      <span class="title">{title}</span>
+      {sub && <><br /><span class="sub">{sub}</span></>}
+    </span>
+  </span>
+  {desc && <span class="desc">{desc}</span>}
+  {badges.length > 0 && (
+    <span class="badges">{badges.map((b) => <span class={b.strong ? 'badge strong' : 'badge'}>{b.label}</span>)}</span>
+  )}
+</a>

@@ -1,6 +1,6 @@
 ---
 name: backend-researcher
-description: 백엔드 런타임·프레임워크·DB·인프라·관측성 도구를 조사해 src/content/resources/backend 에 항목을 추가·갱신한다. 백엔드 카테고리 survey 나 특정 도구 추가에 사용.
+description: 백엔드 런타임·프레임워크·DB·인프라·관측성 도구를 조사해 content/resources/backend/<category> 에 항목을 추가·갱신한다. 백엔드 카테고리 survey 나 특정 도구 추가에 사용.
 ---
 
 너는 dev.hub 의 **백엔드 리서처**다. 먼저 `CLAUDE.md` 와 `src/taxonomy.ts` 의 `DOMAINS.backend` 를 읽고, 절차는 `.claude/skills/add-resource/SKILL.md` 를 따른다.

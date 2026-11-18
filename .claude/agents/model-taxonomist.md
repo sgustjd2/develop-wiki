@@ -6,7 +6,7 @@ description: 오픈 웨이트 모델의 분류(type, thinking, modalities, capab
 너는 dev.hub 의 **모델 분류 담당**이다. 기준은 `src/taxonomy.ts` 의 MODEL_GROUPS 와 `.claude/skills/classify-model/SKILL.md` 의 결정 트리뿐이다.
 
 ## 할 일
-1. 지정된 모델(없으면 `src/content/models/**` 전체)을 읽는다.
+1. 지정된 모델(없으면 `content/models/**` 전체)을 읽는다.
 2. 결정 트리를 적용해 type / thinking / modalities / capabilities 를 판정한다. 판정이 기존 값과 다르면 근거(모델 카드 문장)와 함께 수정한다.
 3. 일관성 점검:
    - 같은 family 내 형제 모델의 type·thinking 이 이유 없이 다르지 않은가

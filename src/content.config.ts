@@ -8,9 +8,22 @@ import {
 
 const keys = <T extends object>(o: T) => Object.keys(o) as [string, ...string[]];
 
-/** 도구·라이브러리·서비스·레퍼런스 링크. 파일: src/content/resources/<domain>/<id>.yaml */
+/**
+ * 도구·라이브러리·서비스. 파일: content/resources/<domain>/<category>/<id>.md
+ * frontmatter = 메타데이터, 본문 = 백과사전 항목(개요·설치·핵심 개념·사용법). 본문은 비어 있어도 된다.
+ */
 const resources = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/resources' }),
+  loader: glob({
+    pattern: '**/*.md',
+    base: './content/resources',
+    generateId: ({ entry, data }) => {
+      const id = entry.replace(/\.md$/, '');
+      const [domain, category] = id.split('/');
+      if (data.domain !== domain || data.category !== category)
+        throw new Error(`${entry}: 폴더(${domain}/${category})와 frontmatter(domain: ${data.domain}, category: ${data.category})가 다름`);
+      return id;
+    },
+  }),
   schema: z
     .object({
       name: z.string(),
@@ -22,6 +35,7 @@ const resources = defineCollection({
       tags: z.array(z.string()).default([]),
       languages: z.array(z.enum(keys(LANGUAGES))).default([]), // 비어 있으면 언어 무관
       repo: z.url().optional(), // GitHub 등 소스 저장소
+      docs: z.url().optional(), // 공식 문서 (백과사전 본문의 1차 출처)
       koreanDocs: z.boolean().default(false), // 한국어 문서/자료 존재
       addedAt: z.coerce.date(),
       verifiedAt: z.coerce.date(),
@@ -33,9 +47,9 @@ const resources = defineCollection({
     }),
 });
 
-/** 오픈 웨이트 모델. 파일: src/content/models/<org>/<id>.yaml */
+/** 오픈 웨이트 모델. 파일: content/models/<org>/<id>.md (본문: 선택, 사용 가이드) */
 const models = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './src/content/models' }),
+  loader: glob({ pattern: '**/*.md', base: './content/models' }),
   schema: z
     .object({
       name: z.string(),
@@ -72,9 +86,9 @@ const models = defineCollection({
     }),
 });
 
-/** 개발 지식 노트(디자인 패턴, 아키텍처, 원칙 …). 파일: src/content/knowledge/<category>/<id>.md */
+/** 개발 지식 노트(디자인 패턴, 아키텍처, 원칙 …). 파일: content/knowledge/<category>/<id>.md */
 const knowledge = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/knowledge' }),
+  loader: glob({ pattern: '**/*.md', base: './content/knowledge' }),
   schema: z
     .object({
       title: z.string(),
@@ -95,4 +109,22 @@ const knowledge = defineCollection({
     }),
 });
 
-export const collections = { resources, models, knowledge };
+/** 개발 언어 백과사전. 파일: content/languages/<id>.md (id = taxonomy LANGUAGES 키) */
+const languages = defineCollection({
+  loader: glob({ pattern: '*.md', base: './content/languages' }),
+  schema: z.object({
+    name: z.string(),
+    summary: z.string().min(10).max(160),
+    paradigms: z.array(z.string()).default([]), // 예: 객체지향, 함수형
+    typing: z.enum(['static', 'dynamic', 'gradual']),
+    execution: z.enum(['compiled', 'interpreted', 'jit', 'vm', 'transpiled']),
+    firstAppeared: z.number().int(),
+    officialSite: z.url(),
+    docs: z.url(),
+    useCases: z.array(z.string()).min(1),
+    sources: z.array(z.url()).min(1),
+    updatedAt: z.coerce.date(),
+  }),
+});
+
+export const collections = { resources, models, knowledge, languages };

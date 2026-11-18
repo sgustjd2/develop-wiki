@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Card from '../../../components/Card.astro';
+import { DOMAINS, LANGUAGES, PRICING } from '../../../taxonomy';
+import { fmtDate, hostOf, href, languagePath, sourceUrl } from '../../../lib';
+import { resourceCard } from '../../../cards';
+
+export async function getStaticPaths() {
+  const all = await getCollection('resources');
+  return all.map((entry) => {
+    const [domain, category, slug] = entry.id.split('/');
+    return { params: { domain, category, slug }, props: { entry, siblings: all.filter((e) => e.data.category === category && e.data.domain === domain && e.id !== entry.id) } };
+  });
+}
+const { entry, siblings } = Astro.props;
+const d = entry.data;
+const { Content } = await render(entry);
+const hasBody = Boolean(entry.body?.trim());
+const dom = DOMAINS[d.domain as keyof typeof DOMAINS];
+const cat = (dom.categories as Record<string, { label: string }>)[d.category];
+---
+<Base title={d.name} description={d.description} current={d.domain}>
+  <div class="article">
+    <article class="article-main">
+      <p class="crumbs"><a href={href(`${d.domain}/`)}>{dom.label}</a> / <a href={href(`${d.domain}/${d.category}/`)}>{cat.label}</a></p>
+      <h1>{d.name}</h1>
+      <p class="lead">{d.description}</p>
+      <div class="prose">
+        {hasBody ? <Content /> : (
+          <p class="notice">아직 백과사전 본문이 없습니다. 에이전트가 공식 문서를 조사해 개요·설치·사용법을 채웁니다. 지금은 <a href={d.docs ?? d.url}>공식 문서</a>를 참고하세요.</p>
+        )}
+      </div>
+      {siblings.length > 0 && (
+        <section class="section" style="margin-top:56px">
+          <div class="section-head"><h2>같은 카테고리</h2><a class="more" href={href(`${d.domain}/${d.category}/`)}>전체 보기 →</a></div>
+          <div class="grid" style="margin-top:16px">{siblings.slice(0, 4).map((e) => { const { search, facets, ...p } = resourceCard(e); return <Card {...p} />; })}</div>
+        </section>
+      )}
+    </article>
+    <aside class="article-side">
+      <dl class="facts">
+        <dt>분류</dt><dd>{dom.label} › {cat.label}</dd>
+        {d.languages.length > 0 && (<><dt>언어</dt><dd>{d.languages.map((l, i) => <>{i > 0 && ', '}<a href={languagePath(l)}>{LANGUAGES[l as keyof typeof LANGUAGES]}</a></>)}</dd></>)}
+        <dt>가격</dt><dd>{PRICING[d.pricing as keyof typeof PRICING]}</dd>
+        <dt>한국어 문서</dt><dd>{d.koreanDocs ? '있음' : '없음'}</dd>
+        {d.tags.length > 0 && (<><dt>태그</dt><dd>{d.tags.map((t) => `#${t}`).join(' ')}</dd></>)}
+        <dt>검증일</dt><dd>{fmtDate(d.verifiedAt)}</dd>
+      </dl>
+      <div class="side-links">
+        <a class="btn primary" href={d.url} target="_blank" rel="noopener">{hostOf(d.url)} ↗</a>
+        {d.docs && <a class="btn" href={d.docs} target="_blank" rel="noopener">공식 문서 ↗</a>}
+        {d.repo && <a class="btn" href={d.repo} target="_blank" rel="noopener">소스 저장소 ↗</a>}
+        <a class="btn" href={sourceUrl('resources', entry.id)} target="_blank" rel="noopener">Markdown 원문</a>
+        <a class="btn" href={href('data/resources.json')}>JSON 데이터</a>
+      </div>
+    </aside>
+  </div>
+</Base>

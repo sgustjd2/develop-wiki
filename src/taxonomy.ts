@@ -86,6 +86,7 @@ export type LanguageId = keyof typeof LANGUAGES;
 
 export const PRICING = {
   oss: '오픈소스',
+  'source-available': '소스 공개(비OSI)', // SSPL·BSL 등 소스는 공개지만 OSI 오픈소스가 아님
   free: '무료',
   freemium: '부분 무료',
   paid: '유료',

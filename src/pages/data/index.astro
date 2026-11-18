@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { href, REPO } from '../../lib';
+
+const sets = [
+  { id: 'resources', label: '라이브러리·도구', folder: 'content/resources/<도메인>/<카테고리>/<id>.md' },
+  { id: 'models', label: '오픈 웨이트 모델', folder: 'content/models/<조직>/<id>.md' },
+  { id: 'knowledge', label: '개발 지식', folder: 'content/knowledge/<분류>/<id>.md' },
+  { id: 'languages', label: '개발 언어', folder: 'content/languages/<id>.md' },
+] as const;
+const counts = Object.fromEntries(await Promise.all(sets.map(async (s) => [s.id, (await getCollection(s.id)).length])));
+---
+<Base title="데이터 (MD·JSON)" current="data" description="정리된 자료를 Markdown 과 JSON 으로 받기">
+  <article class="article-main prose" style="max-width:860px">
+    <h1>데이터 (Markdown · JSON)</h1>
+    <p class="lead">사이트의 모든 내용은 폴더별 Markdown 파일이 원본이고, 같은 내용을 JSON 으로도 제공합니다.</p>
+    <table>
+      <thead><tr><th>자료</th><th>항목 수</th><th>Markdown 원본 폴더</th><th>JSON</th></tr></thead>
+      <tbody>
+        {sets.map((s) => (
+          <tr>
+            <td>{s.label}</td>
+            <td>{counts[s.id]}</td>
+            <td><a href={`${REPO}/tree/main/content/${s.id}`} target="_blank" rel="noopener"><code>{s.folder}</code></a></td>
+            <td><a href={href(`data/${s.id}.json`)}><code>/data/{s.id}.json</code></a></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <h2>파일 형식</h2>
+    <p>각 Markdown 파일은 위쪽 frontmatter(YAML)에 메타데이터를, 본문에 백과사전 내용(개요·설치·핵심 개념·사용법)을 담습니다. JSON 의 각 항목은 frontmatter 필드 + <code>id</code>, <code>path</code>(원본 파일 경로), <code>body</code>(본문 Markdown)입니다.</p>
+    <h2>분류 체계</h2>
+    <p>폴더 이름과 필드 값은 <a href={`${REPO}/blob/main/src/taxonomy.ts`}>src/taxonomy.ts</a> 의 분류를 따르며, 빌드할 때 스키마로 검증됩니다. 사람이 읽기 쉬운 설명은 <a href={href('taxonomy/')}>분류 기준</a> 페이지에 있습니다.</p>
+    <h2>조사 기록</h2>
+    <p>에이전트의 조사 로그·백로그·제외 목록은 <a href={`${REPO}/tree/main/research`}>research/</a> 폴더에 있습니다.</p>
+  </article>
+</Base>

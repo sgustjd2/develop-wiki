@@ -9,10 +9,12 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | --- | --- |
 | `src/taxonomy.ts` | **분류 체계의 단일 원천.** 도메인·카테고리·언어·모델 type·지식 분류 |
 | `src/content.config.ts` | 콘텐츠 스키마(Zod). 분류 체계를 벗어난 데이터는 빌드가 실패한다 |
-| `src/content/resources/<domain>/<id>.yaml` | 도구·라이브러리·서비스 링크 (frontend / backend / ai) |
-| `src/content/models/<org>/<id>.yaml` | 오픈 웨이트 모델 |
-| `src/content/knowledge/<category>/<id>.md` | 개발 지식 노트 |
-| `src/pages/` | 사이트 페이지. `[domain]`, `languages/`, `models/`, `knowledge/`, `taxonomy/` |
+| `content/resources/<domain>/<category>/<id>.md` | 도구·라이브러리·DB. frontmatter=메타데이터, 본문=백과사전(개요·설치·사용법) |
+| `content/models/<org>/<id>.md` | 오픈 웨이트 모델 |
+| `content/knowledge/<category>/<id>.md` | 개발 지식 노트 (디자인 패턴·아키텍처 …) |
+| `content/languages/<id>.md` | 개발 언어 백과사전 (id = taxonomy LANGUAGES 키) |
+| `src/pages/` | 사이트. 도메인→카테고리→항목 페이지, `models/type/*`, `new/`, `data/*.json`, `search-index.json` |
+| `hermes/` | Hermes(로컬 모델) 매일 업데이트 스킬·스크립트 원본 |
 | `research/` | 조사 로그·백로그·제외 목록 (사이트에는 안 나감) |
 | `.claude/agents/` | 서브에이전트 정의 |
 | `.claude/skills/` | 작업 절차(스킬) |
@@ -41,6 +43,7 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `model-researcher` | 오픈 웨이트 모델 조사 → models |
 | `model-taxonomist` | 모델 type/thinking/모달리티 분류 판정과 일관성 점검 |
 | `knowledge-writer` | 디자인 패턴·아키텍처·원칙 등 지식 노트 작성 → knowledge |
+| `encyclopedia-writer` | 공식 문서 기반 백과사전 본문(사용법·DB별 사용법·언어 개요) 작성 |
 | `fact-checker` | 출처·라이선스·수치·링크 독립 검증 (수정하지 않고 보고) |
 | `site-builder` | 페이지·컴포넌트·스타일 작업, 브라우저로 확인 |
 
@@ -52,6 +55,7 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `add-model` | 오픈 웨이트 모델 1건 조사·추가 |
 | `classify-model` | 모델 type 판정 결정 트리 |
 | `write-knowledge` | 지식 노트 1건 작성 |
+| `write-encyclopedia` | 라이브러리·DB·언어 백과사전 본문 작성 (템플릿 A/B/C) |
 | `validate-hub` | 스키마·타입·빌드·링크 검증 |
 
 ## 반드시 지킬 규칙
@@ -72,5 +76,12 @@ npm run dev        # 로컬 개발 서버 (http://localhost:4321/develop-wiki/)
 npm run validate   # 스키마 + 타입 검사
 npm run build      # 정적 빌드 → dist/
 ```
+
+## 매일 자동 업데이트 (Hermes)
+
+로컬 Hermes 에이전트(Ollama gemma4)가 매일 03:00 에 `hermes/` 의 스킬로 조사·갱신한다.
+- 사전 스크립트가 HF·GitHub·npm 데이터를 결정적으로 모아 오늘의 작업 목록을 만들고, 에이전트는 그 범위 안에서만 파일을 고친다.
+- `hermes/publish.sh` 가 변경 범위(`content/`, `research/`)와 `npm run validate && npm run build` 를 확인한 뒤에만 main 에 push → Pages 자동 배포.
+- 로컬 모델은 오류 가능성이 있으므로, Claude Code 세션의 `/refresh-hub` 때 `research/log/*-hermes.md` 를 읽고 `fact-checker` 로 재검증한다.
 
 main 브랜치에 push 하면 `.github/workflows/deploy.yml` 이 Pages 로 배포한다.

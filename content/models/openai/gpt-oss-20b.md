@@ -1,0 +1,34 @@
+---
+name: gpt-oss-20b
+org: OpenAI
+family: gpt-oss
+type: text-llm
+thinking: native
+modalities: { input: [text], output: [text] }
+architecture: moe
+paramsB: 20.9
+activeParamsB: 3.6
+contextLength: 131072
+license: Apache-2.0
+commercialUse: allowed
+korean: basic
+releaseDate: 2025-08-05
+huggingface: https://huggingface.co/openai/gpt-oss-20b
+summary: gpt-oss 의 소형 MoE 추론 모델. 16GB 메모리 안에서 돌아가 로컬·저지연 용도에 맞춘 크기다.
+useCases:
+  - 16GB급 GPU·노트북에서 돌리는 로컬 추론 어시스턴트
+  - 특정 업무로 파인튜닝하는 소형 에이전트 베이스
+strengths:
+  - 활성 파라미터 3.6B 로 응답 지연이 짧음
+  - 추론 강도(low/medium/high)를 시스템 프롬프트로 조절
+  - Apache-2.0 라이선스
+limitations:
+  - 텍스트 전용
+  - 지식량이 필요한 질의는 120b 대비 정확도가 낮음
+capabilities: [tool-calling, long-context, structured-output]
+sources:
+  - https://huggingface.co/openai/gpt-oss-20b
+  - https://huggingface.co/api/models/openai/gpt-oss-20b
+  - https://arxiv.org/abs/2508.10925
+verifiedAt: 2026-11-18
+---

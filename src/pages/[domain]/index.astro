@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+import { DOMAINS, DOMAIN_IDS, type DomainId } from '../../taxonomy';
+import { href } from '../../lib';
+import { resourceCard } from '../../cards';
+
+export function getStaticPaths() {
+  return DOMAIN_IDS.map((domain) => ({ params: { domain } }));
+}
+const domain = Astro.params.domain as DomainId;
+const meta = DOMAINS[domain];
+const all = (await getCollection('resources', (e) => e.data.domain === domain)).sort((a, b) => a.data.name.localeCompare(b.data.name));
+const cats = Object.entries(meta.categories as Record<string, { label: string; desc: string }>).map(([id, c]) => ({
+  id, ...c, items: all.filter((e) => e.data.category === id),
+}));
+const PREVIEW = 6;
+---
+<Base title={meta.label} description={meta.desc} current={domain}>
+  <div class="page-head">
+    <h1>{meta.label}<span class="count-pill">{all.length}</span></h1>
+    <p>{meta.desc}</p>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="카테고리">
+      <div class="label">카테고리</div>
+      {cats.map((c) => c.items.length
+        ? <a href={href(`${domain}/${c.id}/`)}>{c.label} <span>{c.items.length}</span></a>
+        : <span class="off">{c.label} <span>0</span></span>)}
+    </aside>
+    <div>
+      {cats.filter((c) => c.items.length).map((c) => (
+        <section class="section" id={c.id}>
+          <div class="section-head">
+            <h2><a href={href(`${domain}/${c.id}/`)} style="text-decoration:none">{c.label}</a></h2>
+            <span class="count">{c.items.length}</span>
+            <a class="more" href={href(`${domain}/${c.id}/`)}>전체 보기 →</a>
+          </div>
+          <p class="section-desc">{c.desc}</p>
+          <div class="grid">
+            {c.items.slice(0, PREVIEW).map((e) => { const { search, facets, ...p } = resourceCard(e); return <Card {...p} />; })}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

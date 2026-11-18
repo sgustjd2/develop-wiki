@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Card from '../../../components/Card.astro';
+import Filter from '../../../components/Filter.astro';
+import { KNOWLEDGE, LEVELS, type KnowledgeCategory } from '../../../taxonomy';
+import { href } from '../../../lib';
+import { knowledgeCard } from '../../../cards';
+
+export async function getStaticPaths() {
+  const all = await getCollection('knowledge');
+  return Object.keys(KNOWLEDGE).map((category) => ({ params: { category }, props: { all } }));
+}
+const category = Astro.params.category as KnowledgeCategory;
+const { all } = Astro.props;
+const cat = KNOWLEDGE[category];
+const groups = cat.groups as Record<string, string>;
+const items = all.filter((e) => e.data.category === category).sort((a, b) => a.data.title.localeCompare(b.data.title, 'ko'));
+const sections = Object.keys(groups).length
+  ? Object.entries(groups).map(([id, label]) => ({ id, label, items: items.filter((e) => e.data.group === id) })).concat([{ id: 'etc', label: '기타', items: items.filter((e) => !e.data.group) }])
+  : [{ id: 'all', label: '', items }];
+const chips = Object.entries(LEVELS).map(([k, label]) => ({ facet: `level:${k}`, label }));
+---
+<Base title={`${cat.label} · 개발 지식`} description={cat.desc} current="knowledge">
+  <div class="page-head">
+    <p class="crumbs"><a href={href('knowledge/')}>개발 지식</a> /</p>
+    <h1>{cat.label}<span class="count-pill">{items.length}</span></h1>
+    <p>{cat.desc}</p>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="지식 분류">
+      <div class="label">분류</div>
+      {Object.entries(KNOWLEDGE).map(([id, c]) => {
+        const n = all.filter((e) => e.data.category === id).length;
+        return n
+          ? <a href={href(`knowledge/${id}/`)} aria-current={id === category ? 'page' : undefined}>{c.label} <span>{n}</span></a>
+          : <span class="off">{c.label} <span>0</span></span>;
+      })}
+    </aside>
+    <div>
+      {items.length === 0 ? <p class="empty">아직 정리된 노트가 없습니다.</p> : (
+        <>
+          <Filter chips={chips} placeholder="이름, 영문명, 태그로 검색" />
+          {sections.filter((s) => s.items.length).map((s) => (
+            <section class="section" id={s.id} data-section>
+              {s.label && <div class="section-head"><h2>{s.label}</h2><span class="count" data-count>{s.items.length}</span></div>}
+              <div class="grid" style={s.label ? 'margin-top:14px' : ''}>{s.items.map((e) => <Card {...knowledgeCard(e)} />)}</div>
+            </section>
+          ))}
+        </>
+      )}
+    </div>
+  </div>
+</Base>

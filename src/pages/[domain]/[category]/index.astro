@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Card from '../../../components/Card.astro';
+import Filter from '../../../components/Filter.astro';
+import { DOMAINS, DOMAIN_IDS, LANGUAGES, PRICING, type DomainId } from '../../../taxonomy';
+import { href } from '../../../lib';
+import { resourceCard } from '../../../cards';
+
+export async function getStaticPaths() {
+  const all = await getCollection('resources');
+  return DOMAIN_IDS.flatMap((domain) =>
+    Object.keys(DOMAINS[domain].categories).map((category) => ({
+      params: { domain, category },
+      props: { all: all.filter((e) => e.data.domain === domain) },
+    })),
+  );
+}
+const domain = Astro.params.domain as DomainId;
+const category = Astro.params.category!;
+const meta = DOMAINS[domain];
+const cats = meta.categories as Record<string, { label: string; desc: string }>;
+const cat = cats[category];
+const items = Astro.props.all.filter((e) => e.data.category === category).sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const chips = [
+  ...Object.entries(LANGUAGES).filter(([k]) => items.some((e) => e.data.languages.includes(k))).map(([k, label]) => ({ facet: `lang:${k}`, label })),
+  ...Object.entries(PRICING).filter(([k]) => items.some((e) => e.data.pricing === k)).map(([k, label]) => ({ facet: `pricing:${k}`, label })),
+  ...(items.some((e) => e.data.koreanDocs) ? [{ facet: 'ko:yes', label: '한국어 문서' }] : []),
+];
+---
+<Base title={`${cat.label} · ${meta.label}`} description={cat.desc} current={domain}>
+  <div class="page-head">
+    <p class="crumbs"><a href={href(`${domain}/`)}>{meta.label}</a> /</p>
+    <h1>{cat.label}<span class="count-pill">{items.length}</span></h1>
+    <p>{cat.desc}</p>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="카테고리">
+      <div class="label">{meta.label}</div>
+      {Object.entries(cats).map(([id, c]) => {
+        const n = Astro.props.all.filter((e) => e.data.category === id).length;
+        return n
+          ? <a href={href(`${domain}/${id}/`)} aria-current={id === category ? 'page' : undefined}>{c.label} <span>{n}</span></a>
+          : <span class="off">{c.label} <span>0</span></span>;
+      })}
+    </aside>
+    <div>
+      {items.length === 0
+        ? <p class="empty">아직 정리된 항목이 없습니다. 에이전트가 조사하면 채워집니다.</p>
+        : (
+          <>
+            <Filter chips={chips} />
+            <section class="section" data-section>
+              <div class="grid">{items.map((e) => <Card {...resourceCard(e)} />)}</div>
+            </section>
+          </>
+        )}
+    </div>
+  </div>
+</Base>

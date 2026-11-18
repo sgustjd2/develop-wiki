@@ -6,7 +6,7 @@ description: 오픈 웨이트 모델 1건을 조사해 dev.hub 에 추가·갱�
 # 모델 추가
 
 ## 1. 중복·대상 확인
-`grep -ril "<hf repo id 또는 모델명>" src/content/models research/excluded.md`
+`grep -ril "<hf repo id 또는 모델명>" content/models research/excluded.md`
 가중치가 공개되지 않은 모델은 제외.
 
 ## 2. 메타데이터 수집
@@ -30,8 +30,8 @@ curl -s https://huggingface.co/api/models/<org>/<repo> | python3 -I -c "import s
 ## 5. 한국어(korean)
 모델 카드가 한국어 지원을 명시하거나 한국어 벤치마크 결과가 공개돼 있으면 basic/good, 명시적 미지원이면 none, 근거가 없으면 unknown.
 
-## 6. 파일 작성 — `src/content/models/<org-slug>/<repo-slug>.yaml`
-스키마는 `src/content.config.ts` 의 models. 기존 파일(`src/content/models/qwen/qwen3-30b-a3b.yaml`)을 본보기로.
+## 6. 파일 작성 — `content/models/<org-slug>/<repo-slug>.md`
+스키마는 `src/content.config.ts` 의 models. 기존 파일(`content/models/qwen/qwen3-30b-a3b.md`)을 본보기로.
 `sources` 에는 실제로 수치를 확인한 URL 만.
 
 ## 7. 검증

@@ -6,9 +6,9 @@ description: 디자인 패턴, 아키텍처, 설계 원칙, 분산 시스템, DB
 # 지식 노트 작성
 
 ## 1. 위치·분류
-- `src/content/knowledge/<category>/<kebab-id>.md`, category 는 `KNOWLEDGE` 키.
+- `content/knowledge/<category>/<kebab-id>.md`, category 는 `KNOWLEDGE` 키.
 - group 이 정의된 category(디자인 패턴: creational/structural/behavioral 등)는 group 필수로 취급.
-- 중복 확인: `grep -ril "<개념명|영문명>" src/content/knowledge`
+- 중복 확인: `grep -ril "<개념명|영문명>" content/knowledge`
 
 ## 2. frontmatter
 ```yaml

@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { KNOWLEDGE, LEVELS } from '../../../taxonomy';
+import { fmtDate, href, hostOf, knowledgePath, sourceUrl } from '../../../lib';
+
+export async function getStaticPaths() {
+  const all = await getCollection('knowledge');
+  return all.map((entry) => {
+    const [category, slug] = entry.id.split('/');
+    return { params: { category, slug }, props: { entry, all } };
+  });
+}
+const { entry, all } = Astro.props;
+const d = entry.data;
+const { Content, headings } = await render(entry);
+const cat = KNOWLEDGE[d.category as keyof typeof KNOWLEDGE];
+const groups = cat.groups as Record<string, string>;
+const related = all.filter((e) => d.related.includes(e.id));
+---
+<Base title={d.title} description={d.summary} current="knowledge">
+  <div class="article">
+    <article class="article-main">
+      <p class="crumbs"><a href={href('knowledge/')}>개발 지식</a> / <a href={href(`knowledge/${d.category}/`)}>{cat.label}</a>{d.group && ` / ${groups[d.group]}`}</p>
+      <h1>{d.title}</h1>
+      {d.aka.length > 0 && <p class="meta">{d.aka.join(' · ')}</p>}
+      <p class="lead">{d.summary}</p>
+      <div class="prose">
+        <Content />
+        <h2>출처</h2>
+        <ul>{d.sources.map((s) => <li><a href={s} target="_blank" rel="noopener">{hostOf(s)}</a></li>)}</ul>
+      </div>
+    </article>
+    <aside class="article-side">
+      <dl class="facts">
+        <dt>분류</dt><dd>{cat.label}{d.group && ` › ${groups[d.group]}`}</dd>
+        <dt>난이도</dt><dd>{LEVELS[d.level as keyof typeof LEVELS]}</dd>
+        {d.tags.length > 0 && (<><dt>태그</dt><dd>{d.tags.map((t) => `#${t}`).join(' ')}</dd></>)}
+        <dt>갱신일</dt><dd>{fmtDate(d.updatedAt)}</dd>
+      </dl>
+      {headings.filter((h) => h.depth === 2).length > 1 && (
+        <nav class="facts" style="display:block" aria-label="목차">
+          <div class="meta" style="margin-bottom:6px">목차</div>
+          {headings.filter((h) => h.depth === 2).map((h) => <div><a href={`#${h.slug}`} style="text-decoration:none">{h.text}</a></div>)}
+        </nav>
+      )}
+      {related.length > 0 && (
+        <nav class="facts" style="display:block" aria-label="관련 노트">
+          <div class="meta" style="margin-bottom:6px">관련 노트</div>
+          {related.map((r) => <div><a href={knowledgePath(r.id)}>{r.data.title}</a></div>)}
+        </nav>
+      )}
+      <div class="side-links">
+        <a class="btn" href={sourceUrl('knowledge', entry.id)} target="_blank" rel="noopener">Markdown 원문</a>
+        <a class="btn" href={href('data/knowledge.json')}>JSON 데이터</a>
+      </div>
+    </aside>
+  </div>
+</Base>

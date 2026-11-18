@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import Card from '../../../components/Card.astro';
+import Filter from '../../../components/Filter.astro';
+import { MODEL_GROUPS, MODEL_TYPES, MODEL_TYPE_TO_GROUP } from '../../../taxonomy';
+import { href } from '../../../lib';
+import { MODEL_CHIPS, modelCard } from '../../../cards';
+
+type T = Record<string, { label: string; desc: string }>;
+export async function getStaticPaths() {
+  const all = await getCollection('models');
+  return MODEL_TYPES.map((type) => ({ params: { type }, props: { all } }));
+}
+const type = Astro.params.type!;
+const all = Astro.props.all;
+const group = MODEL_GROUPS[MODEL_TYPE_TO_GROUP[type]];
+const t = (group.types as T)[type];
+const items = all.filter((m) => m.data.type === type).sort((a, b) => +b.data.releaseDate - +a.data.releaseDate);
+---
+<Base title={`${t.label} · 오픈 웨이트 모델`} description={t.desc} current="models">
+  <div class="page-head">
+    <p class="crumbs"><a href={href('models/')}>오픈 웨이트 모델</a> / {group.label}</p>
+    <h1>{t.label}<span class="count-pill">{items.length}</span></h1>
+    <p>{t.desc}</p>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="모델 분류">
+      {Object.entries(MODEL_GROUPS).map(([, g]) => (
+        <>
+          <div class="label">{g.label}</div>
+          {Object.entries(g.types as T).map(([id, x]) => {
+            const n = all.filter((m) => m.data.type === id).length;
+            return n
+              ? <a href={href(`models/type/${id}/`)} aria-current={id === type ? 'page' : undefined}>{x.label} <span>{n}</span></a>
+              : <span class="off">{x.label} <span>0</span></span>;
+          })}
+        </>
+      ))}
+    </aside>
+    <div>
+      {items.length === 0 ? <p class="empty">아직 정리된 모델이 없습니다.</p> : (
+        <>
+          <Filter chips={MODEL_CHIPS} placeholder="모델명, 조직, 용도로 검색" />
+          <section class="section" data-section><div class="grid">{items.map((e) => <Card {...modelCard(e)} />)}</div></section>
+        </>
+      )}
+    </div>
+  </div>
+</Base>

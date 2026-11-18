@@ -1,0 +1,79 @@
+---
+/**
+ * 헤더 전역 검색. /search-index.json 을 처음 포커스할 때 한 번 받아 클라이언트에서 거른다.
+ * 단축키: "/" 또는 ⌘K / Ctrl+K
+ */
+import { href } from '../lib';
+---
+<div class="search-box" data-index={href('search-index.json')}>
+  <input class="search-input" type="search" placeholder="검색 — 라이브러리, 모델, 패턴, 언어  ( / )" aria-label="전체 검색" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" />
+  <ul class="search-results" id="search-results" role="listbox" hidden></ul>
+</div>
+
+<script>
+  type Item = { t: string; s: string; u: string; k: string; x: string };
+  const box = document.querySelector<HTMLElement>('.search-box')!;
+  const input = box.querySelector<HTMLInputElement>('.search-input')!;
+  const list = box.querySelector<HTMLUListElement>('.search-results')!;
+  let items: Item[] | null = null;
+  let active = -1;
+
+  async function load() {
+    if (!items) items = await fetch(box.dataset.index!).then((r) => r.json());
+  }
+  function close() { list.hidden = true; input.setAttribute('aria-expanded', 'false'); active = -1; }
+  function render(q: string) {
+    if (!items || !q) return close();
+    const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+    const hits = items
+      .filter((i) => terms.every((t) => i.x.includes(t)))
+      .sort((a, b) => Number(!a.t.toLowerCase().includes(terms[0])) - Number(!b.t.toLowerCase().includes(terms[0])))
+      .slice(0, 12);
+    list.replaceChildren(
+      ...(hits.length
+        ? hits.map((h, i) => {
+            const li = document.createElement('li');
+            li.role = 'option';
+            li.id = `sr-${i}`;
+            const a = document.createElement('a');
+            a.href = h.u;
+            const kind = document.createElement('span'); kind.className = 'sr-kind'; kind.textContent = h.k;
+            const title = document.createElement('span'); title.className = 'sr-title'; title.textContent = h.t;
+            const sub = document.createElement('span'); sub.className = 'sr-sub'; sub.textContent = h.s;
+            a.append(kind, title, sub);
+            li.append(a);
+            return li;
+          })
+        : [Object.assign(document.createElement('li'), { className: 'sr-empty', textContent: '결과가 없습니다' })]),
+    );
+    list.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+    active = -1;
+  }
+  function move(d: number) {
+    const opts = [...list.querySelectorAll<HTMLElement>('[role=option]')];
+    if (!opts.length) return;
+    active = (active + d + opts.length) % opts.length;
+    opts.forEach((o, i) => o.toggleAttribute('data-active', i === active));
+    input.setAttribute('aria-activedescendant', opts[active].id);
+    opts[active].scrollIntoView({ block: 'nearest' });
+  }
+
+  input.addEventListener('focus', load);
+  input.addEventListener('input', async () => { await load(); render(input.value.trim()); });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown') { e.preventDefault(); move(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+    else if (e.key === 'Escape') { close(); input.blur(); }
+    else if (e.key === 'Enter') {
+      const opts = list.querySelectorAll<HTMLAnchorElement>('[role=option] a');
+      const target = opts[Math.max(active, 0)];
+      if (target) location.href = target.href;
+    }
+  });
+  document.addEventListener('click', (e) => { if (!box.contains(e.target as Node)) close(); });
+  document.addEventListener('keydown', (e) => {
+    const typing = e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement;
+    if ((e.key === '/' && !typing) || (e.key === 'k' && (e.metaKey || e.ctrlKey))) { e.preventDefault(); input.focus(); }
+  });
+</script>

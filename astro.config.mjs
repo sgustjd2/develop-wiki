@@ -6,4 +6,7 @@ export default defineConfig({
   site: 'https://sgustjd2.github.io',
   base: '/develop-wiki',
   trailingSlash: 'always',
+  markdown: {
+    shikiConfig: { themes: { light: 'github-light', dark: 'github-dark' } },
+  },
 });

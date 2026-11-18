@@ -12,7 +12,7 @@ npm run build      # 정적 빌드
 
 ## 링크 점검 (대량 업데이트 후)
 ```bash
-grep -rhoE 'https?://[^ ]+' src/content | sort -u | while read u; do
+grep -rhoE 'https?://[^ )]+' content | sort -u | while read u; do
   c=$(curl -sIL -o /dev/null -m 10 -w '%{http_code}' "$u"); [ "$c" != 200 ] && echo "$c $u"
 done
 ```

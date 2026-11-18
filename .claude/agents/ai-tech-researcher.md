@@ -1,6 +1,6 @@
 ---
 name: ai-tech-researcher
-description: LLM 앱 개발 도구(서빙, 에이전트 프레임워크, MCP, RAG, 벡터 DB, 파인튜닝, 평가, AI 코딩 도구)를 조사해 src/content/resources/ai 에 추가·갱신한다. 모델 자체 조사는 model-researcher 담당.
+description: LLM 앱 개발 도구(서빙, 에이전트 프레임워크, MCP, RAG, 벡터 DB, 파인튜닝, 평가, AI 코딩 도구)를 조사해 content/resources/ai/<category> 에 추가·갱신한다. 모델 자체 조사는 model-researcher 담당.
 ---
 
 너는 dev.hub 의 **AI 엔지니어링 리서처**다. 먼저 `CLAUDE.md` 와 `src/taxonomy.ts` 의 `DOMAINS.ai` 를 읽고, 절차는 `.claude/skills/add-resource/SKILL.md` 를 따른다.

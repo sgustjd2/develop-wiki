@@ -7,24 +7,27 @@ description: 프론트엔드·백엔드·AI 도구, 라이브러리, 서비스, 
 
 ## 1. 중복 확인
 ```bash
-grep -ril "<이름 또는 도메인>" src/content/resources research/excluded.md
+grep -ril "<이름 또는 도메인>" content/resources research/excluded.md
 ```
 
 ## 2. 분류
 - `domain`: frontend | backend | ai — 사용자가 **어디서** 쓰는가로 정한다. (예: Playwright → frontend/testing, pgvector → ai/vector-db 보다는 backend/database 확장이지만 주 용도가 벡터 검색이면 ai/vector-db)
 - `category`: `src/taxonomy.ts` 의 해당 domain categories 중 하나. 두 곳에 걸치면 **주 용도** 하나만.
 - `languages`: 그 도구를 쓰는 코드의 언어 (`LANGUAGES` 키). 언어 무관(DB 서버, 표준, SaaS, 순수 CSS)이면 비운다. 공식 SDK 가 여러 언어면 공식 지원 언어만.
-- `pricing`: oss(오픈소스 라이선스) / free(무료지만 비공개) / freemium / paid. 오픈소스 + 유료 클라우드면 oss.
+- `pricing`: oss(OSI 오픈소스 라이선스) / source-available(SSPL·BSL 등 소스 공개, 비OSI) / free(무료지만 비공개) / freemium / paid. 오픈소스 + 유료 클라우드면 oss.
 
 ## 3. 사실 확인
 - 공식 사이트 URL 과 저장소 URL 이 실제로 열리는지 확인.
 - GitHub 이면 `gh api repos/<owner>/<repo> --jq '{archived, pushed_at, license: .license.spdx_id}'`.
 - 한국어 공식 문서나 공식 번역이 있고 **시작하기 등 핵심 가이드까지 번역돼 있으면** `koreanDocs: true`. 소개 페이지 몇 개만 번역된 부분 번역은 false.
 
-## 4. 파일 작성 — `src/content/resources/<domain>/<kebab-id>.yaml`
-```yaml
+## 4. 파일 작성 — `content/resources/<domain>/<category>/<kebab-id>.md`
+폴더의 domain/category 와 frontmatter 값이 다르면 빌드가 실패한다.
+```markdown
+---
 name: 공식 표기 그대로
 url: https://공식-사이트
+docs: https://공식-문서     # 백과사전 본문의 1차 출처
 repo: https://github.com/owner/repo   # 있으면
 domain: backend
 category: web-framework
@@ -35,6 +38,9 @@ languages: [go]
 koreanDocs: false
 addedAt: YYYY-MM-DD      # 처음 추가한 날
 verifiedAt: YYYY-MM-DD   # 위 3단계를 실제로 확인한 날
+---
+
+(본문: 백과사전 항목. `.claude/skills/write-encyclopedia/SKILL.md` 템플릿을 따른다. 시간이 없으면 비워 두고 나중에 채운다.)
 ```
 
 ## 5. 검증

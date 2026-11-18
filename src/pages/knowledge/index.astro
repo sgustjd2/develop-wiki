@@ -1,52 +1,35 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Filter from '../../components/Filter.astro';
-import { KNOWLEDGE, LEVELS } from '../../taxonomy';
+import Card from '../../components/Card.astro';
+import { KNOWLEDGE } from '../../taxonomy';
 import { href } from '../../lib';
+import { knowledgeCard } from '../../cards';
 
 const all = (await getCollection('knowledge')).sort((a, b) => a.data.title.localeCompare(b.data.title, 'ko'));
-const sections = Object.entries(KNOWLEDGE)
-  .map(([id, c]) => ({ id, ...c, items: all.filter((e) => e.data.category === id) }))
-  .filter((s) => s.items.length > 0);
-const chips = Object.entries(LEVELS).map(([k, label]) => ({ facet: `level:${k}`, label }));
+const cats = Object.entries(KNOWLEDGE).map(([id, c]) => ({ id, ...c, items: all.filter((e) => e.data.category === id) }));
 ---
 <Base title="개발 지식" current="knowledge" description="디자인 패턴, 아키텍처, 설계 원칙 등 개발에 중요한 지식 정리">
   <div class="page-head">
-    <h1>개발 지식 <span class="meta">{all.length}</span></h1>
-    <p>디자인 패턴, 아키텍처, 설계 원칙, 분산 시스템처럼 도구가 바뀌어도 남는 지식을 노트로 정리합니다.</p>
+    <h1>개발 지식<span class="count-pill">{all.length}</span></h1>
+    <p>디자인 패턴, 아키텍처, 설계 원칙, 분산 시스템처럼 도구가 바뀌어도 남는 지식을 원전과 공식 문서를 근거로 정리합니다.</p>
   </div>
   <div class="directory">
     <aside class="sidebar" aria-label="지식 분류">
       <div class="label">분류</div>
-      {sections.map((s) => <a href={`#${s.id}`}>{s.label} <span>{s.items.length}</span></a>)}
+      {cats.map((c) => c.items.length
+        ? <a href={href(`knowledge/${c.id}/`)}>{c.label} <span>{c.items.length}</span></a>
+        : <span class="off">{c.label} <span>0</span></span>)}
     </aside>
     <div>
-      <Filter chips={chips} placeholder="패턴명, 영문명, 태그로 검색" />
-      {sections.map((s) => (
-        <section class="section" id={s.id} data-section>
-          <div class="section-head"><h2>{s.label}</h2><span class="count" data-count>{s.items.length}</span></div>
-          <p class="section-desc">{s.desc}</p>
-          <div class="grid">
-            {s.items.map(({ id, data: d }) => (
-              <a
-                class="card"
-                href={href(`knowledge/${id}/`)}
-                data-item
-                data-search={[d.title, ...d.aka, d.summary, ...d.tags].join(' ').toLowerCase()}
-                data-facets={`level:${d.level}`}
-              >
-                <span class="title">{d.title}</span>
-                {d.aka.length > 0 && <span class="host">{d.aka.join(' · ')}</span>}
-                <span class="desc">{d.summary}</span>
-                <span class="badges">
-                  <span class="badge">{LEVELS[d.level as keyof typeof LEVELS]}</span>
-                  {d.group && <span class="badge">{(s.groups as Record<string, string>)[d.group]}</span>}
-                  {d.tags.map((t) => <span class="badge">#{t}</span>)}
-                </span>
-              </a>
-            ))}
+      {cats.filter((c) => c.items.length).map((c) => (
+        <section class="section" id={c.id}>
+          <div class="section-head">
+            <h2>{c.label}</h2><span class="count">{c.items.length}</span>
+            <a class="more" href={href(`knowledge/${c.id}/`)}>전체 보기 →</a>
           </div>
+          <p class="section-desc">{c.desc}</p>
+          <div class="grid">{c.items.slice(0, 6).map((e) => { const { search, facets, ...p } = knowledgeCard(e); return <Card {...p} />; })}</div>
         </section>
       ))}
     </div>

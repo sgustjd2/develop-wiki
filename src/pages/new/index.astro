@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Card from '../../components/Card.astro';
+import { fmtDate } from '../../lib';
+import { knowledgeCard, modelCard, resourceCard } from '../../cards';
+
+// 최근 공개된 모델 + 최근 추가된 도구·지식. 매일 업데이트가 쌓이는 피드
+const models = (await getCollection('models')).sort((a, b) => +b.data.releaseDate - +a.data.releaseDate).slice(0, 12);
+const resources = (await getCollection('resources')).sort((a, b) => +b.data.addedAt - +a.data.addedAt || a.data.name.localeCompare(b.data.name)).slice(0, 24);
+const knowledge = (await getCollection('knowledge')).sort((a, b) => +b.data.updatedAt - +a.data.updatedAt).slice(0, 9);
+const strip = <T extends { search?: string; facets?: string }>({ search, facets, ...p }: T) => p;
+---
+<Base title="새로 나온 것" current="new" description="최근 공개된 모델과 새로 정리된 라이브러리·지식">
+  <div class="page-head">
+    <h1>새로 나온 것</h1>
+    <p>최근 공개된 오픈 웨이트 모델과 새로 정리한 라이브러리·지식입니다. 에이전트가 매일 새벽 갱신합니다.</p>
+  </div>
+  <section class="section">
+    <div class="section-head"><h2>최근 공개된 모델</h2></div>
+    <div class="grid" style="margin-top:16px">{models.map((e) => <Card {...strip(modelCard(e))} />)}</div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2>새로 추가된 라이브러리·도구</h2></div>
+    <div class="grid" style="margin-top:16px">{resources.map((e) => { const p = strip(resourceCard(e)); return <Card {...p} sub={`${p.sub} · 추가 ${fmtDate(e.data.addedAt)}`} />; })}</div>
+  </section>
+  <section class="section">
+    <div class="section-head"><h2>최근 갱신된 지식</h2></div>
+    <div class="grid" style="margin-top:16px">{knowledge.map((e) => <Card {...strip(knowledgeCard(e))} />)}</div>
+  </section>
+</Base>

@@ -6,7 +6,7 @@ import { execSync } from 'node:child_process';
 let input = '';
 for await (const chunk of process.stdin) input += chunk;
 const file = JSON.parse(input || '{}')?.tool_input?.file_path ?? '';
-if (!/src\/(content\/|taxonomy\.ts|content\.config\.ts)/.test(file)) process.exit(0);
+if (!/(\/content\/|src\/taxonomy\.ts|src\/content\.config\.ts)/.test(file)) process.exit(0);
 
 try {
   execSync('npx astro sync', { cwd: process.env.CLAUDE_PROJECT_DIR, stdio: 'pipe' });

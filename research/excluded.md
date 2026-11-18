@@ -54,3 +54,7 @@
 | erkamyaman/rust-anything | devtools | 개인 저장소, 생성 3일에 ★3천, 수치형 홍보 문구(최대 20배 등)와 자체 벤치마크만 근거 — 신뢰할 근거 부족 | 2026-11-19 |
 | mdiri-ai/SoduWork | oss/self-hosted | 개발 라이브러리가 아닌 AI 팀 협업 제품(데스크톱 앱 중심), 생성 3주, 열린 이슈·PR 141건 — 성숙 후 재검토 | 2026-11-19 |
 | MassTransit | backend/messaging | v9 부터 상용 제품 전환(공식 사이트 안내), v8 만 Apache-2.0 이라 현행 기준 오픈소스로 부적합 | 2026-11-19 |
+| runwayml/praxis-1-base, praxis-1-droid, praxis-1-yam, praxis-1-so101, *-lerobot | models/vla | 2026-11 공개 27B 로봇 정책 모델(HF 태그 robotics·action-chunking, Apache-2.0 표기)이나 HF 저장소가 게이트(gated=auto, 접근 제한)이고 변형 상당수가 양자화(yam·so101·droid 의 NVFP4)·포팅본(lerobot) — 게이트 해제 후 재검토 | 2026-11-19 |
+| lerobot/Cosmos3-Edge, Cosmos3-Nano, Cosmos3-{Edge,Nano}-Policy-LIBERO(_10) | models | nvidia/Cosmos3 의 LeRobot 포팅본·LIBERO 벤치마크 전용 파인튜닝 — 원본 nvidia/Cosmos3-* 로 등록 | 2026-11-19 |
+| nvidia/GR00T-H-N1.7 | models/vla | GR00T N1.7 을 수술 로봇용 Open-H 데이터로 후속 학습한 도메인 전용 파생(카드: 임상 사용 불가) — N1.7 본체만 등록 | 2026-11-19 |
+| nvidia/MotionBricks, nvidia/Metatron-v1 | models | 이미지 입력 VLA 가 아닌 휴머노이드 모션 생성·강화학습 제어 정책(상태 입력, G1·SOMA 전용) — 현 taxonomy 에 맞는 type 없음, 같은 성격 3건 이상 쌓이면 type 신설 검토 | 2026-11-19 |

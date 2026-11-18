@@ -11,6 +11,7 @@ export function resourceCard(e: CollectionEntry<'resources'>) {
     sub: hostOf(d.url),
     desc: d.description,
     badges: [
+      ...(d.stars !== undefined ? [{ label: `★ ${d.stars >= 1000 ? (d.stars / 1000).toFixed(d.stars >= 10000 ? 0 : 1) + 'k' : d.stars}` }] : []),
       ...d.languages.map((l) => ({ label: LANGUAGES[l as keyof typeof LANGUAGES], strong: true })),
       { label: PRICING[d.pricing as keyof typeof PRICING] },
       ...(d.koreanDocs ? [{ label: '한국어 문서' }] : []),

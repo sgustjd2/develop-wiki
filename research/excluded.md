@@ -21,3 +21,12 @@
 | Chatterbox TTS | models/tts | README 상 2026-08 이후 유지보수 중단 | 2026-11-18 |
 | Soda Core | data-ml/transform | Elastic License 2.0 로 전환 (오픈소스 아님) | 2026-11-18 |
 | Auth.js (next-auth) | backend/auth | Better Auth 팀으로 이관, 보안 수정 위주 유지보수 — better-auth 항목에서 다룸 | 2026-11-18 |
+| Mithril | frontend/framework | 안정판 마지막 릴리스 2025-11, v3 는 프리릴리스만 — 대체: Preact, Solid | 2026-11-18 |
+| Inferno | frontend/framework | 유지보수되나 Preact 와 위치가 겹쳐 차별점 부족 | 2026-11-18 |
+| @headlessui/vue | frontend/ui-kit | 2024-09 이후 릴리스 없음 — 대체: Ark UI(Vue) | 2026-11-18 |
+| MiniMax-H3-Image-PE | models | 독립 모델이 아닌 프롬프트 확장 부품, NVFP4 양자화 파생본만 공개 | 2026-11-18 |
+| mw00/project-maya | ai/inference-serving | 특정 4개 모델 전용 엔진 + 작성자 자체 양자화 빌드 의존, 범용 서빙 엔진 아님, 생성 6주 | 2026-11-18 |
+| microsoft/TokenEconomizer | ai | 논문 산출물(연구 프로토타입), 범용 개발 도구 아님 | 2026-11-18 |
+| KKKKhazix/agent-autoloop | ai | 생성 2주 개인 프로젝트, 분류 체계에 맞는 자리 없음 | 2026-11-18 |
+| vercel-labs/ui | frontend | 베타(0.1.0-beta), 정식화 후 재검토 | 2026-11-18 |
+| Leonxlnx/earshot | ai | 생성 1개월, 니치한 오디오 분석 CLI | 2026-11-18 |

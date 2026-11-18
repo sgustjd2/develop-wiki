@@ -3,6 +3,7 @@ name: Pa11y
 url: https://pa11y.org
 docs: https://github.com/pa11y/pa11y
 repo: https://github.com/pa11y/pa11y
+stars: 4602
 domain: frontend
 category: performance-a11y
 description: 헤드리스 Chrome으로 페이지를 열어 접근성 문제를 검사하는 명령줄·Node 도구. pa11y-ci로 여러 URL을 CI에서 일괄 검사한다.

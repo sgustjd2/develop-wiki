@@ -78,6 +78,7 @@ const cat = (dom.categories as Record<string, { label: string }>)[d.category];
       <dl class="facts">
         <dt>분류</dt><dd>{dom.label} › {cat.label}</dd>
         {d.languages.length > 0 && (<><dt>언어</dt><dd>{d.languages.map((l, i) => <>{i > 0 && ', '}<a href={languagePath(l)}>{LANGUAGES[l as keyof typeof LANGUAGES]}</a></>)}</dd></>)}
+        {d.stars !== undefined && (<><dt>GitHub ★</dt><dd>{d.stars.toLocaleString()}</dd></>)}
         <dt>가격</dt><dd>{PRICING[d.pricing as keyof typeof PRICING]}</dd>
         <dt>한국어 문서</dt><dd>{d.koreanDocs ? '있음' : '없음'}</dd>
         {d.tags.length > 0 && (<><dt>태그</dt><dd>{d.tags.map((t) => `#${t}`).join(' ')}</dd></>)}

@@ -3,6 +3,7 @@ name: tRPC
 url: https://trpc.io
 docs: https://trpc.io/docs
 repo: https://github.com/trpc/trpc
+stars: 40815
 domain: backend
 category: api
 description: 스키마나 코드 생성 없이 서버 라우터의 TypeScript 타입을 클라이언트가 그대로 가져다 쓰는 RPC 라이브러리. 같은 저장소의 TS 풀스택 앱에 쓴다.

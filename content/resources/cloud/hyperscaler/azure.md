@@ -3,6 +3,7 @@ name: Microsoft Azure
 url: https://azure.microsoft.com/
 docs: https://learn.microsoft.com/en-us/azure/
 repo: https://github.com/Azure/azure-cli
+stars: 4665
 domain: cloud
 category: hyperscaler
 description: Microsoft 의 퍼블릭 클라우드. 구독·리소스 그룹 단위로 VM·Blob Storage·Azure SQL·AKS·App Service 를 제공하며, Entra ID·.NET·Microsoft 365 와 엮인 조직에서 주로 쓴다.

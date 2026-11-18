@@ -6,7 +6,7 @@ group: structural
 level: beginner
 summary: 인터페이스가 맞지 않는 기존 객체를 감싸, 클라이언트가 기대하는 인터페이스로 변환해 주는 구조 패턴.
 tags: [gof, oop, integration, legacy]
-related: [design-patterns/decorator, design-patterns/facade, design-patterns/proxy, architecture/hexagonal]
+related: [design-patterns/decorator, design-patterns/facade, design-patterns/proxy, architecture/hexagonal, design-patterns/bridge]
 sources:
   - https://refactoring.guru/design-patterns/adapter
   - https://en.wikipedia.org/wiki/Design_Patterns

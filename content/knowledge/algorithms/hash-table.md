@@ -6,7 +6,7 @@ group: data-structure
 level: beginner
 summary: 키를 해시 함수로 배열 위치에 대응시켜 조회·삽입·삭제를 평균 O(1)에 하는 자료구조. 충돌 처리 방식과 적재율, 리사이즈가 성능을 결정한다.
 tags: [hash, hashmap, dictionary, collision, load-factor]
-related: [algorithms/array-dynamic-array, algorithms/amortized-analysis, algorithms/bloom-filter, algorithms/bst-balanced-tree, algorithms/linked-list]
+related: [algorithms/array-dynamic-array, algorithms/amortized-analysis, algorithms/bloom-filter, algorithms/bst-balanced-tree, algorithms/linked-list, algorithms/consistent-hashing, algorithms/hyperloglog-count-min-sketch]
 sources:
   - https://en.wikipedia.org/wiki/Hash_table
   - https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/HashMap.html

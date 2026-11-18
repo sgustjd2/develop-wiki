@@ -3,6 +3,7 @@ name: Espresso
 url: https://developer.android.com/training/testing/espresso
 docs: https://developer.android.com/training/testing/espresso
 repo: https://github.com/android/android-test
+stars: 1229
 domain: mobile
 category: mobile-testing
 description: AndroidX Test의 View 기반 UI 테스트 프레임워크. 기기·에뮬레이터에서 앱 화면의 뷰를 찾아 조작하고 검증하며, UI 스레드 유휴 상태를 자동으로 기다린다.

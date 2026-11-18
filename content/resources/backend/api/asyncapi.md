@@ -3,6 +3,7 @@ name: AsyncAPI
 url: https://www.asyncapi.com
 docs: https://www.asyncapi.com/docs
 repo: https://github.com/asyncapi/spec
+stars: 5340
 domain: backend
 category: api
 description: Kafka, MQTT, AMQP, WebSocket 같은 메시지 기반 API 의 채널·메시지·작업을 기술하는 명세. 이벤트 드리븐 시스템의 문서화와 코드 생성에 쓴다.

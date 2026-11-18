@@ -6,7 +6,7 @@ group: data-structure
 level: intermediate
 summary: 노드 하나에 키를 수백 개 담아 트리를 아주 낮게 유지하는 균형 다진 트리. 디스크·SSD 블록 단위 읽기에 맞춰져 있어 관계형 DB 인덱스와 파일 시스템의 표준 구조다.
 tags: [b-tree, b-plus-tree, database, index, storage]
-related: [algorithms/bst-balanced-tree, algorithms/binary-search, algorithms/hash-table, data-modeling/index-design, data-modeling/primary-key-design]
+related: [algorithms/bst-balanced-tree, algorithms/binary-search, algorithms/hash-table, data-modeling/index-design, data-modeling/primary-key-design, algorithms/lsm-tree, algorithms/skip-list]
 sources:
   - https://en.wikipedia.org/wiki/B-tree
   - https://www.postgresql.org/docs/current/btree.html

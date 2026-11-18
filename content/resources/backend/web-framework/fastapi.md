@@ -2,6 +2,7 @@
 name: FastAPI
 url: https://fastapi.tiangolo.com
 repo: https://github.com/fastapi/fastapi
+stars: 104896
 docs: https://fastapi.tiangolo.com/tutorial/
 domain: backend
 category: web-framework

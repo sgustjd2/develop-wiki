@@ -6,7 +6,7 @@ group: structural
 level: beginner
 summary: 객체를 트리 구조로 구성하고, 개별 객체(잎)와 객체 묶음(복합체)을 같은 인터페이스로 다뤄 클라이언트가 둘을 구분하지 않게 하는 구조 패턴.
 tags: [gof, oop, tree, recursion]
-related: [design-patterns/decorator, design-patterns/iterator, design-patterns/chain-of-responsibility, principles/solid]
+related: [design-patterns/decorator, design-patterns/iterator, design-patterns/chain-of-responsibility, principles/solid, design-patterns/visitor, design-patterns/interpreter, design-patterns/flyweight]
 sources:
   - https://refactoring.guru/design-patterns/composite
   - https://en.wikipedia.org/wiki/Design_Patterns

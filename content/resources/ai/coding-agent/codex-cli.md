@@ -3,6 +3,7 @@ name: Codex CLI
 url: https://chatgpt.com/codex
 docs: https://developers.openai.com/codex/cli
 repo: https://github.com/openai/codex
+stars: 135755
 domain: ai
 category: coding-agent
 description: 로컬 터미널에서 코드를 읽고 수정·실행하는 OpenAI의 오픈소스 코딩 에이전트. ChatGPT 요금제나 API 키로 쓰고, 샌드박스·승인 정책으로 실행 범위를 제한한다.

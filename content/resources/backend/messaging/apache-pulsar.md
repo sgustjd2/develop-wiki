@@ -3,6 +3,7 @@ name: Apache Pulsar
 url: https://pulsar.apache.org
 docs: https://pulsar.apache.org/docs/
 repo: https://github.com/apache/pulsar
+stars: 15364
 domain: backend
 category: messaging
 description: 서빙(브로커)과 저장(BookKeeper)을 분리한 분산 메시징·스트리밍 플랫폼. 스트림과 큐 방식 구독, 멀티테넌시, 지역 간 복제가 필요한 대규모 메시징에 쓴다.

@@ -3,6 +3,7 @@ name: Nuxt
 url: https://nuxt.com
 docs: https://nuxt.com/docs/4.x/getting-started/introduction
 repo: https://github.com/nuxt/nuxt
+stars: 61076
 domain: frontend
 category: meta-framework
 description: Vue 기반 풀스택 프레임워크. 파일 기반 라우팅·SSR·서버 API(Nitro)·자동 import를 갖춘 Vue 앱을 만들 때 쓴다.

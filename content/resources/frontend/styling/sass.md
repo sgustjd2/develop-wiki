@@ -3,6 +3,7 @@ name: Sass
 url: https://sass-lang.com
 docs: https://sass-lang.com/documentation/
 repo: https://github.com/sass/dart-sass
+stars: 4238
 domain: frontend
 category: styling
 description: 변수·중첩·믹스인·모듈을 더한 CSS 전처리기. 큰 스타일시트를 파일 단위로 나누고 재사용할 때 쓴다.

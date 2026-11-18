@@ -53,6 +53,19 @@ for (const r of resources.sort((a, b) => d10(a.fm.verifiedAt).localeCompare(d10(
   } catch { say(`- ⚠ ${rel}: 저장소 조회 실패 — 건드리지 않음`); reverify.push(`${rel} 조회 실패`); }
 }
 
+// 2-1) GitHub 별 수 갱신: frontmatter 에 stars 가 있는 항목 전부
+say('\n## GitHub ★ 갱신');
+let starUpdated = 0, starFailed = 0;
+for (const r of resources.filter((x) => x.fm.stars !== undefined)) {
+  try {
+    const n = gh(`repos/${repoOf(r.fm.repo)}`).stargazers_count;
+    const text = readFileSync(r.p, 'utf8');
+    const next = text.replace(/^stars: \d+$/m, `stars: ${n}`);
+    if (next !== text) { writeFileSync(r.p, next); starUpdated++; }
+  } catch { starFailed++; }
+}
+say(`- ${starUpdated}개 갱신${starFailed ? `, 조회 실패 ${starFailed}개` : ''}`);
+
 // 3) 후보 적립
 say('\n## 신규 후보 → research/backlog.md');
 let cands = [];

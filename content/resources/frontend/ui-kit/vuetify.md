@@ -3,6 +3,7 @@ name: Vuetify
 url: https://vuetifyjs.com
 docs: https://vuetifyjs.com/en/getting-started/installation/
 repo: https://github.com/vuetifyjs/vuetify
+stars: 41043
 domain: frontend
 category: ui-kit
 description: Material Design 기반의 Vue 3 컴포넌트 프레임워크. 레이아웃·폼·데이터 테이블까지 갖춘 컴포넌트로 Vue 관리 화면과 업무 앱을 만들 때 쓴다.

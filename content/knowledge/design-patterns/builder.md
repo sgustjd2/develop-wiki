@@ -6,7 +6,7 @@ group: creational
 level: beginner
 summary: 선택 항목이 많은 복잡한 객체를 단계별 메서드 호출로 조립하고, 마지막에 완성된 객체를 돌려받는 생성 패턴.
 tags: [gof, oop, creation, fluent-api]
-related: [design-patterns/factory-method, design-patterns/abstract-factory]
+related: [design-patterns/factory-method, design-patterns/abstract-factory, design-patterns/prototype]
 sources:
   - https://refactoring.guru/design-patterns/builder
   - https://en.wikipedia.org/wiki/Design_Patterns

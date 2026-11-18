@@ -3,6 +3,7 @@ name: BullMQ
 url: https://bullmq.io
 docs: https://docs.bullmq.io
 repo: https://github.com/taskforcesh/bullmq
+stars: 9611
 domain: backend
 category: messaging
 description: Redis(또는 Valkey·Dragonfly)나 PostgreSQL 에 큐를 저장하는 백그라운드 작업 큐 라이브러리. 지연·반복·우선순위·재시도·부모-자식 작업이 필요한 Node.js 서비스에 주로 쓴다.

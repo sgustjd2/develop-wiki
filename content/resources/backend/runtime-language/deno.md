@@ -3,6 +3,7 @@ name: Deno
 url: https://deno.com
 docs: https://docs.deno.com
 repo: https://github.com/denoland/deno
+stars: 109044
 domain: backend
 category: runtime-language
 description: 권한 기반 보안 모델과 TypeScript 기본 지원을 갖춘 V8 기반 JS 런타임. 포맷터·린터·테스트가 내장돼 있고 npm 패키지도 쓸 수 있다.

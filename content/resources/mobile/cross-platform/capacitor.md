@@ -3,6 +3,7 @@ name: Capacitor (Ionic)
 url: https://capacitorjs.com
 docs: https://capacitorjs.com/docs
 repo: https://github.com/ionic-team/capacitor
+stars: 17118
 domain: mobile
 category: cross-platform
 description: 웹 앱을 iOS·Android 네이티브 앱으로 포장하는 런타임. 웹뷰 위에서 JS로 네이티브 플러그인을 호출하며, Ionic UI 컴포넌트와 함께 쓰거나 기존 React·Vue·Angular 앱을 앱으로 낼 때 쓴다.

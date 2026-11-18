@@ -3,6 +3,7 @@ name: Kaggle
 url: https://www.kaggle.com
 docs: https://www.kaggle.com/docs
 repo: https://github.com/Kaggle/kaggle-cli
+stars: 7673
 domain: data-ml
 category: learning
 description: 데이터 과학 대회, 공개 데이터셋, 무료 GPU 노트북, 단기 강좌를 제공하는 Google 의 데이터·ML 커뮤니티. 실습 데이터와 다른 사람의 풀이로 배울 때 쓴다.

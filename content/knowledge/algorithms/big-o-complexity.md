@@ -6,7 +6,7 @@ group: complexity
 level: beginner
 summary: 입력 크기 n 이 커질 때 실행 시간·메모리가 어떤 속도로 늘어나는지를 상수와 작은 항을 버리고 비교하는 표기법과, 코드에서 그 값을 읽어 내는 방법.
 tags: [complexity, big-o, analysis, fundamentals]
-related: [algorithms/amortized-analysis, algorithms/space-time-tradeoff, algorithms/sorting-comparison, algorithms/hash-table]
+related: [algorithms/amortized-analysis, algorithms/space-time-tradeoff, algorithms/sorting-comparison, algorithms/hash-table, algorithms/p-np-approximation]
 sources:
   - https://en.wikipedia.org/wiki/Big_O_notation
   - https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/

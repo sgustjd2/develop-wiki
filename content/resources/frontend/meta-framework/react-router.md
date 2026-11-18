@@ -3,6 +3,7 @@ name: React Router
 url: https://reactrouter.com
 docs: https://reactrouter.com/start/framework/installation
 repo: https://github.com/remix-run/react-router
+stars: 56641
 domain: frontend
 category: meta-framework
 description: React 라우터이자 Remix를 흡수한 풀스택 프레임워크. 프레임워크 모드에서 loader/action·SSR·프리렌더링을 웹 표준 Request/Response로 다룰 때 쓴다.

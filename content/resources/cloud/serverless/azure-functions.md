@@ -3,6 +3,7 @@ name: Azure Functions
 url: https://azure.microsoft.com/products/functions/
 docs: https://learn.microsoft.com/en-us/azure/azure-functions/
 repo: https://github.com/Azure/azure-functions-core-tools
+stars: 1466
 domain: cloud
 category: serverless
 description: 트리거와 바인딩으로 HTTP·큐·타이머·Blob·Cosmos DB 이벤트에 반응하는 Azure 서버리스 함수 서비스. Azure 리소스 이벤트 처리와 .NET·Node.js·Python 백엔드 작업에 쓴다.

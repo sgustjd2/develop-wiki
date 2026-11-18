@@ -28,8 +28,10 @@ curl -s https://huggingface.co/api/models/<org>/<repo> | python3 -I -c "import s
 - CC-BY-NC, 연구용 전용 → not-allowed
 
 ## 5. 한국어(korean)
-모델 카드가 한국어 지원을 명시하거나 한국어 벤치마크 결과가 공개돼 있으면 basic/good, 명시적 미지원이면 none, 근거가 없으면 unknown.
-
+- `good`: 한국어 벤치마크 수치(KMMLU, KoBEST, MTEB-ko 등)가 카드·논문에 공개돼 있다.
+- `basic`: 카드 본문이 한국어 지원을 명시하거나, HF 언어 메타데이터(`language`)에 `ko` 가 있다. 근거가 메타데이터뿐이면 limitations 에 "한국어 성능 수치 없음"을 적는다.
+- `none`: 카드가 지원 언어를 나열했는데 한국어가 없거나, 비영어에 다른 모델을 쓰라고 안내한다.
+- `unknown`: 위 근거를 찾지 못했다.
 ## 6. 파일 작성 — `content/models/<org-slug>/<repo-slug>.md`
 스키마는 `src/content.config.ts` 의 models. 기존 파일(`content/models/qwen/qwen3-30b-a3b.md`)을 본보기로.
 `sources` 에는 실제로 수치를 확인한 URL 만.

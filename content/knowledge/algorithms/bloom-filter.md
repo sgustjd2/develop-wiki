@@ -6,7 +6,7 @@ group: data-structure
 level: intermediate
 summary: 비트 배열과 해시 함수 k 개로 "확실히 없음" 또는 "아마 있음"을 답하는 확률적 집합. 원소당 10비트 안팎으로 1% 오탐률을 내며, 비싼 조회를 앞에서 걸러 내는 데 쓴다.
 tags: [bloom-filter, probabilistic, hash, lsm-tree, caching]
-related: [algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/b-tree]
+related: [algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/b-tree, algorithms/hyperloglog-count-min-sketch, algorithms/lsm-tree]
 sources:
   - https://en.wikipedia.org/wiki/Bloom_filter
   - https://github.com/facebook/rocksdb/wiki/RocksDB-Bloom-Filter

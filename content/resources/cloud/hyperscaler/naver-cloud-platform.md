@@ -3,6 +3,7 @@ name: NAVER Cloud Platform
 url: https://www.ncloud.com/
 docs: https://guide.ncloud-docs.com/docs/home
 repo: https://github.com/NaverCloudPlatform/terraform-provider-ncloud
+stars: 120
 domain: cloud
 category: hyperscaler
 description: 네이버클라우드의 국내 퍼블릭 클라우드. VPC 기반 Server·Object Storage·Cloud DB·Ncloud Kubernetes Service 와 CLOVA AI 서비스를 제공하며, 국내 리전·한국어 지원·공공 요건이 중요할 때 쓴다.

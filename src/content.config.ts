@@ -35,6 +35,7 @@ const resources = defineCollection({
       tags: z.array(z.string()).default([]),
       languages: z.array(z.enum(keys(LANGUAGES))).default([]), // 비어 있으면 언어 무관
       repo: z.url().optional(), // GitHub 등 소스 저장소
+      stars: z.number().int().nonnegative().optional(), // GitHub 별 수 (Hermes 가 매일 갱신)
       docs: z.url().optional(), // 공식 문서 (백과사전 본문의 1차 출처)
       koreanDocs: z.boolean().default(false), // 한국어 문서/자료 존재
       addedAt: z.coerce.date(),

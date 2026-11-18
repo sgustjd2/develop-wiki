@@ -3,6 +3,7 @@ name: Unstructured
 url: https://unstructured.io
 docs: https://docs.unstructured.io/open-source/introduction/overview
 repo: https://github.com/Unstructured-IO/unstructured
+stars: 15764
 domain: ai
 category: rag-retrieval
 description: PDF·HTML·Word·이메일 등 다양한 문서를 요소(Element) 단위로 분할·정제·청킹하는 오픈소스 전처리 라이브러리. 상용 API 도 있다.

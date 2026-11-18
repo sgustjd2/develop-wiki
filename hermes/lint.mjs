@@ -15,7 +15,7 @@ const files = (args.length
 
 // 컬렉션별 허용 frontmatter 키 — src/content.config.ts 와 맞춰 둘 것 (스키마는 모르는 키를 조용히 버려서 여기서 막는다)
 const KEYS = {
-  resources: ['name', 'url', 'docs', 'repo', 'domain', 'category', 'description', 'pricing', 'tags', 'languages', 'koreanDocs', 'addedAt', 'verifiedAt'],
+  resources: ['name', 'url', 'docs', 'repo', 'stars', 'domain', 'category', 'description', 'pricing', 'tags', 'languages', 'koreanDocs', 'addedAt', 'verifiedAt'],
   models: ['name', 'org', 'family', 'type', 'thinking', 'modalities', 'architecture', 'paramsB', 'activeParamsB', 'contextLength', 'license', 'commercialUse', 'korean', 'releaseDate', 'huggingface', 'summary', 'useCases', 'strengths', 'limitations', 'capabilities', 'sources', 'verifiedAt'],
   knowledge: ['title', 'aka', 'category', 'group', 'level', 'summary', 'tags', 'related', 'sources', 'updatedAt'],
   advisories: ['checkedAt', 'latestVersion', 'latestReleasedAt', 'versions', 'security'],

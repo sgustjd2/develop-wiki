@@ -3,6 +3,7 @@ name: Delta Lake
 url: https://delta.io
 docs: https://docs.delta.io/latest/
 repo: https://github.com/delta-io/delta
+stars: 9085
 domain: data-ml
 category: warehouse-lake
 description: Parquet 파일 위에 트랜잭션 로그를 두어 ACID·업서트·타임 트래블을 제공하는 오픈 테이블 포맷. Spark·Databricks 중심 레이크하우스에 쓴다.

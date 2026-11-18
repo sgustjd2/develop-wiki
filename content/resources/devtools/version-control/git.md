@@ -3,6 +3,7 @@ name: Git
 url: https://git-scm.com
 docs: https://git-scm.com/docs
 repo: https://github.com/git/git
+stars: 64364
 domain: devtools
 category: version-control
 description: 파일 변경 이력을 커밋 그래프로 관리하는 분산 버전 관리 시스템. 거의 모든 코드 저장소·협업 플랫폼의 기반으로 쓴다.

@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 매 단계에서 지금 가장 좋아 보이는 선택을 하고 되돌리지 않는 설계 기법. 빠르고 단순하지만, 그 선택이 전체 최적을 보장한다는 증명이 있을 때만 정답이다.
 tags: [greedy, optimization, mst, huffman, scheduling]
-related: [algorithms/dynamic-programming, algorithms/union-find, algorithms/shortest-path, algorithms/heap-priority-queue, algorithms/sorting-comparison]
+related: [algorithms/dynamic-programming, algorithms/union-find, algorithms/shortest-path, algorithms/heap-priority-queue, algorithms/sorting-comparison, algorithms/minimum-spanning-tree, algorithms/p-np-approximation]
 sources:
   - https://en.wikipedia.org/wiki/Greedy_algorithm
   - https://en.wikipedia.org/wiki/Huffman_coding

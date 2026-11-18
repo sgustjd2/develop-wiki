@@ -3,6 +3,7 @@ name: Hibernate ORM
 url: https://hibernate.org/orm/
 docs: https://hibernate.org/orm/documentation/
 repo: https://github.com/hibernate/hibernate-orm
+stars: 6488
 domain: backend
 category: orm-query
 description: Jakarta Persistence(JPA) 표준의 대표 구현체인 Java ORM. Spring Data JPA 와 함께 Java·Kotlin 서버에서 엔티티 매핑과 트랜잭션 처리에 쓴다.

@@ -6,7 +6,7 @@ group: behavioral
 level: beginner
 summary: 컬렉션의 내부 구조를 드러내지 않고 요소를 하나씩 순회하는 방법을 별도 객체로 제공하는 행위 패턴. JavaScript 에서는 이터레이션 프로토콜과 제너레이터로 언어에 내장돼 있다.
 tags: [gof, oop, collection, generator, lazy-evaluation]
-related: [design-patterns/composite, design-patterns/strategy, principles/solid]
+related: [design-patterns/composite, design-patterns/strategy, principles/solid, design-patterns/visitor, design-patterns/memento]
 sources:
   - https://refactoring.guru/design-patterns/iterator
   - https://en.wikipedia.org/wiki/Design_Patterns

@@ -3,6 +3,7 @@ name: Material UI
 url: https://mui.com/material-ui/
 docs: https://mui.com/material-ui/getting-started/
 repo: https://github.com/mui/material-ui
+stars: 99351
 domain: frontend
 category: ui-kit
 description: Google Material Design을 구현한 React 컴포넌트 라이브러리. 디자인이 갖춰진 컴포넌트와 테마 시스템으로 관리 화면·사내 도구를 빠르게 만들 때 쓴다.

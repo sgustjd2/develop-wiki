@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 해를 한 단계씩 만들어 가다가 제약을 어기는 순간 되돌아가 다른 선택을 시도하는 완전 탐색 기법. 가지치기로 탐색 공간을 줄이지만 최악은 지수 시간이다.
 tags: [backtracking, search, pruning, constraint-satisfaction, regex]
-related: [algorithms/bfs-dfs, algorithms/dynamic-programming, algorithms/greedy, security/owasp-top-10]
+related: [algorithms/bfs-dfs, algorithms/dynamic-programming, algorithms/greedy, security/owasp-top-10, algorithms/p-np-approximation]
 sources:
   - https://en.wikipedia.org/wiki/Backtracking
   - https://community.owasp.org/attacks/Regular_expression_Denial_of_Service_-_ReDoS

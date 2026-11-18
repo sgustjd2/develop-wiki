@@ -3,6 +3,7 @@ name: mise
 url: https://mise.jdx.dev/
 docs: https://mise.jdx.dev/getting-started.html
 repo: https://github.com/jdx/mise
+stars: 36277
 domain: devtools
 category: environment
 description: 프로젝트별 런타임·CLI 도구 버전, 환경 변수, 작업(task)을 mise.toml 하나로 관리하는 개발 환경 관리자. asdf·nvm·pyenv를 대체할 때 쓴다.

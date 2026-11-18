@@ -6,7 +6,7 @@ group: data-structure
 level: intermediate
 summary: 왼쪽 < 노드 < 오른쪽 규칙으로 정렬 순서를 유지하는 트리. 회전으로 높이를 O(log n)으로 묶어 두는 레드블랙·AVL 트리가 정렬 맵·범위 질의의 표준이다.
 tags: [bst, red-black-tree, avl, sorted-map, ordered-set]
-related: [algorithms/b-tree, algorithms/hash-table, algorithms/heap-priority-queue, algorithms/binary-search, algorithms/trie]
+related: [algorithms/b-tree, algorithms/hash-table, algorithms/heap-priority-queue, algorithms/binary-search, algorithms/trie, algorithms/skip-list]
 sources:
   - https://docs.kernel.org/core-api/rbtree.html
   - https://en.wikipedia.org/wiki/Red%E2%80%93black_tree

@@ -3,6 +3,7 @@ name: Gemini API
 url: https://aistudio.google.com
 docs: https://aistudio.google.com/docs
 repo: https://github.com/googleapis/python-genai
+stars: 4078
 domain: ai
 category: model-platform
 description: Google 의 Gemini 모델을 호출하는 API. Google AI Studio 키로 쓰고, 일부 모델에 무료 등급이 있다.

@@ -3,6 +3,7 @@ name: tmux
 url: https://github.com/tmux/tmux
 docs: https://github.com/tmux/tmux/wiki
 repo: https://github.com/tmux/tmux
+stars: 50506
 domain: devtools
 category: terminal
 description: 한 터미널에서 여러 세션·창·분할 화면을 만들고, 접속이 끊겨도 세션을 유지하는 터미널 멀티플렉서. 원격 서버 작업과 장시간 프로세스에 쓴다.

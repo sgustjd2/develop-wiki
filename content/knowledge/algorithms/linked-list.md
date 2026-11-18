@@ -6,7 +6,7 @@ group: data-structure
 level: beginner
 summary: 각 노드가 다음(과 이전) 노드를 가리키는 포인터로 이어진 목록. 위치를 알고 있으면 삽입·삭제가 O(1)이지만 인덱스 접근은 O(n)이다.
 tags: [linked-list, pointer, lru-cache]
-related: [algorithms/array-dynamic-array, algorithms/stack-queue-deque, algorithms/hash-table, algorithms/two-pointers-sliding-window]
+related: [algorithms/array-dynamic-array, algorithms/stack-queue-deque, algorithms/hash-table, algorithms/two-pointers-sliding-window, algorithms/skip-list]
 sources:
   - https://en.wikipedia.org/wiki/Linked_list
   - https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/LinkedHashMap.html

@@ -2,6 +2,7 @@
 name: TanStack Query
 url: https://tanstack.com/query
 repo: https://github.com/TanStack/query
+stars: 50575
 docs: https://tanstack.com/query/latest/docs/framework/react/overview
 domain: frontend
 category: state-data

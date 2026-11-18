@@ -104,6 +104,17 @@ export const DOMAINS = {
       docs: { label: '문서화', desc: '정적 문서 사이트, 다이어그램, API 문서 생성' },
     },
   },
+  oss: {
+    label: '오픈소스·GitHub',
+    desc: 'GitHub 에서 많이 쓰이는 에이전트 스킬, MCP 서버, 큐레이션 저장소, 셀프 호스팅 오픈소스',
+    categories: {
+      'agent-skills': { label: '에이전트 스킬', desc: 'Claude Code·Codex 등 코딩 에이전트용 스킬(SKILL.md)·플러그인·서브에이전트 모음' },
+      'mcp-servers': { label: 'MCP 서버', desc: '실무에서 많이 연결하는 MCP 서버 (SDK·도구는 AI › MCP·툴 연동)' },
+      'awesome-lists': { label: 'Awesome 리스트', desc: '주제별로 엄선된 링크 모음 저장소' },
+      'learning-repos': { label: '학습용 저장소', desc: '무료 책, 직접 만들어 보기, 면접·로드맵 등 학습 저장소' },
+      'self-hosted': { label: '셀프 호스팅', desc: '개발자가 직접 띄워 쓰는 오픈소스 서비스 (자동화, 모니터링, 협업 등)' },
+    },
+  },
 } as const satisfies Record<string, { label: string; desc: string; categories: Record<string, Cat> }>;
 
 export type DomainId = keyof typeof DOMAINS;

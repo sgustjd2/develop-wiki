@@ -6,7 +6,7 @@ group: complexity
 level: intermediate
 summary: 메모리를 더 써서 계산 시간을 줄이거나, 반대로 시간을 더 써서 메모리를 아끼는 선택. 캐시·인덱스·메모이제이션·압축이 모두 이 축 위의 결정이다.
 tags: [complexity, memoization, caching, precomputation]
-related: [algorithms/big-o-complexity, algorithms/dynamic-programming, algorithms/hash-table, algorithms/bloom-filter, data-modeling/index-design]
+related: [algorithms/big-o-complexity, algorithms/dynamic-programming, algorithms/hash-table, algorithms/bloom-filter, data-modeling/index-design, algorithms/hyperloglog-count-min-sketch]
 sources:
   - https://en.wikipedia.org/wiki/Space%E2%80%93time_tradeoff
   - https://www.postgresql.org/docs/current/indexes-index-only-scans.html

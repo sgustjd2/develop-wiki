@@ -6,7 +6,7 @@ group: algorithm
 level: intermediate
 summary: 방향 비순환 그래프(DAG)의 정점을 모든 간선이 앞에서 뒤로 향하도록 일렬로 세우는 알고리즘. 의존성이 있는 작업의 실행 순서를 정하고 순환 의존을 검출한다.
 tags: [graph, dag, topological-sort, dependency, build-system]
-related: [algorithms/bfs-dfs, algorithms/graph-representation, algorithms/dynamic-programming, algorithms/stack-queue-deque]
+related: [algorithms/bfs-dfs, algorithms/graph-representation, algorithms/dynamic-programming, algorithms/stack-queue-deque, algorithms/strongly-connected-components]
 sources:
   - https://en.wikipedia.org/wiki/Topological_sorting
   - https://cp-algorithms.com/graph/topological-sort.html

@@ -6,7 +6,7 @@ group: data-structure
 level: beginner
 summary: 정점과 간선을 메모리에 담는 세 가지 방법. 희소 그래프는 인접 리스트, 조밀하거나 간선 존재 확인이 잦으면 인접 행렬, 간선 단위 처리는 간선 리스트가 맞다.
 tags: [graph, adjacency-list, adjacency-matrix, csr]
-related: [algorithms/bfs-dfs, algorithms/shortest-path, algorithms/topological-sort, algorithms/union-find, algorithms/array-dynamic-array]
+related: [algorithms/bfs-dfs, algorithms/shortest-path, algorithms/topological-sort, algorithms/union-find, algorithms/array-dynamic-array, algorithms/minimum-spanning-tree, algorithms/strongly-connected-components]
 sources:
   - https://en.wikipedia.org/wiki/Adjacency_list
   - https://en.wikipedia.org/wiki/Adjacency_matrix

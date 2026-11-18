@@ -3,6 +3,7 @@ name: Bruno
 url: https://www.usebruno.com/
 docs: https://docs.usebruno.com/
 repo: https://github.com/usebruno/bruno
+stars: 48442
 domain: devtools
 category: api-client
 description: 요청 컬렉션을 저장소 안 일반 텍스트 파일로 저장하는 오프라인 API 클라이언트. 계정·클라우드 동기화 없이 API 요청을 Git으로 공유할 때 쓴다.

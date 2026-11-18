@@ -3,6 +3,7 @@ name: Netlify
 url: https://www.netlify.com/
 docs: https://docs.netlify.com/
 repo: https://github.com/netlify/cli
+stars: 1936
 domain: cloud
 category: paas-edge
 description: Git 저장소를 연결해 정적 사이트·프론트엔드 앱을 빌드·배포하고 Functions·Edge Functions·Blobs·Forms 를 붙이는 웹 배포 플랫폼. Jamstack·SSG 사이트와 Deploy Preview 기반 협업에 쓴다.

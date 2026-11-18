@@ -3,6 +3,7 @@ name: OrbStack
 url: https://orbstack.dev
 docs: https://docs.orbstack.dev/
 repo: https://github.com/orbstack/orbstack
+stars: 9572
 domain: devtools
 category: environment
 description: macOS에서 Docker 컨테이너와 경량 Linux 머신을 실행하는 가벼운 런타임. Docker Desktop 대신 빠르고 자원을 적게 쓰는 로컬 컨테이너 환경이 필요할 때 쓴다.

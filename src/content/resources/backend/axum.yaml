@@ -1,0 +1,12 @@
+name: Axum
+url: https://docs.rs/axum
+repo: https://github.com/tokio-rs/axum
+domain: backend
+category: web-framework
+description: Tokio 팀이 관리하는 Rust 웹 프레임워크. tower 미들웨어와 extractor 기반 핸들러로 비동기 HTTP API를 만들 때 쓴다.
+pricing: oss
+tags: [tokio, tower, async]
+languages: [rust]
+koreanDocs: false
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

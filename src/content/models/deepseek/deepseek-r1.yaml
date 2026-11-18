@@ -24,8 +24,10 @@ strengths:
 limitations:
   - 원본 모델은 서빙에 다중 GPU 노드급 자원이 필요
   - 사고 토큰이 길어 지연·비용이 큼
+  - DeepSeek 의 후속 V4 계열은 한 모델에서 Non-think·추론 모드를 전환하는 방식으로 통합됨
 capabilities: [long-context]
 sources:
   - https://huggingface.co/deepseek-ai/DeepSeek-R1
   - https://arxiv.org/abs/2501.12948
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
 verifiedAt: 2026-11-18

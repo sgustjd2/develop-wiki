@@ -1,0 +1,31 @@
+name: NVIDIA Nemotron 3 Nano 30B-A3B
+org: NVIDIA
+family: Nemotron 3
+type: text-llm
+thinking: hybrid
+modalities: { input: [text], output: [text] }
+architecture: moe
+paramsB: 30
+activeParamsB: 3.5
+contextLength: 1000000
+license: NVIDIA Nemotron Open Model License
+commercialUse: allowed
+korean: unknown
+releaseDate: 2025-12-15
+huggingface: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+summary: Mamba-2 와 어텐션, MoE 를 섞은 활성 3.5B 모델. 학습 레시피와 학습 데이터 주요 부분이 공개된 에이전트용 범용 LLM 이다.
+useCases:
+  - 단일 GPU에서 긴 컨텍스트를 다루는 에이전트·RAG 서비스
+  - 공개 학습 데이터를 바탕으로 재현·추가 학습이 필요한 연구
+strengths:
+  - enable_thinking 으로 추론 온/오프 전환
+  - 최대 1M 토큰 입력 지원(HF 기본 설정은 256K)
+  - 사전·사후 학습 데이터셋의 주요 부분과 레시피를 공개
+limitations:
+  - 공식 지원 언어가 영어·독일어·스페인어·프랑스어·이탈리아어·일본어로 한정
+capabilities: [tool-calling, long-context, multilingual]
+sources:
+  - https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  - https://huggingface.co/api/models/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  - https://arxiv.org/abs/2512.20848
+verifiedAt: 2026-11-18

@@ -17,6 +17,8 @@ const groups = Object.entries(MODEL_GROUPS).map(([gid, g]) => ({
 const chips = [
   { facet: 'thinking:native', label: '추론(항상)' },
   { facet: 'thinking:hybrid', label: '추론(하이브리드)' },
+  { facet: 'input:image', label: '이미지 입력' },
+  { facet: 'input:audio', label: '음성 입력' },
   { facet: 'commercial:allowed', label: '상업 이용 가능' },
   { facet: 'size:tiny', label: '<3B' },
   { facet: 'size:small', label: '3–15B' },
@@ -53,7 +55,7 @@ const sizeKey = (p?: number) => (p === undefined ? 'na' : p < 3 ? 'tiny' : p < 1
                   href={href(`models/${id}/`)}
                   data-item
                   data-search={[d.name, d.org, d.family, d.summary, ...d.useCases].join(' ').toLowerCase()}
-                  data-facets={`thinking:${d.thinking} commercial:${d.commercialUse} size:${sizeKey(d.paramsB)}`}
+                  data-facets={[`thinking:${d.thinking}`, `commercial:${d.commercialUse}`, `size:${sizeKey(d.paramsB)}`, ...d.modalities.input.map((m) => `input:${m}`)].join(' ')}
                 >
                   <span class="title">{d.name}</span>
                   <span class="host">{d.org} · {fmtDate(d.releaseDate)}</span>

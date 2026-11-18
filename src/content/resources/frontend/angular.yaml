@@ -1,0 +1,12 @@
+name: Angular
+url: https://angular.dev
+repo: https://github.com/angular/angular
+domain: frontend
+category: framework
+description: 라우터·폼·HTTP·DI·CLI를 한데 묶은 Google의 웹 프레임워크. 시그널 기반 반응성을 쓰며, 규칙이 정해진 대규모 팀 프로젝트에 쓴다.
+pricing: oss
+tags: [ui, signals, di, full-featured]
+languages: [typescript]
+koreanDocs: true
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

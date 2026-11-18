@@ -1,0 +1,12 @@
+name: Lit
+url: https://lit.dev
+repo: https://github.com/lit/lit
+domain: frontend
+category: framework
+description: 표준 Web Components를 적은 코드로 만들게 돕는 라이브러리. 프레임워크에 상관없이 재사용할 디자인 시스템 컴포넌트를 만들 때 쓴다.
+pricing: oss
+tags: [web-components, custom-elements, ui]
+languages: [typescript]
+koreanDocs: false
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

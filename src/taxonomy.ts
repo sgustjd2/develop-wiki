@@ -157,8 +157,8 @@ export const MODEL_GROUPS = {
     label: '언어 모델',
     desc: '텍스트를 입력받아 텍스트를 생성',
     types: {
-      'text-llm': { label: '텍스트 LLM', desc: '범용 대화·지시 수행. 하이브리드 thinking 모델도 여기' },
-      'reasoning-llm': { label: '추론 LLM', desc: '항상 긴 사고 과정을 거치는 추론 특화 모델' },
+      'text-llm': { label: '텍스트 LLM', desc: '범용 대화·지시 수행·에이전트. 항상/하이브리드 사고 범용 모델, 이미지·오디오 입력을 받는 범용 모델도 여기' },
+      'reasoning-llm': { label: '추론 LLM', desc: '추론 특화로 공개된 항상 사고 모델 (R1, *-Thinking 변형 등)' },
       'code-llm': { label: '코드 LLM', desc: '코드 생성·완성·에이전트 코딩에 특화' },
     },
   },
@@ -166,8 +166,8 @@ export const MODEL_GROUPS = {
     label: '멀티모달 이해',
     desc: '이미지·오디오·영상을 이해해 텍스트로 답함',
     types: {
-      vlm: { label: 'VLM', desc: '이미지(+영상)+텍스트 → 텍스트' },
-      omni: { label: '옴니', desc: '텍스트·이미지·오디오·영상 입력, 텍스트/음성 출력' },
+      vlm: { label: 'VLM', desc: '시각 이해가 주 목적인 이미지(+영상)+텍스트 → 텍스트 모델' },
+      omni: { label: '옴니', desc: '음성 상호작용 중심. 텍스트·이미지·오디오·영상 입력, 텍스트/음성 출력' },
       'ocr-document': { label: 'OCR·문서 이해', desc: '문서 파싱, 표·수식 인식 특화' },
       'gui-agent': { label: 'GUI 에이전트', desc: '화면을 보고 클릭·입력 액션을 출력' },
     },

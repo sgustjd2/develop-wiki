@@ -1,0 +1,12 @@
+name: Alpine.js
+url: https://alpinejs.dev
+repo: https://github.com/alpinejs/alpine
+domain: frontend
+category: framework
+description: HTML 속성에 상태와 동작을 직접 적는 경량 반응형 라이브러리. 서버 렌더링 페이지에 드롭다운·모달 같은 작은 인터랙션을 붙일 때 쓴다.
+pricing: oss
+tags: [html, reactivity, lightweight, server-rendered]
+languages: [typescript]
+koreanDocs: false
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

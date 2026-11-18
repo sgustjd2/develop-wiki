@@ -25,7 +25,8 @@ type T = Record<string, { label: string; desc: string }>;
     <ul>
       {Object.entries(THINKING).map(([k, v]) => <li><code>{k}</code> — {v}</li>)}
     </ul>
-    <p>항상 사고 과정을 거치는 모델만 <strong>추론 LLM</strong>으로 분류합니다. 켜고 끌 수 있는 하이브리드 모델은 텍스트/코드 LLM으로 두고 thinking 속성으로 구분합니다.</p>
+    <p><strong>추론 LLM</strong>은 추론 특화로 공개된 항상 사고 모델만입니다. 항상 사고하더라도 범용·에이전트 모델이면 텍스트 LLM 에 두고, 사고 방식은 thinking 속성("추론(항상)"·"추론(하이브리드)" 필터)으로 구분합니다.</p>
+    <p>이미지·오디오를 받는 범용 모델도 텍스트 LLM 입니다. <strong>VLM</strong>은 시각 이해가 주 목적일 때, <strong>옴니</strong>는 음성 상호작용이 주 목적일 때만 씁니다. 입력 모달리티는 "이미지 입력"·"음성 입력" 필터로 고릅니다.</p>
 
     <h2>리소스 카테고리</h2>
     {Object.values(DOMAINS).map((d) => (

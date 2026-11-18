@@ -19,7 +19,7 @@ grep -ril "<이름 또는 도메인>" src/content/resources research/excluded.md
 ## 3. 사실 확인
 - 공식 사이트 URL 과 저장소 URL 이 실제로 열리는지 확인.
 - GitHub 이면 `gh api repos/<owner>/<repo> --jq '{archived, pushed_at, license: .license.spdx_id}'`.
-- 한국어 공식 문서나 번역이 있으면 `koreanDocs: true`.
+- 한국어 공식 문서나 공식 번역이 있고 **시작하기 등 핵심 가이드까지 번역돼 있으면** `koreanDocs: true`. 소개 페이지 몇 개만 번역된 부분 번역은 false.
 
 ## 4. 파일 작성 — `src/content/resources/<domain>/<kebab-id>.yaml`
 ```yaml

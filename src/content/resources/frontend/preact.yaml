@@ -1,0 +1,12 @@
+name: Preact
+url: https://preactjs.com
+repo: https://github.com/preactjs/preact
+domain: frontend
+category: framework
+description: React와 거의 같은 API를 가진 수 KB 크기의 UI 라이브러리. 번들 크기가 중요한 위젯·임베드나 React 대체로 쓴다.
+pricing: oss
+tags: [ui, jsx, lightweight, virtual-dom]
+languages: [typescript]
+koreanDocs: false
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

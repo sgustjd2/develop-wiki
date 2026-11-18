@@ -1,0 +1,12 @@
+name: Vue
+url: https://vuejs.org
+repo: https://github.com/vuejs/core
+domain: frontend
+category: framework
+description: 템플릿과 반응형 상태를 중심으로 한 점진적 UI 프레임워크. 기존 페이지에 일부만 붙이거나 SPA 전체를 만들 때 쓴다.
+pricing: oss
+tags: [ui, component, reactivity, sfc]
+languages: [typescript]
+koreanDocs: true
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

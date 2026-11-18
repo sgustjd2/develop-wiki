@@ -19,16 +19,23 @@ description: 오픈 웨이트 모델의 주 분류(type)와 thinking·modalities
    - 응답 품질 점수, 쌍 비교, 프로세스 보상(PRM)  → decision: reward
    - 의도·주제 분류, 라우팅, NLI, 감성 분석       → decision: classifier
 6. 화면을 보고 클릭·타이핑 액션을 내는가?        → multimodal: gui-agent
-7. 오디오/영상까지 함께 입력받는 범용 모델인가?  → multimodal: omni
+7. 음성 상호작용이 주 목적인 모델인가?          → multimodal: omni
+   (오디오 입력 + 음성 출력, 또는 실시간 음성 대화를 내세움. 영상·오디오 입력만으로는 해당 안 됨)
 8. 문서 파싱·OCR 이 주 목적인가?                 → multimodal: ocr-document
-9. 이미지 입력을 받는 범용 모델인가?             → multimodal: vlm
+9. 시각 이해가 주 목적인가?                      → multimodal: vlm
+   (-VL/-Vision 계열, 텍스트 전용 형제가 따로 있는 비전 변형, 시각 벤치마크 중심 소개)
 10. 코드 전용으로 학습·튜닝됐는가?               → language: code-llm
-11. 항상 사고 과정을 출력하는가? (끌 수 없음)   → language: reasoning-llm
+11. 항상 사고하고(끌 수 없음) 추론 특화로 공개됐는가? → language: reasoning-llm
+   (수학·과학·논리 추론이 주 목적이거나, 범용 Instruct 와 별도로 나온 Thinking/R 변형)
 12. 그 외 텍스트 생성                            → language: text-llm
+   (항상 사고하는 범용·에이전트 모델도 여기, thinking: native)
 ```
 
 ## 애매한 경우
-- **범용 모델에 비전이 붙은 경우**(예: 한 체크포인트가 텍스트·이미지 모두 처리): 공식 발표가 "멀티모달 모델"로 소개하면 vlm, 텍스트 모델에 부가 기능으로 소개하면 text-llm + modalities.input 에 image.
+- **네이티브 멀티모달 범용 모델**(한 체크포인트가 텍스트·이미지·영상·오디오를 처리하지만 범용/코딩 플래그십): type 은 text-llm/code-llm, 받는 입력은 modalities.input 에 모두 기록. "멀티모달 모델"이라는 공식 표현만으로 vlm/omni 로 보내지 않는다. 사이트의 "이미지 입력"/"음성 입력" 필터가 이를 드러낸다.
+- **항상 사고하는 범용 모델**(effort 조절만 가능한 범용·에이전트 모델): text-llm + thinking: native. reasoning-llm 은 추론 특화 모델만.
+- **같은 패밀리에서 일부 크기만 오디오 입력**: type 은 같게 두고 modalities 로 구분.
+- **architecture**: MoE 가 있으면 moe 우선(SSM·선형 어텐션 혼합이어도). hybrid 는 MoE 없는 SSM/선형 어텐션 혼합 모델.
 - **하이브리드 추론**(thinking 온/오프): type 은 text-llm/code-llm, `thinking: hybrid`.
 - **LLM-as-judge 전용 파인튜닝 모델**: reward. 범용 LLM 을 저지로 쓰는 것은 해당 안 됨.
 - **임베딩 + 리랭크 겸용**: 모델 카드의 주 사용법 기준.

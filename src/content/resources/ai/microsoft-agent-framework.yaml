@@ -1,0 +1,10 @@
+name: Microsoft Agent Framework
+url: https://learn.microsoft.com/en-us/agent-framework/
+domain: ai
+category: agent-framework
+description: AutoGen과 Semantic Kernel의 후속인 Microsoft의 에이전트·그래프 워크플로 프레임워크. .NET·Python(Go는 프리뷰)으로 에이전트를 만들 때 쓴다.
+pricing: oss
+tags: [agent, multi-agent, workflow, microsoft]
+languages: [csharp, python, go]
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

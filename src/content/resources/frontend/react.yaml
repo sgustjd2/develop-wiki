@@ -1,9 +1,9 @@
 name: React
 url: https://react.dev
-repo: https://github.com/facebook/react
+repo: https://github.com/react/react
 domain: frontend
 category: framework
-description: 컴포넌트 기반 UI 라이브러리. 생태계가 가장 크고 서버 컴포넌트까지 지원한다.
+description: 컴포넌트 기반 UI 라이브러리. 서버 컴포넌트와 Actions를 지원하며, 생태계가 넓어 SPA부터 메타 프레임워크 기반 앱까지 두루 쓴다.
 pricing: oss
 tags: [ui, component, jsx]
 languages: [typescript]

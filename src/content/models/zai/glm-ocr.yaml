@@ -1,0 +1,28 @@
+name: GLM-OCR
+org: Z.ai
+family: GLM-V
+type: ocr-document
+thinking: none
+modalities: { input: [text, image], output: [text] }
+architecture: dense
+paramsB: 0.9
+license: MIT
+commercialUse: allowed
+korean: basic
+releaseDate: 2026-02-03
+huggingface: https://huggingface.co/zai-org/GLM-OCR
+summary: CogViT 비전 인코더와 GLM-0.5B 디코더로 만든 0.9B 문서 OCR 모델. 레이아웃 분석과 병렬 인식 파이프라인으로 문서를 파싱한다.
+useCases:
+  - 대량 PDF·스캔 문서를 Markdown 으로 변환하는 고동시성 파싱 서비스
+  - 영수증·신분증 등 이미지에서 지정한 JSON 필드 추출
+strengths:
+  - 0.9B 로 작아 vLLM·SGLang·Ollama 로 가볍게 배포
+  - 공식 SDK 제공, 한국어 포함 8개 언어 태그
+  - MIT 라이선스
+limitations:
+  - 전체 파이프라인은 PP-DocLayoutV3(Apache-2.0)에 의존
+capabilities: [multilingual, structured-output]
+sources:
+  - https://huggingface.co/zai-org/GLM-OCR
+  - https://huggingface.co/api/models/zai-org/GLM-OCR
+verifiedAt: 2026-11-18

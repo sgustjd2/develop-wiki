@@ -1,0 +1,12 @@
+name: ASP.NET Core
+url: https://dotnet.microsoft.com/apps/aspnet
+repo: https://github.com/dotnet/aspnetcore
+domain: backend
+category: web-framework
+description: .NET의 크로스 플랫폼 웹 프레임워크. Minimal API·MVC·Blazor·SignalR을 포함하며 C#으로 웹 API나 웹 앱을 만들 때 쓴다.
+pricing: oss
+tags: [dotnet, minimal-api, mvc]
+languages: [csharp]
+koreanDocs: true
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

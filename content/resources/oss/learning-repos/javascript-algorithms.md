@@ -2,7 +2,7 @@
 name: JavaScript Algorithms and Data Structures
 url: https://github.com/trekhleb/javascript-algorithms
 repo: https://github.com/trekhleb/javascript-algorithms
-stars: 196737
+stars: 196739
 domain: oss
 category: learning-repos
 description: 주요 자료 구조와 알고리즘을 JavaScript 로 구현하고 각각 설명 README 와 테스트를 붙인 학습 저장소. JS 개발자가 알고리즘을 코드로 읽고 실행해 보며 익힐 때 쓴다.

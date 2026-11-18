@@ -3,7 +3,7 @@ name: Chakra UI
 url: https://chakra-ui.com
 docs: https://chakra-ui.com/docs/get-started/installation
 repo: https://github.com/chakra-ui/chakra-ui
-stars: 40736
+stars: 40735
 domain: frontend
 category: ui-kit
 description: 스타일 props와 디자인 토큰 기반 테마를 갖춘 React 컴포넌트 라이브러리. v3는 Ark UI 위에서 접근성 동작을, 토큰·레시피로 스타일을 정의해 빠르게 화면을 만들 때 쓴다.

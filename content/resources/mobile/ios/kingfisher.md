@@ -3,7 +3,7 @@ name: Kingfisher
 url: https://github.com/onevcat/Kingfisher
 docs: https://github.com/onevcat/Kingfisher/wiki
 repo: https://github.com/onevcat/Kingfisher
-stars: 24410
+stars: 24411
 domain: mobile
 category: ios
 description: Swift 이미지 다운로드·캐싱 라이브러리. UIKit 의 kf.setImage 와 SwiftUI 의 KFImage 로 원격 이미지를 불러오고 메모리·디스크 캐시, 프로세서, 프리페치를 제공한다.

@@ -3,7 +3,7 @@ name: Langfuse
 url: https://langfuse.com
 docs: https://langfuse.com/docs
 repo: https://github.com/langfuse/langfuse
-stars: 37584
+stars: 37597
 domain: ai
 category: evaluation
 description: LLM 앱의 트레이싱·프롬프트 관리·데이터셋 실험·점수 기록을 한곳에서 하는 오픈소스 LLMOps 플랫폼. 셀프 호스팅이나 클라우드로 쓴다.

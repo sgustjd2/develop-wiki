@@ -3,7 +3,7 @@ name: Fastify
 url: https://fastify.dev
 docs: https://fastify.dev/docs/latest/
 repo: https://github.com/fastify/fastify
-stars: 37435
+stars: 37437
 domain: backend
 category: web-framework
 description: JSON Schema 기반 검증·직렬화와 캡슐화된 플러그인 구조를 가진 Node.js 웹 프레임워크. 오버헤드가 낮은 HTTP API 서버를 만들 때 쓴다.

@@ -3,7 +3,7 @@ name: Apache Flink
 url: https://flink.apache.org
 docs: https://nightlies.apache.org/flink/flink-docs-stable/
 repo: https://github.com/apache/flink
-stars: 26479
+stars: 26480
 domain: data-ml
 category: processing
 description: 상태를 가진 스트림 처리 엔진. 이벤트 시간·정확히 한 번 처리를 보장해 실시간 집계, 이상 탐지, CDC 파이프라인에 쓴다.

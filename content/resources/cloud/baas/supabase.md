@@ -3,7 +3,7 @@ name: Supabase
 url: https://supabase.com/
 docs: https://supabase.com/docs
 repo: https://github.com/supabase/supabase
-stars: 115142
+stars: 115126
 domain: cloud
 category: baas
 description: PostgreSQL 위에 인증·자동 생성 REST/GraphQL API·스토리지·Realtime·Edge Functions 를 얹은 오픈소스 BaaS. SQL 과 RLS 로 권한을 관리하며 Firebase 대안으로 앱 백엔드를 빠르게 만들 때 쓴다.

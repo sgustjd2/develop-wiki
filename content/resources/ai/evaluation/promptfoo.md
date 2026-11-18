@@ -3,7 +3,7 @@ name: Promptfoo
 url: https://www.promptfoo.dev
 docs: https://www.promptfoo.dev/docs/intro/
 repo: https://github.com/promptfoo/promptfoo
-stars: 27410
+stars: 27424
 domain: ai
 category: evaluation
 description: YAML 설정으로 프롬프트·모델 조합을 테스트 케이스와 단언으로 평가하고 레드팀 취약점 점검까지 하는 CLI. CI 회귀 테스트에 쓴다.

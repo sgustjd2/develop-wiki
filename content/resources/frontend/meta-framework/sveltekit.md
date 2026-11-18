@@ -3,7 +3,7 @@ name: SvelteKit
 url: https://svelte.dev/docs/kit
 docs: https://svelte.dev/docs/kit/introduction
 repo: https://github.com/sveltejs/kit
-stars: 20917
+stars: 20919
 domain: frontend
 category: meta-framework
 description: Svelte 공식 풀스택 프레임워크. 파일 기반 라우팅, load 함수, 폼 액션, 어댑터 배포로 Svelte 앱을 SSR·정적 생성할 때 쓴다.

@@ -15,3 +15,13 @@
 | Cosmos3 변형(Super/Edge-Policy-DROID), GR00T N1.x, π0, Cosmos-Reason2 | models | VLA·월드 모델 추가 후보 | 2026-11-19 |
 | Paparazzi, Bitrise, Appium 4 마이그레이션 | mobile | 테스트·CI 후보 | 2026-11-19 |
 | Chi 외 Kotlin·C# 프레임워크 추가, TanStack Start 외 | backend | 언어 균형 점검 | 2026-11-19 |
+| lerobot/RynnValue-4B | models/vla (로보틱스 정책 모델; modalities.output 에 action) | https://huggingface.co/lerobot/RynnValue-4B · 2026-11-05 · license=apache-2.0 · params=5.1B · ♥1 ↓301 (Hermes 후보, 검증 전) | 2026-11-19 |
+| microsoft/Aion-1.0-Instruct-2.3B | models/language(text/code/reasoning) | https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B · 2026-11-18 · license=mit · params=2.3B · ♥6 ↓0 (Hermes 후보, 검증 전) | 2026-11-19 |
+| allenai/maniflow-tb | models/vla (로보틱스 정책 모델; modalities.output 에 action) | https://huggingface.co/allenai/maniflow-tb · 2026-11-05 · license=apache-2.0 · params=? · ♥3 ↓95 (Hermes 후보, 검증 전) | 2026-11-19 |
+| allenai/Molmo2-4B-tb | models/vla (로보틱스 정책 모델; modalities.output 에 action) | https://huggingface.co/allenai/Molmo2-4B-tb · 2026-11-05 · license=apache-2.0 · params=? · ♥2 ↓94 (Hermes 후보, 검증 전) | 2026-11-19 |
+| lerobot/asimov-mujoco | models/분류 미정 | https://huggingface.co/lerobot/asimov-mujoco · 2026-11-17 · license=? · params=? · ♥0 ↓31 (Hermes 후보, 검증 전) | 2026-11-19 |
+| https://github.com/wangzan101/Mika | resources/Kotlin | ★9080 · license=Apache-2.0 · An on-device AI agent for Android that operates apps and the web to get things done for you. (Hermes 후보, 검증 전) | 2026-11-19 |
+| https://github.com/qybaihe/bla | resources/TypeScript | ★6122 · license=MIT · 🛡️ BLA (bla-agents / Blind LLM Agents) — Open-source Blue Defense MCP server & CLI protecting JS/TS (Hermes 후보, 검증 전) | 2026-11-19 |
+| https://github.com/expo/exact | resources/Rust | ★4661 · license=MIT · Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, (Hermes 후보, 검증 전) | 2026-11-19 |
+| https://github.com/erkamyaman/rust-anything | resources/Rust | ★2973 · license=MIT · Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavio (Hermes 후보, 검증 전) | 2026-11-19 |
+| https://github.com/mdiri-ai/SoduWork | resources/JavaScript | ★2764 · license=MIT · The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted. (Hermes 후보, 검증 전) | 2026-11-19 |

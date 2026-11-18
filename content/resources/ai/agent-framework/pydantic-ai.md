@@ -3,7 +3,7 @@ name: Pydantic AI
 url: https://pydantic.dev/pydantic-ai
 docs: https://pydantic.dev/docs/ai/overview/
 repo: https://github.com/pydantic/pydantic-ai
-stars: 21271
+stars: 21275
 domain: ai
 category: agent-framework
 description: Pydantic 팀이 만든 타입 중심 Python 에이전트 프레임워크. 의존성 주입·구조화 출력·도구 인자 검증을 타입 힌트로 처리해야 하는 프로덕션 에이전트에 쓴다.

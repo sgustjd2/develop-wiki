@@ -2,7 +2,7 @@
 name: Elysia
 url: https://elysiajs.com
 repo: https://github.com/elysiajs/elysia
-stars: 19363
+stars: 19365
 docs: https://elysiajs.com/at-glance
 domain: backend
 category: web-framework

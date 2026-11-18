@@ -2,7 +2,7 @@
 name: Awesome-Selfhosted
 url: https://awesome-selfhosted.net/
 repo: https://github.com/awesome-selfhosted/awesome-selfhosted
-stars: 338239
+stars: 338322
 domain: oss
 category: awesome-lists
 description: 직접 서버에 띄워 쓸 수 있는 자유 소프트웨어 웹 서비스를 분야별로 정리한 목록. SaaS 대체재나 사내·홈랩용 서비스를 고를 때 쓴다.

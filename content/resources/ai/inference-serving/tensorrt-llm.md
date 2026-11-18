@@ -3,7 +3,7 @@ name: TensorRT LLM
 url: https://nvidia.github.io/TensorRT-LLM/
 docs: https://nvidia.github.io/TensorRT-LLM/
 repo: https://github.com/NVIDIA/TensorRT-LLM
-stars: 15096
+stars: 15100
 domain: ai
 category: inference-serving
 description: NVIDIA GPU 전용 최적화 커널과 PyTorch 기반 런타임으로 LLM 을 서빙하는 NVIDIA 의 추론 라이브러리. trtllm-serve 로 OpenAI 호환 서버를 띄운다.

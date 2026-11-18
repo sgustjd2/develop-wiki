@@ -3,7 +3,7 @@ name: LanceDB
 url: https://lancedb.com
 docs: https://docs.lancedb.com
 repo: https://github.com/lancedb/lancedb
-stars: 11934
+stars: 11936
 domain: ai
 category: vector-db
 description: Lance 컬럼 포맷 위에 만든 임베디드 벡터 DB. 서버 없이 로컬 디스크·오브젝트 스토리지에서 벡터·전문·하이브리드 검색을 한다.

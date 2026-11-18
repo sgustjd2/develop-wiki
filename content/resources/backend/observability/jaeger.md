@@ -3,7 +3,7 @@ name: Jaeger
 url: https://www.jaegertracing.io
 docs: https://www.jaegertracing.io/docs/latest/
 repo: https://github.com/jaegertracing/jaeger
-stars: 23421
+stars: 23423
 domain: backend
 category: observability
 description: 분산 트레이스를 수집·저장하고 UI 로 조회하는 CNCF 졸업 프로젝트. v2 는 OpenTelemetry Collector 기반 단일 바이너리이며 OTLP 를 직접 받는다.

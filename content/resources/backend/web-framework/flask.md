@@ -3,7 +3,7 @@ name: Flask
 url: https://flask.palletsprojects.com
 docs: https://flask.palletsprojects.com/en/stable/
 repo: https://github.com/pallets/flask
-stars: 75271
+stars: 75253
 domain: backend
 category: web-framework
 description: Werkzeug(WSGI)와 Jinja 위에 만든 Python 마이크로 웹 프레임워크. 작은 웹 앱·API나 구성 요소를 직접 골라 조립하고 싶을 때 쓴다.

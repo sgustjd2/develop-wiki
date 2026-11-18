@@ -3,7 +3,7 @@ name: Motion
 url: https://motion.dev
 docs: https://motion.dev/docs/react
 repo: https://github.com/motiondivision/motion
-stars: 35329
+stars: 35337
 domain: frontend
 category: animation
 description: 선언적 props로 React 컴포넌트에 애니메이션·제스처·레이아웃 전환을 붙이는 라이브러리(옛 Framer Motion). 바닐라 JS·Vue용 API도 있다.

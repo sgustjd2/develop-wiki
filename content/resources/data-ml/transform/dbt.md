@@ -3,7 +3,7 @@ name: dbt
 url: https://www.getdbt.com
 docs: https://docs.getdbt.com/
 repo: https://github.com/dbt-labs/dbt
-stars: 14188
+stars: 14191
 domain: data-ml
 category: transform
 description: SELECT 문으로 작성한 SQL 모델을 의존 순서대로 웨어하우스 테이블·뷰로 빌드하고 테스트·문서화하는 변환 도구. 분석용 데이터 모델링에 쓴다.

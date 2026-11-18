@@ -3,7 +3,7 @@ name: Bloc
 url: https://bloclibrary.dev
 docs: https://bloclibrary.dev/getting-started/
 repo: https://github.com/felangel/bloc
-stars: 12487
+stars: 12489
 domain: mobile
 category: cross-platform
 description: Dart·Flutter 용 BLoC 상태 관리 패키지 모음(bloc, flutter_bloc). 이벤트→상태 스트림 구조와 간단한 Cubit 으로 UI 와 비즈니스 로직을 분리하고 bloc_test 로 검증한다.

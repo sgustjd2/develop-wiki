@@ -3,7 +3,7 @@ name: Grafana Tempo
 url: https://grafana.com/oss/tempo/
 docs: https://grafana.com/docs/tempo/latest/
 repo: https://github.com/grafana/tempo
-stars: 5580
+stars: 5581
 domain: backend
 category: observability
 description: 분산 트레이스를 오브젝트 스토리지에 저장하고 TraceQL 로 조회하는 트레이싱 백엔드. 샘플링 부담 없이 대량 트레이스를 저렴하게 보관하고 Grafana 에서 볼 때 쓴다. AGPLv3.

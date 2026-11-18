@@ -3,7 +3,7 @@ name: Ultralytics YOLO
 url: https://www.ultralytics.com
 docs: https://docs.ultralytics.com
 repo: https://github.com/ultralytics/ultralytics
-stars: 63556
+stars: 63563
 domain: robotics
 category: perception
 description: YOLO 계열 객체 검출·분할·자세 추정·추적 모델의 학습·추론·내보내기 프레임워크. AGPL-3.0 이며 상용 이용은 별도 Enterprise 라이선스다.

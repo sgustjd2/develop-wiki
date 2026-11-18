@@ -3,7 +3,7 @@ name: n8n
 url: https://n8n.io
 docs: https://docs.n8n.io
 repo: https://github.com/n8n-io/n8n
-stars: 210818
+stars: 210942
 domain: oss
 category: self-hosted
 description: 노드를 연결해 API 호출·웹훅·DB 작업·LLM 에이전트를 자동화하는 워크플로 도구. Sustainable Use License(fair-code)라 사내 사용은 자유지만 재판매·SaaS 제공은 제한된다.

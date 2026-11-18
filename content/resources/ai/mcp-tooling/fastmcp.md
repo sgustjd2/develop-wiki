@@ -3,7 +3,7 @@ name: FastMCP
 url: https://gofastmcp.com
 docs: https://gofastmcp.com/docs/getting-started/welcome
 repo: https://github.com/PrefectHQ/fastmcp
-stars: 28642
+stars: 28650
 domain: ai
 category: mcp-tooling
 description: Python 함수에 데코레이터를 붙여 MCP 서버·클라이언트를 만드는 Prefect 의 프레임워크. 서버 조합, 프록시, 인증, 테스트용 클라이언트까지 포함한다.

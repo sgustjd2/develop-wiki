@@ -3,7 +3,7 @@ name: LLaMA-Factory
 url: https://llamafactory.readthedocs.io
 docs: https://llamafactory.readthedocs.io/en/latest/
 repo: https://github.com/hiyouga/LlamaFactory
-stars: 76099
+stars: 76105
 domain: ai
 category: fine-tuning
 description: 다수의 오픈 웨이트 LLM·VLM 을 YAML 설정이나 Gradio 웹 UI(LLaMA Board)로 SFT·DPO·KTO·PPO 학습하는 통합 파인튜닝 프레임워크.

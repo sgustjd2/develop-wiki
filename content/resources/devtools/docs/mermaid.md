@@ -3,7 +3,7 @@ name: Mermaid
 url: https://mermaid.js.org
 docs: https://mermaid.js.org/intro/
 repo: https://github.com/mermaid-js/mermaid
-stars: 91151
+stars: 91153
 domain: devtools
 category: docs
 description: 텍스트 문법으로 플로차트·시퀀스·ER·간트 다이어그램을 그리는 JavaScript 라이브러리. Markdown 문서와 README 안에 다이어그램을 코드로 관리할 때 쓴다.

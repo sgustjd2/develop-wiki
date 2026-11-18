@@ -3,7 +3,7 @@ name: Ghostty
 url: https://ghostty.org
 docs: https://ghostty.org/docs
 repo: https://github.com/ghostty-org/ghostty
-stars: 64209
+stars: 64216
 domain: devtools
 category: terminal
 description: Zig로 작성하고 GPU로 렌더링하며 플랫폼 네이티브 UI를 쓰는 터미널 에뮬레이터. 설정 없이 바로 쓰는 빠른 터미널이 필요할 때 쓴다.

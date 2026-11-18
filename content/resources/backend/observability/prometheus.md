@@ -3,7 +3,7 @@ name: Prometheus
 url: https://prometheus.io
 docs: https://prometheus.io/docs/introduction/overview/
 repo: https://github.com/prometheus/prometheus
-stars: 67686
+stars: 67691
 domain: backend
 category: observability
 description: 대상을 주기적으로 스크레이프해 시계열 메트릭을 저장하고 PromQL 로 조회·알림하는 모니터링 시스템. 서버·컨테이너·애플리케이션 메트릭 수집의 사실상 표준이다.

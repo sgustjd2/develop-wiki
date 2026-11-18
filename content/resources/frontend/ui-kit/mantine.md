@@ -3,7 +3,7 @@ name: Mantine
 url: https://mantine.dev
 docs: https://mantine.dev/getting-started/
 repo: https://github.com/mantinedev/mantine
-stars: 31957
+stars: 31958
 domain: frontend
 category: ui-kit
 description: 컴포넌트·훅·폼·날짜·차트 패키지를 함께 제공하는 React UI 라이브러리. 스타일이 갖춰진 컴포넌트로 대시보드·사내 도구를 빠르게 만들 때 쓴다.

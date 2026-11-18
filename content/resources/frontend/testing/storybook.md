@@ -3,7 +3,7 @@ name: Storybook
 url: https://storybook.js.org
 docs: https://storybook.js.org/docs
 repo: https://github.com/storybookjs/storybook
-stars: 91624
+stars: 91632
 domain: frontend
 category: testing
 description: UI 컴포넌트를 앱과 분리해 상태별 "스토리"로 개발·문서화하고, 그 스토리를 상호작용·접근성·시각 테스트로 재사용하는 도구.

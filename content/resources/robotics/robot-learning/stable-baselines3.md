@@ -3,7 +3,7 @@ name: Stable-Baselines3
 url: https://stable-baselines3.readthedocs.io/en/master/
 docs: https://stable-baselines3.readthedocs.io/en/master/
 repo: https://github.com/DLR-RM/stable-baselines3
-stars: 14027
+stars: 14028
 domain: robotics
 category: robot-learning
 description: PyTorch 기반 강화학습 알고리즘 구현 모음(PPO·SAC·TD3·DQN 등). Gymnasium 환경에 바로 붙여 로봇 제어 정책의 기준선을 학습할 때 쓴다.

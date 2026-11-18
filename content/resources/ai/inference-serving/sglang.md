@@ -3,7 +3,7 @@ name: SGLang
 url: https://www.sglang.io
 docs: https://docs.sglang.io/
 repo: https://github.com/sgl-project/sglang
-stars: 39020
+stars: 39034
 domain: ai
 category: inference-serving
 description: RadixAttention 기반 프리픽스 캐시로 에이전트·대규모 서빙에 맞춘 LLM·VLM 서빙 엔진. OpenAI 호환 서버를 제공한다.

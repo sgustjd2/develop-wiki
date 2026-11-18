@@ -3,7 +3,7 @@ name: ROS 2
 url: https://www.ros.org
 docs: https://docs.ros.org/en/lyrical/
 repo: https://github.com/ros2/ros2
-stars: 6329
+stars: 6330
 domain: robotics
 category: ros
 description: 노드가 토픽·서비스·액션으로 통신하는 로봇 소프트웨어 미들웨어 프레임워크. 센서·제어·내비게이션 패키지를 조합해 로봇 앱을 만들 때 쓴다.

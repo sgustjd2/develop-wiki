@@ -2,7 +2,7 @@
 name: Awesome React
 url: https://github.com/enaqx/awesome-react
 repo: https://github.com/enaqx/awesome-react
-stars: 75319
+stars: 75321
 domain: oss
 category: awesome-lists
 description: React 와 React Native 의 학습 자료·프레임워크·라이브러리를 분야별로 모은 목록. 상태 관리, 폼, 테이블, 차트 같은 React 라이브러리 후보를 찾을 때 쓴다.

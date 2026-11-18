@@ -3,7 +3,7 @@ name: SQLMesh
 url: https://github.com/SQLMesh/sqlmesh
 docs: https://sqlmesh.readthedocs.io/en/stable/
 repo: https://github.com/SQLMesh/sqlmesh
-stars: 3360
+stars: 3362
 domain: data-ml
 category: transform
 description: SQL·Python 모델의 변경을 계획(plan)으로 미리 보여 주고 가상 환경으로 배포하는 데이터 변환 프레임워크. dbt 대안으로 증분·환경 관리가 중요할 때 쓴다.

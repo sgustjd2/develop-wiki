@@ -3,7 +3,7 @@ name: RViz2
 url: https://github.com/ros2/rviz
 docs: https://docs.ros.org/en/lyrical/Developer-Tools/Visualization/RViz/RViz-User-Guide/RViz-User-Guide.html
 repo: https://github.com/ros2/rviz
-stars: 502
+stars: 503
 domain: robotics
 category: ros
 description: ROS 2 의 3D 시각화 도구. TF, 센서 데이터, 지도, 경로, 로봇 모델을 디스플레이 플러그인으로 한 화면에 보여준다.

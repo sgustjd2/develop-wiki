@@ -3,7 +3,7 @@ name: Hugging Face Learn
 url: https://huggingface.co/learn
 docs: https://huggingface.co/learn
 repo: https://github.com/huggingface/agents-course
-stars: 35138
+stars: 35155
 domain: ai
 category: learning
 description: Hugging Face 가 운영하는 무료 실습 강좌 모음. LLM·에이전트·MCP·컨텍스트 엔지니어링·후학습 등을 노트북과 과제로 익힐 때 쓴다.

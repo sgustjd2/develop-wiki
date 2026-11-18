@@ -3,7 +3,7 @@ name: Fiber
 url: https://gofiber.io
 docs: https://docs.gofiber.io
 repo: https://github.com/gofiber/fiber
-stars: 40283
+stars: 40284
 domain: backend
 category: web-framework
 description: fasthttp 위에 Express 스타일 API를 얹은 Go 웹 프레임워크. 메모리 할당을 줄인 HTTP API 서버를 Express에 익숙한 방식으로 만들 때 쓴다.

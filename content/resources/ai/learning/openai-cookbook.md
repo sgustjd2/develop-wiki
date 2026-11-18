@@ -3,7 +3,7 @@ name: OpenAI Cookbook
 url: https://developers.openai.com/cookbook
 docs: https://developers.openai.com/cookbook
 repo: https://github.com/openai/openai-cookbook
-stars: 77227
+stars: 77232
 domain: ai
 category: learning
 description: OpenAI 가 관리하는 API 예제·가이드 모음. 임베딩·함수 호출·Responses·Agents SDK·평가·음성 같은 기능을 노트북으로 익힐 때 쓴다.

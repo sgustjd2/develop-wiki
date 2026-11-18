@@ -3,7 +3,7 @@ name: pnpm
 url: https://pnpm.io
 docs: https://pnpm.io/installation
 repo: https://github.com/pnpm/pnpm
-stars: 37122
+stars: 37124
 domain: frontend
 category: build-tooling
 description: 전역 콘텐츠 주소 저장소와 심볼릭 링크로 node_modules를 구성하는 JavaScript 패키지 매니저. 디스크·설치 시간을 줄이고 모노레포 워크스페이스를 관리할 때 쓴다.

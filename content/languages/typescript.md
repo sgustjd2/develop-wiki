@@ -32,7 +32,7 @@ TypeScript는 Microsoft가 만든 JavaScript의 상위 집합(superset)이다. J
 | 동시성 | 싱글 스레드 이벤트 루프 + `Promise`/`async`·`await`. 병렬 처리는 Worker |
 | 모듈 | ES 모듈(`import`/`export`). 7.0 기본 `module` 은 `esnext` |
 
-7.0에서 정리된 옵션: `target: es5`, `moduleResolution: node`(node10)·`classic`, `module: amd/umd/systemjs`, `baseUrl` 등은 이제 오류가 난다. 오래된 tsconfig 를 쓰는 프로젝트는 업그레이드 전에 확인이 필요하다.
+7.0에서 정리된 옵션: `target: es5`, `downlevelIteration`, `moduleResolution: node`(node10)·`classic`, `module: amd/umd/systemjs/none`, `baseUrl` 등은 이제 오류가 난다. 기본값도 바뀌어 `rootDir` 은 `./`, `types` 는 `[]` 가 기본이다. 오래된 tsconfig 를 쓰는 프로젝트는 업그레이드 전에 확인이 필요하다.
 
 ## 개발 환경 시작하기
 1. [Node.js](https://nodejs.org/) LTS 설치 (npm 포함). pnpm·yarn·Bun 같은 다른 패키지 매니저도 쓸 수 있다.
@@ -45,11 +45,11 @@ npm install -D typescript
 npx tsc --version        # 7.x 확인
 ```
 
-3. 최소 `tsconfig.json` (7.0 은 `strict`·`module: esnext` 가 기본이라 짧아도 된다)
+3. 최소 `tsconfig.json` (7.0 은 `strict`·`module: esnext` 가 기본이지만 `rootDir` 은 기본값이 tsconfig 위치(`./`)라서 `src` 로 명시해야 `dist/index.js` 로 출력된다)
 
 ```json
 {
-  "compilerOptions": { "outDir": "dist" },
+  "compilerOptions": { "rootDir": "src", "outDir": "dist" },
   "include": ["src"]
 }
 ```
@@ -59,12 +59,14 @@ npx tsc --version        # 7.x 확인
 ```bash
 npx tsc                  # src/*.ts → dist/*.js
 node dist/index.js
-node src/index.ts        # Node 22.18+/23.6+ 는 타입 제거로 바로 실행 (타입 검사는 안 함)
+node src/index.ts        # Node 22.18+/23.6+ 는 타입 제거로 바로 실행 (타입 검사는 안 함, 24.12+/25.2+ 에서 stable)
 ```
 
 Node 의 타입 제거는 `enum`, 런타임 코드가 있는 `namespace`, 생성자 매개변수 프로퍼티처럼 JS 코드 생성이 필요한 문법을 지원하지 않고 `tsconfig.json` 도 읽지 않는다. 타입 검사는 따로 `npx tsc --noEmit` 으로 돌린다.
 
 ## 문법 한눈에 보기
+각 예제는 `import`/`export` 가 있는 모듈 파일(예: 맨 위에 `export {};`)로 저장해야 전역 이름과 충돌하지 않고 최상위 `await` 도 쓸 수 있다.
+
 ```ts
 // 변수·타입 추론
 const name = "dev.hub";          // string 으로 추론

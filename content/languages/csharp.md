@@ -28,7 +28,7 @@ C#은 Anders Hejlsberg가 설계해 2000년 공개한 언어로, .NET 런타임 
 | 타입 시스템 | 정적·명목적 타입, `var` 추론, 실체화된(reified) 제네릭, `record`, 패턴 매칭, 널 가능 참조 타입(`string?`) 분석 |
 | 새 기능(C# 15) | 유니언 타입, 닫힌 계층(closed hierarchies), 컬렉션 식 인수, 확장 인덱서, 레이블 붙은 `break`/`continue` 등 |
 | 메모리 관리 | 가비지 컬렉션. `struct`·`Span<T>` 로 힙 할당을 줄이는 저수준 최적화 가능 |
-| 동시성 | `Task` + `async`/`await`(C# 이 대중화한 모델), `Parallel`, 채널. .NET 11 은 런타임 수준 async 를 기본 지원 |
+| 동시성 | `Task` + `async`/`await`(C# 이 대중화한 모델), `Parallel`, 채널. .NET 11 은 런타임 네이티브 async(Runtime Async)를 지원한다(`<Features>runtime-async=on</Features>` 로 켜며, net11.0 에서는 더 이상 미리 보기 기능 설정이 필요 없다) |
 | 실행 | IL 로 컴파일 → CLR 이 JIT 컴파일해 실행. Native AOT 로 단일 네이티브 실행 파일도 가능 |
 | 에러 처리 | 예외(검사 예외 없음) |
 

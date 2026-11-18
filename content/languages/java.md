@@ -56,7 +56,8 @@ gradle init --type java-application --dsl kotlin
 ./gradlew test
 
 # Maven
-mvn archetype:generate -DgroupId=com.example -DartifactId=hello -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.example -DartifactId=hello -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+cd hello
 mvn package
 ```
 

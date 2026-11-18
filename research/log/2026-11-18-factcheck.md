@@ -12,4 +12,4 @@
 - microsoft/agent-framework GitHub 저장소가 404 (일시적일 수 있음, 링크는 Go SDK 로 교체)
 - MCP Ruby SDK: 본문엔 있으나 frontmatter languages 에 없음. 공식 SDK 목록 확인 후 맞출 것
 - Go, Rust, .NET, PHP, JDK 가 없는 환경이라 해당 예제는 컴파일 못 함 (Gin·Axum·ASP.NET·Laravel·Spring·LangChain4j)
-- languages 14개: 재개된 검증 대기
+- languages: 위 검증 결과 반영 (TypeScript 7 rootDir, Maven quickstart 1.5, .NET 11 runtime async 서술, Elixir struct 예제). C++26 ISO 승인 상태·MySQL 8.4 매뉴얼 링크(26.x 컨테이너와 불일치)·crates.io 링크는 브라우저 확인 필요

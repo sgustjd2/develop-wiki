@@ -67,7 +67,7 @@ defmodule User do
   def label(%User{name: name, age: age}), do: "#{name} #{age}"
 end
 
-users = [%User{name: "kim", age: 30}, %User{name: "lee"}]
+users = [struct(User, name: "kim", age: 30), struct(User, name: "lee")]
 
 users
 |> Enum.map(&User.label/1)

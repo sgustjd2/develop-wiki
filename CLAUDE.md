@@ -15,7 +15,7 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `content/advisories/<domain>/<category>/<id>.md` | 버전별 변경·보안 권고 (resources 와 같은 경로, 구조화 frontmatter). Hermes 가 매일 5개씩 갱신 |
 | `content/languages/<id>.md` | 개발 언어 백과사전 (id = taxonomy LANGUAGES 키) |
 | `src/pages/` | 사이트. 도메인→카테고리→항목 페이지, `models/type/*`, `new/`, `data/*.json`, `search-index.json` |
-| `hermes/` | Hermes(로컬 모델) 매일 업데이트 스킬·스크립트 원본 |
+| `hermes/` | 매일 업데이트 스크립트(daily, advisories, candidates, summarize, lint, publish) |
 | `research/` | 조사 로그·백로그·제외 목록 (사이트에는 안 나감) |
 | `.claude/agents/` | 서브에이전트 정의 |
 | `.claude/skills/` | 작업 절차(스킬) |
@@ -78,11 +78,14 @@ npm run validate   # 스키마 + 타입 검사
 npm run build      # 정적 빌드 → dist/
 ```
 
-## 매일 자동 업데이트 (Hermes)
+## 매일 자동 업데이트 (Hermes, 에이전트 없이 스크립트)
 
-로컬 Hermes 에이전트(Ollama gemma4)가 매일 03:00 에 `hermes/` 의 스킬로 조사·갱신한다.
-- 사전 스크립트가 HF·GitHub·npm 데이터를 결정적으로 모아 오늘의 작업 목록을 만들고, 에이전트는 그 범위 안에서만 파일을 고친다.
-- `hermes/publish.sh` 가 변경 범위(`content/`, `research/`)와 `npm run validate && npm run build` 를 확인한 뒤에만 main 에 push → Pages 자동 배포.
-- 로컬 모델은 오류 가능성이 있으므로, Claude Code 세션의 `/refresh-hub` 때 `research/log/*-hermes.md` 를 읽고 `fact-checker` 로 재검증한다.
+Hermes cron(매일 03:00, `--no-agent`)이 `hermes/run.sh` → `hermes/daily.mjs` 를 실행한다. **로컬 모델은 도구를 쓰는 에이전트가 아니라 "릴리스 노트 한 문장 요약 함수"로만 쓰인다**(파일은 스크립트가 쓴다). 이전에 로컬 모델이 파일을 직접 편집하게 했을 때 frontmatter 손상·규칙 위반이 반복돼 이 구조로 바꿨다.
+- 버전·보안 이슈: 저장소 5개의 GitHub Releases·Security Advisories 를 `content/advisories/` 에 병합(보안 권고 제목은 원문 그대로, 릴리스 요약만 한국어 한 문장).
+- 재검증: 저장소가 정상(archived 아님)이면 `verifiedAt` 만 갱신. archived·조회 실패는 로그에만.
+- 신규 모델·라이브러리: **항목을 만들지 않고** `research/backlog.md` 에 후보로 적립. 실제 추가는 Claude Code `/refresh-hub`(또는 `/add-model`, `/add-resource`)가 검증 후 수행.
+- `hermes/publish.sh` 가 변경 범위(`content/`, `research/`) → `hermes/lint.mjs` → `npm run validate` → 빌드를 통과해야만 main 에 push(→ Pages 자동 배포). 실패하면 변경을 `hermes/.failed/<날짜>/` 에 보관하고 작업 트리를 되돌린다.
+- 로컬 모델 요약은 오류 가능성이 있어, `/refresh-hub` 때 `research/log/*-hermes.md` 의 변경 파일을 `fact-checker` 로 재검증한다.
+- 수동 실행: `node hermes/daily.mjs --dry` (배포 없이 결과 확인) / `hermes cron run dc7a7670bbb3`.
 
 main 브랜치에 push 하면 `.github/workflows/deploy.yml` 이 Pages 로 배포한다.

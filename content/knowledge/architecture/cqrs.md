@@ -6,7 +6,7 @@ group: app-structure
 level: advanced
 summary: 데이터를 바꾸는 명령(command) 모델과 읽는 조회(query) 모델을 분리해, 각각을 따로 설계·최적화·확장하는 패턴.
 tags: [ddd, read-model, eventual-consistency, event-sourcing]
-related: [architecture/event-driven, architecture/layered-clean-hexagonal, distributed-systems/transactional-outbox, distributed-systems/idempotency]
+related: [architecture/event-driven, architecture/layered-clean-hexagonal, distributed-systems/transactional-outbox, distributed-systems/idempotency, architecture/event-sourcing]
 sources:
   - https://martinfowler.com/bliki/CQRS.html
   - https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs

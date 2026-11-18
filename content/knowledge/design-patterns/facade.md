@@ -6,7 +6,7 @@ group: structural
 level: beginner
 summary: 여러 객체로 이뤄진 복잡한 서브시스템 앞에 필요한 기능만 묶은 단순한 진입점을 두는 구조 패턴.
 tags: [gof, oop, encapsulation, layering]
-related: [design-patterns/adapter, design-patterns/decorator, architecture/hexagonal]
+related: [design-patterns/adapter, design-patterns/decorator, architecture/hexagonal, design-patterns/mediator, design-patterns/singleton]
 sources:
   - https://refactoring.guru/design-patterns/facade
   - https://en.wikipedia.org/wiki/Design_Patterns

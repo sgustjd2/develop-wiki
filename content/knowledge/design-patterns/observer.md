@@ -6,7 +6,7 @@ group: behavioral
 level: beginner
 summary: 한 객체의 변화나 이벤트를 구독한 여러 객체에 자동으로 알리는 행위 패턴. 발행자는 구독자 구체 타입을 모른다.
 tags: [gof, oop, event, reactive]
-related: [design-patterns/command, principles/solid]
+related: [design-patterns/command, principles/solid, design-patterns/mediator]
 sources:
   - https://refactoring.guru/design-patterns/observer
   - https://en.wikipedia.org/wiki/Design_Patterns

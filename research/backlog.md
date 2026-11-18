@@ -28,3 +28,16 @@
 | https://github.com/vercel-labs/ui | resources/TypeScript | ★5622 · license=Apache-2.0 · A library of behaviors for agents to build the next generation of user interfaces. (Hermes 후보, 검증 전) | 2026-11-18 |
 | https://github.com/Leonxlnx/earshot | resources/Python | ★5119 · license=MIT · Ears for coding agents: let AI hear, review and make sound. CPU-only, open source. (Hermes 후보, 검증 전) | 2026-11-18 |
 | https://github.com/mw00/project-maya | resources/C++ | ★3005 · license=MIT · Run GLM-5.3 (744B), GLM-5.3-Flash (321B), DeepSeek-V4.1-Flash (748B) and MiniMax-M3.1-Flash (428B) o (Hermes 후보, 검증 전) | 2026-11-18 |
+| SolidStart, Remix 3, Analog | frontend/meta-framework | SolidStart 는 Solid 2.0 대응 확인 필요, Remix 3 는 React 무관 프레임워크로 별도 평가 | 2026-11-18 |
+| Ark UI, Chakra UI v3, HeroUI v3, Headless UI | frontend/ui-kit | 다음 survey 후보 | 2026-11-18 |
+| Nx | frontend/build-tooling | Turborepo 와 겹치지만 생성기·경계 규칙 차별점 | 2026-11-18 |
+| Zod, Frontend Masters(Master.dev) | frontend | 카테고리 결정 필요 | 2026-11-18 |
+| Authlib, OpenIddict, go-oidc, Exposed, sqlc, ent, SeaORM, SQLModel, Hot Chocolate, gqlgen, Strawberry | backend | 언어별 공백 채우기 | 2026-11-18 |
+| Caddy, Tempo, Mimir, Pulumi, Flux, Kustomize, Podman, Traefik | backend/infra·observability | 현재는 다른 항목 안에서만 언급 | 2026-11-18 |
+| Inspect AI, Antigravity CLI, DSPy | ai | evaluation / coding-agent / agent-framework 후보 | 2026-11-18 |
+| Qwen3-VL-Embedding/Reranker, Step3-VL-10B, Qwen-Image-2512, nomic-embed-text-v2, arctic-embed-l-v2 | models | 다음 회차 후보 | 2026-11-18 |
+| Argo Workflows, Plotly | data-ml | 현재는 다른 항목 안에서만 언급 | 2026-11-18 |
+| Railway, Serverless Framework | cloud | 다른 항목 안에서만 언급 | 2026-11-18 |
+| skip list, LSM tree, consistent hashing, MST, SCC, HyperLogLog, P/NP | knowledge/algorithms | 다음 노트 후보 | 2026-11-18 |
+| 시스템 콜, WebSocket/SSE, Service Worker, CSP, 세마포어, WebAssembly | knowledge/cs-fundamentals | 다음 노트 후보 | 2026-11-18 |
+| RBAC/ABAC, 비밀번호 저장, SSRF, 위협 모델링, 회로 차단기, EXPLAIN, 낙관적·비관적 잠금 | knowledge | 보안·성능·데이터 다음 노트 | 2026-11-18 |

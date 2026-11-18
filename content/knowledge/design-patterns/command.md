@@ -6,7 +6,7 @@ group: behavioral
 level: intermediate
 summary: 요청(실행할 작업과 그 인자)을 객체로 만들어, 큐에 넣거나 기록하거나 되돌릴 수 있게 하는 행위 패턴.
 tags: [gof, oop, undo, queue]
-related: [design-patterns/strategy, design-patterns/observer]
+related: [design-patterns/strategy, design-patterns/observer, design-patterns/chain-of-responsibility, design-patterns/mediator]
 sources:
   - https://refactoring.guru/design-patterns/command
   - https://en.wikipedia.org/wiki/Design_Patterns

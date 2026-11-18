@@ -56,6 +56,54 @@ export const DOMAINS = {
       learning: { label: '레퍼런스·학습', desc: '논문 정리, 강의, 리더보드' },
     },
   },
+  mobile: {
+    label: '모바일',
+    desc: 'iOS·Android 네이티브와 크로스플랫폼 앱 개발',
+    categories: {
+      ios: { label: 'iOS 네이티브', desc: 'Swift, SwiftUI, UIKit, Xcode 생태계' },
+      android: { label: 'Android 네이티브', desc: 'Kotlin, Jetpack Compose, Android Studio 생태계' },
+      'cross-platform': { label: '크로스플랫폼', desc: 'Flutter, React Native, Kotlin Multiplatform 등' },
+      'mobile-backend': { label: '모바일 백엔드·서비스', desc: '푸시, 인증, 원격 설정, 분석, 크래시 리포트' },
+      'mobile-testing': { label: '빌드·테스트·배포', desc: 'UI 테스트, CI 빌드, 스토어 배포 자동화' },
+      learning: { label: '레퍼런스·학습', desc: '공식 가이드, 휴먼 인터페이스 가이드라인' },
+    },
+  },
+  'data-ml': {
+    label: '데이터·ML',
+    desc: '데이터 엔지니어링·분석·머신러닝 기반 도구',
+    categories: {
+      processing: { label: '데이터 처리', desc: '배치·분산 처리, 데이터프레임 (Spark, Polars, pandas)' },
+      orchestration: { label: '워크플로 오케스트레이션', desc: '파이프라인 스케줄링 (Airflow, Dagster, Prefect)' },
+      'warehouse-lake': { label: '웨어하우스·레이크하우스', desc: '분석용 저장소와 테이블 포맷 (BigQuery, Iceberg, Delta)' },
+      transform: { label: '변환·품질', desc: 'SQL 변환, 데이터 품질·계약 (dbt, Great Expectations)' },
+      'analytics-bi': { label: '분석·BI·시각화', desc: '대시보드, 노트북, 시각화 라이브러리' },
+      ml: { label: '머신러닝 프레임워크', desc: 'PyTorch, JAX, scikit-learn, 실험 관리' },
+      learning: { label: '레퍼런스·학습', desc: '문서, 강의, 데이터셋' },
+    },
+  },
+  cloud: {
+    label: '클라우드',
+    desc: '클라우드 플랫폼, PaaS·엣지, BaaS, 서버리스',
+    categories: {
+      hyperscaler: { label: '퍼블릭 클라우드', desc: 'AWS, Google Cloud, Azure 핵심 서비스' },
+      'paas-edge': { label: 'PaaS·엣지', desc: 'Vercel, Cloudflare, Netlify, Fly.io 등 배포 플랫폼' },
+      baas: { label: 'BaaS', desc: 'Supabase, Firebase, Appwrite 등 백엔드 서비스' },
+      serverless: { label: '서버리스·컨테이너 실행', desc: 'Lambda, Cloud Run, 서버리스 프레임워크' },
+      learning: { label: '레퍼런스·학습', desc: '아키텍처 센터, 자격증 자료' },
+    },
+  },
+  devtools: {
+    label: '개발 도구',
+    desc: '버전 관리, 에디터, 터미널, 개발 환경 같은 일상 도구',
+    categories: {
+      'version-control': { label: '버전 관리·협업', desc: 'Git, GitHub, GitLab, 코드 리뷰 도구' },
+      'editor-ide': { label: '에디터·IDE', desc: 'VS Code, JetBrains, Neovim, Zed' },
+      terminal: { label: '터미널·셸', desc: '셸, 터미널 에뮬레이터, CLI 유틸리티' },
+      environment: { label: '개발 환경·패키지', desc: '버전 관리자, 컨테이너 개발 환경, 패키지 매니저' },
+      'api-client': { label: 'API 클라이언트·디버깅', desc: 'HTTP 클라이언트, 프록시, 디버거' },
+      docs: { label: '문서화', desc: '정적 문서 사이트, 다이어그램, API 문서 생성' },
+    },
+  },
 } as const satisfies Record<string, { label: string; desc: string; categories: Record<string, Cat> }>;
 
 export type DomainId = keyof typeof DOMAINS;
@@ -142,7 +190,17 @@ export const KNOWLEDGE = {
   'ai-patterns': {
     label: 'AI 엔지니어링 패턴',
     desc: 'RAG 패턴, 에이전트 패턴, 프롬프트·평가 설계',
-    groups: { rag: 'RAG', agent: '에이전트', prompting: '프롬프트', evaluation: '평가' },
+    groups: { rag: 'RAG', agent: '에이전트', prompting: '프롬프트', evaluation: '평가', safety: '안전·가드레일' },
+  },
+  algorithms: {
+    label: '자료구조·알고리즘',
+    desc: '복잡도, 핵심 자료구조, 정렬·탐색·그래프·DP',
+    groups: { 'data-structure': '자료구조', algorithm: '알고리즘', complexity: '복잡도·기법' },
+  },
+  'cs-fundamentals': {
+    label: 'CS 기초',
+    desc: '운영체제, 네트워크, 웹 동작 원리, 동시성, 컴퓨터 구조',
+    groups: { os: '운영체제', network: '네트워크', web: '웹 동작 원리', concurrency: '동시성', architecture: '컴퓨터 구조', compiler: '언어·컴파일러' },
   },
 } as const satisfies Record<string, { label: string; desc: string; groups: Record<string, string> }>;
 

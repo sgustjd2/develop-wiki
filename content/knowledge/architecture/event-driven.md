@@ -6,7 +6,7 @@ group: system-style
 level: intermediate
 summary: 구성 요소가 서로를 직접 호출하지 않고, 상태 변화를 이벤트로 발행·구독해 느슨하게 연결되는 시스템 스타일.
 tags: [messaging, pub-sub, async, eventual-consistency]
-related: [architecture/cqrs, distributed-systems/saga, distributed-systems/transactional-outbox, distributed-systems/idempotency, design-patterns/observer]
+related: [architecture/cqrs, distributed-systems/saga, distributed-systems/transactional-outbox, distributed-systems/idempotency, design-patterns/observer, architecture/event-sourcing]
 sources:
   - https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven
   - https://martinfowler.com/articles/201701-event-driven.html

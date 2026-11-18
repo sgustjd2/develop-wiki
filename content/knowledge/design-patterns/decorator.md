@@ -6,7 +6,7 @@ group: structural
 level: intermediate
 summary: 같은 인터페이스를 구현한 래퍼로 객체를 감싸, 원본을 고치지 않고 실행 중에 기능을 덧붙이는 구조 패턴.
 tags: [gof, oop, composition]
-related: [design-patterns/adapter, design-patterns/facade, design-patterns/proxy, principles/solid]
+related: [design-patterns/adapter, design-patterns/facade, design-patterns/proxy, principles/solid, design-patterns/composite, design-patterns/chain-of-responsibility]
 sources:
   - https://refactoring.guru/design-patterns/decorator
   - https://en.wikipedia.org/wiki/Design_Patterns

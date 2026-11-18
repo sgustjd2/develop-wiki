@@ -14,3 +14,6 @@
 | Raft 합의, 논리 시계(Lamport·벡터·HLC), CRDT, 복제와 쿼럼, gossip | knowledge/distributed-systems | 다음 노트 | 2026-11-18 |
 | 벌크헤드, OAuth·OIDC 흐름(PKCE), MFA·패스키, 파일 업로드 보안, MVCC·VACUUM, DB 기반 잡 큐(SKIP LOCKED) | knowledge | 성능·보안·데이터 다음 노트 | 2026-11-18 |
 | Web Worker·SharedArrayBuffer, HTTP/3·QUIC·WebTransport, 파일 디스크립터·epoll | knowledge/cs-fundamentals | 다음 노트 | 2026-11-18 |
+| ComposioHQ/awesome-claude-skills, hesreallyhim/awesome-claude-code, VoltAgent/awesome-agent-skills, Shubhamsaboo/awesome-llm-apps | oss/awesome-lists | 에이전트·LLM 관련 큐레이션 저장소 | 2026-11-18 |
+| huggingface/skills, anthropics/knowledge-work-plugins, trailofbits/skills, grafana/mcp-grafana, Notion·Cloudflare·MongoDB·Terraform·Stripe·Atlassian MCP, Docker MCP gateway | oss | 스킬·MCP 서버 추가 후보 | 2026-11-18 |
+| ToolJet, boost-devs/ai-tech-interview, ksundong/backend-interview-question | oss | 셀프 호스팅·학습 저장소 후보 | 2026-11-18 |

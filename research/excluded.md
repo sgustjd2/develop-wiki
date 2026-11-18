@@ -30,3 +30,7 @@
 | KKKKhazix/agent-autoloop | ai | 생성 2주 개인 프로젝트, 분류 체계에 맞는 자리 없음 | 2026-11-18 |
 | vercel-labs/ui | frontend | 베타(0.1.0-beta), 정식화 후 재검토 | 2026-11-18 |
 | Leonxlnx/earshot | ai | 생성 1개월, 니치한 오디오 분석 CLI | 2026-11-18 |
+| MinIO | oss/self-hosted | 저장소 archived(2026-04), 유지보수 중단 | 2026-11-18 |
+| openai/skills | oss/agent-skills | README 상 deprecated, openai/plugins 로 이전 | 2026-11-18 |
+| browserbase/mcp-server-browserbase | oss/mcp-servers | 저장소 archived | 2026-11-18 |
+| gyoogle/tech-interview-for-developer 외 한국어 면접 저장소 3개 | oss/learning-repos | 2024~2025 이후 갱신 정체 | 2026-11-18 |

@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Filter from '../../components/Filter.astro';
+import { COMMERCIAL, MODEL_GROUPS, THINKING, sizeBucket } from '../../taxonomy';
+import { fmtDate, href } from '../../lib';
+
+type T = Record<string, { label: string; desc: string }>;
+const all = (await getCollection('models')).sort((a, b) => +b.data.releaseDate - +a.data.releaseDate);
+
+const groups = Object.entries(MODEL_GROUPS).map(([gid, g]) => ({
+  id: gid,
+  ...g,
+  types: Object.entries(g.types as T).map(([tid, t]) => ({ id: tid, ...t, items: all.filter((m) => m.data.type === tid) })),
+}));
+
+const chips = [
+  { facet: 'thinking:native', label: '추론(항상)' },
+  { facet: 'thinking:hybrid', label: '추론(하이브리드)' },
+  { facet: 'commercial:allowed', label: '상업 이용 가능' },
+  { facet: 'size:tiny', label: '<3B' },
+  { facet: 'size:small', label: '3–15B' },
+  { facet: 'size:medium', label: '15–70B' },
+  { facet: 'size:large', label: '70B+' },
+];
+const sizeKey = (p?: number) => (p === undefined ? 'na' : p < 3 ? 'tiny' : p < 15 ? 'small' : p < 70 ? 'medium' : 'large');
+---
+<Base title="오픈 웨이트 모델" current="models" description="오픈 웨이트 모델을 용도·모달리티·판단형 여부로 분류">
+  <div class="page-head">
+    <h1>오픈 웨이트 모델 <span class="meta">{all.length}</span></h1>
+    <p>모델마다 주 분류(type)를 하나만 붙이고, 추론 방식·크기·라이선스는 필터로 고릅니다. 분류 규칙은 <a href={href('taxonomy/')}>분류 기준</a>에.</p>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="모델 분류">
+      {groups.map((g) => (
+        <>
+          <div class="label">{g.label}</div>
+          {g.types.map((t) => t.items.length ? <a href={`#${t.id}`}>{t.label} <span>{t.items.length}</span></a> : <span class="off">{t.label} <span>0</span></span>)}
+        </>
+      ))}
+    </aside>
+    <div>
+      <Filter chips={chips} placeholder="모델명, 조직, 용도로 검색" />
+      {groups.flatMap((g) =>
+        g.types.filter((t) => t.items.length > 0).map((t) => (
+          <section class="section" id={t.id} data-section>
+            <div class="section-head"><h2>{g.label} · {t.label}</h2><span class="count" data-count>{t.items.length}</span></div>
+            <p class="section-desc">{t.desc}</p>
+            <div class="grid">
+              {t.items.map(({ id, data: d }) => (
+                <a
+                  class="card"
+                  href={href(`models/${id}/`)}
+                  data-item
+                  data-search={[d.name, d.org, d.family, d.summary, ...d.useCases].join(' ').toLowerCase()}
+                  data-facets={`thinking:${d.thinking} commercial:${d.commercialUse} size:${sizeKey(d.paramsB)}`}
+                >
+                  <span class="title">{d.name}</span>
+                  <span class="host">{d.org} · {fmtDate(d.releaseDate)}</span>
+                  <span class="desc">{d.summary}</span>
+                  <span class="badges">
+                    {d.thinking !== 'none' && <span class="badge strong">{THINKING[d.thinking as keyof typeof THINKING]}</span>}
+                    {d.paramsB && <span class="badge">{d.activeParamsB ? `${d.paramsB}B (활성 ${d.activeParamsB}B)` : `${d.paramsB}B`}</span>}
+                    {sizeBucket(d.paramsB) && <span class="badge">{sizeBucket(d.paramsB)}</span>}
+                    <span class="badge">{d.license}</span>
+                    <span class="badge">{COMMERCIAL[d.commercialUse as keyof typeof COMMERCIAL]}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )),
+      )}
+    </div>
+  </div>
+</Base>

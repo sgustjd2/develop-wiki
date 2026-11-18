@@ -1,0 +1,42 @@
+---
+import { href } from '../lib';
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; current?: string }
+const { title, description = '프론트엔드·백엔드·AI 기술과 오픈 웨이트 모델, 개발 지식을 분류해 정리한 개발자 허브', current } = Astro.props;
+
+const nav = [
+  { id: 'frontend', label: '프론트엔드', path: 'frontend/' },
+  { id: 'backend', label: '백엔드', path: 'backend/' },
+  { id: 'ai', label: 'AI', path: 'ai/' },
+  { id: 'languages', label: '언어별', path: 'languages/' },
+  { id: 'models', label: '오픈 웨이트 모델', path: 'models/' },
+  { id: 'knowledge', label: '개발 지식', path: 'knowledge/' },
+  { id: 'taxonomy', label: '분류 기준', path: 'taxonomy/' },
+];
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · dev.hub` : 'dev.hub — 개발자 레퍼런스 허브'}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href={href()}>dev<span>.</span>hub</a>
+      <nav aria-label="주요 메뉴">
+        {nav.map((n) => (
+          <a href={href(n.path)} aria-current={current === n.id ? 'page' : undefined}>{n.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <p>dev.hub · Claude Code 에이전트 하네스로 조사·분류하고 사람이 검토합니다. 오류 제보는 GitHub 이슈로.</p>
+    </footer>
+  </body>
+</html>

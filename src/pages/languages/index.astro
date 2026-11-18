@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { LANGUAGES } from '../../taxonomy';
+import { href } from '../../lib';
+
+const all = await getCollection('resources');
+const langs = Object.entries(LANGUAGES).map(([id, label]) => ({ id, label, n: all.filter((e) => e.data.languages.includes(id)).length }));
+---
+<Base title="언어별" current="languages" description="개발 언어별로 모아 본 도구·라이브러리">
+  <div class="page-head">
+    <h1>언어별 보기</h1>
+    <p>프론트엔드·백엔드·AI 구분 없이 같은 언어로 쓰는 도구를 모읍니다. DB·표준·SaaS 처럼 언어와 무관한 항목은 빠집니다.</p>
+  </div>
+  <div class="home-grid">
+    {langs.map((l) => (
+      <a class="card" href={href(`languages/${l.id}/`)}>
+        <span class="num">{l.n}</span>
+        <span class="title">{l.label}</span>
+      </a>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,10 @@
+name: Tailwind CSS
+url: https://tailwindcss.com
+repo: https://github.com/tailwindlabs/tailwindcss
+domain: frontend
+category: styling
+description: 유틸리티 클래스로 마크업에서 바로 스타일을 짜는 CSS 프레임워크.
+pricing: oss
+tags: [css, utility-first]
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

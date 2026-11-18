@@ -1,0 +1,9 @@
+name: Claude Code
+url: https://www.claude.com/product/claude-code
+domain: ai
+category: coding-agent
+description: 터미널·IDE·데스크톱에서 코드베이스를 읽고 수정하는 Anthropic의 에이전트형 코딩 도구.
+pricing: paid
+tags: [agent, cli]
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

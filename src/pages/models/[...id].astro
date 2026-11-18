@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { ARCHITECTURES, COMMERCIAL, KOREAN, MODEL_GROUPS, MODEL_TYPE_TO_GROUP, THINKING, modelTypeLabel } from '../../taxonomy';
+import { fmtDate, href, hostOf } from '../../lib';
+
+export async function getStaticPaths() {
+  return (await getCollection('models')).map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { data: d } = Astro.props.entry;
+const group = MODEL_GROUPS[MODEL_TYPE_TO_GROUP[d.type]];
+const list = (title: string, xs: string[]) => ({ title, xs });
+const blocks = [list('이럴 때 쓴다', d.useCases), list('강점', d.strengths), list('한계·주의', d.limitations)].filter((b) => b.xs.length);
+---
+<Base title={d.name} description={d.summary} current="models">
+  <article class="detail prose">
+    <p class="meta"><a href={href('models/')}>오픈 웨이트 모델</a> / {group.label} / {modelTypeLabel(d.type)}</p>
+    <h1>{d.name}</h1>
+    <p>{d.summary}</p>
+    <dl class="facts">
+      <dt>조직</dt><dd>{d.org}{d.family && ` · ${d.family}`}</dd>
+      <dt>분류</dt><dd>{group.label} › {modelTypeLabel(d.type)}</dd>
+      <dt>추론(thinking)</dt><dd>{THINKING[d.thinking as keyof typeof THINKING]}</dd>
+      <dt>입력 → 출력</dt><dd>{d.modalities.input.join(', ')} → {d.modalities.output.join(', ')}</dd>
+      <dt>아키텍처</dt><dd>{ARCHITECTURES[d.architecture as keyof typeof ARCHITECTURES]}</dd>
+      {d.paramsB && (<><dt>파라미터</dt><dd>{d.paramsB}B{d.activeParamsB && ` (활성 ${d.activeParamsB}B)`}</dd></>)}
+      {d.contextLength && (<><dt>컨텍스트</dt><dd>{d.contextLength.toLocaleString()} 토큰</dd></>)}
+      <dt>라이선스</dt><dd>{d.license} · {COMMERCIAL[d.commercialUse as keyof typeof COMMERCIAL]}</dd>
+      <dt>한국어</dt><dd>{KOREAN[d.korean as keyof typeof KOREAN]}</dd>
+      <dt>공개일</dt><dd>{fmtDate(d.releaseDate)}</dd>
+      {d.capabilities.length > 0 && (<><dt>기능</dt><dd>{d.capabilities.join(', ')}</dd></>)}
+      {d.huggingface && (<><dt>Hugging Face</dt><dd><a href={d.huggingface} target="_blank" rel="noopener">{d.huggingface.replace('https://huggingface.co/', '')}</a></dd></>)}
+    </dl>
+    {blocks.map((b) => (<><h2>{b.title}</h2><ul>{b.xs.map((x) => <li>{x}</li>)}</ul></>))}
+    <h2>출처</h2>
+    <ul>{d.sources.map((s) => <li><a href={s} target="_blank" rel="noopener">{hostOf(s)}</a> — <code>{s}</code></li>)}</ul>
+    <p class="meta">마지막 검증 {fmtDate(d.verifiedAt)}</p>
+  </article>
+</Base>

@@ -1,0 +1,26 @@
+name: BGE-M3
+org: BAAI
+family: BGE
+type: embedding
+thinking: none
+modalities: { input: [text], output: [vector] }
+architecture: dense
+paramsB: 0.568
+contextLength: 8192
+license: MIT
+commercialUse: allowed
+korean: unknown
+releaseDate: 2024-01-30
+huggingface: https://huggingface.co/BAAI/bge-m3
+summary: 100개 이상 언어를 지원하는 다국어 임베딩 모델. dense·sparse·multi-vector 검색을 한 모델로 낸다.
+useCases:
+  - 다국어 RAG 문서 검색
+  - 하이브리드(dense+sparse) 검색
+strengths:
+  - 최대 8192 토큰 긴 문서 임베딩
+  - MIT 라이선스
+capabilities: [multilingual, long-context]
+sources:
+  - https://huggingface.co/BAAI/bge-m3
+  - https://arxiv.org/abs/2402.03216
+verifiedAt: 2026-11-18

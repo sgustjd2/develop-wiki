@@ -1,0 +1,11 @@
+name: Hono
+url: https://hono.dev
+repo: https://github.com/honojs/hono
+domain: backend
+category: web-framework
+description: Web 표준 기반의 가벼운 웹 프레임워크. Node, Bun, Deno, 엣지 런타임에서 그대로 돈다.
+pricing: oss
+tags: [typescript, edge]
+languages: [typescript]
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Filter from '../../components/Filter.astro';
+import { DOMAINS, DOMAIN_IDS, LANGUAGES, type LanguageId } from '../../taxonomy';
+import { hostOf, href } from '../../lib';
+
+export function getStaticPaths() {
+  return Object.keys(LANGUAGES).map((lang) => ({ params: { lang } }));
+}
+const lang = Astro.params.lang as LanguageId;
+const all = (await getCollection('resources', (e) => e.data.languages.includes(lang))).sort((a, b) =>
+  a.data.name.localeCompare(b.data.name),
+);
+const sections = DOMAIN_IDS.map((id) => ({ id, label: DOMAINS[id].label, items: all.filter((e) => e.data.domain === id) })).filter(
+  (s) => s.items.length,
+);
+const catLabel = (dom: string, cat: string) =>
+  (DOMAINS[dom as keyof typeof DOMAINS].categories as Record<string, { label: string }>)[cat].label;
+---
+<Base title={LANGUAGES[lang]} current="languages">
+  <div class="page-head">
+    <p class="meta"><a href={href('languages/')}>언어별</a></p>
+    <h1>{LANGUAGES[lang]} <span class="meta">{all.length}</span></h1>
+  </div>
+  <div class="directory">
+    <aside class="sidebar" aria-label="도메인">
+      <div class="label">도메인</div>
+      {sections.map((s) => <a href={`#${s.id}`}>{s.label} <span>{s.items.length}</span></a>)}
+      <div class="label">다른 언어</div>
+      {Object.entries(LANGUAGES).filter(([k]) => k !== lang).map(([k, l]) => <a href={href(`languages/${k}/`)}>{l}</a>)}
+    </aside>
+    <div>
+      {all.length === 0 ? <p class="empty">아직 등록된 항목이 없습니다.</p> : <Filter />}
+      {sections.map((s) => (
+        <section class="section" id={s.id} data-section>
+          <div class="section-head"><h2>{s.label}</h2><span class="count" data-count>{s.items.length}</span></div>
+          <div class="grid">
+            {s.items.map(({ data: d }) => (
+              <a class="card" href={d.url} target="_blank" rel="noopener" data-item data-search={[d.name, d.description, ...d.tags].join(' ').toLowerCase()}>
+                <span class="title">{d.name}</span>
+                <span class="host">{hostOf(d.url)}</span>
+                <span class="desc">{d.description}</span>
+                <span class="badges"><span class="badge">{catLabel(d.domain, d.category)}</span></span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>

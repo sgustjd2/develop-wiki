@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { DOMAINS, DOMAIN_IDS, MODEL_GROUPS } from '../taxonomy';
+import { href } from '../lib';
+
+const resources = await getCollection('resources');
+const models = await getCollection('models');
+const knowledge = await getCollection('knowledge');
+
+const cards = [
+  ...DOMAIN_IDS.map((id) => ({
+    path: `${id}/`, label: DOMAINS[id].label, desc: DOMAINS[id].desc,
+    n: resources.filter((r) => r.data.domain === id).length,
+  })),
+  { path: 'models/', label: '오픈 웨이트 모델', desc: Object.values(MODEL_GROUPS).map((g) => g.label).join(' · '), n: models.length },
+  { path: 'knowledge/', label: '개발 지식', desc: '디자인 패턴 · 아키텍처 · 설계 원칙 · 분산 시스템', n: knowledge.length },
+];
+---
+<Base>
+  <div class="page-head">
+    <h1>개발자를 위한 레퍼런스 허브</h1>
+    <p>프론트엔드·백엔드·AI 기술, 오픈 웨이트 모델, 개발 지식을 한 가지 분류 체계로 정리합니다.</p>
+  </div>
+  <div class="home-grid">
+    {cards.map((c) => (
+      <a class="card" href={href(c.path)}>
+        <span class="num">{c.n}</span>
+        <span class="title">{c.label}</span>
+        <span class="desc">{c.desc}</span>
+      </a>
+    ))}
+  </div>
+</Base>

@@ -1,0 +1,11 @@
+name: Astro
+url: https://astro.build
+repo: https://github.com/withastro/astro
+domain: frontend
+category: meta-framework
+description: 콘텐츠 중심 사이트에 강한 프레임워크. 기본은 JS 없는 정적 HTML이고 필요한 곳만 아일랜드로 붙인다.
+pricing: oss
+tags: [ssg, islands, content]
+languages: [typescript]
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

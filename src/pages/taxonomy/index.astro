@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { DOMAINS, KNOWLEDGE, LANGUAGES, MODEL_GROUPS, THINKING } from '../../taxonomy';
+
+type T = Record<string, { label: string; desc: string }>;
+---
+<Base title="분류 기준" current="taxonomy" description="dev.hub 의 카테고리·모델 분류 체계">
+  <article class="detail prose">
+    <h1>분류 기준</h1>
+    <p>모든 항목은 <code>src/taxonomy.ts</code> 한 파일의 분류 체계를 따르고, 빌드 시 스키마로 검증됩니다.</p>
+
+    <h2>오픈 웨이트 모델</h2>
+    <p>모델마다 <strong>주 분류(type) 하나</strong>를 붙입니다. 추론 방식, 크기, 라이선스, 모달리티는 별도 속성으로 둡니다.</p>
+    <table>
+      <thead><tr><th>대분류</th><th>주 분류</th><th>설명</th></tr></thead>
+      <tbody>
+        {Object.values(MODEL_GROUPS).flatMap((g) =>
+          Object.values(g.types as T).map((t, i) => (
+            <tr><td>{i === 0 ? g.label : ''}</td><td>{t.label}</td><td>{t.desc}</td></tr>
+          )),
+        )}
+      </tbody>
+    </table>
+    <h2>추론(thinking) 속성</h2>
+    <ul>
+      {Object.entries(THINKING).map(([k, v]) => <li><code>{k}</code> — {v}</li>)}
+    </ul>
+    <p>항상 사고 과정을 거치는 모델만 <strong>추론 LLM</strong>으로 분류합니다. 켜고 끌 수 있는 하이브리드 모델은 텍스트/코드 LLM으로 두고 thinking 속성으로 구분합니다.</p>
+
+    <h2>리소스 카테고리</h2>
+    {Object.values(DOMAINS).map((d) => (
+      <>
+        <h3>{d.label}</h3>
+        <ul>{Object.values(d.categories as T).map((c) => <li><strong>{c.label}</strong> — {c.desc}</li>)}</ul>
+      </>
+    ))}
+
+    <h2>개발 언어</h2>
+    <p>{Object.values(LANGUAGES).join(' · ')}</p>
+    <p>그 언어로 쓰는 SDK·라이브러리·프레임워크에만 붙입니다. DB·표준·SaaS 처럼 언어와 무관하면 비워 둡니다.</p>
+
+    <h2>개발 지식</h2>
+    <ul>{Object.values(KNOWLEDGE).map((k) => <li><strong>{k.label}</strong> — {k.desc}</li>)}</ul>
+  </article>
+</Base>

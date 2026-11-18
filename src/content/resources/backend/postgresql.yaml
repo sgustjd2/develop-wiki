@@ -1,0 +1,11 @@
+name: PostgreSQL
+url: https://www.postgresql.org
+domain: backend
+category: database
+description: 확장성이 뛰어난 오픈소스 RDBMS. JSONB, 전문 검색, pgvector 같은 확장까지 폭넓게 지원한다.
+pricing: oss
+tags: [rdbms, sql]
+languages: [sql]
+koreanDocs: true
+addedAt: 2026-11-18
+verifiedAt: 2026-11-18

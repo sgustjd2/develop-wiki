@@ -1,0 +1,28 @@
+name: Qwen3-30B-A3B
+org: Alibaba Qwen
+family: Qwen3
+type: text-llm
+thinking: hybrid
+modalities: { input: [text], output: [text] }
+architecture: moe
+paramsB: 30.5
+activeParamsB: 3.3
+license: Apache-2.0
+commercialUse: allowed
+korean: unknown
+releaseDate: 2025-04-29
+huggingface: https://huggingface.co/Qwen/Qwen3-30B-A3B
+summary: 활성 파라미터 3B대의 MoE 범용 모델. 하나의 모델에서 thinking 모드를 켜고 끌 수 있다.
+useCases:
+  - 단일 GPU급 환경의 범용 챗봇·에이전트
+  - 상황에 따라 빠른 응답과 깊은 추론을 전환해야 하는 서비스
+strengths:
+  - 활성 파라미터가 작아 같은 총 크기 대비 추론이 빠름
+  - Apache-2.0
+limitations:
+  - 총 파라미터는 30B급이라 메모리는 그만큼 필요
+capabilities: [tool-calling, multilingual]
+sources:
+  - https://huggingface.co/Qwen/Qwen3-30B-A3B
+  - https://qwenlm.github.io/blog/qwen3/
+verifiedAt: 2026-11-18

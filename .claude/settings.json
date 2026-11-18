@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enabledMcpjsonServers": ["huggingface", "context7", "playwright"],
+  "permissions": {
+    "allow": [
+      "Bash(npm run validate)",
+      "Bash(npm run build)",
+      "Bash(npx astro sync)",
+      "Bash(npx astro check)",
+      "Bash(gh api repos/*)",
+      "Bash(curl -s https://huggingface.co/api/*)",
+      "Bash(curl -s https://api.npmjs.org/*)",
+      "WebFetch(domain:huggingface.co)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:npmjs.com)",
+      "WebSearch",
+      "mcp__huggingface",
+      "mcp__context7"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/validate-content.mjs\"", "timeout": 60 }
+        ]
+      }
+    ]
+  }
+}

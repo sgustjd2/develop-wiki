@@ -1,0 +1,61 @@
+---
+/**
+ * 검색창 + 칩 필터. 같은 페이지의 [data-item] 요소를 거른다.
+ *  - data-search: 검색 대상 텍스트
+ *  - data-facets: "key:value key:value" (같은 key 칩끼리는 OR, 서로 다른 key 는 AND)
+ * [data-section] 안의 항목이 모두 숨겨지면 섹션도 숨긴다.
+ */
+interface Props { chips?: { facet: string; label: string }[]; placeholder?: string }
+const { chips = [], placeholder = '이름, 설명, 태그로 검색' } = Astro.props;
+---
+<div class="toolbar" data-filter>
+  <input class="search" type="search" placeholder={placeholder} aria-label="검색" />
+  {chips.length > 0 && (
+    <div class="chips" role="group" aria-label="필터">
+      {chips.map((c) => <button type="button" class="chip" data-facet={c.facet} aria-pressed="false">{c.label}</button>)}
+    </div>
+  )}
+</div>
+<p class="empty" data-empty hidden>조건에 맞는 항목이 없습니다.</p>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-filter]')!;
+  const input = root.querySelector<HTMLInputElement>('.search')!;
+  const chips = [...root.querySelectorAll<HTMLButtonElement>('.chip')];
+  const items = [...document.querySelectorAll<HTMLElement>('[data-item]')];
+  const sections = [...document.querySelectorAll<HTMLElement>('[data-section]')];
+  const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    const active = new Map<string, Set<string>>();
+    for (const c of chips) {
+      if (c.getAttribute('aria-pressed') !== 'true') continue;
+      const [k, v] = c.dataset.facet!.split(':');
+      if (!active.has(k)) active.set(k, new Set());
+      active.get(k)!.add(v);
+    }
+    let shown = 0;
+    for (const el of items) {
+      const facets = new Set((el.dataset.facets ?? '').split(' '));
+      const okQ = !q || (el.dataset.search ?? '').includes(q);
+      const okF = [...active].every(([k, vs]) => [...vs].some((v) => facets.has(`${k}:${v}`)));
+      el.hidden = !(okQ && okF);
+      if (!el.hidden) shown++;
+    }
+    for (const s of sections) {
+      const visible = s.querySelectorAll('[data-item]:not([hidden])').length;
+      s.hidden = visible === 0;
+      const count = s.querySelector('[data-count]');
+      if (count) count.textContent = String(visible);
+    }
+    empty.hidden = shown > 0;
+  }
+
+  input.addEventListener('input', apply);
+  for (const c of chips)
+    c.addEventListener('click', () => {
+      c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'));
+      apply();
+    });
+</script>

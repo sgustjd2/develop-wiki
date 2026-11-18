@@ -36,14 +36,16 @@ await db.transaction(async (tx) => {
   });
 });
 
-// 2) 릴레이 (폴링 방식)
-setInterval(async () => {
+// 2) 릴레이 (폴링 방식) — 이전 배치가 끝난 뒤 다음 폴링 (겹침 방지)
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+for (;;) {
   const rows = await db.outbox.findUnpublished({ limit: 100, orderBy: 'created_at' });
   for (const r of rows) {
     await broker.publish(r.type, r.payload, { messageId: r.id }); // id 를 멱등 키로
     await db.outbox.markPublished(r.id);  // 여기 전에 죽으면 → 다음에 재발행(중복)
   }
-}, 1000);
+  await sleep(1000);
+}
 ```
 
 ### 릴레이 방식

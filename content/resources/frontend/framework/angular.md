@@ -21,7 +21,7 @@ Angular는 컴포넌트, 라우터, 폼, HTTP 클라이언트, 의존성 주입(
 - 라이브러리를 골라 조합하는 쪽의 대안은 [React](/develop-wiki/frontend/framework/react/)·[Vue](/develop-wiki/frontend/framework/vue/).
 
 ## 설치
-Node.js v22.22.3 이상이 필요하다.
+Node.js `^22.22.3 || ^24.15.0 || >=26.0.0`이 필요하다(23.x, 24.15 미만 24.x는 미지원).
 
 ```bash
 npm install -g @angular/cli
@@ -42,7 +42,7 @@ cd my-app && npm start        # http://localhost:4200
 | `output()` / `model()` | 이벤트 출력 / 양방향 바인딩용 입력 (`[(value)]`) |
 | 흐름 제어 블록 | `@if`·`@else`, `@for (x of xs; track x.id)`·`@empty`, `@switch`·`@case`, `@defer` |
 | DI | `inject(Service)`로 서비스 주입, `@Injectable({ providedIn: 'root' })`로 전역 등록 |
-| zoneless | v21부터 기본. `provideZoneChangeDetection()`을 넣으면 Zone 기반으로 되돌아간다 |
+| zoneless | v21부터 기본. `provideZoneChangeDetection()`과 `zone.js` 폴리필을 함께 넣으면 Zone 기반으로 되돌아간다 |
 | 라우터 | `provideRouter(routes)`와 `<router-outlet>`, `loadComponent`로 지연 로딩 |
 
 ## 기본 사용법

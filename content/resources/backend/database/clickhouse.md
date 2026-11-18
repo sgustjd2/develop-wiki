@@ -70,7 +70,7 @@ DELETE FROM events WHERE user_id = 2;                     -- lightweight delete
 ## 트랜잭션·일관성
 - 일반적인 ACID 다중 문장 트랜잭션은 기본 기능이 아니다. 하나의 `INSERT` 블록 단위로 원자적으로 기록된다.
 - 복제는 `Replicated*MergeTree` + ClickHouse Keeper(ZooKeeper 호환)로 하며 비동기 복제가 기본이다.
-- 작은 `INSERT` 를 자주 보내면 파트가 많아져 "Too many parts" 오류가 난다. 배치로 모으거나 `async_insert` 를 켠다.
+- 작은 `INSERT` 를 자주 보내면 파트가 많아져 "Too many parts" 오류가 난다. 배치로 모아 보낸다. 26.3 이후로는 `async_insert` 가 기본으로 켜져 있어 서버가 작은 INSERT 를 모아 기록하므로, 이 설정을 끄지 않았는지 확인한다.
 
 ## 애플리케이션 연동
 | 언어 | 공식 클라이언트 |
@@ -97,7 +97,7 @@ print(result.result_rows)
 ## 운영 팁
 - 백업: `BACKUP TABLE db.events TO Disk('backups', 'events.zip')` / `RESTORE`, 또는 S3 대상 백업.
 - 지표: `system.parts`(파트 수), `system.merges`, `system.mutations`, `system.query_log`, 복제 지연(`system.replicas`).
-- 함정: 잦은 소량 INSERT, 잘못 고른 정렬 키, 높은 카디널리티 컬럼으로 파티션 나누기, 불필요한 `Nullable`. 조인은 오른쪽 테이블을 메모리에 올리므로 작은 테이블을 오른쪽에 둔다.
+- 함정: 잦은 소량 INSERT, 잘못 고른 정렬 키, 높은 카디널리티 컬럼으로 파티션 나누기, 불필요한 `Nullable`. 해시 조인은 한쪽 테이블을 메모리에 올린다. 24.12 부터 `query_plan_join_swap_table=auto` 로 옵티마이저가 작은 쪽을 고르지만, 통계가 부족할 때를 대비해 작은 테이블을 오른쪽에 두는 편이 안전하다.
 
 ## 언제 쓰나 / 피할 때
 - 쓸 때: 로그·이벤트·클릭스트림 분석, 실시간 대시보드, 관측성 데이터 저장, 시계열 집계.

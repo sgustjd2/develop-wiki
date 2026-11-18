@@ -22,9 +22,9 @@ verifiedAt: 2026-11-18
 ## 설치·실행
 ```bash
 docker run --name mongodb -p 27017:27017 -d mongodb/mongodb-community-server:9.0-ubi9-slim
-mongosh                       # 공식 셸, 기본 localhost:27017 접속
+docker exec -it mongodb mongosh   # 공식 셸(이미지에 포함). 호스트에서 바로 쓰려면 mongosh 를 따로 설치한다
 ```
-트랜잭션을 쓰려면 단일 노드라도 레플리카 셋으로 띄운다(`... --replSet rs0` 후 `rs.initiate()`).
+트랜잭션을 쓰려면 단일 노드라도 레플리카 셋으로 띄운다(`... --replSet rs0` 후 `rs.initiate()`). 이때 레플리카 셋 멤버가 컨테이너 호스트명으로 등록되므로 호스트에서 접속할 때는 연결 문자열에 `?directConnection=true` 를 붙인다(예: `mongodb://localhost:27017/?directConnection=true`).
 
 | mongosh 명령 | 뜻 |
 | --- | --- |

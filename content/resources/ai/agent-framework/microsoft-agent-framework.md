@@ -13,7 +13,7 @@ verifiedAt: 2026-11-18
 ---
 
 ## 개요
-Microsoft Agent Framework 는 Semantic Kernel 과 AutoGen 팀이 함께 만든 두 프로젝트의 직접적인 후속작이다. AutoGen 의 단순한 에이전트 추상화에 Semantic Kernel 의 세션 기반 상태 관리·타입 안정성·미들웨어·텔레메트리를 합치고, 실행 경로를 명시하는 그래프 워크플로를 더했다.
+Microsoft Agent Framework 는 Semantic Kernel 과 AutoGen 팀이 함께 만든 두 프로젝트의 직접적인 후속작이다. AutoGen 의 에이전트 추상화와 Semantic Kernel 의 상태 관리·미들웨어·텔레메트리 기능을 한 프레임워크로 모았고, 실행 경로를 명시하는 그래프 워크플로를 더했다.
 .NET 과 Python 이 중심이며 Go SDK 는 공개 프리뷰(Go 1.26+)다. Microsoft Foundry·Azure OpenAI 외에 OpenAI, Anthropic, Gemini, Bedrock, [Ollama](/develop-wiki/ai/inference-serving/ollama/) 등 여러 모델 공급자를 같은 `Agent` 인터페이스로 쓴다.
 2026-11 기준 Python `agent-framework` 1.26.0(Python 3.11+). .NET 패키지는 문서상 `--prerelease` 로 설치한다.
 
@@ -87,4 +87,4 @@ asyncio.run(main())
 
 ## 공식 문서
 - [개요](https://learn.microsoft.com/en-us/agent-framework/overview/) · [첫 에이전트](https://learn.microsoft.com/en-us/agent-framework/get-started/your-first-agent) · [도구 추가](https://learn.microsoft.com/en-us/agent-framework/get-started/add-tools) · [멀티 턴](https://learn.microsoft.com/en-us/agent-framework/get-started/multi-turn)
-- [워크플로 개념](https://learn.microsoft.com/en-us/agent-framework/concepts/workflows/) · [모델 공급자](https://learn.microsoft.com/en-us/agent-framework/integrations/by-component/model-providers/) · [OpenAI 공급자](https://learn.microsoft.com/en-us/agent-framework/integrations/by-component/model-providers/openai) · [GitHub](https://github.com/microsoft/agent-framework)
+- [워크플로 개념](https://learn.microsoft.com/en-us/agent-framework/concepts/workflows/) · [모델 공급자](https://learn.microsoft.com/en-us/agent-framework/integrations/by-component/model-providers/) · [OpenAI 공급자](https://learn.microsoft.com/en-us/agent-framework/integrations/by-component/model-providers/openai) · [Go SDK GitHub](https://github.com/microsoft/agent-framework-go)

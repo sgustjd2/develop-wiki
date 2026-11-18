@@ -182,6 +182,13 @@ code { font-family: var(--mono); font-size: 0.88em; }
 /* 코드 하이라이트 듀얼 테마 */
 [data-theme='dark'] .astro-code, [data-theme='dark'] .astro-code span { color: var(--shiki-dark) !important; background-color: var(--shiki-dark-bg) !important; }
 
+/* 보안 심각도 배지 */
+.advisories { margin-top: 48px; }
+.badge.sev-critical { background: #b42318; color: #fff; }
+.badge.sev-high { background: #d9480f; color: #fff; }
+.badge.sev-moderate { background: #b7791f; color: #fff; }
+.badge.sev-low, .badge.sev-unknown { background: var(--chip); color: var(--muted); }
+
 /* ── 모바일 ───────────────────────────────────────────── */
 @media (max-width: 960px) {
   .article { grid-template-columns: 1fr; }

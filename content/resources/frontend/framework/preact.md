@@ -86,7 +86,7 @@ export function Counter() {
 - **React 라이브러리 재사용.** Vite는 `@preact/preset-vite`가 `react`→`preact/compat` 별칭을 자동 처리한다. 다른 번들러는 `resolve.alias`에 `react`, `react-dom`, `react/jsx-runtime`(→`preact/jsx-runtime`)을 지정한다.
 - **전역 상태는 시그널로.** 모듈 최상위 `signal()`을 여러 컴포넌트가 import 해서 공유하면 Context 없이도 상태를 나눌 수 있다.
 - **위젯·임베드.** 다른 사이트에 끼워 넣는 작은 위젯은 런타임 크기가 작은 Preact로 만들고 `render`로 특정 노드에 붙인다.
-- **10 → 11 이전.** `forwardRef` 제거, `useRef(null)` 초기값 지정, 숫자 스타일 단위 명시, 언마운트 시 `useEffect` cleanup이 페인트 이후로 늦춰진 점(테스트 영향)을 확인한다.
+- **10 → 11 이전.** ref가 기본 전달되어 `forwardRef`가 필요 없어짐(compat에는 남아 있음), `useRef(null)` 초기값 지정, 숫자 스타일 단위 명시, 언마운트 시 `useEffect` cleanup이 페인트 이후로 늦춰진 점(테스트 영향)을 확인한다.
 
 ## 언제 쓰나 / 피할 때
 - 쓸 때: 번들 크기가 중요한 위젯·랜딩 페이지·임베드, React 경험을 그대로 살리면서 가볍게 가고 싶을 때, [Astro](/develop-wiki/frontend/meta-framework/astro/) 아일랜드처럼 작은 상호작용 조각.

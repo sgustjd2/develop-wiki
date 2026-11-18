@@ -127,4 +127,42 @@ const languages = defineCollection({
   }),
 });
 
-export const collections = { resources, models, knowledge, languages };
+/**
+ * 버전별 이슈·보안 권고. 파일: content/advisories/<domain>/<category>/<id>.md — 경로가 같은 resources 항목에 붙는다.
+ * 구조화 필드만 쓰고(Hermes 가 쓰기 쉽게), 본문은 선택(추가 설명).
+ * 사실은 GitHub Releases / GitHub Security Advisories / 공식 릴리스 노트에서 확인한 것만.
+ */
+const advisories = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './content/advisories' }),
+  schema: z.object({
+    checkedAt: z.coerce.date(), // 마지막으로 출처를 확인한 날
+    latestVersion: z.string().optional(),
+    latestReleasedAt: z.coerce.date().optional(),
+    versions: z
+      .array(
+        z.object({
+          version: z.string(),
+          releasedAt: z.coerce.date(),
+          summary: z.string().max(200), // 한국어, 사용자에게 영향 있는 변경만
+          breaking: z.boolean().default(false),
+          url: z.url(),
+        }),
+      )
+      .default([]),
+    security: z
+      .array(
+        z.object({
+          id: z.string(), // GHSA-xxxx / CVE-xxxx
+          severity: z.enum(['low', 'moderate', 'high', 'critical', 'unknown']),
+          title: z.string().max(160), // 한국어
+          affected: z.string(), // 예: "< 5.2.1"
+          fixedIn: z.string().optional(),
+          publishedAt: z.coerce.date(),
+          url: z.url(),
+        }),
+      )
+      .default([]),
+  }),
+});
+
+export const collections = { resources, models, knowledge, languages, advisories };

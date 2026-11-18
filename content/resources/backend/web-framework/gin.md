@@ -31,7 +31,7 @@ go run .
 | --- | --- |
 | `gin.Engine` | 라우터 겸 서버. `gin.Default()` 는 Logger·Recovery 미들웨어 포함, `gin.New()` 는 빈 엔진 |
 | `gin.Context` | 요청 값(`Param`, `Query`, `ShouldBind*`)과 응답(`JSON`, `String`, `AbortWithStatusJSON`)을 다룬다 |
-| `gin.H` | `map[string]any` 별칭. 즉석 JSON 응답에 쓴다 |
+| `gin.H` | `map[string]any` 를 바탕으로 정의한 타입(`type H map[string]any`). 즉석 JSON 응답에 쓴다 |
 | 라우트 그룹 | `r.Group("/v1")` 로 공통 접두사·미들웨어를 묶는다. 중첩 가능 |
 | 미들웨어 | `gin.HandlerFunc`. `c.Next()` 로 다음 단계를 실행하고 `c.Abort()` 로 중단 |
 | 바인딩 | `ShouldBindJSON`, `ShouldBindQuery`, `ShouldBindUri` 가 struct 로 매핑하고 검증 |

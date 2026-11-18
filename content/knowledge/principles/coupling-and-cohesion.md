@@ -51,7 +51,7 @@ Larry Constantine 이 1960년대 말 구조적 설계(structured design)에서 �
 
 ```ts
 // 제어 결합 + 스탬프 결합
-function notify(user: User, viaSms: boolean) { /* user 전체를 받고 플래그로 분기 */ }
+function notifyUser(user: User, viaSms: boolean) { /* user 전체를 받고 플래그로 분기 */ }
 
 // 자료 결합 + 기능적 응집: 필요한 값만, 분기는 호출자가 고른 구현으로
 interface Channel { send(to: string, msg: string): Promise<void>; }

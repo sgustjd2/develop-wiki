@@ -47,7 +47,7 @@ sqlite3 app.db               # 파일이 없으면 새로 만든다
 ## 기본 사용법 (CRUD)
 ```sql
 CREATE TABLE users (
-  id    INTEGER PRIMARY KEY,          -- rowid 별칭, 자동 증가
+  id    INTEGER PRIMARY KEY,          -- rowid 별칭, 값을 생략하면 자동 할당(삭제된 최댓값은 재사용될 수 있음)
   email TEXT NOT NULL UNIQUE,
   meta  TEXT DEFAULT '{}'
 ) STRICT;

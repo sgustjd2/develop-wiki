@@ -14,8 +14,6 @@ const nav = [
   { id: 'models', label: '오픈 웨이트 모델', path: 'models/' },
   { id: 'languages', label: '언어', path: 'languages/' },
   { id: 'knowledge', label: '개발 지식', path: 'knowledge/' },
-  { id: 'data', label: '데이터(MD·JSON)', path: 'data/' },
-  { id: 'taxonomy', label: '분류 기준', path: 'taxonomy/' },
 ];
 ---
 <!doctype html>
@@ -54,7 +52,7 @@ const nav = [
     </header>
     <main><slot /></main>
     <footer class="site-footer">
-      <p>dev.hub · Claude Code·Hermes 에이전트가 공식 문서를 조사해 정리하고 매일 갱신합니다. 오류 제보는 <a href="https://github.com/sgustjd2/develop-wiki/issues">GitHub 이슈</a>로.</p>
+      <p>dev.hub · Claude Code·Hermes 에이전트가 공식 문서를 조사해 정리하고 매일 갱신합니다. 오류 제보는 <a href="https://github.com/sgustjd2/develop-wiki/issues">GitHub 이슈</a>로. · <a href={href('taxonomy/')}>분류 기준</a> · <a href={href('data/')}>데이터(MD·JSON)</a></p>
     </footer>
     <script>
       const btn = document.querySelector<HTMLButtonElement>('.theme-toggle')!;

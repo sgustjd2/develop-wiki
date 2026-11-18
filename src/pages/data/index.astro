@@ -8,6 +8,7 @@ const sets = [
   { id: 'models', label: '오픈 웨이트 모델', folder: 'content/models/<조직>/<id>.md' },
   { id: 'knowledge', label: '개발 지식', folder: 'content/knowledge/<분류>/<id>.md' },
   { id: 'languages', label: '개발 언어', folder: 'content/languages/<id>.md' },
+  { id: 'advisories', label: '버전·보안 이슈', folder: 'content/advisories/<도메인>/<카테고리>/<id>.md' },
 ] as const;
 const counts = Object.fromEntries(await Promise.all(sets.map(async (s) => [s.id, (await getCollection(s.id)).length])));
 ---

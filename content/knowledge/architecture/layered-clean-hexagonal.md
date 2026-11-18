@@ -49,13 +49,13 @@ updatedAt: 2026-11-18
 
 ```ts
 // 레이어드: 도메인 서비스가 구체 저장소를 직접 안다
-import { PgOrderRepository } from '../data/pg-order-repository';
-class OrderService { repo = new PgOrderRepository(); }
+import { PgOrderDao } from '../data/pg-order-dao';
+class OrderService { repo = new PgOrderDao(); }
 
 // 헥사고날·클린: 도메인이 포트를 정의하고, 바깥이 구현한다
 export interface OrderRepository { save(o: Order): Promise<void>; } // 코어 소유
 class PlaceOrder { constructor(private repo: OrderRepository) {} }  // 유스케이스
-class PgOrderRepository implements OrderRepository { /* 어댑터 */ }
+class PgOrderRepository implements OrderRepository { async save(o: Order) { /* SQL INSERT */ } } // 어댑터
 ```
 
 레이어드에 저장소 인터페이스를 도메인 쪽에 두는 순간(Fowler 가 말한 "mapper 를 사이에 두는" 변형) 사실상 헥사고날이 된다. 셋은 별개 진영이라기보다 **의존 역전을 얼마나 엄격하게 적용하느냐의 스펙트럼**이다. 클린 아키텍처 원문도 헥사고날·어니언을 같은 목표의 변형으로 묶는다.

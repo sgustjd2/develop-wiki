@@ -64,8 +64,8 @@ ON DUPLICATE KEY UPDATE meta = new.meta;   -- VALUES() 함수 형태는 deprecat
 - 복합 인덱스는 왼쪽 컬럼부터 쓰일 때만 효과가 있다(leftmost prefix).
 
 ```sql
-CREATE INDEX idx_users_email ON users (email);
-EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'a@example.com';
+CREATE INDEX idx_users_email_lower ON users ((LOWER(email)));
+EXPLAIN ANALYZE SELECT * FROM users WHERE LOWER(email) = 'a@example.com';
 ```
 
 ## 트랜잭션·일관성

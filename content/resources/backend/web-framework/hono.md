@@ -27,7 +27,7 @@ cd my-app && npm i && npm run dev
 ```bash
 npm i hono @hono/node-server
 ```
-Node 는 18 이상에서 동작한다(문서 기준 18.14.1+).
+`@hono/node-server` 2.x 는 Node.js 20 이상이 필요하다(공식 Node.js 페이지에는 아직 18.14.1+ 로 적혀 있다).
 
 ## 핵심 개념
 | 개념 | 설명 |

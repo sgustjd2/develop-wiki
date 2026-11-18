@@ -73,7 +73,7 @@ EXPLAIN (ANALYZE, BUFFERS) SELECT * FROM users WHERE meta @> '{"plan":"pro"}';
 
 ## 트랜잭션·일관성
 - MVCC: 읽기와 쓰기가 서로 막지 않는다. 기본 격리 수준은 `READ COMMITTED`, `REPEATABLE READ`·`SERIALIZABLE` 선택 가능.
-- DDL 도 트랜잭션 안에서 롤백된다.
+- 대부분의 DDL 도 트랜잭션 안에서 롤백된다(단, `CREATE DATABASE`, `CREATE INDEX CONCURRENTLY`, `VACUUM` 등은 트랜잭션 블록 안에서 실행할 수 없다).
 - 복제: 스트리밍 복제(물리, 읽기 전용 standby)와 논리 복제(`PUBLICATION`/`SUBSCRIPTION`).
 
 ```sql

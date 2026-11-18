@@ -2,7 +2,7 @@
 name: Laravel
 url: https://laravel.com
 repo: https://github.com/laravel/framework
-docs: https://laravel.com/docs/13.x
+docs: https://laravel.com/framework/docs/13.x
 domain: backend
 category: web-framework
 description: 라우팅, Eloquent ORM, 큐, 인증을 갖춘 PHP 풀스택 웹 프레임워크. PHP로 웹 서비스나 API를 만들 때 쓴다.
@@ -77,7 +77,7 @@ protected $fillable = ['title'];
       $this->postJson('/api/todos', ['title' => 'a'])->assertCreated();
   });
   ```
-  `php artisan test` 로 실행하고, `RefreshDatabase` 트레이트로 테스트마다 DB 를 초기화한다.
+  `php artisan test` 로 실행한다. 테스트마다 DB 를 되돌리려면 Pest 는 `pest()->use(RefreshDatabase::class)`, PHPUnit 은 테스트 클래스에 `use RefreshDatabase;` 를 넣는다(스키마가 최신이면 마이그레이션 없이 트랜잭션으로 감싸 롤백한다).
 
 ## 언제 쓰나 / 피할 때
 - 쓸 때: PHP 로 만드는 웹 서비스·SaaS·관리 도구, 인증·큐·메일·결제까지 공식 패키지로 빠르게 갖추고 싶을 때, 공유 호스팅부터 Laravel Cloud 까지 PHP 배포 환경을 쓸 때.

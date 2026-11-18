@@ -47,7 +47,7 @@ AMD ROCm, Intel XPU, TPU(`vllm-tpu` 패키지), Apple Silicon(vLLM-Metal) 은 �
 | PagedAttention | KV 캐시를 블록 단위로 할당해 메모리 단편화를 줄이는 방식 |
 | 연속 배칭 | 요청이 끝나는 즉시 새 요청을 배치에 끼워 넣어 GPU 를 쉬지 않게 함 |
 | 텐서·파이프라인 병렬 | `--tensor-parallel-size`, `--pipeline-parallel-size` 로 여러 GPU 에 모델을 나눔 |
-| 프리픽스 캐싱 | 공통 프롬프트 앞부분의 KV 캐시를 재사용 (`--enable-prefix-caching`) |
+| 프리픽스 캐싱 | 공통 프롬프트 앞부분의 KV 캐시를 재사용 (v0.34 에서 기본 켜짐, 끄려면 `--no-enable-prefix-caching`) |
 | 도구 호출 파서 | 모델별 출력 형식을 OpenAI `tool_calls` 로 바꿔 주는 파서 (`--tool-call-parser`) |
 
 ## 기본 사용법

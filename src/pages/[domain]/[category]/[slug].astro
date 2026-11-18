@@ -17,6 +17,8 @@ const { entry, siblings } = Astro.props;
 const d = entry.data;
 const { Content } = await render(entry);
 const hasBody = Boolean(entry.body?.trim());
+const adv = (await getCollection('advisories')).find((a) => a.id === entry.id)?.data;
+const SEV = { critical: '치명', high: '높음', moderate: '보통', low: '낮음', unknown: '미분류' } as const;
 const dom = DOMAINS[d.domain as keyof typeof DOMAINS];
 const cat = (dom.categories as Record<string, { label: string }>)[d.category];
 ---
@@ -31,6 +33,40 @@ const cat = (dom.categories as Record<string, { label: string }>)[d.category];
           <p class="notice">아직 백과사전 본문이 없습니다. 에이전트가 공식 문서를 조사해 개요·설치·사용법을 채웁니다. 지금은 <a href={d.docs ?? d.url}>공식 문서</a>를 참고하세요.</p>
         )}
       </div>
+      {adv && (adv.versions.length > 0 || adv.security.length > 0) && (
+        <section class="prose advisories" id="advisories">
+          <h2>버전·보안 이슈 <span class="meta">확인 {fmtDate(adv.checkedAt)}{adv.latestVersion && ` · 최신 ${adv.latestVersion}`}</span></h2>
+          {adv.security.length > 0 && (
+            <>
+              <h3>보안 권고</h3>
+              <table>
+                <thead><tr><th>심각도</th><th>내용</th><th>영향 버전</th><th>수정</th></tr></thead>
+                <tbody>
+                  {adv.security.map((s) => (
+                    <tr>
+                      <td><span class={`badge sev-${s.severity}`}>{SEV[s.severity]}</span></td>
+                      <td><a href={s.url} target="_blank" rel="noopener">{s.title}</a><br /><span class="meta">{s.id} · {fmtDate(s.publishedAt)}</span></td>
+                      <td><code>{s.affected}</code></td>
+                      <td>{s.fixedIn ? <code>{s.fixedIn}</code> : '-'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+          )}
+          {adv.versions.length > 0 && (
+            <>
+              <h3>버전별 변경</h3>
+              <ul>
+                {adv.versions.map((v) => (
+                  <li><a href={v.url} target="_blank" rel="noopener"><strong>{v.version}</strong></a> <span class="meta">{fmtDate(v.releasedAt)}</span>{v.breaking && <> <span class="badge sev-high">호환성 변경</span></>} — {v.summary}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <p class="meta">출처: GitHub Releases·Security Advisories 등 공식 공지. 자동 수집 후 요약한 내용이므로 적용 전 원문을 확인하세요.</p>
+        </section>
+      )}
       {siblings.length > 0 && (
         <section class="section" style="margin-top:56px">
           <div class="section-head"><h2>같은 카테고리</h2><a class="more" href={href(`${d.domain}/${d.category}/`)}>전체 보기 →</a></div>

@@ -12,6 +12,7 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `content/resources/<domain>/<category>/<id>.md` | 도구·라이브러리·DB. frontmatter=메타데이터, 본문=백과사전(개요·설치·사용법) |
 | `content/models/<org>/<id>.md` | 오픈 웨이트 모델 |
 | `content/knowledge/<category>/<id>.md` | 개발 지식 노트 (디자인 패턴·아키텍처 …) |
+| `content/advisories/<domain>/<category>/<id>.md` | 버전별 변경·보안 권고 (resources 와 같은 경로, 구조화 frontmatter). Hermes 가 매일 5개씩 갱신 |
 | `content/languages/<id>.md` | 개발 언어 백과사전 (id = taxonomy LANGUAGES 키) |
 | `src/pages/` | 사이트. 도메인→카테고리→항목 페이지, `models/type/*`, `new/`, `data/*.json`, `search-index.json` |
 | `hermes/` | Hermes(로컬 모델) 매일 업데이트 스킬·스크립트 원본 |

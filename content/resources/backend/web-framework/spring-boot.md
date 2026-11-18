@@ -67,7 +67,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/todos")
 public class TodoApplication {
-    record Todo(long id, @NotBlank String title) {}
+    record Todo(long id, String title) {}
+    record NewTodo(@NotBlank String title) {}
     private final Map<Long, Todo> todos = new ConcurrentHashMap<>();
 
     @GetMapping("/{id}")
@@ -77,7 +78,7 @@ public class TodoApplication {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    Todo create(@Valid @RequestBody Todo body) {
+    Todo create(@Valid @RequestBody NewTodo body) {
         var todo = new Todo(todos.size() + 1, body.title());
         todos.put(todo.id(), todo);
         return todo;

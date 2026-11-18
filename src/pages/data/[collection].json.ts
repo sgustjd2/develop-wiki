@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 /** 컬렉션 전체를 JSON 으로: /data/resources.json, /data/models.json, /data/knowledge.json, /data/languages.json
  *  각 항목 = { id, path(원본 md 경로), ...frontmatter, body(마크다운 본문) } */
-const COLLECTIONS = ['resources', 'models', 'knowledge', 'languages'] as const;
+const COLLECTIONS = ['resources', 'models', 'knowledge', 'languages', 'advisories'] as const;
 
 export function getStaticPaths() {
   return COLLECTIONS.map((collection) => ({ params: { collection } }));

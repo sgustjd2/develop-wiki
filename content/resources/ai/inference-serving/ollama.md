@@ -26,7 +26,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION=0.5.7 sh
 ```
 
-- macOS·Windows: [ollama.com/download](https://ollama.com/download) 에서 앱(Windows 는 `OllamaSetup.exe`)을 받아 설치한다. 관리자 권한 없이 사용자 폴더에 설치된다.
+- macOS·Windows: [ollama.com/download](https://ollama.com/download) 에서 앱(Windows 는 `OllamaSetup.exe`)을 받아 설치한다. Windows 는 관리자 권한 없이 사용자 폴더에 설치된다. macOS 는 `ollama.dmg` 를 열어 앱을 Applications 폴더로 옮기며, `ollama` CLI 링크(`/usr/local/bin`)를 만들 때 권한을 물을 수 있다.
 - Docker 이미지와 GPU 설정은 공식 문서의 Docker·Hardware 페이지를 따른다.
 - Python 클라이언트: `pip install -U ollama`, JavaScript: `ollama-js`.
 

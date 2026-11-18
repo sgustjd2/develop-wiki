@@ -70,7 +70,7 @@ HTML에서 사용:
 - **바깥에 알리기는 CustomEvent.** `this.dispatchEvent(new CustomEvent('change', { detail, bubbles: true, composed: true }))`로 Shadow DOM 경계를 넘겨 보낸다.
 - **자식 콘텐츠는 `<slot>`.** 템플릿에 `<slot></slot>`, `<slot name="footer"></slot>`을 두어 사용하는 쪽이 마크업을 넣게 한다.
 - **테마는 CSS 사용자 정의 속성.** Shadow DOM 안 스타일에서 `var(--my-color, blue)`를 쓰면 바깥에서 값을 덮어쓸 수 있다.
-- **목록은 `repeat` 디렉티브.** 키가 있는 목록은 ``repeat(items, (i) => i.id, (i) => html`<li>${i.name}</li>`)``로 DOM 재사용을 보장한다.
+- **목록은 `repeat` 디렉티브.** 키가 있는 목록은 ``repeat(items, (i) => i.id, (i) => html`<li>${i.name}</li>`)``로 항목과 DOM을 키로 연결해 재정렬 시에도 재사용한다.
 - **파생 값 계산은 `willUpdate`.** 렌더 직전에 여러 속성에서 계산한 값을 필드에 저장하면 `render`가 단순해진다.
 
 ## 언제 쓰나 / 피할 때

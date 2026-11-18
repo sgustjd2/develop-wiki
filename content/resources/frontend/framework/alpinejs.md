@@ -49,7 +49,7 @@ Alpine.start();         // 페이지당 한 번만 호출
 | `x-bind:attr` / `:attr` | 속성 바인딩. `:class`는 객체 문법 지원 |
 | `x-model` | 입력값과 상태 양방향 바인딩 |
 | `x-show` / `x-if` | CSS로 숨기기 / DOM에서 추가·제거 (`x-if`는 `<template>`에) |
-| `x-for` | 반복 렌더링. 반드시 `<template x-for="item in items" :key="item.id">` |
+| `x-for` | 반복 렌더링. 반드시 `<template>`에 쓰고 루트 요소는 하나만. 재정렬이 있으면 `:key` 지정 (`<template x-for="item in items" :key="item.id">`) |
 | `x-text` / `x-html` | 텍스트 / HTML 내용 설정 |
 | `x-init` / `x-effect` | 초기화 시 실행 / 의존 상태가 바뀔 때마다 재실행 |
 | `x-transition` | 표시·숨김 전환 애니메이션 |

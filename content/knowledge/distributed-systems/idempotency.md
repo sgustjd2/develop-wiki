@@ -54,7 +54,7 @@ async function handlePayment(msg: { id: string; orderId: string; amount: number 
 }
 ```
 
-API 쪽에서는 클라이언트가 `Idempotency-Key` 헤더(UUID v4 등)를 보내고, 서버는 첫 응답(상태 코드·본문)을 저장해 같은 키의 재시도에 그대로 돌려준다. Stripe 는 같은 키로 다른 파라미터가 오면 오류를 내고, 오래된 키(24시간 이상)는 정리한다.
+API 쪽에서는 클라이언트가 `Idempotency-Key` 헤더(UUID v4 등)를 보내고, 서버는 첫 응답(상태 코드·본문)을 저장해 같은 키의 재시도에 그대로 돌려준다. Stripe(API v1 기준)는 같은 키로 다른 파라미터가 오면 오류를 내고, 24시간 이상 지난 키는 정리될 수 있다. API v2 는 저장된 응답을 그대로 돌려주는 대신 실패한 작업을 끝까지 재시도하는 방식으로 동작이 다르다.
 
 ## 언제 쓰나
 

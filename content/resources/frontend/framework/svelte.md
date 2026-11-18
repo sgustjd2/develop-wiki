@@ -43,7 +43,7 @@ cd myapp && npm install && npm run dev
 | 이벤트 | 엘리먼트 속성처럼 `onclick={...}`으로 지정 (`on:click`은 레거시) |
 | snippet | `{#snippet name()}…{/snippet}`로 마크업 조각을 정의하고 `{@render name()}`으로 출력 (슬롯 대체) |
 | 블록 | `{#if}`, `{#each items as item (item.id)}`, `{#await promise}` |
-| `{@attach}` | 엘리먼트가 마운트될 때 실행되는 함수를 붙이는 문법 (`svelte/attachments`) |
+| `{@attach}` | 엘리먼트가 마운트될 때와 안에서 읽은 상태가 바뀔 때 effect로 실행되는 함수를 붙이는 문법(5.29+). 반환 함수는 cleanup |
 
 ## 기본 사용법
 `Counter.svelte`:
@@ -71,7 +71,7 @@ cd myapp && npm install && npm run dev
   let todos = $state([{ id: 1, text: '문서 읽기', done: false }]);
 </script>
 
-{#snippet row(todo)}
+{#snippet row(todo: { id: number; text: string; done: boolean })}
   <label>
     <input type="checkbox" checked={todo.done} onchange={() => (todo.done = !todo.done)} />
     {todo.text}

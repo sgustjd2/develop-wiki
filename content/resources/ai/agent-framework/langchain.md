@@ -51,7 +51,7 @@ def get_weather(city: str) -> str:
     return f"{city}: 맑음, 18°C"
 
 agent = create_agent(
-    model="google_genai:gemini-2.5-flash-lite",
+    model="openai:<모델명>",  # 설치한 langchain-openai 사용
     tools=[get_weather],
     system_prompt="날씨 질문에는 도구를 써서 짧게 답한다.",
 )

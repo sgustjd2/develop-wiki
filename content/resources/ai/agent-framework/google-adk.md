@@ -15,7 +15,7 @@ verifiedAt: 2026-11-18
 
 ## 개요
 Agent Development Kit(ADK)는 Google 이 만든 코드 중심 에이전트 개발 툴킷이다. LLM 에이전트 정의부터 멀티 에이전트·그래프 워크플로, 로컬 개발용 웹 UI, 평가(`adk eval`), Cloud Run·GKE·Agent Runtime 배포까지 한 도구 안에서 다룬다.
-Gemini 에 최적화돼 있지만 LiteLLM 래퍼 등으로 다른 모델이나 [Ollama](/develop-wiki/ai/inference-serving/ollama/)·[vLLM](/develop-wiki/ai/inference-serving/vllm/) 호스팅 모델도 쓸 수 있다. Python·TypeScript·Go·Java·Kotlin SDK 가 있다.
+Gemini 와 함께 쓰는 예제가 기본이지만 LiteLLM 래퍼(`pip install "google-adk[extensions]"`) 등으로 다른 모델이나 [Ollama](/develop-wiki/ai/inference-serving/ollama/)·[vLLM](/develop-wiki/ai/inference-serving/vllm/) 호스팅 모델도 쓸 수 있다. Python·TypeScript·Go·Java·Kotlin SDK 가 있다.
 2026-11 기준 Python `google-adk` 2.14.1(Python 3.11+), npm `@google/adk` 2.5.0. Google Cloud 배포·평가까지 한 흐름으로 가져가려는 팀에 맞다.
 
 ## 설치
@@ -73,8 +73,8 @@ adk web --port 8000         # my_agent 의 상위 폴더에서 실행, 브라우
 ## 자주 쓰는 패턴
 - **고정 파이프라인**: `SequentialAgent(name="pipeline", sub_agents=[writer, reviewer, refactorer])` 로 작성 → 검토 → 수정 순서를 고정한다. 동시에 돌릴 조사는 `ParallelAgent`, 조건 충족까지 반복은 `LoopAgent`.
 - **그래프 워크플로**: `from google.adk import Workflow` 후 `Workflow(name=..., edges=[("START", agent_a, some_function, agent_b)])` 처럼 노드를 나열한다. 노드 출력이 다음 노드 입력으로 넘어가며, 라우터 노드로 분기할 수 있다.
-- **MCP 도구 붙이기**: `McpToolset(connection_params=StdioConnectionParams(...))` 를 `tools` 에 넣는다.
-- **평가**: 평가 세트를 만들어 `adk eval` 이나 pytest 로 회귀 테스트를 돌린다.
+- **MCP 도구 붙이기**: 먼저 `pip install "google-adk[mcp]"` 로 extra 를 설치한 뒤 `McpToolset(connection_params=StdioConnectionParams(...))` 를 `tools` 에 넣는다.
+- **평가**: `pip install "google-adk[eval]"` 로 평가 의존성을 설치한 뒤, 평가 세트를 만들어 `adk eval` 이나 pytest 로 회귀 테스트를 돌린다.
 - **배포**: `adk deploy cloud_run --project=$GOOGLE_CLOUD_PROJECT --region=$GOOGLE_CLOUD_LOCATION ./my_agent` (`--with_ui` 로 웹 UI 포함).
 - **세션 저장**: `adk run --save_session --session_id s1 ./my_agent` 로 대화 세션을 남겨 재현·평가에 쓴다.
 

@@ -84,7 +84,7 @@ async fn main() {
 - **함수 미들웨어**: `middleware::from_fn(auth)` 로 `async fn auth(req: Request, next: Next) -> Result<Response, StatusCode>` 를 등록한다. 조기 반환으로 401 등을 돌려줄 수 있다.
 - **검증·에러**: 내장 검증기가 없다. serde 역직렬화 실패는 extractor 가 4xx 로 거절하고, 추가 규칙은 직접 검사하거나 커스텀 extractor 를 만든다. 앱 에러 타입에 `IntoResponse` 를 구현해 `?` 로 전파하는 방식이 흔하다.
 - **DB 연동**: sqlx·SeaORM 등의 커넥션 풀(`PgPool` 은 내부적으로 `Arc`)을 상태 struct 에 넣고 `State` 로 꺼낸다. 데이터베이스는 [PostgreSQL](/develop-wiki/backend/database/postgresql/) 이 흔하다.
-- **테스트**: `Router` 가 tower `Service` 이므로 서버 없이 `tower::ServiceExt::oneshot` 으로 요청을 넣어 응답을 검사한다(dev-dependency 로 `tower` 추가).
+- **테스트**: `Router` 가 tower `Service` 이므로 서버 없이 `tower::ServiceExt::oneshot` 으로 요청을 넣어 응답을 검사한다(dev-dependency 로 `tower` 를 `util` 기능과 함께 추가: `cargo add --dev tower --features util`).
 - **관측성**: `tracing` + `TraceLayer` 로 요청 스팬을 남기고, [OpenTelemetry](/develop-wiki/backend/observability/opentelemetry/) 로 내보낼 수 있다.
 
 ## 언제 쓰나 / 피할 때

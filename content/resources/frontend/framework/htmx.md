@@ -15,7 +15,7 @@ verifiedAt: 2026-11-18
 ---
 
 ## 개요
-htmx는 HTML 속성(`hx-get`, `hx-target` 등)만으로 어떤 요소든 HTTP 요청을 보내고, 서버가 돌려준 **HTML 조각**으로 페이지 일부를 교체하게 해 주는 라이브러리다. 상태와 렌더링을 서버에 두고 JSON API·클라이언트 렌더링 없이 상호작용을 만드는 하이퍼미디어 방식이다. 이 문서는 **htmx 2.x** 기준이다(npm `htmx.org` `latest` 2.0.11). npm `next` 태그로 htmx 4가 배포되고 있지만 공식 문서의 현재 버전은 2.x다.
+htmx는 HTML 속성(`hx-get`, `hx-target` 등)만으로 어떤 요소든 HTTP 요청을 보내고, 서버가 돌려준 **HTML 조각**으로 페이지 일부를 교체하게 해 주는 라이브러리다. 상태와 렌더링을 서버에 두고 JSON API·클라이언트 렌더링 없이 상호작용을 만드는 하이퍼미디어 방식이다. 이 문서는 **htmx 2.x** 기준이다(npm `htmx.org` `latest` 2.0.11). htmx 4.0은 정식 출시됐지만 2.x 사용자가 실수로 올라가지 않도록 npm `latest`가 아닌 `next` 태그(4.0.2)로만 배포되며, htmx.org 문서는 2.x 기준이다.
 
 - 서버는 어떤 언어든 HTML만 응답하면 된다. [Django](/develop-wiki/backend/web-framework/django/), [Laravel](/develop-wiki/backend/web-framework/laravel/), [FastAPI](/develop-wiki/backend/web-framework/fastapi/), [Express](/develop-wiki/backend/web-framework/express/) 등과 조합한다.
 - 클라이언트 쪽 작은 상태(드롭다운 열림 등)는 [Alpine.js](/develop-wiki/frontend/framework/alpinejs/)와 함께 쓰는 경우가 많다.

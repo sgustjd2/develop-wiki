@@ -97,3 +97,41 @@ const empty = resources.filter((r) => !r.body);
 const pick = empty.find((r) => r.fm.category === 'database') ?? empty.find((r) => r.fm.domain === 'backend') ?? empty[0];
 console.log(`\n## D. 백과사전 본문 작성 1건 (본문 없는 항목 ${empty.length}개 중)`);
 console.log(pick ? `- ${pick.path} (${pick.fm.name}) — 공식 문서: ${pick.fm.docs ?? pick.fm.url}` : '- 없음');
+
+// 5) 버전·보안 이슈: advisories 파일이 없거나 checkedAt 이 가장 오래된 리소스 5개
+import { existsSync } from 'node:fs';
+const advDir = join(ROOT, 'content/advisories');
+const advOf = (r) => {
+  const rel = r.path.replace(/^content\/resources\//, '');
+  const p = join(advDir, rel);
+  return existsSync(p) ? front(p).fm.checkedAt ?? '0000' : null;
+};
+const withRepo = resources.filter((r) => r.fm.repo?.includes('github.com'));
+const advTargets = withRepo
+  .map((r) => ({ r, at: advOf(r) }))
+  .sort((a, b) => (a.at ?? '').localeCompare(b.at ?? ''))
+  .slice(0, 5);
+console.log(`\n## E. 버전·보안 이슈 갱신 대상 (checkedAt 없음/오래된 순 5개) — 아래 원자료만 근거로 content/advisories/<같은 경로>.md 작성·갱신`);
+for (const { r, at } of advTargets) {
+  const full = r.fm.repo.replace(/^https:\/\/github.com\//, '').replace(/\/$/, '');
+  const target = r.path.replace(/^content\/resources\//, 'content/advisories/');
+  console.log(`\n### ${r.fm.name} → ${target} (기존 checkedAt: ${at ?? '파일 없음'})`);
+  try {
+    const rels = gh(`repos/${full}/releases?per_page=6`).filter((x) => !x.draft && !x.prerelease);
+    console.log('릴리스:');
+    for (const x of rels.slice(0, 5)) {
+      const body = (x.body ?? '').replace(/\s+/g, ' ').slice(0, 500);
+      console.log(`- ${x.tag_name} | ${x.published_at?.slice(0, 10)} | ${x.html_url}\n  노트: ${body || '(없음)'}`);
+    }
+    if (!rels.length) console.log('- (릴리스 없음)');
+  } catch (e) { console.log('- 릴리스 조회 실패 — 이 항목은 건너뛰고 로그에 기록'); }
+  try {
+    const sec = gh(`repos/${full}/security-advisories?per_page=8`);
+    console.log('보안 권고(GitHub 공개 목록):');
+    for (const a of sec) {
+      const v = a.vulnerabilities?.[0] ?? {};
+      console.log(`- ${a.ghsa_id}${a.cve_id ? `/${a.cve_id}` : ''} | severity=${a.severity} | ${a.published_at?.slice(0, 10)} | 영향=${v.vulnerable_version_range ?? '?'} | 수정=${v.patched_versions ?? '?'} | ${a.html_url}\n  제목: ${a.summary}`);
+    }
+    if (!sec.length) console.log('- (공개된 권고 없음)');
+  } catch (e) { console.log('- 보안 권고 조회 실패(권한/미사용) — 확인 못 했다고 로그에 기록, 빈 목록으로 단정하지 말 것'); }
+}

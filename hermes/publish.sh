@@ -8,13 +8,17 @@ TODAY=$(TZ=Asia/Seoul date '+%Y-%m-%d')
 changed=$(git status --porcelain | awk '{print $2}')
 [ -z "$changed" ] && { echo "PUBLISH: 변경 없음"; exit 0; }
 
-# 허용 범위: content/ 와 research/ 만
+# 허용 범위: content/ 와 research/ 만 (package.json 등은 불가)
 bad=$(echo "$changed" | grep -vE '^(content|research)/' || true)
 if [ -n "$bad" ]; then
   echo "PUBLISH: 거부 — 허용 범위 밖 파일 변경:"; echo "$bad"
   echo "→ 이 파일들은 되돌리지 말고 그대로 둔 채 사람에게 보고"; exit 1
 fi
 
+if ! node hermes/lint.mjs >/tmp/devhub-lint.log 2>&1; then
+  cat /tmp/devhub-lint.log
+  echo "→ 위 위반만 고친 뒤 publish.sh 를 한 번 더 실행. 고칠 수 없으면 그 파일만 두고 사람에게 보고"; exit 1
+fi
 if ! npm run validate >/tmp/devhub-validate.log 2>&1; then
   echo "PUBLISH: 거부 — 스키마/타입 검증 실패"; grep -iE "error|schema|허용|필요|Invalid|Expected" /tmp/devhub-validate.log | head -20; exit 1
 fi

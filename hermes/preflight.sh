@@ -12,3 +12,4 @@ git pull --ff-only -q origin main 2>&1 | tail -2
 [ -d node_modules ] || npm ci --silent >/dev/null 2>&1
 echo "REPO: ok ($(git rev-parse --short HEAD))"
 node hermes/collect.mjs
+node hermes/advisories.mjs 5

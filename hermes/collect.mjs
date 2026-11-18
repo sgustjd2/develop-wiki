@@ -44,6 +44,12 @@ const ORGS = ['deepseek-ai', 'Qwen', 'meta-llama', 'google', 'mistralai', 'opena
   'ibm-granite', 'allenai', 'BAAI', 'moonshotai', 'MiniMaxAI', 'tencent', 'baidu', 'CohereLabs', 'HuggingFaceTB', 'stepfun-ai',
   'LGAI-EXAONE', 'upstage', 'naver-hyperclovax', 'kakaocorp', 'skt', 'jinaai', 'nomic-ai', 'Alibaba-NLP'];
 const SKIP = /gguf|awq|gptq|fp8|nvfp4|fp4|w4a16|mlx|bnb|int4|int8|-base$|eagle|draft|onnx|dspine/i;
+const HINT = {
+  'text-generation': 'language 계열(text-llm/code-llm/reasoning-llm)', 'image-text-to-text': 'text-llm 또는 vlm (classify-model 규칙)',
+  'text-to-image': 'image-gen', 'image-to-image': 'image-gen', 'text-to-video': 'video-gen', 'automatic-speech-recognition': 'asr',
+  'text-to-speech': 'tts', 'feature-extraction': 'embedding', 'sentence-similarity': 'embedding', 'text-ranking': 'reranker',
+  'text-classification': 'classifier/guard/reward', 'robotics': '대상 아님(로보틱스 정책 모델)',
+};
 const fresh = [];
 for (const org of ORGS) {
   try {
@@ -56,13 +62,13 @@ for (const org of ORGS) {
   } catch (e) { console.log(`- (HF 조회 실패: ${org} — ${e.message})`); }
 }
 fresh.sort((a, b) => (b.downloads ?? 0) + (b.likes ?? 0) * 50 - ((a.downloads ?? 0) + (a.likes ?? 0) * 50));
-console.log(`\n## A. 신규 모델 후보 (최근 14일, 인기순 상위 3 — 최대 2개만 추가)`);
+console.log(`\n## A. 신규 모델 후보 (최근 14일, 인기순 상위 3 — 오늘은 **최대 1개**만 추가. 기준에 맞는 게 없으면 0개)`);
 if (!fresh.length) console.log('- 없음');
 for (const m of fresh.slice(0, 3)) {
   let detail = {};
   try { detail = await json(`https://huggingface.co/api/models/${m.id}`); } catch {}
   const c = detail.cardData ?? {};
-  console.log(`- ${m.id} | pipeline=${m.pipeline_tag ?? '?'} | createdAt=${m.createdAt?.slice(0, 10)} | license=${c.license ?? '?'}${c.license_name ? `(${c.license_name})` : ''} | params=${detail.safetensors?.total ?? '?'} | downloads=${m.downloads ?? 0} likes=${m.likes ?? 0}\n  카드: https://huggingface.co/${m.id}  커밋: https://huggingface.co/api/models/${m.id}/commits/main`);
+  console.log(`- ${m.id} | pipeline=${m.pipeline_tag ?? '?'}(분류 힌트: ${HINT[m.pipeline_tag] ?? '불명 — 카드 보고 결정'}) | createdAt=${m.createdAt?.slice(0, 10)} | license=${c.license ?? '?'}${c.license_name ? `(${c.license_name})` : ''} | params=${detail.safetensors?.total ?? '?'} | downloads=${m.downloads ?? 0} likes=${m.likes ?? 0}\n  카드: https://huggingface.co/${m.id}  커밋: https://huggingface.co/api/models/${m.id}/commits/main`);
 }
 
 // 2) 신규 라이브러리 후보: 최근 45일 생성 + 별 1000+ 인 주제별 저장소
@@ -71,10 +77,15 @@ const repos = new Map();
 for (const t of TOPICS) {
   try {
     const r = gh(`search/repositories?q=topic:${t}+created:>${daysAgo(45)}+stars:>1000&sort=stars&per_page=5`);
-    for (const it of r.items) if (!knownRepos.has(it.html_url.toLowerCase()) && !it.archived) repos.set(it.full_name, it);
+    for (const it of r.items) {
+      const d = it.description ?? '';
+      const libLike = /(library|framework|sdk|toolkit|cli\b|server|engine|runtime|orm\b|database|protocol|agent)/i.test(d);
+      const appLike = /(desktop app|application|\bgame\b|\bIDE\b|editor|download manager|android|\bios\b|extension for)/i.test(d);
+      if (!knownRepos.has(it.html_url.toLowerCase()) && !it.archived && libLike && !appLike) repos.set(it.full_name, it);
+    }
   } catch (e) { console.log(`- (GitHub 검색 실패: ${t})`); }
 }
-console.log(`\n## B. 신규 라이브러리 후보 (최근 45일 생성, ★1000+ — 최대 2개만 추가, 포함 기준 미달이면 research/backlog.md 에 기록)`);
+console.log(`\n## B. 신규 라이브러리 후보 (최근 45일 생성, ★1000+ — 오늘은 **최대 1개**. 개발자가 코드에서 쓰는 라이브러리·프레임워크·SDK·서버·CLI 만. 기준 미달은 research/excluded.md 에 사유 한 줄)`);
 const top = [...repos.values()].sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 6);
 if (!top.length) console.log('- 없음');
 for (const it of top) console.log(`- ${it.full_name} ★${it.stargazers_count} | ${it.language ?? '?'} | license=${it.license?.spdx_id ?? '?'} | ${it.html_url}\n  ${it.description ?? ''}`);
@@ -98,40 +109,3 @@ const pick = empty.find((r) => r.fm.category === 'database') ?? empty.find((r) =
 console.log(`\n## D. 백과사전 본문 작성 1건 (본문 없는 항목 ${empty.length}개 중)`);
 console.log(pick ? `- ${pick.path} (${pick.fm.name}) — 공식 문서: ${pick.fm.docs ?? pick.fm.url}` : '- 없음');
 
-// 5) 버전·보안 이슈: advisories 파일이 없거나 checkedAt 이 가장 오래된 리소스 5개
-import { existsSync } from 'node:fs';
-const advDir = join(ROOT, 'content/advisories');
-const advOf = (r) => {
-  const rel = r.path.replace(/^content\/resources\//, '');
-  const p = join(advDir, rel);
-  return existsSync(p) ? front(p).fm.checkedAt ?? '0000' : null;
-};
-const withRepo = resources.filter((r) => r.fm.repo?.includes('github.com'));
-const advTargets = withRepo
-  .map((r) => ({ r, at: advOf(r) }))
-  .sort((a, b) => (a.at ?? '').localeCompare(b.at ?? ''))
-  .slice(0, 5);
-console.log(`\n## E. 버전·보안 이슈 갱신 대상 (checkedAt 없음/오래된 순 5개) — 아래 원자료만 근거로 content/advisories/<같은 경로>.md 작성·갱신`);
-for (const { r, at } of advTargets) {
-  const full = r.fm.repo.replace(/^https:\/\/github.com\//, '').replace(/\/$/, '');
-  const target = r.path.replace(/^content\/resources\//, 'content/advisories/');
-  console.log(`\n### ${r.fm.name} → ${target} (기존 checkedAt: ${at ?? '파일 없음'})`);
-  try {
-    const rels = gh(`repos/${full}/releases?per_page=6`).filter((x) => !x.draft && !x.prerelease);
-    console.log('릴리스:');
-    for (const x of rels.slice(0, 5)) {
-      const body = (x.body ?? '').replace(/\s+/g, ' ').slice(0, 500);
-      console.log(`- ${x.tag_name} | ${x.published_at?.slice(0, 10)} | ${x.html_url}\n  노트: ${body || '(없음)'}`);
-    }
-    if (!rels.length) console.log('- (릴리스 없음)');
-  } catch (e) { console.log('- 릴리스 조회 실패 — 이 항목은 건너뛰고 로그에 기록'); }
-  try {
-    const sec = gh(`repos/${full}/security-advisories?per_page=8`);
-    console.log('보안 권고(GitHub 공개 목록):');
-    for (const a of sec) {
-      const v = a.vulnerabilities?.[0] ?? {};
-      console.log(`- ${a.ghsa_id}${a.cve_id ? `/${a.cve_id}` : ''} | severity=${a.severity} | ${a.published_at?.slice(0, 10)} | 영향=${v.vulnerable_version_range ?? '?'} | 수정=${v.patched_versions ?? '?'} | ${a.html_url}\n  제목: ${a.summary}`);
-    }
-    if (!sec.length) console.log('- (공개된 권고 없음)');
-  } catch (e) { console.log('- 보안 권고 조회 실패(권한/미사용) — 확인 못 했다고 로그에 기록, 빈 목록으로 단정하지 말 것'); }
-}

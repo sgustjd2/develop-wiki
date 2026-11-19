@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: 리눅스의 두 단조 시계는 시스템 서스펜드 시간을 세느냐만 다르다. 남이 재는 약속(리스)에 기대는 쪽은 서스펜드를 세는 BOOTTIME 이 안전하고, 자기 활동을 기준으로 하는 감시 타임아웃은 MONOTONIC 이 기대 동작이라는 점을 man 페이지와 커널·런타임 사례로 정리한다.
 tags: [clock, monotonic-clock, boottime, suspend, lease, timeout, linux, time-assumptions]
-related: [distributed-systems/raft-lease-read-monotonic-clock, distributed-systems/leader-lease-clock-assumptions, distributed-systems/distributed-lock-fencing-token, distributed-systems/gossip-failure-detection, distributed-systems/cockroachdb-lease-types, distributed-systems/hybrid-logical-clock]
+related: [distributed-systems/raft-lease-read-monotonic-clock, distributed-systems/leader-lease-clock-assumptions, distributed-systems/distributed-lock-fencing-token, distributed-systems/gossip-failure-detection, distributed-systems/cockroachdb-lease-types, distributed-systems/hybrid-logical-clock, distributed-systems/vm-pause-live-migration-guest-clock]
 sources:
   - https://man7.org/linux/man-pages/man2/clock_gettime.2.html
   - https://man7.org/linux/man-pages/man2/timerfd_create.2.html
@@ -83,7 +83,7 @@ export class Lease {
 ## 주의 (비용)
 
 - **BOOTTIME 은 서스펜드만 센다.** 프로세스 정지(GC, `SIGSTOP`), 스케줄링 지연, 확인 직후의 정지는 어느 시계도 못 막는다. 이전 노트의 실험대로 확인과 응답 사이의 정지는 남는다. 외부 자원에는 [펜싱 토큰](/develop-wiki/knowledge/distributed-systems/distributed-lock-fencing-token/)이 여전히 필요하다.
-- **가상화는 별개 문제다.** VM 일시 정지·라이브 마이그레이션 때 게스트 커널이 그 시간을 서스펜드로 인식하는지는 하이퍼바이저·클록소스에 달려 있고, 이 노트는 확인하지 못했다.
+- **가상화는 별개 문제다.** QEMU/KVM(kvmclock)은 VM 정지 때 시계 값을 저장했다가 재개 때 되돌리므로, 게스트는 정지를 서스펜드로 인식하지 않고 BOOTTIME 도 정지 시간을 세지 않는다(소스 기반 추론). [VM 일시 정지와 게스트 시계](/develop-wiki/knowledge/distributed-systems/vm-pause-live-migration-guest-clock/)에 정리했다. 다른 하이퍼바이저는 확인하지 않았다.
 - BOOTTIME 은 속도 조정 측면에서 MONOTONIC 과 같아 NTP 의 slew 를 받는다. 속도 상한 가정은 그대로다.
 - 이식성: `CLOCK_BOOTTIME` 은 리눅스 전용 이름이다. 다른 OS 의 대응 시계와 의미는 이 노트에서 확인하지 않았다(Rust 문서는 macOS 에서 `CLOCK_UPTIME_RAW` 를 쓴다고만 밝힌다).
 - `*_ALARM` 타이머는 시스템을 깨우므로 전력 비용이 있고 권한이 필요하다. 리스 만료 판정에는 읽기 시계로 충분하다.

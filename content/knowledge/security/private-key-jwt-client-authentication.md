@@ -1,15 +1,18 @@
 ---
 title: private_key_jwt 클라이언트 인증 (RFC 7523)
-aka: [private_key_jwt, client_assertion, JWT Bearer Client Authentication, RFC 7523, RFC 10070, client_secret_jwt, Audience Injection]
+aka: [private_key_jwt, client_assertion, JWT Bearer Client Authentication, RFC 7523, RFC 10070, rfc7523bis, client_secret_jwt, Audience Injection]
 category: security
 level: advanced
 summary: 토큰 엔드포인트에서 공유 비밀 대신 클라이언트가 개인키로 서명한 JWT 어서션으로 자신을 증명하는 방식. aud 를 발급자 식별자 하나로 고정하는 최신 개정(RFC 10070)이 핵심이다.
 tags: [oauth2, client-authentication, rfc7523, rfc10070, jwt, private-key-jwt, oidc, fapi]
-related: [security/oauth2-oidc-pkce, security/jwt-algorithm-confusion, security/jwt-key-rotation, security/mtls-certificate-bound-tokens, security/dpop, security/secrets-management, security/kms-hsm-signing-keys]
+related: [security/oauth2-oidc-pkce, security/jwt-algorithm-confusion, security/jwt-key-rotation, security/mtls-certificate-bound-tokens, security/dpop, security/secrets-management, security/kms-hsm-signing-keys, security/fapi-2-security-profile, security/oauth-par-rfc9126, security/openid-ciba-poll-ping-push]
 sources:
   - https://www.rfc-editor.org/rfc/rfc7523.html
   - https://www.rfc-editor.org/rfc/rfc10070.html
+  - https://datatracker.ietf.org/doc/draft-ietf-oauth-rfc7523bis/
   - https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication
+  - https://openid.net/specs/fapi-security-profile-2_0-final.html
+  - https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html
 updatedAt: 2026-11-19
 ---
 
@@ -64,13 +67,33 @@ RFC 7523 은 `aud` 에 인가 서버를 가리키는 값이면 된다고 하고 
 - 클라이언트 인증에서 `aud` 는 인가 서버의 **issuer 식별자 단 하나**여야 한다. 토큰 엔드포인트 URL 은 더 쓰지 못하고, 서버는 이 조건을 어긴 JWT 를 거부해야 한다.
 - 인가 그랜트(어서션을 grant 로 쓰는 경우)는 issuer 식별자와 엔드포인트 URL 둘 다 허용된다.
 - 헤더 `typ` 는 `client-authentication+jwt` 를 쓰도록 권장한다. 다만 아직 안 붙이는 클라이언트가 많으므로 `typ` 가 없다고 거부하지 말라고 한다.
-- 순서 주의: 새 규칙을 따르는 클라이언트는 옛 서버·새 서버에서 모두 동작한다. 서버를 먼저 엄격하게 바꾸면 옛 클라이언트가 깨지므로 **클라이언트를 먼저** 바꾼다.
+- 순서 주의: 새 규칙을 따르는 클라이언트는 옛 서버·새 서버에서 모두 동작한다. 서버를 먼저 엄격하게 바꾸면 옛 클라이언트가 깨질 수 있어, 클라이언트를 서버보다 먼저 또는 서버와 함께 갱신해야 할 수 있다고 문서는 적는다(6절).
 - 재사용(replay) 방지는 이 개정이 건드리지 않았다. RFC 7523 은 `jti` 추적을 선택 사항으로 둔다. 서버가 직접 정해야 한다.
+
+### RFC 10070 이 고친 문서 (원문 2~5절)
+
+IETF 초안 이름은 `draft-ietf-oauth-rfc7523bis` 이고 마지막 판은 -11 이다(datatracker 상태 RFC). 제목은 RFC 7523 개정처럼 보이지만 머리말의 `Updates:` 는 **RFC 7521, 7522, 7523, 9126** 넷이다.
+
+| 대상 | 바뀐 곳 | 바뀐 내용 |
+| --- | --- | --- |
+| RFC 7521(어서션 프레임워크) | 5.1 Audience | "토큰 엔드포인트 URL 을 쓸 수 있다" 를 "AS 의 issuer 식별자를 쓸 수 있다" 로 교체. 복수 대상("party or parties")도 단수로 |
+| RFC 7522(SAML 프로파일) | 2.2 | **새 애플리케이션은 SAML 어서션으로 클라이언트 인증을 하면 안 된다**(MUST NOT). 기존 사용처의 이전 여부는 구현자 재량 |
+| | 3절 2항 | SAML **grant** 의 `<Audience>` 는 issuer, 토큰 엔드포인트 URL, SAML Entity ID 중 적절한 것을 클라이언트가 고른다(MAY). AS 는 자기 신원이 없으면 거부(MUST) |
+| RFC 7523(JWT 프로파일) | 3절 3항 | 두 경우로 분리. A) grant: issuer 또는 토큰 엔드포인트 URL. B) 클라이언트 인증: issuer 단일 값 MUST, 토큰 엔드포인트 URL 금지(MUST NOT), AS 에 issuer 가 있어야 함(MUST) |
+| | 3.2 | `typ: client-authentication+jwt`(또는 이를 프로파일링한 규격의 더 구체적인 값) SHOULD. `typ` 없다고 거부하는 것은 NOT RECOMMENDED |
+| | 5절 | 클라이언트 인증 JWT 에 대해서는 참여자 간 "audience 식별자" 합의가 더는 필요 없음 |
+| RFC 9126(PAR) | 2절 마지막 문단 | 전: issuer 를 SHOULD, AS 는 issuer·토큰 엔드포인트·**PAR 엔드포인트 URL** 모두 수락 MUST. 후: issuer 단일 값 MUST, 아니면 거부 MUST |
+
+RFC 7523 개정문은 비교 기준을 RFC 3986 6.2.1 의 단순 문자열 비교(MUST, 애플리케이션 프로파일이 달리 정하지 않는 한)로 유지한다(RFC 7521 의 새 Audience 정의에는 비교 문장이 없다). 즉 끝 슬래시 하나 차이로도 불일치다.
+
+[FAPI 2.0 Security Profile](/develop-wiki/knowledge/security/fapi-2-security-profile/)은 RFC 10070 이전(2025-02)에 이미 같은 방향으로 고정했다. AS 는 클라이언트 인증 어서션의 `aud` 로 자기 issuer 를 **문자열로만** 수락하고(5.3.2.1, shall), 클라이언트는 issuer 를 배열이 아닌 문자열로 보낸다(5.3.3.1, shall). RFC 10070 은 단일 값을 요구하지만 문자열·배열 표기까지 정하지는 않는다(원문에서 해당 문구를 찾지 못했다).
+
+OpenID 규격 중 [CIBA](/develop-wiki/knowledge/security/openid-ciba-poll-ping-push/) Core 7.1 은 백채널 인증 엔드포인트에서 issuer·토큰 엔드포인트·백채널 엔드포인트 URL 을 모두 수락하라(MUST)는 옛 문구를 갖고 있고, RFC 10070 의 개정 대상이 아니다. OpenID 쪽 후속 개정 여부는 확인하지 못했다.
 
 ## 언제 쓰나
 
 - 서비스 간(M2M) 인증에서 **서버 쪽에 비밀을 저장하지 않으려는** 경우. 인가 서버가 털려도 공개키만 노출된다.
-- 금융 등 높은 보증 프로파일(FAPI)처럼 공유 비밀 방식이 허용되지 않는 환경(해당 프로파일의 요구 자체는 이 노트에서 원문을 읽지 못했다).
+- 금융 등 높은 보증 프로파일(FAPI)처럼 공유 비밀 방식이 허용되지 않는 환경. FAPI 2.0 은 클라이언트 인증을 mTLS 또는 `private_key_jwt` 로 제한한다(5.3.2.1, shall).
 - 개인키를 [KMS·HSM](/develop-wiki/knowledge/security/kms-hsm-signing-keys/)에 두고 서명만 호출하는 구성이 가능할 때.
 
 ## 주의 (비용)
@@ -92,4 +115,4 @@ RFC 7523 은 `aud` 에 인가 서버를 가리키는 값이면 된다고 하고 
 
 ## 검증 범위
 
-RFC 7523, RFC 10070, OIDC Core 9절을 읽고 정리했다. RFC 10070 은 최근 발행되어 구현 현황을 확인하지 못했다. FAPI 의 요구사항은 원문을 읽지 않았다.
+RFC 7523, RFC 10070, OIDC Core 9절을 읽고 정리했다. RFC 10070 은 2026-11-19 에 1~7절(개정 대상 RFC 7521·7522·7523·9126 의 OLD/NEW 문구)을 rfc-editor.org 원문에서 다시 대조했고, 초안 마지막 판(-11)과 상태는 datatracker API 로 확인했다. RFC 10070 은 최근 발행되어 구현 현황을 확인하지 못했다. FAPI 2.0 Security Profile Final 은 5.3.2.1 과 5.3.3.1 의 클라이언트 인증·`aud` 조항만 원문 Markdown 에서 읽었다. CIBA Core 1.0 은 7.1 을 읽었다.

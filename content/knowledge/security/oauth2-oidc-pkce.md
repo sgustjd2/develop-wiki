@@ -5,7 +5,7 @@ category: security
 level: intermediate
 summary: 위임 인가 OAuth 2.0 과 그 위의 로그인 계층 OIDC 에서 클라이언트 종류별로 어떤 흐름을 쓰고, PKCE 가 무엇을 막으며, 브라우저에서 토큰을 어디에 둘지 정리한다.
 tags: [oauth2, oidc, pkce, authentication, authorization, token, bff, owasp]
-related: [security/session-vs-jwt, security/csrf, security/xss, security/cors, security/mfa-passkeys, security/access-control-design, security/secrets-management, cs-fundamentals/cookies-and-web-storage]
+related: [security/session-vs-jwt, security/csrf, security/xss, security/cors, security/mfa-passkeys, security/access-control-design, security/secrets-management, cs-fundamentals/cookies-and-web-storage, security/oauth-browser-based-apps-rfc10017]
 sources:
   - https://www.rfc-editor.org/rfc/rfc6749.html
   - https://www.rfc-editor.org/rfc/rfc7636.html

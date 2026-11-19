@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: GNC 는 볼록한 근사에서 시작해 비볼록 견고 비용으로 점차 되돌리며 가중 최소제곱만 반복해 이상치를 걸러낸다. TEASER 는 쌍별 불변량과 최대 클릭으로 이상치를 크게 줄인 뒤 GNC 로 회전을 풀고 최적성을 사후 인증한다.
 tags: [robotics, robust-estimation, gnc, teaser, point-cloud-registration, outliers, truncated-least-squares, max-clique, certifiable, ransac]
-related: [robotics/loop-closure-outlier-rejection, robotics/icp-ndt-scan-matching, robotics/factor-graph-slam-optimization, robotics/slam-concepts, robotics/rotation-representations, robotics/isam2-bayes-tree-incremental]
+related: [robotics/loop-closure-outlier-rejection, robotics/icp-ndt-scan-matching, robotics/factor-graph-slam-optimization, robotics/slam-concepts, robotics/rotation-representations, robotics/isam2-bayes-tree-incremental, robotics/tls-binary-cloning-sdp-relaxation]
 sources:
   - https://arxiv.org/abs/1909.08605
   - https://arxiv.org/abs/2001.07715

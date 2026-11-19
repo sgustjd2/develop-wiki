@@ -6,7 +6,7 @@ group: xr
 level: intermediate
 summary: 진폭 패닝은 같은 신호를 여러 스피커에 음량만 달리 보내 그 사이에 가상 음원을 만든다. VBAP 는 청취자 기준 스피커 방향 벡터 2~3개로 이득을 풀고, DBAP 는 청취 위치를 가정하지 않고 음원과 모든 스피커의 거리로 이득을 나눈다.
 tags: [spatial-audio, panning, vbap, dbap, loudspeaker, amplitude-panning, xr, installation]
-related: [graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio, graphics-xr/hrtf-binaural-rendering]
+related: [graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio, graphics-xr/hrtf-binaural-rendering, graphics-xr/mdap-vbip-multiple-direction-panning]
 sources:
   - https://aes.org/publications/elibrary-page/?id=7853
   - https://www.audiolabs-erlangen.com/resources/aps-w23/papers/sap_Pulkki1997.pdf
@@ -94,7 +94,7 @@ function dbap(src: P, speakers: P[], R = 6, rs = 0): number[] {
 
 ## 주의/비용
 
-- **VBAP 의 음상 폭 변화.** 음원이 스피커 방향에 오면 스피커 하나만, 사이에 오면 둘·셋이 울려 퍼짐과 음색이 위치에 따라 달라진다. DBAP 논문도 같은 문제를 VBAP 에 관한 Pulkki 1999 를 인용해 언급한다. Zotter·Frank 책이 다루는 MDAP(여러 VBAP 음원을 겹침)가 대안이다.
+- **VBAP 의 음상 폭 변화.** 음원이 스피커 방향에 오면 스피커 하나만, 사이에 오면 둘·셋이 울려 퍼짐과 음색이 위치에 따라 달라진다. DBAP 논문도 같은 문제를 VBAP 에 관한 Pulkki 1999 를 인용해 언급한다. Zotter·Frank 책이 다루는 MDAP(여러 VBAP 음원을 겹침)가 대안이다. MDAP 와 이득 제곱으로 푸는 VBIP 는 [별도 노트](/develop-wiki/knowledge/graphics-xr/mdap-vbip-multiple-direction-panning/)에 정리했다.
 - **VBAP 의 스위트 스폿.** 진폭 패닝은 가상 음원을 활성 영역 밖에 놓을 수 없고, 정위 오차의 최대값은 활성 영역 크기에 비례한다고 논문이 말한다. 넓은 청취 영역에서 정확도가 필요하면 스피커를 더 촘촘히 놓아야 한다.
 - **삼각분할의 모호함.** 사각형으로 놓인 스피커는 삼각형 둘로 나누는 방법이 두 가지라 좌우 비대칭이 생길 수 있다(Zotter·Frank 책 그림 3.10). 상상의 스피커로 대칭을 되찾는다.
 - **DBAP 는 방향이 아니라 위치를 패닝한다.** 청취자에 따라 같은 음원이 다른 방향에서 들린다. 이것은 결함이 아니라 설계 전제지만, 특정 자리에서 정확한 방향이 필요하면 맞지 않는다.

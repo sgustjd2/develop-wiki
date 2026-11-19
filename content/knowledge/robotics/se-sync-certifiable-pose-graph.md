@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: SE-Sync 는 포즈 그래프 최대우도 문제를 반정부호(SDP) 완화로 바꿔 저랭크 리만 최적화로 푼다. 잡음이 임계값 아래면 완화가 정확해 전역 최적해를 얻고, 목적값이 하한과 같은지로 최적성을 사후 인증한다.
 tags: [robotics, slam, pose-graph, sdp, convex-relaxation, certifiable, riemannian-optimization, global-optimality]
-related: [robotics/factor-graph-slam-optimization, robotics/gnc-pose-graph-optimization, robotics/loop-closure-outlier-rejection, robotics/rotation-representations, robotics/isam2-bayes-tree-incremental, robotics/slam-concepts]
+related: [robotics/factor-graph-slam-optimization, robotics/gnc-pose-graph-optimization, robotics/loop-closure-outlier-rejection, robotics/rotation-representations, robotics/isam2-bayes-tree-incremental, robotics/slam-concepts, robotics/tls-binary-cloning-sdp-relaxation]
 sources:
   - https://arxiv.org/abs/1612.07386
   - https://doi.org/10.1177/0278364918784361

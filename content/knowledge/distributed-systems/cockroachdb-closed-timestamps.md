@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: 리스홀더가 "이 시각 이하로는 더 쓰지 않는다"고 약속한 타임스탬프를 팔로워에게 퍼뜨려, 그 시각 이하의 읽기를 리스홀더가 아닌 복제본에서 처리하게 하는 장치. 과거 시점 읽기와 GLOBAL 테이블의 현재 시점 읽기가 여기에 기댄다.
 tags: [cockroachdb, closed-timestamp, follower-reads, side-transport, stale-reads, multi-region, mvcc, raft]
-related: [distributed-systems/cockroachdb-lease-types, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/cockroachdb-range-merge-subsume, distributed-systems/raft-read-index, distributed-systems/consistency-models, distributed-systems/spanner-truetime, distributed-systems/hybrid-logical-clock]
+related: [distributed-systems/cockroachdb-global-tables-commit-wait, distributed-systems/cockroachdb-lease-types, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/cockroachdb-range-merge-subsume, distributed-systems/raft-read-index, distributed-systems/consistency-models, distributed-systems/spanner-truetime, distributed-systems/hybrid-logical-clock]
 sources:
   - https://docs.cockroachlabs.com/docs/stable/follower-reads
   - https://github.com/cockroachdb/cockroach/blob/master/pkg/kv/kvserver/closedts/setting.go
@@ -52,7 +52,7 @@ Raft 팔로워는 로그를 받아 적용하지만, 자기 상태가 **어느 �
 - 팔로워에서 현재 시각 트랜잭션을 처리하려면 그 트랜잭션의 불확실성 상한(`now + max_offset`)까지 닫혀 있어야 한다.
 - 송신 측은 여기에 전달 시간을 더해 닫는다. 전달 시간은 Raft 경로(`RTT × 1.5 + 20ms`)와 사이드 트랜스포트 경로(`RTT × 0.5 + 전송 주기 + 페이싱 간격`) 중 큰 값, 그리고 여유 25ms.
 - 주석은 기본 설정에서 이 목표가 송신 노드 시계보다 약 800ms 앞선다고 적는다. RTT 는 지연 정보가 없으면 150ms 를 쓰고, 지연 기반 정책에서는 20ms 폭 구간의 중간값을 쓴다.
-- 공식 문서는 쓰기 지연을 모든 리전 복제 탓으로 설명한다. 미래 시각을 닫는 구조도 커밋 대기를 낳을 수 있지만, 이는 이 노트의 추론이다(대기 코드 미확인).
+- Follower Reads 문서는 쓰기 지연을 모든 리전 복제 탓으로 설명하지만, Table Localities 문서는 미래 타임스탬프를 쓰는 non-blocking 프로토콜과 `--max-offset` 의존을 명시한다. 미래 시각을 닫는 구조 때문에 쓰기 타임스탬프가 미래로 밀리고, 게이트웨이가 그 시각까지 **커밋 대기**를 한다는 것은 소스(`maybeCommitWait`)로 확인했다. 자세한 내용은 [GLOBAL 테이블과 커밋 대기](/develop-wiki/knowledge/distributed-systems/cockroachdb-global-tables-commit-wait/)에 있다.
 - 소스 주석은 계산이 리더보다 시계가 빠른 팔로워를 고려하지 않는다고 밝히며, 틀리면 팔로워 읽기를 놓치는 **성능 문제이지 오래된 읽기(정합성) 문제는 아니라고** 적는다.
 
 ## 언제 쓰나
@@ -70,4 +70,4 @@ Raft 팔로워는 로그를 받아 적용하지만, 자기 상태가 **어느 �
 - 범위 병합, 리스 이전, 진행 중 제안에서 닫힌 타임스탬프 진행이 멈추거나 돌아갈 수 있다. 병합에서는 오른쪽 범위의 닫힌 타임스탬프가 사라지므로 타임스탬프 캐시로 보정한다 → [범위 병합과 읽기 보호](/develop-wiki/knowledge/distributed-systems/cockroachdb-range-merge-subsume/).
 - 기본값(3초, 200ms 등)은 master 소스 시점 기준이다. 버전별로 다를 수 있다.
 
-> 출처 확인 범위: 공식 문서 Follower Reads(v26.4)를 읽었다. 이 페이지는 클러스터 설정 이름·기본값을 다루지 않아 설정은 master 소스 `closedts/setting.go` 에서 확인했다. `closedts/policy.go`(정책별 목표 계산, 리드 타임 공식과 주석), `sidetransport/sender.go`(송신 측 주석), `replica_closedts.go`(사이드 트랜스포트 진행 조건), `replica_follower_read.go`(팔로워 처리 조건 주석)를 읽었다(2026-11-19 조회). 미확인: 닫힌 타임스탬프 설계 RFC 원문, GLOBAL 테이블 쓰기의 커밋 대기 코드, 라이선스 요구 여부, 지연 기반 정책 자동 조정(기본 꺼짐)의 실제 동작, `follower_read_timestamp()` 의 계산식. 실제 클러스터에서 실행하지 않았다.
+> 출처 확인 범위: 공식 문서 Follower Reads(v26.4)를 읽었다. 이 페이지는 클러스터 설정 이름·기본값을 다루지 않아 설정은 master 소스 `closedts/setting.go` 에서 확인했다. `closedts/policy.go`(정책별 목표 계산, 리드 타임 공식과 주석), `sidetransport/sender.go`(송신 측 주석), `replica_closedts.go`(사이드 트랜스포트 진행 조건), `replica_follower_read.go`(팔로워 처리 조건 주석)를 읽었다(2026-11-19 조회). 미확인: 닫힌 타임스탬프 설계 RFC 원문, 라이선스 요구 여부, 지연 기반 정책 자동 조정(기본 꺼짐)의 실제 동작, `follower_read_timestamp()` 의 계산식. 실제 클러스터에서 실행하지 않았다. (2026-11-19 보강: 커밋 대기는 별도 노트에서 `txn_coord_sender.go` 로 확인.)

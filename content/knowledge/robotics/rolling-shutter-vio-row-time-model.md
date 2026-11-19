@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: 롤링 셔터 카메라는 이미지 행마다 촬영 시각이 달라 행마다 카메라 자세가 다르다. Li·Mourikis 는 잔차는 IMU 적분으로 행별 자세를 정확히 계산하고, 선형화에서만 오차를 낮은 차수 테일러 항으로 근사해 상태 수를 늘리지 않는다.
 tags: [robotics, vio, rolling-shutter, msckf, ekf, camera-model, readout-time, smartphone]
-related: [robotics/ekf-camera-imu-time-offset-estimation, robotics/camera-imu-time-offset-online-calibration, robotics/continuous-time-spline-calibration-kalibr, robotics/kalman-filter-ekf, robotics/imu-preintegration, robotics/sensor-fusion-time-sync]
+related: [robotics/ekf-camera-imu-time-offset-estimation, robotics/camera-imu-time-offset-online-calibration, robotics/continuous-time-spline-calibration-kalibr, robotics/kalman-filter-ekf, robotics/imu-preintegration, robotics/sensor-fusion-time-sync, robotics/rolling-shutter-camera-calibration-line-delay, robotics/spline-fusion-se3-cumulative-bspline]
 sources:
   - http://web.archive.org/web/20240506123025/https://intra.ece.ucr.edu/~mourikis/papers/LiI2014JRR_RS.pdf
   - https://doi.org/10.1177/0278364914538326

@@ -6,7 +6,7 @@ group: rendering
 level: intermediate
 summary: VRS 는 픽셀 셰이더를 1×1 대신 2×2·4×4 같은 픽셀 묶음당 한 번만 실행해 결과를 묶음 전체에 퍼뜨리는 하드웨어 기능이다. 깊이·커버리지는 그대로 풀 해상도로 처리한다. D3D12 는 드로우별·프리미티브별·화면 이미지 세 출처를 합쳐 비율을 정한다.
 tags: [rendering, shading, vrs, variable-rate-shading, d3d12, performance, foveated-rendering, vr]
-related: [graphics-xr/texture-space-shading, graphics-xr/foveated-stereo-rendering, graphics-xr/rasterization-pipeline, graphics-xr/shaders-gpu-pipeline, graphics-xr/motion-to-photon-reprojection-frame-budget, graphics-xr/taa-temporal-filtering-ao-ssr]
+related: [graphics-xr/texture-space-shading, graphics-xr/foveated-stereo-rendering, graphics-xr/rasterization-pipeline, graphics-xr/shaders-gpu-pipeline, graphics-xr/motion-to-photon-reprojection-frame-budget, graphics-xr/taa-temporal-filtering-ao-ssr, graphics-xr/vulkan-fragment-shading-rate]
 sources:
   - https://microsoft.github.io/DirectX-Specs/d3d/VariableRateShading.html
   - https://github.com/microsoft/DirectX-Specs/blob/master/d3d/VariableRateShading.md
@@ -14,7 +14,7 @@ sources:
 updatedAt: 2026-11-19
 ---
 
-> 출처 메모: Microsoft DirectX-Specs 저장소의 `d3d/VariableRateShading.md` 원문을 내려받아 동기, 티어, 비율 지정 방식, 결합기, 깊이·스텐실, 타일, 미분, API 열거형 절을 읽었다. **MSAA 표본 수별 지원 거친 픽셀 크기 표는 이미지라 읽지 못했다.** 속성 보간·SV_Coverage 세부와 Vulkan(`VK_KHR_fragment_shading_rate`)·Metal 의 대응 기능은 읽지 않았다. 텍스처 공간 셰이딩과의 관계는 [기존 노트](/develop-wiki/knowledge/graphics-xr/texture-space-shading/)의 출처(NVIDIA Turing TSS 블로그)를 따른다. 호출 수 계산은 내 산수다.
+> 출처 메모: Microsoft DirectX-Specs 저장소의 `d3d/VariableRateShading.md` 원문을 내려받아 동기, 티어, 비율 지정 방식, 결합기, 깊이·스텐실, 타일, 미분, API 열거형 절을 읽었다. **MSAA 표본 수별 지원 거친 픽셀 크기 표는 이미지라 읽지 못했다.** 속성 보간·SV_Coverage 세부와 Metal 의 대응 기능은 읽지 않았다. Vulkan(`VK_KHR_fragment_shading_rate`)은 [별도 노트](/develop-wiki/knowledge/graphics-xr/vulkan-fragment-shading-rate/)에서 사양 원문 기준으로 정리했다. 텍스처 공간 셰이딩과의 관계는 [기존 노트](/develop-wiki/knowledge/graphics-xr/texture-space-shading/)의 출처(NVIDIA Turing TSS 블로그)를 따른다. 호출 수 계산은 내 산수다.
 
 ## 문제
 

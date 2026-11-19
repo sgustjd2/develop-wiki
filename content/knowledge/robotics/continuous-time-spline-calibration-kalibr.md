@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: IMU 자세를 B-spline 으로 두면 영상 잔차를 임의 시각 t+d 에서 평가할 수 있어, 시간 오프셋 d 와 카메라-IMU 변환을 한 번의 최대우도 일괄 최적화로 함께 푼다. Kalibr 카메라-IMU 보정의 원리다.
 tags: [robotics, calibration, kalibr, b-spline, continuous-time, camera-imu, time-offset, batch-estimation]
-related: [robotics/ekf-camera-imu-time-offset-estimation, robotics/camera-imu-time-offset-online-calibration, robotics/rolling-shutter-vio-row-time-model, robotics/factor-graph-slam-optimization, robotics/sensor-fusion-time-sync, robotics/coordinate-frames-tf]
+related: [robotics/ekf-camera-imu-time-offset-estimation, robotics/camera-imu-time-offset-online-calibration, robotics/rolling-shutter-vio-row-time-model, robotics/factor-graph-slam-optimization, robotics/sensor-fusion-time-sync, robotics/coordinate-frames-tf, robotics/continuous-time-batch-estimation-temporal-basis, robotics/rolling-shutter-camera-calibration-line-delay]
 sources:
   - https://doi.org/10.1109/IROS.2013.6696514
   - https://web.archive.org/web/20260110144748/https://furgalep.github.io/bib/furgale_iros13.pdf

@@ -6,7 +6,7 @@ group: writing
 level: intermediate
 summary: 번역 후 늘어나는 텍스트로 생기는 잘림·넘침을 번역 전에 찾기 위해, 짧은 문자열일수록 더 크게 늘리는 길이별 확장률(W3C 가 인용한 IBM 수치)과 Android·Xcode·FormatJS 의 의사 로캘을 쓰는 방법.
 tags: [i18n, l10n, pseudo-localization, text-expansion, truncation, qa, android, xcode, formatjs]
-related: [ui-ux/icu-messageformat-pseudo-localization, ui-ux/translation-qa-icu-syntax-validation, ui-ux/translation-workflow-xliff-tm, ui-ux/i18n-ux, ui-ux/cjk-typography-line-breaking, ui-ux/visual-regression-testing, ui-ux/responsive-adaptive-container-queries]
+related: [ui-ux/playwright-text-truncation-detection, ui-ux/icu-messageformat-pseudo-localization, ui-ux/translation-qa-icu-syntax-validation, ui-ux/translation-workflow-xliff-tm, ui-ux/i18n-ux, ui-ux/cjk-typography-line-breaking, ui-ux/visual-regression-testing, ui-ux/responsive-adaptive-container-queries]
 sources:
   - https://www.w3.org/International/articles/article-text-size
   - https://developer.android.com/guide/topics/resources/pseudolocales
@@ -74,7 +74,7 @@ export function pseudoExpand(s: string): string {
 ### 3. 잘림을 자동으로 찾는다
 
 - 의사 로캘 빌드로 [시각 회귀 테스트](/develop-wiki/knowledge/ui-ux/visual-regression-testing/)를 돌려 원문 빌드와 비교한다.
-- 웹이라면 브라우저 테스트에서 텍스트 요소의 `scrollWidth > clientWidth`(또는 높이)인 요소를 모아 보고하는 방식이 있다. `text-overflow: ellipsis` 로 숨긴 잘림도 이 비교로 드러난다. 이 노트에서는 실행 검증하지 않았다.
+- 웹이라면 브라우저 테스트에서 텍스트 요소의 `scrollWidth > clientWidth`(또는 높이)인 요소를 모아 보고하는 방식이 있다. `text-overflow: ellipsis` 로 숨긴 잘림도 이 비교로 드러난다. 직접 실행한 결과와 놓치는 경우(소수점 폭)는 [Playwright 로 텍스트 잘림 자동 검출](/develop-wiki/knowledge/ui-ux/playwright-text-truncation-detection/)에 있다.
 - 잘림을 허용할 곳(긴 파일명 등)은 전체 텍스트를 툴팁·`title` 이 아닌 접근 가능한 방법으로 볼 수 있게 하고, 검사 예외 목록에 명시한다.
 
 ## 언제 쓰나

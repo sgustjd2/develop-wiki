@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: OpenID Foundation 이 2025-02 최종 확정한 고보안 OAuth 2.0 프로파일. 공격자 모델 문서가 정한 목표를 위해 기밀 클라이언트, PAR, PKCE S256, iss 응답, 송신자 제약 토큰(mTLS·DPoP)을 shall 로 묶는다.
 tags: [oauth2, fapi, openid, security-profile, par, pkce, dpop, mtls, private-key-jwt, attacker-model, open-banking]
-related: [security/oauth-security-bcp-rfc9700, security/oauth-par-rfc9126, security/dpop, security/dpop-resource-server-validation, security/mtls-certificate-bound-tokens, security/private-key-jwt-client-authentication, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-authorization-server-metadata-rfc8414, security/oauth-rich-authorization-requests-rfc9396, security/oauth2-oidc-pkce, security/oauth-jar-rfc9101, security/jwt-key-rotation, security/threat-modeling-stride, security/oauth-2-1-vs-rfc9700]
+related: [security/oauth-security-bcp-rfc9700, security/oauth-par-rfc9126, security/dpop, security/dpop-resource-server-validation, security/mtls-certificate-bound-tokens, security/private-key-jwt-client-authentication, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-authorization-server-metadata-rfc8414, security/oauth-rich-authorization-requests-rfc9396, security/oauth2-oidc-pkce, security/oauth-jar-rfc9101, security/jwt-key-rotation, security/threat-modeling-stride, security/oauth-2-1-vs-rfc9700, security/fapi-2-message-signing-rfc9421, security/oauth-jarm-fapi-migration, security/openid-ciba-poll-ping-push]
 sources:
   - https://openid.net/specs/fapi-security-profile-2_0-final.html
   - https://openid.net/specs/fapi-attacker-model-2_0-final.html

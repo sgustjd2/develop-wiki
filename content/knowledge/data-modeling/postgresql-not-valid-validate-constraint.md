@@ -5,7 +5,7 @@ category: data-modeling
 level: advanced
 summary: 기존 대형 테이블에 FK·CHECK 를 추가할 때 "새 행부터 강제(NOT VALID)"와 "기존 행 검사(VALIDATE)"를 나눠 쓰기 차단 시간을 줄이는 방법. 각 단계의 락 이름과 무엇을 막는지, 남는 비용을 직접 실행해 정리한다.
 tags: [postgresql, migration, alter-table, not-valid, validate-constraint, locking, foreign-key, check-constraint, lock-timeout]
-related: [data-modeling/zero-downtime-migration, data-modeling/postgresql-foreign-key-deferrable-on-delete-cascade, data-modeling/postgresql-multitenant-composite-foreign-key, data-modeling/postgresql-for-no-key-update-foreign-key-design, data-modeling/mvcc-vacuum, data-modeling/autovacuum-tuning, data-modeling/optimistic-pessimistic-locking]
+related: [data-modeling/zero-downtime-migration, data-modeling/postgresql-18-not-enforced-not-null-not-valid, data-modeling/postgresql-lock-timeout-ddl-retry, data-modeling/postgresql-foreign-key-deferrable-on-delete-cascade, data-modeling/postgresql-multitenant-composite-foreign-key, data-modeling/postgresql-for-no-key-update-foreign-key-design, data-modeling/mvcc-vacuum, data-modeling/autovacuum-tuning, data-modeling/optimistic-pessimistic-locking]
 sources:
   - https://www.postgresql.org/docs/16/sql-altertable.html
   - https://www.postgresql.org/docs/16/explicit-locking.html
@@ -106,7 +106,7 @@ PostgreSQL 16.15 임시 컨테이너(`postgres:16`, tmpfs, `fsync=off`). 부모 
 ## 버전별
 
 - PostgreSQL 16 문서: 파티션 테이블의 FK 는 아직 `NOT VALID` 로 선언할 수 없다(위 실험과 일치).
-- PostgreSQL 18 릴리스 노트: 파티션 테이블에 `NOT VALID` FK 를 허용하고, `ALTER TABLE` 로 `NOT NULL` 제약에 `NOT VALID` 를 설정할 수 있게 됐다. CHECK·FK 를 `NOT ENFORCED` 로 선언하는 기능도 추가됐다. 이 노트는 18 을 실행해 확인하지 않았다.
+- PostgreSQL 18 릴리스 노트: 파티션 테이블에 `NOT VALID` FK 를 허용하고, `ALTER TABLE` 로 `NOT NULL` 제약에 `NOT VALID` 를 설정할 수 있게 됐다. CHECK·FK 를 `NOT ENFORCED` 로 선언하는 기능도 추가됐다. 이 노트의 표는 16 기준이고, 18.7 에서 직접 실행한 NOT NULL NOT VALID·NOT ENFORCED 의 락과 함정은 [PostgreSQL 18 의 NOT ENFORCED 와 NOT NULL NOT VALID](/develop-wiki/knowledge/data-modeling/postgresql-18-not-enforced-not-null-not-valid/)에 정리했다.
 - 16 에서 `NOT NULL` 을 무중단으로 추가하는 우회(`CHECK (col IS NOT NULL) NOT VALID` → VALIDATE → `SET NOT NULL` 이 유효한 CHECK 를 보고 스캔 생략)는 [무중단 마이그레이션](/develop-wiki/knowledge/data-modeling/zero-downtime-migration/)에 정리돼 있다. 문서는 유효한 CHECK 가 NULL 이 없음을 증명하면 스캔을 건너뛴다고 설명한다.
 
 ## 언제 쓰나

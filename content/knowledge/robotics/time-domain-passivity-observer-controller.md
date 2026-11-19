@@ -6,7 +6,7 @@ group: control
 level: advanced
 summary: Hannaford·Ryu 의 방법은 포트의 힘×속도를 매 샘플 누적해(PO) 에너지를 내놓는 순간을 감지하고, 그만큼만 가변 감쇠(PC)로 소산시킨다. 모델 없이 비선형·지연 환경에서도 수동성을 지키지만 저속에서 힘이 튈 수 있다.
 tags: [robotics, control, passivity, haptics, teleoperation, energy, time-domain, stability]
-related: [robotics/passivity-contact-stability, robotics/impedance-admittance-force-control, robotics/realtime-dds-latency, robotics/pid-control]
+related: [robotics/passivity-contact-stability, robotics/impedance-admittance-force-control, robotics/realtime-dds-latency, robotics/pid-control, robotics/two-port-tdpa-bilateral-teleoperation]
 sources:
   - https://doi.org/10.1109/70.988969
   - https://web.archive.org/web/2005/http://brl.ee.washington.edu:80/publications/Rep151.pdf
@@ -81,7 +81,7 @@ export function makeSeriesPC(dT: number, alphaMax = Infinity, vEps = 1e-4) {
   - PC 힘을 ±20 N 으로 제한해도 결과가 거의 같았다.
   - 가상 환경을 66.67 Hz 로 늦추고 강성 30 kN/m: PC 없이 힘 펄스가 200 N 까지, PC 를 켜면 한 번의 튕김 안에 안정.
   - PO 를 여러 지점에 달아 보니 능동 성분의 주원인은 **쿨롱 마찰 보상** 모듈이었다. 원고는 이 보상 항이 수학적으로 능동임을 보인다(식 27).
-- 초록은 "강성 > 100 N/mm 또는 지연 15 ms 에서 안정" 이라고 쓰지만, 원고 본문의 강성 실험 값은 90 kN/m(= 90 N/mm)다. 출판본에서 어느 쪽이 맞는지는 확인하지 못했다.
+- 초록은 "강성 > 100 N/mm 또는 지연 15 ms 에서 안정" 이라고 쓰지만, 원고 본문의 강성 실험 값은 90 kN/m(= 90 N/mm)다. 2002 출판본의 **초록**(출판사 초록, OpenAlex 경유로 2026-11-19 대조)도 "> 100 N/mm 또는 15 ms" 로 원고와 같다. 출판본 **본문**의 실험 강성 값은 본문을 구하지 못해 여전히 미확인이다.
 
 ### 직접 확인: 음의 감쇠 벽에서 PO/PC
 
@@ -123,4 +123,5 @@ export function makeSeriesPC(dT: number, alphaMax = Infinity, vEps = 1e-4) {
 ## 검증 범위
 
 - 직접 읽음: 저자 원고(2000-05, TRA 재투고판) 전문, ICRA 2001 판 초록.
-- 읽지 않음: 2002 TRA 출판본(최종 문구·수치 미대조), 후속 연구(재설정 휴리스틱, 원격 조작 확장, 6 자유도 확장), 특허 US7027965.
+- 초록만 대조: 2002 TRA 출판본(초록 문구는 원고와 같음).
+- 읽지 않음: 2002 TRA 출판본 본문(최종 수치 미대조), 후속 연구(재설정 휴리스틱, 6 자유도 확장), 특허 US7027965. 원격 조작 확장은 [2-포트 TDPA 노트](/develop-wiki/knowledge/robotics/two-port-tdpa-bilateral-teleoperation/)에서 다룬다.

@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: CockroachDB 범위 리스가 "무엇으로 유효 기간을 증명하는가"에 따라 갈리는 세 방식(리스마다 갱신하는 만료 기반, 노드 생존 레코드에 묶는 에포크 기반, Raft 리더 지지에 묶는 리더 리스)을 소스와 공식 문서로 비교한다.
 tags: [cockroachdb, range-lease, leader-lease, epoch-lease, expiration-lease, store-liveness, node-liveness, raft]
-related: [distributed-systems/leader-lease-clock-assumptions, distributed-systems/raft-lease-read-monotonic-clock, distributed-systems/raft-prevote-checkquorum-lease-interplay, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/cockroachdb-closed-timestamps, distributed-systems/raft-consensus, distributed-systems/gossip-failure-detection]
+related: [distributed-systems/cockroachdb-leader-leases-liveness-fabric, distributed-systems/leader-lease-clock-assumptions, distributed-systems/raft-lease-read-monotonic-clock, distributed-systems/raft-prevote-checkquorum-lease-interplay, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/cockroachdb-closed-timestamps, distributed-systems/raft-consensus, distributed-systems/gossip-failure-detection]
 sources:
   - https://docs.cockroachlabs.com/docs/stable/architecture/replication-layer
   - https://github.com/cockroachdb/cockroach/blob/master/pkg/kv/kvserver/replica_range_lease.go
@@ -15,6 +15,8 @@ sources:
   - https://github.com/cockroachdb/cockroach/blob/master/pkg/kv/kvserver/replica_store_liveness.go
   - https://www.cockroachlabs.com/blog/distributed-database-leader-leases/
   - https://www.cockroachlabs.com/blog/cockroachdb-25-1-enhanced-resilience-and-performance/
+  - https://github.com/cockroachdb/cockroach/blob/release-25.2/pkg/kv/kvserver/replica_store_liveness.go
+  - https://www.cockroachlabs.com/docs/releases/v25.1
 updatedAt: 2026-11-19
 ---
 
@@ -84,6 +86,7 @@ updatedAt: 2026-11-19
 - 에포크 기반은 생존 범위에 대한 의존이 크다. 리더 리스는 이 의존을 줄이지만 공식 문서에 따르면 노드 하트비트는 여전히 클러스터 멤버십·사망 판정·복제본 배치에 쓰인다. 생존 시스템이 사라진 것은 아니다.
 - 리더 리스는 Raft 리더 강화와 저장소 생존이라는 새 프로토콜에 기대므로 구버전과 섞인 클러스터, 점진 적용 중(`fraction_enabled` 가 0 과 1 사이)에는 범위마다 리스 종류가 다를 수 있다.
 - 리스가 길수록 장애 후 복구가 늦고 짧을수록 갱신·오탐이 는다. 위 표의 최악 구간이 기본값의 균형점이다(이 노트의 해석).
-- 블로그는 리더 리스 논문(SIGMOD 2026, "Scalable Leader Leases For Multi Consensus Groups in CockroachDB")이 리스 유지 CPU 를 실험에서 최대 85% 줄였다고 소개한다. 논문 본문은 읽지 않았다.
+- 리더 리스 논문(SIGMOD 2026, "Scalable Leader Leases For Multi Consensus Groups in CockroachDB")은 [별도 노트](/develop-wiki/knowledge/distributed-systems/cockroachdb-leader-leases-liveness-fabric/)에 정리했다. 논문 실험에서 리더 리스는 부분 분할·디스크 정지에 강하지만, 단순 노드 장애 복구는 만료·에포크 리스보다 1~2초 느렸다(리스 만료 후 선거가 순서대로 진행되기 때문).
+- 기본 활성 버전: `kv.raft.leader_fortification.fraction_enabled` 기본값이 `release-25.1` 소스에서 0.0, `release-25.2` 소스에서 1.0 이다. 25.2 부터 기본으로 켜진 것으로 보인다(릴리스 노트 문장으로는 미확인).
 
-> 출처 확인 범위: CockroachDB master 소스에서 `replica_range_lease.go`(설정 3개 정의·기본값, `requiresExpirationLease`·`shouldUseExpirationLease`·`desiredLeaseType`, 만료·에포크 리스 정의 주석), `leases/status.go`(리스 종류별 유효성 판정, stasis 주석), `leases/build.go`(설정 필드), `base/config.go`(기본 지속 시간과 획득 시간 표 주석), `replica_store_liveness.go`(`fraction_enabled` 설정)를 읽었다(2026-11-19 조회). 공식 문서는 v26.4 Replication Layer 페이지를 읽었다. 리더 리스 도입 시점은 25.1 출시 블로그의 "Preview" 표현까지만 확인했고, 어느 버전에서 기본값이 됐는지는 릴리스 노트에서 확인하지 못했다. 저장소 생존 프로토콜의 세부(TLA+ 모델 포함)와 SIGMOD 논문 본문은 읽지 않았다. 실제 클러스터에서 장애 시간을 재지 않았다.
+> 출처 확인 범위: CockroachDB master 소스에서 `replica_range_lease.go`(설정 3개 정의·기본값, `requiresExpirationLease`·`shouldUseExpirationLease`·`desiredLeaseType`, 만료·에포크 리스 정의 주석), `leases/status.go`(리스 종류별 유효성 판정, stasis 주석), `leases/build.go`(설정 필드), `base/config.go`(기본 지속 시간과 획득 시간 표 주석), `replica_store_liveness.go`(`fraction_enabled` 설정)를 읽었다(2026-11-19 조회). 공식 문서는 v26.4 Replication Layer 페이지를 읽었다. 리더 리스 도입 시점은 25.1 출시 블로그·릴리스 노트의 "Preview" 표현으로 확인했다. 기본값 전환은 25.1~25.4 릴리스 노트에서 해당 문장을 찾지 못해, `replica_store_liveness.go` 의 release-24.3/25.1/25.2/25.3 브랜치 기본값(0.0, 0.0, 1.0, 1.0)으로 판단했다(2026-11-19 추가 확인). SIGMOD 논문 본문은 별도 노트에서 읽었다. TLA+ 모델 내용은 읽지 않았다. 실제 클러스터에서 장애 시간을 재지 않았다.

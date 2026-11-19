@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: 공간 하한에 다가가는 ShockHash 계열, 질의가 빠른 PTHash·PHOBIC, 질의를 메모리 대역폭 한계 근처까지 끌어올린 PtrHash 를 같은 논문 표 안의 수치로 비교해, 비트/키·구성 시간·질의 시간 중 무엇이 병목인지에 따라 고르는 기준을 정리한다.
 tags: [perfect-hashing, mphf, ptrhash, pthash, phobic, shockhash, benchmark, space-time-tradeoff]
-related: [algorithms/shockhash, algorithms/perfect-hashing-pthash, algorithms/pthash-vs-recsplit-benchmarks, algorithms/recsplit-vs-bbhash, algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/static-filter-xor-fuse-ribbon-benchmarks, cs-fundamentals/cpu-cache-locality]
+related: [algorithms/shockhash, algorithms/perfect-hashing-pthash, algorithms/pthash-vs-recsplit-benchmarks, algorithms/recsplit-vs-bbhash, algorithms/hash-table, algorithms/space-time-tradeoff, algorithms/static-filter-xor-fuse-ribbon-benchmarks, cs-fundamentals/cpu-cache-locality, algorithms/consensus-recsplit]
 sources:
   - https://arxiv.org/abs/2502.15539
   - https://github.com/RagnarGrootKoerkamp/PtrHash
@@ -85,4 +85,4 @@ ShockHash 논문 자체의 표(1천만 키, i7-11700, 단일 스레드)에서는
 - GitHub 저장소 기준 PtrHash 는 Rust(MIT), PTHash·ShockHash 는 C++ 다. 다른 언어 바인딩과 유지보수 상태는 확인하지 않았다.
 - 모든 수치는 논문 저자 기계의 값이다. 이 노트에서 재현하지 않았다. 구성 중 메모리 사용량도 비교하지 않았다.
 
-> 출처 확인 범위: PtrHash 논문 arXiv 2502.15539v2(2025-05-27, SEA 2025) HTML 판에서 설계 절, Table 1(정수 키 구성별 비트·질의), Table 2(문자열 3억 개 비교 전체), 샤딩 실험과 한계 서술을 읽었다. ShockHash 수치는 기존 [ShockHash 노트](/develop-wiki/knowledge/algorithms/shockhash/)가 Table 1 에서 옮긴 값을 인용했다. PHOBIC·PTHash 의 원 논문 수치는 기존 벤치마크 노트를 따랐고 이번에 다시 읽지 않았다. Consensus-RecSplit·FiPS·SicHash·FMPH 의 원논문은 읽지 않았다. PtrHash·PTHash·ShockHash 저장소는 GitHub API 로 언어·라이선스만 확인했다(2026-11-19).
+> 출처 확인 범위: PtrHash 논문 arXiv 2502.15539v2(2025-05-27, SEA 2025) HTML 판에서 설계 절, Table 1(정수 키 구성별 비트·질의), Table 2(문자열 3억 개 비교 전체), 샤딩 실험과 한계 서술을 읽었다. ShockHash 수치는 기존 [ShockHash 노트](/develop-wiki/knowledge/algorithms/shockhash/)가 Table 1 에서 옮긴 값을 인용했다. PHOBIC·PTHash 의 원 논문 수치는 기존 벤치마크 노트를 따랐고 이번에 다시 읽지 않았다. FiPS·SicHash·FMPH 의 원논문은 읽지 않았다. Consensus-RecSplit 원논문은 [별도 노트](/develop-wiki/knowledge/algorithms/consensus-recsplit/)에서 읽었다(2026-11-19 추가, 위 표의 행은 PtrHash 논문 측정값 그대로). PtrHash·PTHash·ShockHash 저장소는 GitHub API 로 언어·라이선스만 확인했다(2026-11-19).

@@ -1,12 +1,12 @@
 # 백로그
 
-2026-11-19 에 이전 백로그를 모두 처리했다(9차). 아래는 그 과정에서 새로 나온 다음 후보다.
+2026-11-19 에 9차·10차 백로그를 모두 처리했다. 아래는 10차 과정에서 새로 나온 다음 후보다.
 
 | 항목 | 영역/카테고리 | 메모 | 날짜 |
 | --- | --- | --- | --- |
-| Kalibr 롤링 셔터 보정(Oth 2013)·연속시간 VI-SLAM(Lovegrove 2013), Furgale·Barfoot·Sibley 연속시간 추정(IJRR 2015), 이상치 견고 인증 추정(TLS 완화), 시간 영역 수동성 원격 조작·기준 에너지 방식 | knowledge/robotics | 다음 노트. 수동성 2002 출판본·SE-Sync IJRR 판 대조 필요 | 2026-11-19 |
-| MDAP·VBIP, EPAD, ReSTIR MIS 가중치(generalized Talbot vs pairwise), 그래디언트 영역 경로 추적, Vulkan fragment shading rate, DDGI 프로브 재배치·분류 | knowledge/graphics-xr | AllRAD 2012 원문(AES 회원 전용) 여전히 미확인 | 2026-11-19 |
-| CockroachDB 저장소 생존·리더 강화(SIGMOD 2026), GLOBAL 테이블 커밋 대기, 범위 분할 시 타임스탬프 캐시, Consensus-RecSplit, WebAuthn 출처 검증·앱 도메인 연결, VM 일시 정지 시 게스트 시계 | knowledge/distributed-systems·algorithms·security | 리더 리스 기본값 도입 버전 미확인 | 2026-11-19 |
-| RFC 10017(브라우저 앱 OAuth·BFF), FAPI 2.0 Message Signing·RFC 9421, JARM·FAPI 1→2 이전, CIBA, rfc7523bis | knowledge/security | 다음 노트 | 2026-11-19 |
-| PostgreSQL RLS 멀티테넌트, PG18 NOT ENFORCED·NOT NULL NOT VALID 실측, lock_timeout·DDL 재시도, 시간 범위 FK(WITHOUT OVERLAPS), Envoy outlier detection, 결정적 서브세팅(Aperture) | knowledge/data-modeling·performance | 다음 노트 | 2026-11-19 |
-| content-visibility vs 가상화, NVDA 키 참조, TalkBack 제스처, Playwright 잘림 자동 검출, CRDT 이력과 개인정보 삭제, Cochran's Q, 대응 비율 차 신뢰구간, 혼합효과 모형, 검색 판정 세트·인터리빙, 한글 형태소·n-gram 색인 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |
+| STRIDE 등 인증 가능 견고 추정 전용 솔버, GP 사전 연속시간 추정(Barfoot·Tong·Anderson), Hedborg 롤링 셔터 BA, 파동 변수 원격 조작 vs TDPA, TDPA 위치 드리프트 보상(arXiv 1909.01603, 2002.02296), 에너지 경계 햅틱 | knowledge/robotics | TCST 2005 기준 에너지·IJRR 2015 본문 여전히 미확인 | 2026-11-19 |
+| Epain·Jin·Zotter 2014 일정 각 퍼짐 디코딩, AllRAD2(AES 2018), 그래디언트 영역 양방향 경로 추적, volumetric ReSTIR, DDGI 다중 볼륨·무한 스크롤, Metal rasterization rate map | knowledge/graphics-xr | AllRAD 2012 원문 미확인 | 2026-11-19 |
+| LeaseGuard(SIGMOD 2026), CockroachDB linearizable 모드, Store Liveness TLA+, 클라우드 VM 유지보수 이벤트와 시계(ClockBound·PTP), minimal k-perfect hashing | knowledge/distributed-systems·algorithms | 다음 노트 | 2026-11-19 |
+| RFC 9701 JWT 인트로스펙션, FAPI 2.0 구현·배포 권고와 x-fapi-* 헤더, RFC 8628 vs CIBA, RFC 9530 Digest Fields, OpenID Federation 과 Audience Injection, Grant Management, Play App Signing 과 앱 출처 | knowledge/security | 다음 노트 | 2026-11-19 |
+| Envoy zone-aware routing·패닉 임계, 변경 시 연결 변동이 작은 서브세팅(rendezvous 등), PG18 가상 생성 열, CREATE INDEX CONCURRENTLY 실패·INVALID 인덱스, PgBouncer transaction 모드와 세션 상태, Envoy retry_budget | knowledge/data-modeling·performance | 다음 노트 | 2026-11-19 |
+| Friedman 검정, JAWS 키와 가상 커서, edge n-gram·search_as_you_type 한국어 자동완성, 판정자 간 일치도(Cohen·Fleiss kappa), Yjs·Automerge 저장 계층 압축, 멀티리빙 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |

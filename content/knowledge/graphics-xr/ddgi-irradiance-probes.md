@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: DDGI 는 3D 격자의 조도 프로브를 매 프레임 광선 추적으로 갱신하고, 프로브마다 거리·거리 제곱을 함께 저장해 가시성을 고려한 보간으로 빛 샘을 줄이는 동적 확산 전역 조명 기법이다.
 tags: [rendering, global-illumination, ddgi, irradiance-probes, ray-tracing, light-probes, rtxgi, octahedral-mapping]
-related: [graphics-xr/radiance-cache-sharc-nrc, graphics-xr/image-based-lighting, graphics-xr/reflection-probes-ssr, graphics-xr/soft-shadows-vsm-pcss, graphics-xr/ssao-ambient-occlusion, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/pbr-material-model]
+related: [graphics-xr/radiance-cache-sharc-nrc, graphics-xr/image-based-lighting, graphics-xr/reflection-probes-ssr, graphics-xr/soft-shadows-vsm-pcss, graphics-xr/ssao-ambient-occlusion, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/pbr-material-model, graphics-xr/ddgi-probe-relocation-classification]
 sources:
   - https://jcgt.org/published/0008/02/01/
   - https://jcgt.org/published/0008/02/01/paper-lowres.pdf
@@ -15,7 +15,7 @@ sources:
 updatedAt: 2026-11-19
 ---
 
-> 출처 메모: Majercik·Guertin·Nowrouzezahrai·McGuire, "Dynamic Diffuse Global Illumination with Ray-Traced Irradiance Fields"(JCGT 8(2), 2019) 본문 PDF(저해상도판)를 내려받아 1~7장을 읽었다. 논문의 참조 셰이더 코드와 보충 영상은 보지 않았다. RTXGI SDK 저장소 README 는 v2.x 가 SHARC·NRC 를 담고, DDGI 를 포함한 v1.x 는 `NVIDIAGameWorks/RTXGI-DDGI` 에 있다고 적는다. **RTXGI-DDGI 저장소 자체(현재 상태, API)는 읽지 않았다.** 아래 두 가지 계산은 논문 수치로 내가 한 산수다.
+> 출처 메모: Majercik·Guertin·Nowrouzezahrai·McGuire, "Dynamic Diffuse Global Illumination with Ray-Traced Irradiance Fields"(JCGT 8(2), 2019) 본문 PDF(저해상도판)를 내려받아 1~7장을 읽었다. 논문의 참조 셰이더 코드와 보충 영상은 보지 않았다. RTXGI SDK 저장소 README 는 v2.x 가 SHARC·NRC 를 담고, DDGI 를 포함한 v1.x 는 `NVIDIAGameWorks/RTXGI-DDGI` 에 있다고 적는다. **RTXGI-DDGI 저장소 자체(현재 상태, API)는 이 노트에서 읽지 않았다.** 후속 논문(JCGT 2021)과 SDK 의 프로브 재배치·분류는 [별도 노트](/develop-wiki/knowledge/graphics-xr/ddgi-probe-relocation-classification/)에 정리했다. 아래 두 가지 계산은 논문 수치로 내가 한 산수다.
 
 ## 문제
 

@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: ReSTIR PT 는 이웃 픽셀의 경로를 내 픽셀의 경로로 옮겨 재사용하며, 그 변환이 이동 사상이다. 재연결은 싸고 거친 면에 맞고, 랜덤 리플레이는 광택면에 맞으며, 옮긴 만큼 야코비안으로 밀도를 보정해야 편향이 없다.
 tags: [rendering, ray-tracing, restir, path-tracing, shift-mapping, jacobian, resampling, global-illumination, gris]
-related: [graphics-xr/restir-gi-pt-hit-distance-contract, graphics-xr/restir-reservoir-resampling, graphics-xr/nrd-hit-distance-accumulation-psr, graphics-xr/radiance-cache-sharc-nrc, graphics-xr/pbr-material-model, graphics-xr/nrd-reblur-relax-denoiser-inputs]
+related: [graphics-xr/restir-gi-pt-hit-distance-contract, graphics-xr/restir-reservoir-resampling, graphics-xr/nrd-hit-distance-accumulation-psr, graphics-xr/radiance-cache-sharc-nrc, graphics-xr/pbr-material-model, graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/restir-mis-weights-balance-pairwise, graphics-xr/gradient-domain-path-tracing]
 sources:
   - https://graphics.cs.utah.edu/research/projects/gris/sig22_GRIS.pdf
   - https://research.nvidia.com/publication/2022-07_generalized-resampled-importance-sampling-foundations-restir
@@ -14,7 +14,7 @@ sources:
 updatedAt: 2026-11-19
 ---
 
-> 출처 메모: Lin·Kettunen·Bitterli·Pantaleoni·Yuksel·Wyman, "Generalized Resampled Importance Sampling: Foundations of ReSTIR"(ACM TOG 41(4), SIGGRAPH 2022) 본문 PDF(유타 대학 프로젝트 페이지 사본)를 내려받아 텍스트로 추출해 4.1·4.3절(일반화된 RIS와 이동 사상의 정의), 5.4~5.5절, 7장(이동 사상 설계), 8장(구현·야코비안·파라미터), 9.2절(이동 사상 결과), 10장(결론)을 읽었다. 보충 자료(증명, S.3·S.4절)와 5.6절 MIS 가중치의 유도는 읽지 않았다. 수식은 PDF 텍스트 추출로 읽어서 첨자가 깨진 곳이 있어, 구조만 옮기고 원문 표기를 그대로 베끼지 않았다. 아래 수치 예시는 내가 직접 계산한 것이다.
+> 출처 메모: Lin·Kettunen·Bitterli·Pantaleoni·Yuksel·Wyman, "Generalized Resampled Importance Sampling: Foundations of ReSTIR"(ACM TOG 41(4), SIGGRAPH 2022) 본문 PDF(유타 대학 프로젝트 페이지 사본)를 내려받아 텍스트로 추출해 4.1·4.3절(일반화된 RIS와 이동 사상의 정의), 5.4~5.5절, 7장(이동 사상 설계), 8장(구현·야코비안·파라미터), 9.2절(이동 사상 결과), 10장(결론)을 읽었다. 보충 자료(증명, S.3·S.4절)와 5.6절 MIS 가중치의 유도는 이 노트를 쓸 때 읽지 않았다(5.6절과 보충 S.1절은 이후 [재샘플링 MIS 가중치 노트](/develop-wiki/knowledge/graphics-xr/restir-mis-weights-balance-pairwise/)에서 다뤘다). 수식은 PDF 텍스트 추출로 읽어서 첨자가 깨진 곳이 있어, 구조만 옮기고 원문 표기를 그대로 베끼지 않았다. 아래 수치 예시는 내가 직접 계산한 것이다.
 
 ## 문제
 

@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: ReSTIR 는 수많은 동적 광원에서 픽셀마다 후보를 골라 저수지 하나에 담고, 저수지를 이웃 픽셀·이전 프레임과 합쳐 사실상 수천 개 후보를 본 효과를 낸다. 단순 합치기는 어두워지는 편향이 있어 보정이 필요하다.
 tags: [rendering, ray-tracing, restir, direct-lighting, importance-sampling, reservoir, resampling, monte-carlo, many-lights]
-related: [graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/svgf-ray-tracing-denoising, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/pbr-material-model, graphics-xr/taa-temporal-filtering-ao-ssr, graphics-xr/stochastic-ssr-hiz-ray-reuse]
+related: [graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/svgf-ray-tracing-denoising, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/pbr-material-model, graphics-xr/taa-temporal-filtering-ao-ssr, graphics-xr/stochastic-ssr-hiz-ray-reuse, graphics-xr/restir-mis-weights-balance-pairwise]
 sources:
   - https://research.nvidia.com/sites/default/files/pubs/2020-07_Spatiotemporal-reservoir-resampling/ReSTIR.pdf
   - https://doi.org/10.1145/3386569.3392481

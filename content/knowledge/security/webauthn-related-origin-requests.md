@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: 도메인이 여러 개인 서비스가 RP ID 하나의 패스키를 함께 쓰도록, RP ID 도메인의 .well-known/webauthn 에 허용 출처 목록을 공개하고 브라우저가 검증하는 WebAuthn Level 3 기능. 라벨 수 제한과 사용자 혼동이 비용이다.
 tags: [webauthn, passkeys, related-origins, rp-id, well-known, fido2, w3c, multi-domain]
-related: [security/webauthn-signal-api-passkey-lifecycle, security/mfa-passkeys, security/passkey-recovery-hints, security/cors, security/oauth-authorization-server-metadata-rfc8414, security/threat-modeling-stride]
+related: [security/webauthn-signal-api-passkey-lifecycle, security/mfa-passkeys, security/passkey-recovery-hints, security/cors, security/oauth-authorization-server-metadata-rfc8414, security/threat-modeling-stride, security/webauthn-native-app-origin-asset-links]
 sources:
   - https://www.w3.org/TR/webauthn-3/
   - https://www.rfc-editor.org/rfc/rfc8615
@@ -70,7 +70,7 @@ updatedAt: 2026-11-19
 - **목록 = 신뢰 경계.** 목록에 넣은 출처는 공통 RP ID 의 패스키로 서명을 받을 수 있다. 한 도메인의 XSS·하위 도메인 탈취가 다른 브랜드 계정까지 번질 수 있다. 서버는 `clientDataJSON.origin` 을 검증해야 하고(MUST) 예상 밖 값은 받지 않는다(MUST NOT). 관련 출처를 쓰면 보통 well-known 목록과 같은 허용 목록에 정확히 일치하는지로 검증한다(13.4.9 예시).
 - **라벨 상한.** 브랜드가 5개를 넘으면 일부 브라우저에서 동작하지 않을 수 있다. 중요한 출처를 목록 앞에 둔다.
 - **가용성 의존.** 검증 때마다(또는 캐시 정책에 따라) `.well-known/webauthn` 을 가져온다. 이 파일이 200 이 아니거나 콘텐츠 타입이 틀리면 관련 출처 로그인이 전부 `SecurityError` 가 된다. CDN·리다이렉트 설정을 점검한다. 브라우저 캐시 정책은 명세에 없고 확인하지 않았다.
-- **네이티브 앱은 별개.** 앱의 연결(Android Digital Asset Links, Apple associated domains)은 이 메커니즘이 아니다. 이 노트는 그 연동을 다루지 않는다.
+- **네이티브 앱은 별개.** 앱의 연결(Android Digital Asset Links, Apple associated domains)은 이 메커니즘이 아니다. 그 연동과 앱 출처(`android:apk-key-hash:`) 검증은 [네이티브 앱의 WebAuthn 출처 검증](/develop-wiki/knowledge/security/webauthn-native-app-origin-asset-links/)에 있다.
 - [Signal API](/develop-wiki/knowledge/security/webauthn-signal-api-passkey-lifecycle/)도 RP ID 가 현재 출처와 맞지 않으면 이 검증을 거친다.
 
 > 출처 확인 범위: W3C WebAuthn Level 3(Recommendation, 2026-08-25)에서 5.11·5.11.1(형식·가져오기 조건·검증 알고리즘·라벨 하한), 용어 정의의 Registrable Origin Label, 5.8.7(`relatedOrigins` 능력), 14.5.5(교차 출처 사용 시 UI 권고), 13.4.9(출처 검증)를 직접 읽었다. 라벨 실험은 명세 알고리즘을 Node 로 옮긴 모형이며 공개 접미사 목록은 예시용 소집합이다. 미확인: 브라우저별 지원 여부·라벨 상한·응답 캐시, 네이티브 앱 연동.

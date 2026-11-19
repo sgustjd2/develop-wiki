@@ -6,7 +6,7 @@ group: xr
 level: advanced
 summary: 앰비소닉스를 실제 스피커로 내보내는 디코더는 배치가 불규칙하면 방향마다 음량이 들쭉날쭉해진다. AllRAD 는 균일한 가상 스피커로 먼저 디코딩한 뒤 VBAP 로 실제 스피커에 옮기고, max-rE 가중은 부엽을 줄여 방향감을 선명하게 한다.
 tags: [spatial-audio, ambisonics, decoder, loudspeaker, allrad, max-re, vbap, spherical-harmonics, t-design, xr]
-related: [graphics-xr/ambisonics-sound-field, graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/magls-binaural-ambisonics-decoding, graphics-xr/hrtf-binaural-rendering, graphics-xr/spatial-audio]
+related: [graphics-xr/ambisonics-sound-field, graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/magls-binaural-ambisonics-decoding, graphics-xr/hrtf-binaural-rendering, graphics-xr/spatial-audio, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/mdap-vbip-multiple-direction-panning]
 sources:
   - https://phaidra.kug.ac.at/open/o:127169
   - https://aes.org/publications/elibrary-page/?id=16554
@@ -14,7 +14,7 @@ sources:
 updatedAt: 2026-11-19
 ---
 
-> 출처 메모: **원전 Zotter·Frank, "All-Round Ambisonic Panning and Decoding"(JAES 60(10), 2012, 위 AES 링크)은 회원 전용이라 여전히 읽지 못했다.** 처음 서술은 이를 인용한 IEM 그라츠의 학생 프로젝트 보고서(Radke, "Comparison of Ambisonic Loudspeaker Decoders for Channel-Based Material", 2022) 2·3장에 근거했다. 2026-11-19 에 같은 저자들의 오픈 액세스 책 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) PDF 를 내려받아 3.3절(상상의 스피커), 4.9.1~4.9.8절(SAD·모드 매칭·EPAD·AllRAD)을 읽고 아래 AllRAD·max-rE·SAD 서술을 대조했다. 보고서에서 옮긴 내용은 책과 어긋나지 않았고, 보고서에서 못 읽었던 정규화와 상상의 스피커 처리를 책 기준으로 채웠다. 책은 2012 논문을 "원 논문" 으로 인용하며 요약하는 것이라, 논문 자체의 문장과 대조한 것은 아니다. 보고서의 청취 실험 결과는 한 방·한 가지 소재의 결과라 일반 결론이 아니다. 아래 수치 두 가지는 내가 직접 계산한 것이다(max-rE 가중치 검산, 2차원 모형 비교).
+> 출처 메모: **원전 Zotter·Frank, "All-Round Ambisonic Panning and Decoding"(JAES 60(10), 2012, 위 AES 링크)은 회원 전용이라 여전히 읽지 못했다.** 처음 서술은 이를 인용한 IEM 그라츠의 학생 프로젝트 보고서(Radke, "Comparison of Ambisonic Loudspeaker Decoders for Channel-Based Material", 2022) 2·3장에 근거했다. 2026-11-19 에 같은 저자들의 오픈 액세스 책 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) PDF 를 내려받아 3.3절(상상의 스피커), 4.9.1~4.9.8절(SAD·모드 매칭·EPAD·AllRAD)을 읽고 아래 AllRAD·max-rE·SAD 서술을 대조했다. 보고서에서 옮긴 내용은 책과 어긋나지 않았고, 보고서에서 못 읽었던 정규화와 상상의 스피커 처리를 책 기준으로 채웠다. 책은 2012 논문을 "원 논문" 으로 인용하며 요약하는 것이라, 논문 자체의 문장과 대조한 것은 아니다. 보고서의 청취 실험 결과는 한 방·한 가지 소재의 결과라 일반 결론이 아니다. 아래 수치 두 가지는 내가 직접 계산한 것이다(max-rE 가중치 검산, 2차원 모형 비교). 2026-11-19 에 원전의 공개 사본을 다시 찾았으나 AES 다운로드·포럼 페이지는 자동 접근 차단 화면만 돌려주었고, IEM·KUG(phaidra) 저장소에서도 사본을 찾지 못했다. 같은 날 EPAD 원전(Acta Acustica 2012)은 읽을 수 있어 [EPAD 노트](/develop-wiki/knowledge/graphics-xr/epad-energy-preserving-ambisonic-decoding/)에 정리했다.
 
 ## 문제
 

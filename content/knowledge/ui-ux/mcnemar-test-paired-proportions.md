@@ -6,7 +6,7 @@ group: research
 level: advanced
 summary: 같은 참가자가 두 디자인을 모두 쓴 과업 성공률을 비교할 때, 엇갈린 쌍(한쪽만 성공)만으로 검정하는 McNemar 검정의 정확·mid-p·카이제곱 근사 버전과 선택 기준을 계산 예로 정리한다.
 tags: [ux, statistics, mcnemar, paired-data, success-rate, within-subjects, binomial, small-sample]
-related: [ui-ux/within-subjects-counterbalancing-latin-square, ui-ux/quantitative-usability-confidence-intervals, ui-ux/task-time-log-transform-geometric-mean, ui-ux/multiple-comparison-correction-bonferroni-holm-bh, ui-ux/usability-testing-sample-size, ui-ux/ab-test-statistics-srm-power-sequential]
+related: [ui-ux/cochrans-q-test-paired-binary, ui-ux/paired-proportion-difference-confidence-interval, ui-ux/within-subjects-counterbalancing-latin-square, ui-ux/quantitative-usability-confidence-intervals, ui-ux/task-time-log-transform-geometric-mean, ui-ux/multiple-comparison-correction-bonferroni-holm-bh, ui-ux/usability-testing-sample-size, ui-ux/ab-test-statistics-srm-power-sequential]
 sources:
   - https://doi.org/10.1007/BF02295996
   - https://doi.org/10.1186/1471-2288-13-91
@@ -86,7 +86,7 @@ N 쌍, 엇갈린 쌍이 나올 확률 `pd`, 귀무가설 참(b·c 확률 동일)
 
 - 같은 참가자가 두 조건을 모두 경험한 이분 결과: 과업 성공/실패, 오류 발생 여부, 첫 클릭 정답 여부, 선호(A/B 중 택1이 아닌, 조건별 "만족 여부").
 - 같은 사용자의 전·후 측정(리디자인 전후 같은 패널).
-- 셋 이상 조건의 이분 결과는 Cochran's Q 로 넓힌다(이 노트는 다루지 않음).
+- 셋 이상 조건의 이분 결과는 Cochran's Q 로 넓힌다 → [Cochran's Q 검정](/develop-wiki/knowledge/ui-ux/cochrans-q-test-paired-binary/)
 
 ## 주의·비용
 
@@ -117,4 +117,4 @@ N 쌍, 엇갈린 쌍이 나올 확률 `pd`, 귀무가설 참(b·c 확률 동일)
 
 - McNemar(1947) 원문은 서지(Psychometrika 12(2), 153–157)와 DOI 만 확인했고 본문은 읽지 않았다. 공식은 Fagerland 등(2013, PMC 공개본)과 Wikipedia 설명을 따랐다.
 - 표의 p 값과 1종 오류율은 Python 으로 직접 계산했다. Fagerland 등의 수치는 재현하지 않았다.
-- 대응 비율 차이의 신뢰구간(Newcombe, Bonett–Price 등) 권고는 확인하지 않아 공식을 싣지 않았다.
+- 대응 비율 차이의 신뢰구간은 이 노트에 싣지 않았다. Newcombe(1998) 방법 10 은 [대응 비율 차의 신뢰구간](/develop-wiki/knowledge/ui-ux/paired-proportion-difference-confidence-interval/)에서 원문 표로 검산했다. Bonett–Price 등 다른 방법은 확인하지 않았다.

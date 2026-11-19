@@ -1,0 +1,224 @@
+---
+/** 노트 consistent-hashing 의 해시 링(가상 노드)과 hash mod N 을 비교하는 시뮬레이션. 로직은 consistent-hash-sim.ts */
+---
+<section class="sim" id="simulation" aria-labelledby="ch-title" data-ch-sim>
+  <h2 id="ch-title">직접 돌려 보기: 해시 링과 hash mod N</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 키는 <code>user:0</code>, <code>user:1</code> … 문자열이고, 해시는 노트 코드의 <code>hash32</code>(FNV-1a + murmur3 마무리 섞기), 가상 노드 위치는 <code>hash32("a#0")</code>, <code>hash32("a#1")</code> … 입니다.
+    노드 이름은 시드 1 이면 노트 코드와 같은 a, b, c … 이고, 다른 시드는 <code>a.2</code> 처럼 접미사를 붙여 링 위 위치만 바꿉니다.
+    "노드 추가"는 다음 이름의 노드 1대를 넣고, "노드 제거"는 마지막 노드 1대를 뺍니다. 부하는 키 <strong>개수</strong>만 세며 키별 요청 빈도(핫 키)는 반영하지 않습니다.{' '}
+    <strong>설명용 모형이며 Cassandra 등의 토큰 할당 방식과는 다릅니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="ch-n">노드 수 N <output id="ch-n-out" for="ch-n"></output></label>
+      <input id="ch-n" type="range" min="2" max="50" step="1" value="4" />
+    </div>
+    <div class="sim-field">
+      <label for="ch-v">노드당 가상 노드 V <output id="ch-v-out" for="ch-v"></output></label>
+      <input id="ch-v" type="range" min="0" max="9" step="1" value="7" />
+    </div>
+    <div class="sim-field">
+      <label for="ch-k">키 수 <output id="ch-k-out" for="ch-k"></output></label>
+      <input id="ch-k" type="range" min="0" max="4" step="1" value="3" />
+    </div>
+    <fieldset class="sim-field sim-radios">
+      <legend>바꿀 것</legend>
+      <label><input type="radio" name="ch-op" value="add" checked /> 노드 1개 추가</label>
+      <label><input type="radio" name="ch-op" value="remove" /> 노드 1개 제거</label>
+    </fieldset>
+    <div class="sim-field">
+      <label for="ch-seed">난수 시드 (노드 이름 접미사)</label>
+      <input id="ch-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="ch-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="ch-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption id="ch-caption">방식별 결과</caption>
+      <thead>
+        <tr>
+          <th scope="col">방식</th><th scope="col">최대/평균</th><th scope="col">최소/평균</th><th scope="col">표준편차 (키, 평균 대비)</th>
+          <th scope="col">이동한 키</th><th scope="col">이론 이동 비율</th>
+        </tr>
+      </thead>
+      <tbody id="ch-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="ch-svg" viewBox="0 0 640 220" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="ch-pat-ring" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="var(--surface)" /><path d="M0 0L6 6M-2 4L2 8M4 -2L8 2" stroke="var(--text)" stroke-width="1.4" /></pattern>
+      </defs>
+      <g id="ch-bars"></g>
+    </svg>
+    <figcaption class="sim-cap">표의 보조 그림입니다. 노드별 부하(평균 = 1). 대각선 무늬 = 해시 링, 채움 = hash mod N, 점선 = 평균.</figcaption>
+  </figure>
+
+  <figure class="sim-chart" id="ch-ring-fig" hidden>
+    <svg id="ch-ring" viewBox="180 10 280 280" aria-hidden="true" focusable="false"></svg>
+    <figcaption class="sim-cap">링 위 가상 노드 위치(맨 위에서 시계 방향으로 해시값 증가). 채운 점 = 그대로인 노드, 속 빈 원 = 추가·제거되는 노드. 키는 시계 방향으로 처음 만나는 점의 노드가 맡습니다.</figcaption>
+  </figure>
+  <p class="sim-cap" id="ch-ring-off">링 그림은 가상 노드 점이 64 개 이하일 때만 그립니다 (예: N = 4, V = 5).</p>
+
+  <p class="sim-note">
+    <strong>읽는 법.</strong> hash mod N 의 이론값은 해시가 균등할 때 h mod N ≠ h mod N′ 인 비율로, 추가는 N/(N+1), 제거는 (N−1)/N 입니다.
+    해시 링의 이론값은 무작위 위치를 가정한 기댓값 1/(N+1)(추가), 1/N(제거)이고, 실제 이동 비율은 추가·제거되는 노드가 맡는 구간 길이와 같아서 V 가 작으면 크게 벗어납니다.
+    시드 1, N = 5, 키 100,000 에서 V 를 1·10·100·500 으로 바꾸면 노트 표의 최대/최소 비율이, N = 4·V = 160·노드 추가에서는 노트의 19.6%·79.9% 가 나옵니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label, .sim-radios legend { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'] { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-radios { border: 0; padding: 0; margin: 0; }
+  .sim-radios legend { padding: 0; margin-bottom: 6px; }
+  .sim-radios label { font-weight: 400; display: flex; align-items: center; gap: 8px; min-height: 28px; }
+  .sim-radios input { accent-color: var(--text); width: 18px; height: 18px; margin: 0; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim :global(.sim-table td) { white-space: nowrap; }
+  .sim :global(.sim-table thead th) { white-space: nowrap; }
+  .sim :global(.sim-table th[scope="row"]) { min-width: 9em; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  #ch-ring { max-width: 360px; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.ax) { stroke: var(--muted); stroke-width: 1; }
+  .sim :global(.mean) { stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .sim :global(.bar) { stroke: var(--text); stroke-width: 1; }
+  .sim :global(.bar-mod) { fill: var(--text); }
+  .sim :global(.bar-ring) { fill: url(#ch-pat-ring); }
+  .sim :global(.lbl) { fill: var(--text); font: 15px var(--font); }
+  .sim :global(.lbl-muted) { fill: var(--muted); font: 14px var(--font); }
+  .sim :global(.ring) { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  .sim :global(.pt) { fill: var(--text); }
+  .sim :global(.pt-changed) { fill: var(--surface); stroke: var(--text); stroke-width: 2; }
+</style>
+
+<script>
+  import { simulate, type ChResult, type Op } from './consistent-hash-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-ch-sim]');
+  if (root) {
+    const $ = <T extends Element>(id: string) => root.querySelector<T>('#' + id)!;
+    const V_STEPS = [1, 2, 5, 10, 20, 50, 100, 160, 200, 500];
+    const K_STEPS = [1000, 10000, 50000, 100000, 200000];
+    const nIn = $<HTMLInputElement>('ch-n'), vIn = $<HTMLInputElement>('ch-v'), kIn = $<HTMLInputElement>('ch-k');
+    const seedIn = $<HTMLInputElement>('ch-seed');
+    const opIns = Array.from(root.querySelectorAll<HTMLInputElement>('input[name="ch-op"]'));
+    const body = $<HTMLElement>('ch-body'), status = $<HTMLElement>('ch-status'), bars = $<SVGGElement>('ch-bars');
+    const ringFig = $<HTMLElement>('ch-ring-fig'), ringSvg = $<SVGSVGElement>('ch-ring'), ringOff = $<HTMLElement>('ch-ring-off');
+    const ns = 'http://www.w3.org/2000/svg';
+    const int = (x: number) => x.toLocaleString('ko-KR');
+    const pct = (x: number) => (x * 100).toFixed(1) + '%';
+    const r2 = (x: number) => x.toFixed(2);
+    let timer: number | undefined;
+
+    const params = () => ({
+      nodes: +nIn.value, vnodes: V_STEPS[+vIn.value], keys: K_STEPS[+kIn.value],
+      op: (opIns.find((o) => o.checked)?.value ?? 'add') as Op,
+      seed: Math.max(1, Math.floor(+seedIn.value) || 1),
+    });
+    const labels = () => {
+      const p = params();
+      $('ch-n-out').textContent = String(p.nodes);
+      for (const [input, out, v] of [[vIn, 'ch-v-out', p.vnodes], [kIn, 'ch-k-out', p.keys]] as const) {
+        $(out).textContent = int(v);
+        input.setAttribute('aria-valuetext', int(v));
+      }
+    };
+    const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+      const e = document.createElementNS(ns, tag);
+      for (const [a, v] of Object.entries(attrs)) e.setAttribute(a, String(v));
+      if (text !== undefined) e.textContent = text;
+      return e;
+    };
+
+    const drawBars = (r: ChResult) => {
+      bars.innerHTML = '';
+      const L = 44, R = 630, T = 12, B = 188;
+      const N = r.names.length;
+      const meanR = r.ring.loads.reduce((a, b) => a + b, 0) / N, meanM = r.mod.loads.reduce((a, b) => a + b, 0) / N;
+      const top = Math.max(1.5, Math.ceil(Math.max(r.ring.maxRatio, r.mod.maxRatio) * 2) / 2);
+      const y = (v: number) => B - (v / top) * (B - T);
+      for (let v = 0; v <= top + 1e-9; v += top > 3 ? 1 : 0.5) {
+        bars.append(el('text', { class: 'lbl-muted', x: L - 8, y: y(v) + 4, 'text-anchor': 'end' }, v.toFixed(1)));
+      }
+      const gw = (R - L) / N, bw = Math.max(1.5, Math.min(14, gw * 0.4));
+      r.names.forEach((name, i) => {
+        const gx = L + i * gw + gw / 2;
+        const hr = r.ring.loads[i] / meanR, hm = r.mod.loads[i] / meanM;
+        bars.append(el('rect', { class: 'bar bar-ring', x: gx - bw, y: y(hr), width: bw, height: B - y(hr) }));
+        bars.append(el('rect', { class: 'bar bar-mod', x: gx, y: y(hm), width: bw, height: B - y(hm) }));
+        if (N <= 20) bars.append(el('text', { class: 'lbl', x: gx, y: B + 18, 'text-anchor': 'middle' }, name.split('.')[0]));
+      });
+      bars.append(el('line', { class: 'ax', x1: L, x2: R, y1: B, y2: B }));
+      bars.append(el('line', { class: 'mean', x1: L, x2: R, y1: y(1), y2: y(1) }));
+    };
+
+    const drawRing = (r: ChResult, changedIdx: number) => {
+      if (!r.points) { ringFig.hidden = true; ringOff.hidden = false; return; }
+      ringFig.hidden = false; ringOff.hidden = true;
+      ringSvg.innerHTML = '';
+      const cx = 320, cy = 150, rad = 105;
+      ringSvg.append(el('circle', { class: 'ring', cx, cy, r: rad }));
+      const allNames = [...r.names, r.changed];
+      for (const p of r.points) {
+        const a = (p.point / 4294967296) * 2 * Math.PI;
+        const px = cx + rad * Math.sin(a), py = cy - rad * Math.cos(a);
+        const changed = p.node === changedIdx;
+        ringSvg.append(changed ? el('circle', { class: 'pt-changed', cx: px, cy: py, r: 6 }) : el('circle', { class: 'pt', cx: px, cy: py, r: 4.5 }));
+        const lx = cx + (rad + 22) * Math.sin(a), ly = cy - (rad + 22) * Math.cos(a) + 4;
+        ringSvg.append(el('text', { class: 'lbl', x: lx, y: ly, 'text-anchor': 'middle' }, allNames[p.node].split('.')[0]));
+      }
+    };
+
+    const run = () => {
+      const p = params();
+      const r = simulate(p);
+      const N = p.nodes, after = p.op === 'add' ? N + 1 : N - 1;
+      const verb = p.op === 'add' ? '추가' : '제거';
+      $('ch-caption').textContent = `방식별 결과 (부하는 변경 전 ${N}대·키 ${int(p.keys)} 개 기준, 이동은 노드 ${r.changed} ${verb} 후 ${after}대와 비교)`;
+      body.innerHTML = '';
+      const mean = p.keys / N;
+      for (const [name, s] of [[`해시 링 (가상 노드 ${int(p.vnodes)})`, r.ring], ['hash mod N', r.mod]] as const) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.textContent = name; th.style.fontWeight = '600';
+        tr.append(th);
+        const cells = [r2(s.maxRatio), r2(s.minRatio), `${int(Math.round(s.stdev))} (${pct(s.stdev / mean)})`, pct(s.moved), pct(s.movedTheory)];
+        for (const v of cells) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      drawBars(r);
+      drawRing(r, p.op === 'add' ? N : N - 1);
+      status.textContent = `노드 ${N}대, 가상 노드 ${int(p.vnodes)}, 키 ${int(p.keys)}, 시드 ${p.seed}. 노드 ${r.changed} ${verb} 시 이동한 키: 해시 링 ${pct(r.ring.moved)} (기댓값 ${pct(r.ring.movedTheory)}), hash mod N ${pct(r.mod.moved)} (이론 ${pct(r.mod.movedTheory)}). 링 부하 최대/평균 ${r2(r.ring.maxRatio)}.`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const e of [nIn, vIn, kIn, seedIn]) e.addEventListener('input', schedule);
+    for (const o of opIns) o.addEventListener('change', schedule);
+    $('ch-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

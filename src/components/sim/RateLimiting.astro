@@ -1,0 +1,223 @@
+---
+/** 노트 rate-limiting 의 알고리즘 다섯 개를 같은 요청 열에 적용해 비교한다. 로직은 rate-limit-sim.ts */
+---
+<section class="sim" id="simulation" aria-labelledby="rl-title" data-rl-sim>
+  <h2 id="rl-title">직접 돌려 보기: 레이트 리미팅 알고리즘 비교</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 클라이언트 하나가 보내는 요청을 단일 프로세스 리미터가 판정하며, 요청 비용은 모두 1, 시간은 윈도 20개 길이입니다.
+    한도는 "윈도 W 초당 L 건"이고, 토큰 버킷은 초당 L/W 개씩 충전되는 크기 B 버킷(가득 찬 상태로 시작), 리키 버킷은 길이 B 큐에 넣어 W/L 초 간격으로 내보냅니다.
+    고정 윈도·슬라이딩 윈도 로그·슬라이딩 윈도 카운터는 허용된 요청만 셉니다. 슬라이딩 윈도 카운터는 이전 윈도 개수를 현재 윈도의 남은 비율만큼 가중해 더합니다.{' '}
+    트래픽: 균일은 평균 속도 "배수 × L/W" 의 포아송 도착, 버스트는 4 윈도마다 윈도 가운데 0.1W 안에 "배수 × L" 건, 윈도 경계 몰림은 홀수 번째 경계의 직전·직후 0.1W 에 각각 "배수 × L ÷ 2" 건입니다.{' '}
+    <strong>단순화된 모형이며 Redis 같은 분산 리미터나 특정 제품의 동작이 아닙니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="rl-l">한도 L (윈도당 건수) <output id="rl-l-out" for="rl-l"></output></label>
+      <input id="rl-l" type="range" min="1" max="100" step="1" value="10" />
+    </div>
+    <div class="sim-field">
+      <label for="rl-w">윈도 길이 W (초) <output id="rl-w-out" for="rl-w"></output></label>
+      <input id="rl-w" type="range" min="1" max="60" step="1" value="1" />
+    </div>
+    <div class="sim-field">
+      <label for="rl-b">버킷 크기 B (토큰·리키 버킷) <output id="rl-b-out" for="rl-b"></output></label>
+      <input id="rl-b" type="range" min="1" max="200" step="1" value="10" />
+    </div>
+    <div class="sim-field">
+      <label for="rl-x">요청량 (한도 대비 배수) <output id="rl-x-out" for="rl-x"></output></label>
+      <input id="rl-x" type="range" min="0.5" max="5" step="0.5" value="2" />
+    </div>
+    <div class="sim-field">
+      <label for="rl-p">트래픽 패턴</label>
+      <select id="rl-p">
+        <option value="boundary" selected>윈도 경계 몰림</option>
+        <option value="uniform">균일 (포아송)</option>
+        <option value="burst">버스트</option>
+      </select>
+    </div>
+    <div class="sim-field">
+      <label for="rl-seed">난수 시드</label>
+      <input id="rl-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field">
+      <label for="rl-show">시계열로 볼 알고리즘</label>
+      <select id="rl-show">
+        <option value="fixed" selected>고정 윈도</option>
+        <option value="slidingLog">슬라이딩 윈도 로그</option>
+        <option value="slidingCounter">슬라이딩 윈도 카운터</option>
+        <option value="tokenBucket">토큰 버킷</option>
+        <option value="leakyBucket">리키 버킷</option>
+      </select>
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="rl-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="rl-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption id="rl-caption">알고리즘별 결과</caption>
+      <thead>
+        <tr>
+          <th scope="col">알고리즘</th><th scope="col">허용</th><th scope="col">거부</th>
+          <th scope="col">임의 W 구간 최대 통과 (한도 대비)</th><th scope="col">임의 W/10 구간 최대 통과</th><th scope="col">최대 대기 (초)</th>
+        </tr>
+      </thead>
+      <tbody id="rl-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="rl-svg" viewBox="0 0 640 230" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="rl-pat-pass" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="var(--text)" /></pattern>
+      </defs>
+      <g id="rl-plot"></g>
+    </svg>
+    <figcaption class="sim-cap" id="rl-cap">시계열은 표의 보조입니다. 처음 6 윈도를 W/10 칸으로 나눠, 테두리만 있는 막대 = 도착한 요청, 채운 막대 = 통과한 요청(리키 버킷은 내보낸 시점), 세로 점선 = 고정 윈도 경계, 가로 점선 = 평균 한도 속도(칸당 L/10)입니다.</figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>노트와의 대응.</strong> 노트 표의 "고정 윈도는 경계에서 순간 2배 허용"은 기본값(윈도 경계 몰림, 배수 2)에서 고정 윈도의 W 구간 최대 통과가 한도의 2배가 되는 것으로 보입니다.
+    토큰 버킷은 B 만큼의 버스트를 허용하므로 임의 W 구간에서 최대 B + L 건 가까이 통과할 수 있고, 리키 버킷은 통과 간격이 일정한 대신 큐 대기가 생깁니다.
+    슬라이딩 윈도 카운터는 근사라 균일 트래픽에서 W 구간 최대 통과가 L 을 조금 넘을 수 있습니다. 노트에는 수치 시뮬레이션이 없어 비교할 숫자 표는 없습니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim :global(.sim-table td) { white-space: nowrap; }
+  .sim :global(.sim-table tbody th) { min-width: 7em; }
+  .sim :global(.sim-table thead th) { overflow-wrap: normal; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.ts-offered) { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+  .sim :global(.ts-pass) { stroke: var(--text); stroke-width: 1; }
+  .sim :global(.ts-text) { fill: var(--text); font: 14px var(--font); }
+  .sim :global(.ts-axis) { stroke: var(--muted); stroke-width: 1; }
+  .sim :global(.ts-grid) { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 4; }
+  .sim :global(.ts-limit) { stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 6 4; }
+  @media (prefers-reduced-motion: no-preference) {
+    .sim :global(.ts-pass) { transition: height 0.3s ease, y 0.3s ease; }
+  }
+</style>
+
+<script>
+  import { runAll, WINDOWS, type Algo, type Params, type Result } from './rate-limit-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-rl-sim]');
+  if (root) {
+    const $ = <T extends HTMLElement>(id: string) => root.querySelector<T>('#' + id)!;
+    const L = $<HTMLInputElement>('rl-l'), W = $<HTMLInputElement>('rl-w'), B = $<HTMLInputElement>('rl-b'), X = $<HTMLInputElement>('rl-x');
+    const pat = $<HTMLSelectElement>('rl-p'), seed = $<HTMLInputElement>('rl-seed'), show = $<HTMLSelectElement>('rl-show');
+    const body = $('rl-body'), plot = root.querySelector('#rl-plot')!, status = $('rl-status'), caption = $('rl-caption');
+    const NAMES: Record<Algo, string> = {
+      fixed: '고정 윈도', slidingLog: '슬라이딩 윈도 로그', slidingCounter: '슬라이딩 윈도 카운터', tokenBucket: '토큰 버킷', leakyBucket: '리키 버킷',
+    };
+    const PATTERNS: Record<string, string> = { boundary: '윈도 경계 몰림', uniform: '균일', burst: '버스트' };
+    const ns = 'http://www.w3.org/2000/svg';
+    const SHOWN = 6, BINS = SHOWN * 10;
+    let last: { p: Params; arrivals: Float64Array; results: Result[] } | undefined;
+    let timer: number | undefined;
+
+    const labels = () => {
+      $('rl-l-out').textContent = L.value;
+      $('rl-w-out').textContent = W.value;
+      $('rl-b-out').textContent = B.value;
+      $('rl-x-out').textContent = Number(X.value).toFixed(1) + '배';
+    };
+    const params = (): Params => ({
+      limit: +L.value, window: +W.value, bucket: +B.value, load: +X.value,
+      pattern: pat.value as Params['pattern'], seed: Math.max(1, Math.floor(+seed.value) || 1),
+    });
+    const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+      const e = document.createElementNS(ns, tag);
+      for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, String(v));
+      if (text !== undefined) e.textContent = text;
+      return e;
+    };
+    const binCounts = (ts: Float64Array, w: number) => {
+      const c = new Array<number>(BINS).fill(0);
+      for (const t of ts) { const b = Math.floor(t / (w / 10)); if (b >= 0 && b < BINS) c[b]++; }
+      return c;
+    };
+
+    const draw = () => {
+      if (!last) return;
+      const { p, arrivals, results } = last;
+      const r = results.find((x) => x.algo === show.value)!;
+      const off = binCounts(arrivals, p.window), pass = binCounts(r.pass, p.window);
+      const x0 = 44, x1 = 632, top = 14, base = 196, bw = (x1 - x0) / BINS;
+      const ymax = Math.max(1, ...off, ...pass, p.limit / 10);
+      const y = (v: number) => base - (v / ymax) * (base - top);
+      plot.innerHTML = '';
+      plot.append(el('line', { class: 'ts-axis', x1: x0, x2: x1, y1: base, y2: base }));
+      plot.append(el('text', { class: 'ts-text', x: x0 - 6, y: top + 10, 'text-anchor': 'end' }, String(ymax)));
+      plot.append(el('text', { class: 'ts-text', x: x0 - 6, y: base, 'text-anchor': 'end' }, '0'));
+      for (let k = 0; k <= SHOWN; k++) {
+        const gx = x0 + k * 10 * bw;
+        plot.append(el('line', { class: 'ts-grid', x1: gx, x2: gx, y1: top, y2: base }));
+        plot.append(el('text', { class: 'ts-text', x: gx, y: base + 20, 'text-anchor': 'middle' }, `${k * p.window}s`));
+      }
+      for (let i = 0; i < BINS; i++) {
+        const bx = x0 + i * bw;
+        if (pass[i] > 0) plot.append(el('rect', { class: 'ts-pass', x: bx + 1, y: y(pass[i]), width: bw - 2, height: base - y(pass[i]), fill: 'url(#rl-pat-pass)' }));
+        if (off[i] > 0) plot.append(el('rect', { class: 'ts-offered', x: bx + 0.75, y: y(off[i]), width: bw - 1.5, height: base - y(off[i]) }));
+      }
+      const ly = y(p.limit / 10);
+      plot.append(el('line', { class: 'ts-limit', x1: x0, x2: x1, y1: ly, y2: ly }));
+    };
+
+    const run = () => {
+      const p = params();
+      const { arrivals, results } = runAll(p);
+      last = { p, arrivals, results };
+      body.innerHTML = '';
+      for (const r of results) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.textContent = NAMES[r.algo]; th.style.fontWeight = '600';
+        tr.append(th);
+        const cells = [
+          String(r.accepted), String(r.rejected),
+          `${r.maxPerWindow} (${(r.maxPerWindow / p.limit).toFixed(1)}배)`, String(r.maxPerTenth),
+          r.algo === 'leakyBucket' ? r.maxWait.toFixed(2) : '해당 없음',
+        ];
+        for (const v of cells) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      caption.textContent = `알고리즘별 결과 (요청 ${arrivals.length}건, ${WINDOWS * p.window}초 동안, 한도 ${p.window}초당 ${p.limit}건, 버킷 ${p.bucket})`;
+      draw();
+      const top = results.map((r) => `${NAMES[r.algo]} ${r.maxPerWindow}`).join(', ');
+      status.textContent =
+        `${PATTERNS[p.pattern]} 패턴, 요청 ${arrivals.length}건(한도 대비 ${p.load.toFixed(1)}배), 한도 ${p.window}초당 ${p.limit}건, 버킷 ${p.bucket}, 시드 ${p.seed}. ` +
+        `임의 ${p.window}초 구간 최대 통과: ${top}.`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const e of [L, W, B, X, seed]) e.addEventListener('input', schedule);
+    pat.addEventListener('change', schedule);
+    show.addEventListener('change', draw);
+    $('rl-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

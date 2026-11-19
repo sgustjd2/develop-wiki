@@ -13,6 +13,7 @@ sources:
   - https://cassandra.apache.org/doc/latest/cassandra/managing/operating/bloom_filters.html
   - https://www.postgresql.org/docs/current/bloom.html
 updatedAt: 2026-11-18
+simulation: bloom-filter
 ---
 
 ## 문제

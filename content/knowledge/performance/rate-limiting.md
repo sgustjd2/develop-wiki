@@ -12,6 +12,7 @@ sources:
   - https://www.rfc-editor.org/rfc/rfc6585.html
   - https://sre.google/sre-book/handling-overload/
 updatedAt: 2026-11-18
+simulation: rate-limiting
 ---
 
 ## 문제

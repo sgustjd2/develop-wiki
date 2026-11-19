@@ -1,0 +1,200 @@
+---
+/** 노트 multiple-comparison-correction-bonferroni-holm-bh 의 시뮬레이션을 브라우저에서 돌린다. 로직은 multiple-comparison-sim.ts */
+---
+<section class="sim" id="simulation" aria-labelledby="mc-title" data-mc-sim>
+  <h2 id="mc-title">직접 돌려 보기: 다중 비교 보정 방법 비교</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 가설 m 개가 서로 독립이고, 효과 0 인 가설의 z 통계량은 N(0, 1), 참 효과인 가설은 평균이 "효과 크기"만큼 이동한 N(이동, 1) 입니다.
+    정규 근사 양측 검정으로 p 값을 정하고, 보정 없음·Bonferroni·Holm·Benjamini–Hochberg(BH) 를 같은 표본에 적용합니다.
+    FWER 은 "거짓 기각이 하나 이상인 반복의 비율", FDR 은 "거짓 기각 수 ÷ 기각 수(기각 0 이면 0)의 평균", 검출률은 참 효과 가운데 기각된 비율입니다.{' '}
+    <strong>지표 간 상관이 없는 단순화된 모형이며 실제 A/B 테스트 데이터가 아닙니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="mc-m">가설 수 m <output id="mc-m-out" for="mc-m"></output></label>
+      <input id="mc-m" type="range" min="2" max="100" step="1" value="20" />
+    </div>
+    <div class="sim-field">
+      <label for="mc-k">참 효과 수 <output id="mc-k-out" for="mc-k"></output></label>
+      <input id="mc-k" type="range" min="0" max="20" step="1" value="5" />
+    </div>
+    <div class="sim-field">
+      <label for="mc-s">효과 크기 (z 평균 이동) <output id="mc-s-out" for="mc-s"></output></label>
+      <input id="mc-s" type="range" min="0" max="5" step="0.25" value="3" />
+    </div>
+    <div class="sim-field">
+      <label for="mc-a">유의수준 α <output id="mc-a-out" for="mc-a"></output></label>
+      <input id="mc-a" type="range" min="0.01" max="0.1" step="0.01" value="0.05" />
+    </div>
+    <div class="sim-field">
+      <label for="mc-r">반복 횟수</label>
+      <select id="mc-r">
+        <option value="2000">2,000회</option>
+        <option value="5000">5,000회</option>
+        <option value="20000" selected>20,000회 (노트와 같음)</option>
+        <option value="50000">50,000회</option>
+      </select>
+    </div>
+    <div class="sim-field">
+      <label for="mc-seed">난수 시드</label>
+      <input id="mc-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="mc-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="mc-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption id="mc-caption">방법별 결과</caption>
+      <thead>
+        <tr><th scope="col">방법</th><th scope="col">FWER</th><th scope="col">FDR</th><th scope="col">참 효과 검출률</th><th scope="col">평균 기각 수</th></tr>
+      </thead>
+      <tbody id="mc-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="mc-svg" viewBox="0 0 640 230" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="mc-pat-none" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><path d="M0 0L8 8M-2 6L2 10M6 -2L10 2" stroke="var(--text)" stroke-width="1.6" /></pattern>
+        <pattern id="mc-pat-bonferroni" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><circle cx="4" cy="4" r="1.7" fill="var(--text)" /></pattern>
+        <pattern id="mc-pat-holm" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><path d="M0 4H8" stroke="var(--text)" stroke-width="1.6" /></pattern>
+        <pattern id="mc-pat-bh" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--text)" /></pattern>
+      </defs>
+      <g id="mc-bars"></g>
+    </svg>
+    <figcaption class="sim-cap">막대는 표의 보조입니다(세로축 0~1). 무늬: 대각선 = 보정 없음, 점 = Bonferroni, 가로줄 = Holm, 채움 = BH. 점선은 α 입니다.</figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>노트 표와의 비교.</strong> 노트(Python, 20,000회)의 기본값 결과는 FWER 보정 없음 0.533·Bonferroni 0.035·Holm 0.041·BH 0.149,
+    검출률 0.852·0.492·0.505·0.654, FDR 0.130·0.012·0.013·0.036 입니다. 난수 생성기가 달라 같은 수열이 아니므로 반복 20,000회 기준 셋째 자리에서 ±0.01 안팎 차이가 납니다.
+    참 효과 수를 0 으로 두면 노트의 "20개 모두 효과 0" 경우(FWER 보정 없음 0.641, Bonferroni·Holm 0.048, BH 0.049)를 볼 수 있습니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim :global(.sim-table td) { white-space: nowrap; }
+  .sim :global(.sim-table tbody th) { min-width: 7em; }
+  .sim :global(.sim-table thead th) { overflow-wrap: normal; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.bar-rect) { stroke: var(--text); stroke-width: 1.5; }
+  .sim :global(.bar-text) { fill: var(--text); font: 15px var(--font); }
+  .sim :global(.bar-title) { fill: var(--text); font: 600 16px var(--font); }
+  .sim :global(.bar-axis) { stroke: var(--muted); stroke-width: 1; }
+  .sim :global(.bar-alpha) { stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  @media (prefers-reduced-motion: no-preference) {
+    .sim :global(.bar-rect) { transition: height 0.3s ease, y 0.3s ease; }
+  }
+</style>
+
+<script>
+  import { simulate, METHODS, type Method, type Result } from './multiple-comparison-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-mc-sim]');
+  if (root) {
+    const $ = <T extends HTMLElement>(id: string) => root.querySelector<T>('#' + id)!;
+    const m = $<HTMLInputElement>('mc-m'), k = $<HTMLInputElement>('mc-k'), s = $<HTMLInputElement>('mc-s'), a = $<HTMLInputElement>('mc-a');
+    const reps = $<HTMLSelectElement>('mc-r'), seed = $<HTMLInputElement>('mc-seed');
+    const body = $('mc-body'), bars = root.querySelector('#mc-bars')!, status = $('mc-status'), caption = $('mc-caption');
+    const NAMES: Record<Method, string> = { none: '보정 없음', bonferroni: 'Bonferroni', holm: 'Holm', bh: 'Benjamini–Hochberg' };
+    const SHORT: Record<Method, string> = { none: '없음', bonferroni: 'Bonf', holm: 'Holm', bh: 'BH' };
+    const f3 = (x: number) => (Number.isNaN(x) ? '해당 없음' : x.toFixed(3));
+    const ns = 'http://www.w3.org/2000/svg';
+    let timer: number | undefined;
+
+    const labels = () => {
+      k.max = m.value;
+      if (+k.value > +m.value) k.value = m.value;
+      $('mc-m-out').textContent = m.value;
+      $('mc-k-out').textContent = k.value;
+      $('mc-s-out').textContent = Number(s.value).toFixed(2);
+      $('mc-a-out').textContent = Number(a.value).toFixed(2);
+    };
+    const params = () => ({ m: +m.value, trueEffects: +k.value, shift: +s.value, alpha: +a.value, reps: +reps.value, seed: Math.max(1, Math.floor(+seed.value) || 1) });
+
+    const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+      const e = document.createElementNS(ns, tag);
+      for (const [key, v] of Object.entries(attrs)) e.setAttribute(key, String(v));
+      if (text !== undefined) e.textContent = text;
+      return e;
+    };
+
+    const draw = (res: Result[], alpha: number) => {
+      bars.innerHTML = '';
+      const panels: { key: 'fwer' | 'fdr' | 'power'; title: string; line: boolean }[] = [
+        { key: 'fwer', title: 'FWER', line: true },
+        { key: 'fdr', title: 'FDR', line: true },
+        { key: 'power', title: '검출률', line: false },
+      ];
+      const top = 46, H = 140, base = top + H;
+      panels.forEach((pn, pi) => {
+        const x0 = 8 + pi * 214;
+        bars.append(el('text', { class: 'bar-title', x: x0, y: 18 }, pn.title));
+        bars.append(el('line', { class: 'bar-axis', x1: x0, x2: x0 + 190, y1: base, y2: base }));
+        res.forEach((r, q) => {
+          const v = r[pn.key];
+          const x = x0 + 4 + q * 47, h = Number.isNaN(v) ? 0 : Math.max(1, v * H);
+          bars.append(el('rect', { class: 'bar-rect', x, y: base - h, width: 40, height: h, fill: `url(#mc-pat-${r.method})` }));
+          bars.append(el('text', { class: 'bar-text', x: x + 20, y: base - h - 6, 'text-anchor': 'middle' }, Number.isNaN(v) ? '–' : v.toFixed(2)));
+          bars.append(el('text', { class: 'bar-text', x: x + 20, y: base + 20, 'text-anchor': 'middle' }, SHORT[r.method]));
+        });
+        if (pn.line) {
+          const y = base - alpha * H;
+          bars.append(el('line', { class: 'bar-alpha', x1: x0, x2: x0 + 190, y1: y, y2: y }));
+        }
+      });
+    };
+
+    const run = () => {
+      const p = params();
+      const t0 = performance.now();
+      const res = simulate(p);
+      const ms = Math.round(performance.now() - t0);
+      body.innerHTML = '';
+      for (const r of res) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.textContent = NAMES[r.method]; th.style.fontWeight = '600';
+        tr.append(th);
+        for (const v of [f3(r.fwer), f3(r.fdr), f3(r.power), r.meanRejections.toFixed(2)]) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      caption.textContent = `방법별 결과 (가설 ${p.m}개 중 참 효과 ${p.trueEffects}개, 반복 ${p.reps.toLocaleString('ko-KR')}회)`;
+      draw(res, p.alpha);
+      const se = (0.5 / Math.sqrt(p.reps)).toFixed(4);
+      const by = (key: 'fwer' | 'fdr' | 'power') => METHODS.map((_, q) => `${NAMES[res[q].method]} ${f3(res[q][key])}`).join(', ');
+      status.textContent =
+        `가설 ${p.m}개(참 효과 ${p.trueEffects}개, 이동 ${p.shift}), α=${p.alpha.toFixed(2)}, 시드 ${p.seed}, 반복 ${p.reps.toLocaleString('ko-KR')}회(계산 ${ms} ms, 비율의 표준오차 최대 ${se}). ` +
+        `FWER: ${by('fwer')}. FDR: ${by('fdr')}.` + (p.trueEffects > 0 ? ` 검출률: ${by('power')}.` : '');
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const e of [m, k, s, a, seed]) e.addEventListener('input', schedule);
+    reps.addEventListener('change', schedule);
+    $('mc-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

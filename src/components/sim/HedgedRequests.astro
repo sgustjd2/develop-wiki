@@ -1,0 +1,175 @@
+---
+/** 노트 hedged-requests-tied-requests 의 이산 사건 모사를 브라우저에서 돌리는 시뮬레이션. 로직은 hedged-sim.ts */
+import { SERVERS, REQUESTS, FAST_MS, SLOW_MS } from './hedged-sim';
+---
+<section class="sim" id="simulation" aria-labelledby="hr-title" data-hedged-sim>
+  <h2 id="hr-title">직접 돌려 보기: 헤징 지연과 큐 취소</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 서버 {SERVERS} 대, 서버당 워커 1 개(FIFO 큐). 서비스 시간은 실행마다 독립으로 대부분은 약 {FAST_MS}ms,
+    "느린 실행 비율"만큼은 약 {SLOW_MS}ms(각각 ×U(0.5, 1.5))입니다. 도착은 포아송 과정이고 요청 {REQUESTS.toLocaleString('ko-KR')} 건을 무작위 서버 하나에 보냅니다.
+    헤지 지연은 같은 시드로 돌린 <em>헤징 없음</em> 응답 시간의 백분위로 정하고, 그 안에 응답이 없으면 다른 서버에 사본을 하나 더 보냅니다.
+    "큐 취소"는 한 사본이 끝나는 순간 다른 사본이 아직 큐에서 대기 중이면 버리는 것이고, 실행 중인 사본은 끝까지 갑니다.
+    가동률은 헤징 전 기준입니다.{' '}
+    <strong>단순화된 모형이며 실제 RPC 라이브러리(gRPC hedging 등)의 동작이 아닙니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="hr-u">가동률 (헤징 전) <output id="hr-u-out" for="hr-u"></output></label>
+      <input id="hr-u" type="range" min="0.02" max="0.9" step="0.02" value="0.1" />
+    </div>
+    <div class="sim-field">
+      <label for="hr-q">느린 실행 비율 (꼬리) <output id="hr-q-out" for="hr-q"></output></label>
+      <input id="hr-q" type="range" min="0" max="10" step="0.5" value="2" />
+    </div>
+    <div class="sim-field">
+      <label for="hr-h">헤지 지연 = 헤징 없음 응답의 백분위 <output id="hr-h-out" for="hr-h"></output></label>
+      <input id="hr-h" type="range" min="50" max="99" step="1" value="95" />
+    </div>
+    <div class="sim-field">
+      <label for="hr-seed">난수 시드</label>
+      <input id="hr-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field">
+      <label for="hr-metric">막대로 볼 지표</label>
+      <select id="hr-metric">
+        <option value="p99">p99 응답 시간</option>
+        <option value="p50">p50 응답 시간</option>
+        <option value="p999">p99.9 응답 시간</option>
+        <option value="execPerReq">요청당 실행 수</option>
+      </select>
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="hr-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="hr-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption>설정별 결과 (시간 단위: ms, 요청 {REQUESTS.toLocaleString('ko-KR')} 건 전체 기준)</caption>
+      <thead>
+        <tr>
+          <th scope="col">설정</th><th scope="col">헤지 지연</th><th scope="col">p50</th><th scope="col">p99</th><th scope="col">p99.9</th>
+          <th scope="col">헤지 비율</th><th scope="col">요청당 실행 수</th><th scope="col">실효 가동률</th>
+        </tr>
+      </thead>
+      <tbody id="hr-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="hr-svg" viewBox="0 0 640 170" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="hr-pat-none" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><path d="M0 0L8 8M-2 6L2 10M6 -2L10 2" stroke="var(--text)" stroke-width="1.6" /></pattern>
+        <pattern id="hr-pat-hedge" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><circle cx="4" cy="4" r="1.7" fill="var(--text)" /></pattern>
+        <pattern id="hr-pat-hedge-cancel" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--text)" /></pattern>
+      </defs>
+      <g id="hr-bars"></g>
+    </svg>
+    <figcaption class="sim-cap">막대는 표의 보조입니다. 무늬: 대각선 = 헤징 없음, 점 = 헤징(취소 없음), 채움 = 헤징 + 큐 취소. 실효 가동률이 1 이상이면 큐가 끝없이 자라 값이 실행 길이에 따라 커집니다.</figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>노트 표와의 차이.</strong> 노트의 표도 시드 고정 1 회 실행이지만 난수 생성기와 사건 처리 순서가 달라 같은 수열은 아닙니다.
+    기본 설정(시드 1)에서 노트의 행들과 대체로 몇 ms 안에서 맞고, 가동률 0.5·0.7 의 헤징 없음 꼬리(p99, p99.9)는 시드 편차로 5~10% 정도 다릅니다.
+    가동률 0.7 의 취소 없는 헤징은 노트와 같이 발산하지만, 발산한 값 자체는 실행 길이에 달려 있어 비교할 수 없습니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.bar-rect) { stroke: var(--text); stroke-width: 1.5; }
+  .sim :global(.bar-text) { fill: var(--text); font: 18px var(--font); }
+  @media (prefers-reduced-motion: no-preference) {
+    .sim :global(.bar-rect) { transition: width 0.3s ease; }
+  }
+</style>
+
+<script>
+  import { runAll, type Result } from './hedged-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-hedged-sim]');
+  if (root) {
+    const $ = <T extends HTMLElement>(id: string) => root.querySelector<T>('#' + id)!;
+    const u = $<HTMLInputElement>('hr-u'), q = $<HTMLInputElement>('hr-q'), h = $<HTMLInputElement>('hr-h');
+    const seed = $<HTMLInputElement>('hr-seed'), metric = $<HTMLSelectElement>('hr-metric');
+    const body = $('hr-body'), bars = root.querySelector('#hr-bars')!, status = $('hr-status');
+    const NAMES: Record<string, string> = { none: '헤징 없음', hedge: '헤징, 취소 없음', 'hedge-cancel': '헤징 + 큐 취소' };
+    const ms = (x: number) => (Number.isNaN(x) ? '-' : x < 100 ? x.toFixed(1) : Math.round(x).toLocaleString('ko-KR'));
+    const pctTxt = (x: number) => (x * 100).toFixed(1) + '%';
+    let last: Result[] = [];
+    let timer: number | undefined;
+
+    const labels = () => {
+      $('hr-u-out').textContent = Number(u.value).toFixed(2);
+      $('hr-q-out').textContent = Number(q.value).toFixed(1) + '%';
+      $('hr-h-out').textContent = 'p' + h.value;
+    };
+    const params = () => ({ util: +u.value, slowPct: +q.value, hedgePct: +h.value, seed: Math.max(1, Math.floor(+seed.value) || 1) });
+
+    const drawBars = () => {
+      const m = metric.value as 'p50' | 'p99' | 'p999' | 'execPerReq';
+      const max = Math.max(...last.map((r) => r[m]), 1e-9);
+      const W = 640, labelW = 200, valW = 110, avail = W - labelW - valW;
+      bars.innerHTML = '';
+      const ns = 'http://www.w3.org/2000/svg';
+      last.forEach((r, k) => {
+        const y = 12 + k * 52, w = Math.max(2, (r[m] / max) * avail);
+        const t = document.createElementNS(ns, 'text');
+        t.setAttribute('class', 'bar-text'); t.setAttribute('x', '0'); t.setAttribute('y', String(y + 22)); t.textContent = NAMES[r.mode];
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('class', 'bar-rect'); rect.setAttribute('x', String(labelW)); rect.setAttribute('y', String(y)); rect.setAttribute('height', '32'); rect.setAttribute('width', String(w)); rect.setAttribute('fill', `url(#hr-pat-${r.mode})`);
+        const v = document.createElementNS(ns, 'text');
+        v.setAttribute('class', 'bar-text'); v.setAttribute('x', String(labelW + w + 8)); v.setAttribute('y', String(y + 22));
+        v.textContent = m === 'execPerReq' ? r[m].toFixed(3) : ms(r[m]);
+        bars.append(t, rect, v);
+      });
+    };
+
+    const run = () => {
+      const p = params();
+      last = runAll(p);
+      body.innerHTML = '';
+      for (const r of last) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.style.fontWeight = '600';
+        th.textContent = NAMES[r.mode] + (r.effUtil >= 1 ? ' (발산)' : '');
+        tr.append(th);
+        const cells = [ms(r.delay), ms(r.p50), ms(r.p99), ms(r.p999), r.mode === 'none' ? '-' : pctTxt(r.hedgedFrac), r.execPerReq.toFixed(3), r.effUtil.toFixed(2)];
+        for (const v of cells) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      drawBars();
+      const [a, b, c] = last;
+      const div = b.effUtil >= 1 ? ` 취소 없는 헤징은 실효 가동률 ${b.effUtil.toFixed(2)} 로 용량을 넘어 발산했습니다.` : '';
+      status.textContent = `가동률 ${p.util.toFixed(2)}, 느린 실행 ${p.slowPct}%, 헤지 지연 p${p.hedgePct} = ${ms(b.delay)}ms, 시드 ${p.seed}. p99 응답: 헤징 없음 ${ms(a.p99)}ms, 취소 없음 ${ms(b.p99)}ms, 큐 취소 ${ms(c.p99)}ms. 요청당 실행 수 ${b.execPerReq.toFixed(3)} / ${c.execPerReq.toFixed(3)}.${div}`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const el of [u, q, h, seed]) el.addEventListener('input', schedule);
+    metric.addEventListener('change', () => { if (last.length) drawBars(); });
+    $('hr-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

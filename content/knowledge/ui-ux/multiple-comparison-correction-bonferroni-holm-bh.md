@@ -13,6 +13,7 @@ sources:
   - https://en.wikipedia.org/wiki/False_discovery_rate
   - https://doi.org/10.1214/aos/1013699998
 updatedAt: 2026-11-19
+simulation: multiple-comparison
 ---
 
 ## 문제

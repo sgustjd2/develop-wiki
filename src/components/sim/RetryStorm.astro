@@ -1,0 +1,238 @@
+---
+/** 노트 metastable-failures-retry-storm 의 재시도 폭풍 유체 모형을 브라우저에서 돌리는 시뮬레이션. 로직은 retry-storm-sim.ts */
+import { DT, HORIZON, TRIGGER_AT, SNAP_TIMES } from './retry-storm-sim';
+---
+<section class="sim" id="simulation" aria-labelledby="rs-title" data-retry-storm-sim>
+  <h2 id="rs-title">직접 돌려 보기: 트리거 뒤 회복하는가</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> {DT}초 단위로 계산하는 유체 모형입니다. 서버는 용량만큼 선입선출로 처리하고 처리한 요청은 그 {DT}초 끝에 응답합니다.
+    클라이언트는 타임아웃까지 응답이 없으면 포기하고 재시도를 보냅니다(백오프 없이 같은 시점, 포기한 요청은 큐에 남음).
+    재시도 예산은 {DT}초마다 "재시도 수 ≤ 새 요청 수 × 예산%"로 제한합니다. 만료 요청 폐기는 서버가 꺼낼 때 이미 포기된 요청을 처리하지 않고 버리는 것입니다.
+    트리거는 {TRIGGER_AT}초에 시작합니다. 단절이면 그동안 서버 처리가 0 이고 요청은 계속 쌓이며, 부하 급증이면 새 요청이 배수만큼 늘어납니다.
+    goodput 은 타임아웃 안에 응답한 요청의 처리량이고, 회복 시각은 트리거가 끝난 뒤 goodput 이 평소 부하(용량이 더 작으면 용량)의 90% 이상으로 돌아와 {HORIZON}초까지 유지된 첫 시각입니다.{' '}
+    <strong>단순화된 모형이며, 용량 초과 때 지연이 비선형으로 커지는 효과나 실제 클라이언트 라이브러리의 동작은 넣지 않았습니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="rs-load">평소 부하 (QPS) <output id="rs-load-out" for="rs-load"></output></label>
+      <input id="rs-load" type="range" min="20" max="600" step="10" value="280" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-cap">서버 용량 (QPS) <output id="rs-cap-out" for="rs-cap"></output></label>
+      <input id="rs-cap" type="range" min="100" max="600" step="10" value="300" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-trig">트리거</label>
+      <select id="rs-trig">
+        <option value="outage">단절 (서버 처리 0)</option>
+        <option value="spike">부하 급증 (새 요청 × 배수)</option>
+      </select>
+    </div>
+    <div class="sim-field">
+      <label for="rs-len">트리거 길이 (초) <output id="rs-len-out" for="rs-len"></output></label>
+      <input id="rs-len" type="range" min="0" max="60" step="1" value="10" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-mul">급증 배수 <output id="rs-mul-out" for="rs-mul"></output></label>
+      <input id="rs-mul" type="range" min="1.1" max="4" step="0.1" value="2" disabled aria-describedby="rs-mul-help" />
+      <small id="rs-mul-help" class="sim-help">트리거가 부하 급증일 때만 씁니다.</small>
+    </div>
+    <div class="sim-field">
+      <label for="rs-to">타임아웃 (초) <output id="rs-to-out" for="rs-to"></output></label>
+      <input id="rs-to" type="range" min="0.5" max="5" step="0.1" value="1" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-ret">재시도 횟수 <output id="rs-ret-out" for="rs-ret"></output></label>
+      <input id="rs-ret" type="range" min="1" max="3" step="1" value="1" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-bud">재시도 예산 (새 요청 대비) <output id="rs-bud-out" for="rs-bud"></output></label>
+      <input id="rs-bud" type="range" min="0" max="50" step="5" value="10" />
+    </div>
+    <div class="sim-field">
+      <label for="rs-show">그래프로 볼 설정</label>
+      <select id="rs-show">
+        <option value="none">재시도 없음</option>
+        <option value="retry" selected>재시도</option>
+        <option value="retry-budget">재시도 + 예산</option>
+        <option value="retry-drop">재시도 + 만료 폐기</option>
+        <option value="retry-budget-drop">재시도 + 예산 + 만료 폐기</option>
+      </select>
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="rs-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="rs-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption>설정별 시각별 goodput (QPS, 해당 시각까지 1초 평균)과 회복 여부</caption>
+      <thead>
+        <tr>
+          <th scope="col">설정</th>
+          {SNAP_TIMES.map((t) => <th scope="col">{t}초</th>)}
+          <th scope="col">회복 시각</th><th scope="col">최대 큐</th><th scope="col">{HORIZON}초 큐</th>
+        </tr>
+      </thead>
+      <tbody id="rs-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="rs-svg" viewBox="0 0 640 330" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="rs-pat-trig" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0M-2 2L2 -2M6 10L10 6" stroke="var(--muted)" stroke-width="1" /></pattern>
+      </defs>
+      <g id="rs-plot"></g>
+    </svg>
+    <figcaption class="sim-cap" id="rs-cap-text">그래프는 표의 보조입니다. 위: goodput(실선)과 서버에 들어온 요청률(점선), 아래: 큐 길이. 빗금 = 트리거 구간.</figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>노트 표와의 차이.</strong> 기본값(부하 280, 용량 300, 10초 단절, 타임아웃 1초, 재시도 1회, 예산 10%)에서 재시도 없음·재시도 1회·예산 10%·예산+만료 폐기 행과
+    부하별 회복 시각(100 → 약 37초, 140 → 약 140초, 160 → 회복 못 함)은 노트와 같은 경향과 값입니다.
+    다만 <em>재시도 1회 + 만료 폐기</em> 행은 노트에서 goodput 300 이 계속되는(과부하 유지) 반면, 이 모형에서는 34초 무렵 큐가 비고 280 으로 회복합니다.
+    포기된 요청을 버리면 재시도는 버려진 원 요청 수만큼만 생기므로 이 모형에서는 과부하가 유지될 수 없고, 노트의 스크립트는 경계 시각 처리(타임아웃과 같은 순간에 끝난 요청)를 다르게 했을 가능성이 있습니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='range']:disabled { opacity: 0.45; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-help { font-size: 13px; color: var(--muted); }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.ln) { fill: none; stroke: var(--text); stroke-width: 2.2; stroke-linejoin: round; }
+  .sim :global(.ln-dash) { stroke-dasharray: 5 4; stroke-width: 1.6; }
+  .sim :global(.axis) { stroke: var(--muted); stroke-width: 1; }
+  .sim :global(.ax-text) { fill: var(--muted); font: 13px var(--font); }
+  .sim :global(.ax-title) { fill: var(--text); font: 600 14px var(--font); }
+</style>
+
+<script>
+  import { runAll, HORIZON, TRIGGER_AT, DT, type Result, type Strategy } from './retry-storm-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-retry-storm-sim]');
+  if (root) {
+    const $ = <T extends HTMLElement>(id: string) => root.querySelector<T>('#' + id)!;
+    const load = $<HTMLInputElement>('rs-load'), cap = $<HTMLInputElement>('rs-cap'), trig = $<HTMLSelectElement>('rs-trig');
+    const len = $<HTMLInputElement>('rs-len'), mul = $<HTMLInputElement>('rs-mul'), to = $<HTMLInputElement>('rs-to');
+    const ret = $<HTMLInputElement>('rs-ret'), bud = $<HTMLInputElement>('rs-bud'), show = $<HTMLSelectElement>('rs-show');
+    const body = $('rs-body'), plot = root.querySelector('#rs-plot')!, status = $('rs-status');
+    let last: Result[] = [];
+    let timer: number | undefined;
+
+    const names = (r: number, b: number): Record<Strategy, string> => ({
+      none: '재시도 없음',
+      retry: `재시도 ${r}회`,
+      'retry-budget': `재시도 ${r}회 + 예산 ${b}%`,
+      'retry-drop': `재시도 ${r}회 + 만료 폐기`,
+      'retry-budget-drop': `재시도 ${r}회 + 예산 ${b}% + 만료 폐기`,
+    });
+    const n0 = (x: number) => Math.round(x).toLocaleString('ko-KR');
+    const rec = (x: number) => (Number.isNaN(x) ? '회복 못 함' : `약 ${Math.round(x)}초`);
+
+    const labels = () => {
+      $('rs-load-out').textContent = load.value;
+      $('rs-cap-out').textContent = cap.value;
+      $('rs-len-out').textContent = len.value;
+      $('rs-mul-out').textContent = '×' + Number(mul.value).toFixed(1);
+      $('rs-to-out').textContent = Number(to.value).toFixed(1);
+      $('rs-ret-out').textContent = ret.value;
+      $('rs-bud-out').textContent = bud.value + '%';
+      mul.disabled = trig.value !== 'spike';
+    };
+    const params = () => ({
+      load: +load.value, capacity: +cap.value, trigger: trig.value as 'outage' | 'spike', triggerLen: +len.value,
+      spikeMul: +mul.value, timeout: +to.value, retries: +ret.value, budgetPct: +bud.value,
+    });
+
+    const ns = 'http://www.w3.org/2000/svg';
+    const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+      const e = document.createElementNS(ns, tag);
+      for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, String(v));
+      if (text !== undefined) e.textContent = text;
+      plot.append(e);
+      return e;
+    };
+    const nice = (v: number) => { // 축 상한을 1·2·5 단위로 올림
+      if (v <= 0) return 1;
+      const e = Math.pow(10, Math.floor(Math.log10(v)));
+      for (const m of [1, 2, 5, 10]) if (m * e >= v) return m * e;
+      return 10 * e;
+    };
+
+    const drawChart = () => {
+      const r = last.find((x) => x.strategy === show.value) ?? last[0];
+      const p = params();
+      plot.innerHTML = '';
+      const X0 = 64, X1 = 628, sx = (t: number) => X0 + (t / HORIZON) * (X1 - X0);
+      const panels = [
+        { top: 24, h: 120, title: 'goodput (QPS)', max: nice(Math.max(p.capacity, p.load, ...r.series.offered) * 1.05), lines: [{ d: r.series.goodput, dash: false }, { d: r.series.offered, dash: true }] },
+        { top: 196, h: 100, title: '큐 길이 (건)', max: nice(Math.max(r.maxQueue, 1)), lines: [{ d: r.series.queue, dash: false }] },
+      ];
+      const t0 = TRIGGER_AT, t1 = Math.min(HORIZON, TRIGGER_AT + p.triggerLen);
+      for (const pn of panels) {
+        const sy = (v: number) => pn.top + pn.h - (Math.min(v, pn.max) / pn.max) * pn.h;
+        if (t1 > t0) el('rect', { x: sx(t0), y: pn.top, width: sx(t1) - sx(t0), height: pn.h, fill: 'url(#rs-pat-trig)' });
+        el('text', { class: 'ax-title', x: X0, y: pn.top - 8 }, pn.title);
+        el('line', { class: 'axis', x1: X0, x2: X1, y1: pn.top + pn.h, y2: pn.top + pn.h });
+        el('line', { class: 'axis', x1: X0, x2: X0, y1: pn.top, y2: pn.top + pn.h });
+        el('text', { class: 'ax-text', x: X0 - 6, y: pn.top + 5, 'text-anchor': 'end' }, n0(pn.max));
+        el('text', { class: 'ax-text', x: X0 - 6, y: pn.top + pn.h + 4, 'text-anchor': 'end' }, '0');
+        for (const ln of pn.lines) {
+          const pts: string[] = [];
+          for (let k = 0; k < ln.d.length; k += 2) pts.push(`${sx((k + 1) * DT).toFixed(1)},${sy(ln.d[k]).toFixed(1)}`);
+          el('polyline', { class: ln.dash ? 'ln ln-dash' : 'ln', points: pts.join(' ') });
+        }
+      }
+      for (const t of [0, 50, 100, 150, 200]) el('text', { class: 'ax-text', x: sx(t), y: 316, 'text-anchor': 'middle' }, `${t}초`);
+    };
+
+    const run = () => {
+      const p = params();
+      last = runAll(p);
+      const N = names(p.retries, p.budgetPct);
+      body.innerHTML = '';
+      for (const r of last) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.style.fontWeight = '600'; th.textContent = N[r.strategy];
+        tr.append(th);
+        for (const v of [...r.snaps.map(n0), rec(r.recoveredAt), n0(r.maxQueue), n0(r.finalQueue)]) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      for (const o of Array.from(show.options)) o.textContent = N[o.value as Strategy];
+      drawChart();
+      const trigTxt = p.trigger === 'outage' ? `${p.triggerLen}초 단절` : `${p.triggerLen}초 동안 부하 ×${p.spikeMul.toFixed(1)}`;
+      const recTxt = last.map((r) => `${N[r.strategy]} ${rec(r.recoveredAt)}`).join(', ');
+      status.textContent = `평소 부하 ${p.load}, 용량 ${p.capacity}, ${trigTxt}, 타임아웃 ${p.timeout.toFixed(1)}초. 회복: ${recTxt}.`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 150); };
+    for (const x of [load, cap, len, mul, to, ret, bud]) x.addEventListener('input', schedule);
+    trig.addEventListener('change', schedule);
+    show.addEventListener('change', () => { if (last.length) drawChart(); });
+    $('rs-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

@@ -1,0 +1,231 @@
+---
+/** 노트 bloom-filter 의 오탐률 공식을 실제 필터로 확인하는 시뮬레이션. 로직은 bloom-sim.ts */
+---
+<section class="sim" id="simulation" aria-labelledby="bf-title" data-bloom-sim>
+  <h2 id="bf-title">직접 돌려 보기: 블룸 필터 오탐률</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 서로 다른 정수 키 n 개를 m = n × (원소당 비트) 비트 배열에 넣은 뒤, 넣지 않은 키 200,000 개를 질의해 "아마 있음"이 나온 비율을 측정 오탐률로 셉니다.
+    해시는 시드로 고른 값을 섞은 murmur3 마무리 함수(fmix32)입니다. "독립 해시"는 위치마다 따로 섞고, "이중 해싱"은 노트 코드처럼 h<sub>i</sub> = h<sub>1</sub> + i·h<sub>2</sub> 로 k 개를 만듭니다.
+    이론 오탐률은 노트의 근사식 (1 − e<sup>−kn/m</sup>)<sup>k</sup> 입니다.{' '}
+    <strong>설명용 모형이며 RocksDB·Cassandra 같은 실제 구현의 필터 형식(블록 단위 필터 등)과는 다릅니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="bf-n">원소 수 n <output id="bf-n-out" for="bf-n"></output></label>
+      <input id="bf-n" type="range" min="0" max="12" step="1" value="6" />
+    </div>
+    <div class="sim-field">
+      <label for="bf-b">원소당 비트 m/n <output id="bf-b-out" for="bf-b"></output></label>
+      <input id="bf-b" type="range" min="1" max="20" step="0.1" value="9.6" />
+    </div>
+    <div class="sim-field">
+      <label for="bf-k">해시 수 k <output id="bf-k-out" for="bf-k"></output></label>
+      <input id="bf-k" type="range" min="1" max="20" step="1" value="7" />
+    </div>
+    <div class="sim-field">
+      <label for="bf-hash">해시 방식</label>
+      <select id="bf-hash">
+        <option value="independent">독립 해시 k 개</option>
+        <option value="double">이중 해싱 (노트 코드 방식)</option>
+      </select>
+    </div>
+    <div class="sim-field">
+      <label for="bf-seed">난수 시드</label>
+      <input id="bf-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="bf-run" class="btn">다시 실행</button>
+    </div>
+    <fieldset class="sim-presets">
+      <legend>노트 표의 설정 불러오기 (목표 오탐률)</legend>
+      <button type="button" class="btn" data-b="4.8" data-k="3">10% · 4.8비트 · k=3</button>
+      <button type="button" class="btn" data-b="9.6" data-k="7">1% · 9.6비트 · k=7</button>
+      <button type="button" class="btn" data-b="14.4" data-k="10">0.1% · 14.4비트 · k=10</button>
+      <button type="button" class="btn" data-n="20" data-b="10" data-k="7">비트 배열 보기 · n=20</button>
+    </fieldset>
+  </form>
+
+  <p id="bf-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption id="bf-caption">이론값과 측정값</caption>
+      <thead>
+        <tr><th scope="col">항목</th><th scope="col">이론</th><th scope="col">측정</th></tr>
+      </thead>
+      <tbody id="bf-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="bf-svg" viewBox="0 0 640 260" aria-hidden="true" focusable="false"><g id="bf-plot"></g></svg>
+    <figcaption class="sim-cap">
+      표의 보조 그림입니다. 실선 = k 에 따른 이론 오탐률(세로축 로그), 네모 = 지금 k 의 이론값, 속 빈 원 = 측정값(오탐 0 건이면 생략), 점선 = 최적 k.
+    </figcaption>
+  </figure>
+
+  <figure class="sim-chart" id="bf-bits-fig" hidden>
+    <svg id="bf-bits" viewBox="0 0 640 100" aria-hidden="true" focusable="false"></svg>
+    <figcaption class="sim-cap" id="bf-bits-cap"></figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>읽는 법.</strong> 측정값의 ± 는 질의 수에서 오는 95% 범위(정규 근사)입니다. 오탐률이 0.01% 아래로 내려가면 질의 200,000 건 중 오탐이 수십 건 이하라 측정이 거칩니다.
+    근사식은 m 이 클 때 잘 맞고, m 이 수백 비트 이하이면 측정값과 차이가 커질 수 있습니다. 이중 해싱은 m 이 작을 때 위치가 덜 독립적이라 오탐률이 이론보다 높게 나오기도 합니다.
+    난수 생성기와 해시가 노트 코드(FNV·djb2)와 달라 같은 수열은 아닙니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-presets { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; border: 0; padding: 0; margin: 0; }
+  .sim-presets legend { font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 6px; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim :global(.sim-table td) { white-space: nowrap; }
+  .sim :global(.sim-table thead th) { white-space: nowrap; }
+  .sim :global(.sim-table th[scope="row"]) { min-width: 9em; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.ax) { stroke: var(--muted); stroke-width: 1; }
+  .sim :global(.grid) { stroke: var(--line); stroke-width: 1; }
+  .sim :global(.curve) { fill: none; stroke: var(--text); stroke-width: 2; }
+  .sim :global(.opt) { stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 5 4; }
+  .sim :global(.mk-theory) { fill: var(--text); }
+  .sim :global(.mk-meas) { fill: none; stroke: var(--text); stroke-width: 2; }
+  .sim :global(.lbl) { fill: var(--text); font: 15px var(--font); }
+  .sim :global(.lbl-muted) { fill: var(--muted); font: 14px var(--font); }
+  .sim :global(.bit) { stroke: var(--muted); stroke-width: 1; fill: var(--surface); }
+  .sim :global(.bit.on) { fill: var(--text); stroke: var(--text); }
+</style>
+
+<script>
+  import { simulate, mOf, theoryFpr, K_MAX, type BloomResult, type HashMode } from './bloom-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-bloom-sim]');
+  if (root) {
+    const $ = <T extends Element>(id: string) => root.querySelector<T>('#' + id)!;
+    const N_STEPS = [10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000];
+    const nIn = $<HTMLInputElement>('bf-n'), bIn = $<HTMLInputElement>('bf-b'), kIn = $<HTMLInputElement>('bf-k');
+    const hashIn = $<HTMLSelectElement>('bf-hash'), seedIn = $<HTMLInputElement>('bf-seed');
+    const body = $<HTMLElement>('bf-body'), status = $<HTMLElement>('bf-status'), plot = $<SVGGElement>('bf-plot');
+    const bitsFig = $<HTMLElement>('bf-bits-fig'), bitsSvg = $<SVGSVGElement>('bf-bits'), bitsCap = $<HTMLElement>('bf-bits-cap');
+    const ns = 'http://www.w3.org/2000/svg';
+    const int = (x: number) => x.toLocaleString('ko-KR');
+    const pct = (x: number) => (x === 0 ? '0%' : (x * 100).toPrecision(3) + '%');
+    let timer: number | undefined;
+
+    const params = () => ({
+      n: N_STEPS[+nIn.value], bitsPerKey: +bIn.value, k: +kIn.value,
+      hash: hashIn.value as HashMode, seed: Math.max(1, Math.floor(+seedIn.value) || 1),
+    });
+    const labels = () => {
+      const p = params();
+      const nText = int(p.n);
+      $('bf-n-out').textContent = nText;
+      nIn.setAttribute('aria-valuetext', nText);
+      const bText = `${p.bitsPerKey.toFixed(1)} (m = ${int(mOf(p.n, p.bitsPerKey))} 비트)`;
+      $('bf-b-out').textContent = bText;
+      bIn.setAttribute('aria-valuetext', bText);
+      $('bf-k-out').textContent = String(p.k);
+    };
+
+    const el = (tag: string, attrs: Record<string, string | number>, text?: string) => {
+      const e = document.createElementNS(ns, tag);
+      for (const [a, v] of Object.entries(attrs)) e.setAttribute(a, String(v));
+      if (text !== undefined) e.textContent = text;
+      return e;
+    };
+
+    const drawCurve = (r: BloomResult) => {
+      plot.innerHTML = '';
+      const L = 70, R = 620, T = 16, B = 220;
+      const ks = Array.from({ length: K_MAX }, (_, i) => i + 1);
+      const ys = ks.map((k) => theoryFpr(r.m, r.n, k));
+      const lowest = Math.min(...ys, r.falsePositives > 0 ? r.measuredFpr : 1);
+      const dMin = Math.max(-8, Math.floor(Math.log10(Math.max(lowest, 1e-12))));
+      const x = (k: number) => L + ((k - 1) / (K_MAX - 1)) * (R - L);
+      const y = (v: number) => T + (Math.log10(Math.max(v, 10 ** dMin)) / dMin) * (B - T);
+      for (let d = 0; d >= dMin; d--) {
+        plot.append(el('line', { class: 'grid', x1: L, x2: R, y1: y(10 ** d), y2: y(10 ** d) }));
+        plot.append(el('text', { class: 'lbl-muted', x: L - 8, y: y(10 ** d) + 4, 'text-anchor': 'end' }, pct(10 ** d)));
+      }
+      for (const k of [1, 5, 10, 15, 20]) plot.append(el('text', { class: 'lbl-muted', x: x(k), y: B + 18, 'text-anchor': 'middle' }, String(k)));
+      plot.append(el('text', { class: 'lbl-muted', x: R, y: B + 36, 'text-anchor': 'end' }, '해시 수 k'));
+      plot.append(el('line', { class: 'ax', x1: L, x2: R, y1: B, y2: B }));
+      const xo = x(r.optimalK);
+      if (r.optimalK >= 1 && r.optimalK <= K_MAX) {
+        plot.append(el('line', { class: 'opt', x1: xo, x2: xo, y1: T, y2: B }));
+        plot.append(el('text', { class: 'lbl', x: xo + 6, y: T + 12 }, `최적 k ≈ ${r.optimalK.toFixed(2)}`));
+      }
+      plot.append(el('polyline', { class: 'curve', points: ks.map((k, i) => `${x(k)},${y(ys[i])}`).join(' ') }));
+      const cx = x(r.k), cy = y(r.theoryFpr);
+      plot.append(el('rect', { class: 'mk-theory', x: cx - 6, y: cy - 6, width: 12, height: 12 }));
+      if (r.falsePositives > 0) plot.append(el('circle', { class: 'mk-meas', cx, cy: y(r.measuredFpr), r: 7 }));
+    };
+
+    const drawBits = (r: BloomResult) => {
+      if (!r.bits) { bitsFig.hidden = true; return; }
+      const cols = 32, cell = 18, gap = 2, rows = Math.ceil(r.m / cols);
+      bitsSvg.setAttribute('viewBox', `0 0 ${cols * (cell + gap)} ${rows * (cell + gap)}`);
+      bitsSvg.innerHTML = '';
+      for (let i = 0; i < r.m; i++) {
+        bitsSvg.append(el('rect', { class: r.bits[i] ? 'bit on' : 'bit', x: (i % cols) * (cell + gap) + 1, y: Math.floor(i / cols) * (cell + gap) + 1, width: cell, height: cell }));
+      }
+      const on = Math.round(r.fillMeasured * r.m);
+      bitsCap.textContent = `비트 배열 ${int(r.m)} 비트 (한 줄 ${cols} 비트). 채운 칸 = 1 (${int(on)} 개), 빈 칸 = 0 (${int(r.m - on)} 개). 질의 키의 k 개 위치가 모두 채운 칸이면 오탐입니다.`;
+      bitsFig.hidden = false;
+    };
+
+    const run = () => {
+      const p = params();
+      const r = simulate(p);
+      $('bf-caption').textContent = `이론값과 측정값 (n = ${int(r.n)}, m = ${int(r.m)} 비트, k = ${r.k}, 질의 = 넣지 않은 키 ${int(r.queries)} 개)`;
+      const rows: [string, string, string][] = [
+        ['오탐률', pct(r.theoryFpr), `${pct(r.measuredFpr)} ± ${pct(r.ci95)} (${int(r.falsePositives)} 건)`],
+        ['켜진 비트 비율', pct(r.fillTheory), pct(r.fillMeasured)],
+        [`최적 k = (m/n)·ln 2 = ${r.optimalK.toFixed(2)} → 정수 ${r.optimalKInt} 일 때 오탐률`, pct(r.optimalFpr), '—'],
+      ];
+      body.innerHTML = '';
+      for (const [h, a, b] of rows) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.textContent = h; th.style.fontWeight = '600';
+        tr.append(th);
+        for (const v of [a, b]) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      drawCurve(r);
+      drawBits(r);
+      const kNote = r.k === r.optimalKInt ? '지금 k 가 최적입니다' : `k 를 ${r.optimalKInt} 로 바꾸면 이론 오탐률 ${pct(r.optimalFpr)}`;
+      status.textContent = `n ${int(r.n)}, m ${int(r.m)} 비트, k ${r.k}, 시드 ${p.seed}: 이론 오탐률 ${pct(r.theoryFpr)}, 측정 ${pct(r.measuredFpr)} (${int(r.queries)} 건 중 ${int(r.falsePositives)} 건). 최적 k ≈ ${r.optimalK.toFixed(2)}, ${kNote}.`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const e of [nIn, bIn, kIn, seedIn]) e.addEventListener('input', schedule);
+    hashIn.addEventListener('change', schedule);
+    $('bf-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    root.querySelectorAll<HTMLButtonElement>('.sim-presets button').forEach((btn) => btn.addEventListener('click', () => {
+      if (btn.dataset.n) nIn.value = String(N_STEPS.indexOf(+btn.dataset.n));
+      bIn.value = btn.dataset.b!;
+      kIn.value = btn.dataset.k!;
+      labels(); clearTimeout(timer); run();
+    }));
+    labels();
+    run();
+  }
+</script>

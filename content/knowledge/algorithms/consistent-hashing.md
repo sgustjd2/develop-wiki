@@ -14,6 +14,7 @@ sources:
   - https://research.google/blog/consistent-hashing-with-bounded-loads/
   - https://arxiv.org/abs/1608.01350
 updatedAt: 2026-11-18
+simulation: consistent-hashing
 ---
 
 ## 문제

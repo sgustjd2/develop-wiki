@@ -6,6 +6,7 @@ level: advanced
 summary: 같은 읽기 요청을 느린 꼬리에 걸린 복제본 대신 다른 복제본에도 늦게 보내 먼저 오는 응답을 쓰는 기법. 지연 기준(예 p95)과 취소가 없으면 부하만 두 배가 되어 오히려 무너진다.
 tags: [tail-latency, hedging, tied-requests, replication, cancellation, resilience, p99, dean-barroso]
 related: [performance/timeout-retry-circuit-breaker, performance/adaptive-throttling-retry-budget, performance/deadline-propagation-cancellation, performance/metastable-failures-retry-storm, performance/load-balancing, performance/mg1-service-time-variance-tail-latency, performance/queueing-theory-utilization-latency, performance/backpressure-load-shedding, distributed-systems/idempotency]
+simulation: hedged-requests
 sources:
   - https://doi.org/10.1145/2408776.2408794
   - https://www.barroso.org/publications/TheTailAtScale.pdf

@@ -6,6 +6,7 @@ level: advanced
 summary: 트리거가 사라져도 재시도·캐시 미스 같은 증폭 피드백이 시스템을 저성능 상태에 붙들어 두는 장애. 부하가 임계 아래일 때만 스스로 회복한다는 것을 모델과 시뮬레이션으로 보인다.
 tags: [metastable, retry-storm, overload, goodput, resilience, sre, cascading-failure, work-amplification]
 related: [performance/timeout-retry-circuit-breaker, performance/adaptive-throttling-retry-budget, performance/priority-load-shedding, performance/backpressure-load-shedding, performance/codel-adaptive-lifo-queue-management, performance/queueing-theory-utilization-latency, performance/caching-strategies, performance/concurrency-limits-littles-law]
+simulation: retry-storm
 sources:
   - https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s11-bronson.pdf
   - https://www.usenix.org/system/files/osdi22-huang-lexiang.pdf
@@ -50,6 +51,8 @@ Bronson 등(HotOS 2021)이 이를 **메타안정 장애(metastable failure)** �
 | 재시도 예산 10% | 280 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 재시도 1회 + 만료 요청 폐기 | 280 | 0 | 300 | 300 | 300 | 300 | 300 |
 | 재시도 예산 10% + 만료 폐기 | 280 | 0 | 300 | 280 | 280 | 280 | 280 |
+
+> "재시도 1회 + 만료 요청 폐기" 행의 goodput 300 지속은 평소 부하(280)보다 커서 정상 상태로는 성립하기 어렵다. 타임아웃 경계에서 같은 요청을 성공과 재시도로 이중 집계했을 가능성이 있다. 아래 직접 돌려 보기의 모형(이중 집계 없음)에서는 단절 뒤 큐가 비면서 goodput 이 280 으로 돌아온다. 원래 스크립트를 다시 확인하기 전까지 이 행은 미확정으로 본다.
 
 평소 부하만 바꾼 결과(재시도 1회, 선입선출, 같은 단절):
 

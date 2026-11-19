@@ -12,6 +12,7 @@ sources:
   - https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers
   - https://nginx.org/en/docs/http/ngx_http_upstream_module.html
 updatedAt: 2026-11-19
+simulation: p2c-load-balancing
 ---
 
 ## 문제

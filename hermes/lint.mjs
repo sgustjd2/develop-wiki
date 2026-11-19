@@ -17,7 +17,7 @@ const files = (args.length
 const KEYS = {
   resources: ['name', 'url', 'docs', 'repo', 'stars', 'domain', 'category', 'description', 'pricing', 'tags', 'languages', 'koreanDocs', 'addedAt', 'verifiedAt'],
   models: ['name', 'org', 'family', 'type', 'thinking', 'modalities', 'architecture', 'paramsB', 'activeParamsB', 'contextLength', 'license', 'commercialUse', 'korean', 'releaseDate', 'huggingface', 'summary', 'useCases', 'strengths', 'limitations', 'capabilities', 'sources', 'verifiedAt'],
-  knowledge: ['title', 'aka', 'category', 'group', 'level', 'summary', 'tags', 'related', 'sources', 'updatedAt'],
+  knowledge: ['title', 'aka', 'category', 'group', 'level', 'summary', 'tags', 'related', 'simulation', 'sources', 'updatedAt'],
   advisories: ['checkedAt', 'latestVersion', 'latestReleasedAt', 'versions', 'security'],
 };
 const PERMISSIVE = /^(apache[- ]?2(\.0)?|mit|bsd[- ]?\d?(-clause)?|isc|cc0|unlicense|0bsd|mpl[- ]?2(\.0)?|openmdw[- ]?1(\.\d)?|cc[- ]by[- ]4\.0)$/i;

@@ -100,6 +100,7 @@ const knowledge = defineCollection({
       summary: z.string().min(10).max(160),
       tags: z.array(z.string()).default([]),
       related: z.array(z.string()).default([]), // 다른 knowledge id
+      simulation: z.string().optional(), // src/components/sim/index.ts 의 키. 있으면 본문 아래에 시뮬레이션 렌더
       sources: z.array(z.url()).min(1),
       updatedAt: z.coerce.date(),
     })

@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import { KNOWLEDGE, LEVELS } from '../../../taxonomy';
+import { simulations } from '../../../components/sim';
 import { fmtDate, href, hostOf, knowledgePath, sourceUrl } from '../../../lib';
 
 export async function getStaticPaths() {
@@ -16,6 +17,7 @@ const d = entry.data;
 const { Content, headings } = await render(entry);
 const cat = KNOWLEDGE[d.category as keyof typeof KNOWLEDGE];
 const groups = cat.groups as Record<string, string>;
+const Sim = d.simulation ? simulations[d.simulation as keyof typeof simulations] : undefined;
 const related = all.filter((e) => d.related.includes(e.id));
 ---
 <Base title={d.title} description={d.summary} current="knowledge">
@@ -30,6 +32,7 @@ const related = all.filter((e) => d.related.includes(e.id));
         <h2>출처</h2>
         <ul>{d.sources.map((s) => <li><a href={s} target="_blank" rel="noopener">{hostOf(s)}</a></li>)}</ul>
       </div>
+      {Sim && <Sim />}
     </article>
     <aside class="article-side">
       <dl class="facts">

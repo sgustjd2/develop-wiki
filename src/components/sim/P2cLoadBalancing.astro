@@ -1,0 +1,164 @@
+---
+/** 노트 power-of-two-choices-load-balancing 의 동적 큐 모형을 브라우저에서 돌리는 시뮬레이션. 로직은 p2c-sim.ts */
+---
+<section class="sim" id="simulation" aria-labelledby="sim-title" data-p2c-sim>
+  <h2 id="sim-title">직접 돌려 보기: 로드 밸런싱 정책 비교</h2>
+  <p class="sim-note">
+    <strong>모형 가정.</strong> 서버마다 M/M/1 큐(서비스 시간 지수분포, 평균 1), 전체 도착은 포아송 과정, 서버당 도착률 λ 가 이용률입니다.
+    시뮬레이션 시간은 최대 4,000 단위이고 앞 20% 는 버리며, 서버가 많으면 도착 수 상한(정책당 약 25만 건) 때문에 더 짧아집니다.
+    부하 정보 갱신 간격이 0 이면 실시간 큐 길이를, 그보다 크면 그 주기마다 찍은 스냅샷만 봅니다.
+    least-loaded 는 전체 서버 중 최소를 고르고 동률은 무작위로 정합니다.{' '}
+    <strong>단순화된 모형이며 실제 프록시(Envoy·NGINX)의 동작이 아닙니다.</strong>
+  </p>
+
+  <form class="sim-form" onsubmit="return false">
+    <div class="sim-field">
+      <label for="sim-n">서버 수 <output id="sim-n-out" for="sim-n"></output></label>
+      <input id="sim-n" type="range" min="10" max="200" step="1" value="50" />
+    </div>
+    <div class="sim-field">
+      <label for="sim-l">부하 λ (서버당 이용률) <output id="sim-l-out" for="sim-l"></output></label>
+      <input id="sim-l" type="range" min="0.5" max="0.95" step="0.05" value="0.9" />
+    </div>
+    <div class="sim-field">
+      <label for="sim-i">부하 정보 갱신 간격 (서비스 시간 단위) <output id="sim-i-out" for="sim-i"></output></label>
+      <input id="sim-i" type="range" min="0" max="5" step="0.5" value="0" />
+    </div>
+    <div class="sim-field">
+      <label for="sim-seed">난수 시드</label>
+      <input id="sim-seed" type="number" min="1" max="999999" step="1" value="1" inputmode="numeric" />
+    </div>
+    <div class="sim-field">
+      <label for="sim-metric">막대로 볼 지표</label>
+      <select id="sim-metric">
+        <option value="mean">평균 응답 시간</option>
+        <option value="p99">p99 응답 시간</option>
+        <option value="maxQueue">최대 큐 길이</option>
+      </select>
+    </div>
+    <div class="sim-field sim-actions">
+      <button type="button" id="sim-run" class="btn">다시 실행</button>
+    </div>
+  </form>
+
+  <p id="sim-status" class="sim-status" role="status" aria-live="polite"></p>
+
+  <div class="sim-table-wrap">
+    <table class="sim-table">
+      <caption>정책별 결과 (응답 시간 단위: 평균 서비스 시간)</caption>
+      <thead>
+        <tr><th scope="col">정책</th><th scope="col">평균 응답</th><th scope="col">p99 응답</th><th scope="col">최대 큐 길이</th></tr>
+      </thead>
+      <tbody id="sim-body"></tbody>
+    </table>
+  </div>
+
+  <figure class="sim-chart">
+    <svg id="sim-svg" viewBox="0 0 640 170" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="sim-pat-random" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><path d="M0 0L8 8M-2 6L2 10M6 -2L10 2" stroke="var(--text)" stroke-width="1.6" /></pattern>
+        <pattern id="sim-pat-p2c" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--surface)" /><circle cx="4" cy="4" r="1.7" fill="var(--text)" /></pattern>
+        <pattern id="sim-pat-jsq" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="var(--text)" /></pattern>
+      </defs>
+      <g id="sim-bars"></g>
+    </svg>
+    <figcaption class="sim-cap">막대는 표의 보조입니다. 무늬: 대각선 = random, 점 = power-of-two-choices, 채움 = least-loaded.</figcaption>
+  </figure>
+
+  <p class="sim-note">
+    <strong>노트 표와의 차이.</strong> 노트의 표는 서버 50 대·시드 3 개 범위이고 이 시뮬레이션은 시드 하나의 결과이므로 소수점 이하는 다를 수 있습니다.
+    특히 random 은 시드 편차가 큽니다. 노트의 JSQ 갱신 주기 표에는 동률을 서버 번호 순으로 푼 열도 있는데, 여기서는 동률 무작위 쪽만 구현했습니다.
+    난수 생성기와 이벤트 처리 순서가 달라 노트 스크립트와 같은 수열은 아닙니다.
+  </p>
+</section>
+
+<style>
+  .sim { margin-top: 56px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .sim h2 { margin: 0 0 12px; }
+  .sim-note { font-size: 14.5px; line-height: 1.7; color: var(--text); margin: 12px 0; }
+  .sim-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 24px; margin: 20px 0; }
+  .sim-field { display: flex; flex-direction: column; gap: 6px; }
+  .sim-field label { font-size: 14px; font-weight: 600; }
+  .sim-field output { font-family: var(--mono); font-weight: 400; margin-left: 6px; }
+  .sim-field input[type='range'] { width: 100%; accent-color: var(--text); min-height: 28px; }
+  .sim-field input[type='number'], .sim-field select { font: inherit; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--text); min-height: 36px; }
+  .sim-actions { justify-content: flex-end; }
+  .sim-status { font-size: 15px; font-weight: 600; min-height: 1.6em; margin: 4px 0 12px; }
+  .sim-table-wrap { overflow-x: auto; }
+  .sim-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .sim-table caption { text-align: left; font-size: 13.5px; color: var(--muted); padding-bottom: 6px; }
+  .sim :global(.sim-table th), .sim :global(.sim-table td) { padding: 8px 12px; border-bottom: 1px solid var(--line); text-align: right; }
+  .sim :global(.sim-table th:first-child) { text-align: left; }
+  .sim-chart { margin: 20px 0 0; }
+  .sim-chart svg { width: 100%; height: auto; max-width: 640px; display: block; }
+  .sim-cap { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .sim :global(.bar-rect) { stroke: var(--text); stroke-width: 1.5; }
+  .sim :global(.bar-text) { fill: var(--text); font: 18px var(--font); }
+  @media (prefers-reduced-motion: no-preference) {
+    .sim :global(.bar-rect) { transition: width 0.3s ease; }
+  }
+</style>
+
+<script>
+  import { runAll, horizonFor, type Result } from './p2c-sim';
+
+  const root = document.querySelector<HTMLElement>('[data-p2c-sim]');
+  if (root) {
+    const $ = <T extends HTMLElement>(id: string) => root.querySelector<T>('#' + id)!;
+    const n = $<HTMLInputElement>('sim-n'), l = $<HTMLInputElement>('sim-l'), iv = $<HTMLInputElement>('sim-i');
+    const seed = $<HTMLInputElement>('sim-seed'), metric = $<HTMLSelectElement>('sim-metric');
+    const body = $('sim-body'), bars = root.querySelector('#sim-bars')!, status = $('sim-status');
+    const NAMES: Record<string, string> = { random: 'random (무작위)', p2c: 'power-of-two-choices (2 후보)', jsq: 'least-loaded (전체 최소)' };
+    const f = (x: number) => x.toFixed(1);
+    let last: Result[] = [];
+    let timer: number | undefined;
+
+    const labels = () => {
+      $('sim-n-out').textContent = n.value;
+      $('sim-l-out').textContent = Number(l.value).toFixed(2);
+      $('sim-i-out').textContent = Number(iv.value) === 0 ? '0 (실시간)' : iv.value;
+    };
+    const params = () => ({ servers: +n.value, lambda: +l.value, interval: +iv.value, seed: Math.max(1, Math.floor(+seed.value) || 1) });
+
+    const drawBars = () => {
+      const m = metric.value as 'mean' | 'p99' | 'maxQueue';
+      const max = Math.max(...last.map((r) => r[m]), 1e-9);
+      const W = 640, labelW = 240, valW = 60, avail = W - labelW - valW;
+      bars.innerHTML = '';
+      last.forEach((r, k) => {
+        const y = 12 + k * 52, w = Math.max(2, (r[m] / max) * avail);
+        const ns = 'http://www.w3.org/2000/svg';
+        const t = document.createElementNS(ns, 'text');
+        t.setAttribute('class', 'bar-text'); t.setAttribute('x', '0'); t.setAttribute('y', String(y + 22)); t.textContent = NAMES[r.policy].split(' (')[0];
+        const rect = document.createElementNS(ns, 'rect');
+        rect.setAttribute('class', 'bar-rect'); rect.setAttribute('x', String(labelW)); rect.setAttribute('y', String(y)); rect.setAttribute('height', '32'); rect.setAttribute('width', String(w)); rect.setAttribute('fill', `url(#sim-pat-${r.policy})`);
+        const v = document.createElementNS(ns, 'text');
+        v.setAttribute('class', 'bar-text'); v.setAttribute('x', String(labelW + w + 8)); v.setAttribute('y', String(y + 22)); v.textContent = m === 'maxQueue' ? String(r[m]) : f(r[m]);
+        bars.append(t, rect, v);
+      });
+    };
+
+    const run = () => {
+      const p = params();
+      last = runAll(p);
+      body.innerHTML = '';
+      for (const r of last) {
+        const tr = document.createElement('tr');
+        const th = document.createElement('th'); th.scope = 'row'; th.textContent = NAMES[r.policy]; th.style.fontWeight = '600';
+        tr.append(th);
+        for (const v of [f(r.mean), f(r.p99), String(r.maxQueue)]) { const td = document.createElement('td'); td.textContent = v; tr.append(td); }
+        body.append(tr);
+      }
+      drawBars();
+      const [a, b, c] = last;
+      status.textContent = `서버 ${p.servers}대, λ=${p.lambda.toFixed(2)}, 갱신 간격 ${p.interval}, 시드 ${p.seed}, 시뮬레이션 시간 ${Math.round(horizonFor(p))}. 평균 응답 시간: random ${f(a.mean)}, power-of-two-choices ${f(b.mean)}, least-loaded ${f(c.mean)}.`;
+    };
+
+    const schedule = () => { labels(); clearTimeout(timer); timer = window.setTimeout(run, 250); };
+    for (const el of [n, l, iv, seed]) el.addEventListener('input', schedule);
+    metric.addEventListener('change', () => { if (last.length) drawBars(); });
+    $('sim-run').addEventListener('click', () => { clearTimeout(timer); run(); });
+    labels();
+    run();
+  }
+</script>

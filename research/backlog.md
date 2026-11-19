@@ -1,12 +1,12 @@
 # 백로그
 
-2026-11-19 에 이전 백로그를 모두 처리했다. 아래는 그 과정에서 새로 나온 다음 후보다.
+2026-11-19 에 이전 백로그를 모두 처리했다(8차). 아래는 그 과정에서 새로 나온 다음 후보다.
 
 | 항목 | 영역/카테고리 | 메모 | 날짜 |
 | --- | --- | --- | --- |
-| GNC 의 포즈 그래프 적용, 카메라-IMU 시간 오프셋 온라인 보정, 시간 영역 수동성 제어(원문 확보 후) | knowledge/robotics | 다음 노트 | 2026-11-19 |
-| ReSTIR GI/PT 와 NRD hitT 계약, SHARC·NRC 라디언스 캐시, 텍스처 공간 셰이딩, 앰비소닉스 스피커 디코더(max-rE·AllRAD) | knowledge/graphics-xr | 다음 노트 | 2026-11-19 |
-| WebAuthn Signal API·패스키 수명주기, CockroachDB 읽기 요약·uncertainty interval, Raft 리스 읽기 단조 시계 실험, ShockHash, Prefix Filter | knowledge/mobile-dev·distributed-systems·algorithms | 다음 노트 | 2026-11-19 |
-| power-of-two-choices, RFC 9700 정리·PAR+DPoP 결합, RFC 9396 RAR, FK DEFERRABLE·CASCADE 비용 | knowledge/performance·security·data-modeling | 다음 노트 | 2026-11-19 |
-| 가상화 리스트 접근성, 오프라인 충돌 해결 UX, 번역 QA(ICU 구문 검증), 차트·그리드 낭독기 수동 테스트 스크립트, 토큰 대비 리포트 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |
-| 사용성 시간 데이터 로그 변환, 다중 비교 교정(Bonferroni·BH), holdout·번호링 효과, 보조기술 사용자 모집, 검색 동의어·오타 교정 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |
+| 롤링 셔터 VIO 라인별 시간 모델, EKF 시간 오프셋(Li·Mourikis)·연속시간 보정(Kalibr), SE-Sync 인증 가능 PGO, 시간 영역 수동성 제어(원문 확보 후) | knowledge/robotics | 다음 노트 | 2026-11-19 |
+| ReSTIR PT 본문(이동 사상·야코비안), NRD 히트 거리 누적·PSR, DDGI vs 라디언스 캐시, VRS vs 텍스처 공간 셰이딩, VBAP·DBAP, AllRAD 원전 확인 | knowledge/graphics-xr | 원전 PDF 필요 | 2026-11-19 |
+| Raft 리스 vs CockroachDB epoch/expiration 리스, CLOCK_BOOTTIME vs MONOTONIC, 범위 병합 읽기 요약, closed timestamp, 정적 필터(Ribbon·Binary Fuse) 비교, ShockHash vs PTHash 선택 기준, WebAuthn related origins·hints·복구 정책 | knowledge/distributed-systems·algorithms·security | 다음 노트 | 2026-11-19 |
+| dpop_jkt+PAR 구현 체크리스트(jti 재사용 저장·nonce), bounded-load 일관 해싱, P2C+peak-EWMA, RFC 9449 RS 검증, FAPI 2.0, ON DELETE SET NULL(cols)·복합 멀티테넌트 FK, NOT VALID→VALIDATE 비용, OAuth 2.1 vs RFC 9700 | knowledge/security·performance·data-modeling | 다음 노트 | 2026-11-19 |
+| 가상화 라이브러리별 접근성, outbox 큐·Background Sync, CRDT 변경 이력 UX, 번역 길이·잘림 검사, VoiceOver 수동 테스트 키 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |
+| 두 비율 비교(McNemar), 응답자 내 설계·순서 효과, 검색 지표(MRR·nDCG), 한글 검색 정규화(초성·영타), 접근성 원격 사용성 테스트 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |

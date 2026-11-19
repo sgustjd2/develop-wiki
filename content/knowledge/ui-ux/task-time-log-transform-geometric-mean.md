@@ -6,7 +6,7 @@ group: research
 level: advanced
 summary: 오른쪽으로 치우친 과업 시간을 로그로 바꿔 평균·t 구간을 구한 뒤 되돌려 기하평균 구간으로 보고하는 절차와, 산술평균 구간과의 포괄률 차이를 시뮬레이션으로 확인한다.
 tags: [ux, metrics, statistics, time-on-task, log-transform, geometric-mean, confidence-interval, small-sample]
-related: [ui-ux/quantitative-usability-confidence-intervals, ui-ux/usability-testing-sample-size, ui-ux/usability-test-tasks-think-aloud, ui-ux/ux-metrics-sus-heart-ab-test, ui-ux/ab-test-statistics-srm-power-sequential]
+related: [ui-ux/quantitative-usability-confidence-intervals, ui-ux/usability-testing-sample-size, ui-ux/usability-test-tasks-think-aloud, ui-ux/ux-metrics-sus-heart-ab-test, ui-ux/ab-test-statistics-srm-power-sequential, ui-ux/within-subjects-counterbalancing-latin-square, ui-ux/mcnemar-test-paired-proportions]
 sources:
   - https://measuringu.com/average-times/
   - https://en.wikipedia.org/wiki/Log-normal_distribution

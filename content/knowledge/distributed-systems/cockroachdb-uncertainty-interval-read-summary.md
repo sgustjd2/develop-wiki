@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: 느슨하지만 상한이 있는 시계로 단일 키 선형화를 지키는 "불확실성 구간"과, 리스가 넘어갈 때 읽기 보호 정보를 크기 예산 안에서 압축해 새 리스홀더에 전하는 "읽기 요약"을 소스 주석 수준에서 푼다.
 tags: [cockroachdb, uncertainty-interval, observed-timestamp, read-summary, hlc, lease-transfer, linearizability, mvcc]
-related: [distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/hybrid-logical-clock, distributed-systems/spanner-truetime, distributed-systems/leader-lease-clock-assumptions, distributed-systems/consistency-models, distributed-systems/tikv-vs-cockroachdb-transactions, distributed-systems/raft-lease-read-monotonic-clock, data-modeling/transaction-isolation]
+related: [distributed-systems/cockroachdb-timestamp-cache-txn-records, distributed-systems/hybrid-logical-clock, distributed-systems/spanner-truetime, distributed-systems/leader-lease-clock-assumptions, distributed-systems/consistency-models, distributed-systems/tikv-vs-cockroachdb-transactions, distributed-systems/raft-lease-read-monotonic-clock, distributed-systems/cockroachdb-range-merge-subsume, distributed-systems/cockroachdb-closed-timestamps, data-modeling/transaction-isolation]
 sources:
   - https://github.com/cockroachdb/cockroach/blob/master/pkg/kv/kvserver/uncertainty/doc.go
   - https://github.com/cockroachdb/cockroach/blob/master/pkg/kv/kvserver/uncertainty/compute.go
@@ -87,4 +87,4 @@ updatedAt: 2026-11-19
 - 읽기 요약은 정밀도를 돈으로 바꾼다. 예산이 작으면 이전 직후 쓰기가 밀리고, 크면 이전 메시지와 메모리가 커진다. 위 기본값은 master 소스 시점의 값이며 버전·설정으로 다를 수 있다.
 - [리더 리스와 시계 가정](/develop-wiki/knowledge/distributed-systems/leader-lease-clock-assumptions/)에서 보듯 "시간으로 권한을 지키는" 구조라서 시계 점프·정지 같은 운영 위험이 그대로 따라온다. 그 읽기 쪽 시계 선택은 [Raft 리스 읽기와 단조 시계](/develop-wiki/knowledge/distributed-systems/raft-lease-read-monotonic-clock/)에서 본다.
 
-> 출처 확인 범위: CockroachDB 저장소 master(커밋 d30c905, 2026-09-23 기준)의 `uncertainty/doc.go`·`compute.go`·`interval.go`, `readsummary/rspb/summary.proto`·`summary.go`(Merge·Compress 포함), `replica_tscache.go` 의 읽기 요약 수집·적용·예산 설정과 `replica_proposal.go` 의 리스 적용 부분을 직접 읽었다. 실험 두 개는 위 규칙을 옮긴 단순 모형(구간 판정은 `IsUncertain` 규칙, 압축은 span 개수 예산)이며 실제 클러스터를 돌리지 않았다. 미확인: 공식 문서 페이지의 설명, 버전별 차이, 최대 시계 오차 기본값, 요약의 바이트 단위 크기 계산, 범위 병합 경로의 코드, 팔로워 읽기·닫힌 타임스탬프와의 상호작용 전반.
+> 출처 확인 범위: CockroachDB 저장소 master(커밋 d30c905, 2026-09-23 기준)의 `uncertainty/doc.go`·`compute.go`·`interval.go`, `readsummary/rspb/summary.proto`·`summary.go`(Merge·Compress 포함), `replica_tscache.go` 의 읽기 요약 수집·적용·예산 설정과 `replica_proposal.go` 의 리스 적용 부분을 직접 읽었다. 실험 두 개는 위 규칙을 옮긴 단순 모형(구간 판정은 `IsUncertain` 규칙, 압축은 span 개수 예산)이며 실제 클러스터를 돌리지 않았다. 미확인: 공식 문서 페이지의 설명, 버전별 차이, 최대 시계 오차 기본값, 요약의 바이트 단위 크기 계산. 범위 병합 경로는 [범위 병합과 읽기 보호](/develop-wiki/knowledge/distributed-systems/cockroachdb-range-merge-subsume/), 팔로워 읽기·닫힌 타임스탬프는 [닫힌 타임스탬프](/develop-wiki/knowledge/distributed-systems/cockroachdb-closed-timestamps/) 노트에서 따로 소스를 읽어 정리했다.

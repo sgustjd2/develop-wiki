@@ -5,7 +5,7 @@ category: data-modeling
 level: advanced
 summary: 외래 키 검사를 트랜잭션 끝으로 미루는 DEFERRABLE 과 부모 삭제 시 자식을 같이 지우는 ON DELETE CASCADE 가 무엇을 바꾸고 무엇을 바꾸지 못하는지, 인덱스·메모리·커밋 지연·삭제 범위 비용을 직접 실행해 정리한다.
 tags: [postgresql, foreign-key, deferrable, on-delete-cascade, set-constraints, referential-integrity, index, transaction, schema-design]
-related: [data-modeling/postgresql-for-no-key-update-foreign-key-design, data-modeling/postgresql-multixact-wraparound-row-locks, data-modeling/index-design, data-modeling/mvcc-vacuum, data-modeling/table-bloat-postgresql, data-modeling/transaction-isolation, data-modeling/zero-downtime-migration, data-modeling/explain-analyze, data-modeling/optimistic-pessimistic-locking]
+related: [data-modeling/postgresql-for-no-key-update-foreign-key-design, data-modeling/postgresql-multixact-wraparound-row-locks, data-modeling/index-design, data-modeling/mvcc-vacuum, data-modeling/table-bloat-postgresql, data-modeling/transaction-isolation, data-modeling/zero-downtime-migration, data-modeling/explain-analyze, data-modeling/optimistic-pessimistic-locking, data-modeling/postgresql-multitenant-composite-foreign-key, data-modeling/postgresql-not-valid-validate-constraint]
 sources:
   - https://www.postgresql.org/docs/16/ddl-constraints.html
   - https://www.postgresql.org/docs/16/sql-createtable.html
@@ -141,7 +141,7 @@ PostgreSQL 16.15 임시 컨테이너(`postgres:16`, 데이터 디렉터리 tmpfs
 | 문장 내 UNIQUE 교환 | `DEFERRABLE INITIALLY IMMEDIATE` UNIQUE | 업서트 불가, 느릴 수 있음 |
 | 부모 삭제 시 자식 자동 정리 | `ON DELETE CASCADE` | 폭발 반경, 큰 트랜잭션, 인덱스 필수 |
 | 자식이 있으면 삭제 거부 | `RESTRICT`(즉시) / `NO ACTION`(지연 가능) | 앱이 정리 순서를 책임 |
-| 자식은 남기고 연결만 끊기 | `SET NULL`(열 지정 가능) | FK 열이 NULL 허용이어야 함 |
+| 자식은 남기고 연결만 끊기 | `SET NULL`(열 지정 가능, 15+) | FK 열이 NULL 허용이어야 함. 복합 키는 [멀티테넌트 복합 FK](/develop-wiki/knowledge/data-modeling/postgresql-multitenant-composite-foreign-key/) |
 | 대량 삭제를 통제하고 싶음 | 자식 먼저 배치 삭제, 부모는 `RESTRICT` | 앱 코드가 늘어남 |
 
 ## 검증 범위

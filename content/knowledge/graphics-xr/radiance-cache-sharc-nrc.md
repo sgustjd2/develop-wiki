@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: 라디언스 캐시는 경로 추적에서 두 번째 이후 히트의 복사휘도를 월드 공간에 저장해 두고, 경로를 캐시에서 일찍 끝내 노이즈와 비용을 줄인다. SHARC 는 해시 격자에 값을 누적하고, NRC 는 작은 신경망을 렌더링 중에 계속 학습시킨다.
 tags: [rendering, ray-tracing, path-tracing, global-illumination, radiance-cache, sharc, nrc, hash-grid, neural-network, rtxgi]
-related: [graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/restir-gi-pt-hit-distance-contract, graphics-xr/restir-reservoir-resampling, graphics-xr/image-based-lighting, graphics-xr/pbr-material-model, graphics-xr/svgf-ray-tracing-denoising]
+related: [graphics-xr/ddgi-irradiance-probes, graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/restir-gi-pt-hit-distance-contract, graphics-xr/restir-reservoir-resampling, graphics-xr/image-based-lighting, graphics-xr/pbr-material-model, graphics-xr/svgf-ray-tracing-denoising]
 sources:
   - https://github.com/NVIDIA-RTX/SHARC
   - https://github.com/NVIDIA-RTX/SHARC/blob/main/docs/Integration.md
@@ -21,7 +21,7 @@ updatedAt: 2026-11-19
 
 ## 문제
 
-경로 추적에서 간접광은 광선이 여러 번 튕겨야 의미 있는 값이 된다. 바운스를 늘리면 비용과 노이즈가 같이 늘고, 줄이면 어두워진다. 두 번째 히트 이후의 복사휘도는 이웃 픽셀·이전 프레임의 경로들이 이미 비슷한 값을 계산했을 가능성이 높다. 이것을 **월드 공간에 저장해 두고 경로를 거기서 끊으면** 된다는 발상이 라디언스 캐시다. RTXGI README 는 이를 기존 프로브 기반 조도 캐시를 월드 공간 라디언스 캐시로 대체하는 것으로 설명한다. 복사휘도(방향별 값)를 다루므로 광택 반사도 어느 정도 담을 수 있다는 점은 노트 작성자의 해석이다.
+경로 추적에서 간접광은 광선이 여러 번 튕겨야 의미 있는 값이 된다. 바운스를 늘리면 비용과 노이즈가 같이 늘고, 줄이면 어두워진다. 두 번째 히트 이후의 복사휘도는 이웃 픽셀·이전 프레임의 경로들이 이미 비슷한 값을 계산했을 가능성이 높다. 이것을 **월드 공간에 저장해 두고 경로를 거기서 끊으면** 된다는 발상이 라디언스 캐시다. RTXGI README 는 이를 기존 프로브 기반 조도 캐시를 월드 공간 라디언스 캐시로 대체하는 것으로 설명한다(그 이전 방식인 v1.x 의 DDGI 와의 차이는 [DDGI 노트](/develop-wiki/knowledge/graphics-xr/ddgi-irradiance-probes/)의 비교 절). 복사휘도(방향별 값)를 다루므로 광택 반사도 어느 정도 담을 수 있다는 점은 노트 작성자의 해석이다.
 
 ## 해법
 

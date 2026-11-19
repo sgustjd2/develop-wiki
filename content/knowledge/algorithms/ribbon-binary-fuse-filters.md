@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: XOR 필터보다 더 작은 정적 확률 필터 두 가지. 이진 퓨즈는 칸을 구간 단위로 묶어 배열을 약 1.125n 으로 줄이고, Ribbon 은 띠 모양 선형 방정식을 풀어 오버헤드를 한 자릿수 %까지 낮춘다.
 tags: [probabilistic, binary-fuse, ribbon-filter, xor-filter, static-filter, membership, lsm-tree]
-related: [algorithms/quotient-xor-filter, algorithms/bloom-filter, algorithms/cuckoo-counting-bloom-filter, algorithms/lsm-tree, algorithms/hash-functions-hashdos, algorithms/space-time-tradeoff, cs-fundamentals/cpu-cache-locality]
+related: [algorithms/quotient-xor-filter, algorithms/bloom-filter, algorithms/cuckoo-counting-bloom-filter, algorithms/lsm-tree, algorithms/hash-functions-hashdos, algorithms/space-time-tradeoff, cs-fundamentals/cpu-cache-locality, algorithms/static-filter-xor-fuse-ribbon-benchmarks]
 sources:
   - https://arxiv.org/abs/2201.01174
   - https://arxiv.org/abs/2103.02515

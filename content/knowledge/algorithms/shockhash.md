@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: 키마다 해시 함수 두 개 중 하나를 고르는 1비트 선택을 별도 검색 구조에 저장해, 무차별 시드 탐색보다 지수적으로 적은 시도로 최소 완전 해시 이론 하한(약 1.44비트/키)에 다가가는 구성법.
 tags: [perfect-hashing, mphf, shockhash, cuckoo-hashing, pseudoforest, retrieval, recsplit, space-optimal]
-related: [algorithms/perfect-hashing-pthash, algorithms/pthash-vs-recsplit-benchmarks, algorithms/recsplit-vs-bbhash, algorithms/hash-table, algorithms/union-find, algorithms/space-time-tradeoff, algorithms/ribbon-binary-fuse-filters, algorithms/quotient-xor-filter]
+related: [algorithms/perfect-hashing-pthash, algorithms/pthash-vs-recsplit-benchmarks, algorithms/recsplit-vs-bbhash, algorithms/hash-table, algorithms/union-find, algorithms/space-time-tradeoff, algorithms/ribbon-binary-fuse-filters, algorithms/quotient-xor-filter, algorithms/mphf-selection-shockhash-pthash-ptrhash]
 sources:
   - https://arxiv.org/abs/2310.14959
   - https://github.com/ByteHamster/ShockHash

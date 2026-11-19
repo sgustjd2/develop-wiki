@@ -6,7 +6,7 @@ group: data-structure
 level: advanced
 summary: 해시 지문을 고정 크기 빈에 넣고 넘치면 "가장 큰 지문"만 예비 필터로 보내, 대부분의 질의·삽입이 캐시 라인 하나만 만지게 하는 삽입 전용(삭제 불가) 근사 멤버십 필터.
 tags: [filter, amq, prefix-filter, pocket-dictionary, cache-locality, incremental-filter, cuckoo-filter, bloom-filter]
-related: [algorithms/bloom-filter, algorithms/vector-quotient-filter, algorithms/counting-quotient-filter, algorithms/cuckoo-counting-bloom-filter, algorithms/quotient-filter-resize-merge, algorithms/quotient-xor-filter, algorithms/ribbon-binary-fuse-filters, algorithms/lsm-tree, algorithms/space-time-tradeoff, cs-fundamentals/cpu-cache-locality]
+related: [algorithms/bloom-filter, algorithms/vector-quotient-filter, algorithms/counting-quotient-filter, algorithms/cuckoo-counting-bloom-filter, algorithms/quotient-filter-resize-merge, algorithms/quotient-xor-filter, algorithms/ribbon-binary-fuse-filters, algorithms/lsm-tree, algorithms/space-time-tradeoff, cs-fundamentals/cpu-cache-locality, algorithms/static-filter-xor-fuse-ribbon-benchmarks]
 sources:
   - https://arxiv.org/abs/2203.17139
   - https://github.com/tomereven/Prefix-Filter

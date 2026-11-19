@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: 과반 응답을 받는 대신 리더가 "일정 시간 동안 다른 리더가 없다"는 약속(리스)에 기대 읽기를 로컬로 처리하는 기법. 안전성이 시계 속도 오차 상한이라는 시간 가정에 걸린다.
 tags: [distributed-systems, lease, leader-lease, clock-drift, linearizability, raft, read-optimization]
-related: [distributed-systems/raft-consensus, distributed-systems/paxos-vs-raft, distributed-systems/distributed-lock-fencing-token, distributed-systems/spanner-truetime, distributed-systems/logical-clocks, distributed-systems/consistency-models, distributed-systems/gossip-failure-detection]
+related: [distributed-systems/raft-consensus, distributed-systems/paxos-vs-raft, distributed-systems/distributed-lock-fencing-token, distributed-systems/spanner-truetime, distributed-systems/logical-clocks, distributed-systems/consistency-models, distributed-systems/gossip-failure-detection, distributed-systems/cockroachdb-lease-types, distributed-systems/clock-boottime-vs-monotonic]
 sources:
   - https://web.stanford.edu/~ouster/cgi-bin/papers/OngaroPhD.pdf
   - https://raft.github.io/raft.pdf

@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: NRD 는 픽셀당 광선 1개 안팎의 경로 추적 신호를 G-버퍼 가이드로 걸러 내는 라이브러리다. ReBLUR 는 재귀 블러 방식, ReLAX 는 à-trous 방식이며, 결과 품질은 입력 신호의 약속(hitT, 확률적 로브 선택, 신뢰도)을 지키는 데 달렸다.
 tags: [rendering, ray-tracing, denoising, nrd, reblur, relax, restir, path-tracing, hit-distance, temporal]
-related: [graphics-xr/svgf-ray-tracing-denoising, graphics-xr/restir-reservoir-resampling, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/taa-temporal-filtering-ao-ssr, graphics-xr/stochastic-ssr-hiz-ray-reuse, graphics-xr/pbr-material-model]
+related: [graphics-xr/nrd-hit-distance-accumulation-psr, graphics-xr/svgf-ray-tracing-denoising, graphics-xr/restir-reservoir-resampling, graphics-xr/hw-ray-traced-shadows-reflections, graphics-xr/taa-temporal-filtering-ao-ssr, graphics-xr/stochastic-ssr-hiz-ray-reuse, graphics-xr/pbr-material-model]
 sources:
   - https://github.com/NVIDIA-RTX/NRD
 updatedAt: 2026-11-19
@@ -32,7 +32,7 @@ README 의 개요:
 
 ### 입력 계약 (README 의 요구)
 
-- 복사휘도는 첫 히트(또는 PSR 의 2차 히트)에서 **확산/반사로 분리**해 넣는다. 자체 발광은 분리해 선명도를 유지한다.
+- 복사휘도는 첫 히트(또는 PSR 의 2차 히트, [PSR 노트](/develop-wiki/knowledge/graphics-xr/nrd-hit-distance-accumulation-psr/))에서 **확산/반사로 분리**해 넣는다. 자체 발광은 분리해 선명도를 유지한다.
 - **히트 거리 `hitT`** 는 디노이징 중인 BRDF 로브 **안에서의** 거리여야 한다. 확산은 코사인 가중 샘플러, 반사는 VNDF 샘플러가 권장된다. 음수 불가, 접촉점에서 0 에 접근, 첫 히트 거리는 포함하지 않는다. 경로 전체 길이의 합을 넣지 말라고 한다(첫 번째 바운스 거리가 무난한 기준).
 - **RIS·MIS·ReSTIR** 로 고른 샘플의 `hitT` 는 그대로 못 넣는다. 한 샘플이 여러 반사를 대표하므로, 실제 BRDF 로브 기준으로 확률적으로 받아들이거나 버려야 한다. 버리면 로브 안 히트 거리로 대체한다. ReSTIR 이 디스오클루전에서 내는 `hitT = 0` 은 항상 무시한다. ([ReSTIR](/develop-wiki/knowledge/graphics-xr/restir-reservoir-resampling/)은 이 약속이 틀어지기 쉬운 대표 사례다.)
 - 고에너지 **반딧불(firefly)** 은 공간 필터가 퍼뜨리므로 피한다. 안티 반딧불 필터가 있으나 주변 배경 신호가 믿을 만할 때만 동작한다.

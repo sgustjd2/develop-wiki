@@ -6,7 +6,7 @@ group: patterns
 level: intermediate
 summary: 한글 같은 조합형 입력에서 조합 중 Enter·실시간 검색·검증이 오동작하는 원인과, composition 이벤트·isComposing 으로 안전하게 처리하는 방법.
 tags: [ime, korean, composition, input, keyboard, i18n, search]
-related: [ui-ux/combobox-autocomplete, ui-ux/form-inline-validation, ui-ux/search-filter-sort, ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/keyboard-focus-management]
+related: [ui-ux/combobox-autocomplete, ui-ux/form-inline-validation, ui-ux/search-filter-sort, ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/keyboard-focus-management, ui-ux/korean-search-normalization-chosung-jamo]
 sources:
   - https://developer.mozilla.org/en-US/docs/Web/API/Element/compositionstart_event
   - https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing

@@ -6,7 +6,7 @@ group: interaction
 level: intermediate
 summary: 사이트 내 검색 로그에서 상위 쿼리·0결과 쿼리·재검색 흐름을 읽어 콘텐츠 공백, 용어 불일치, 철자 오류를 찾아 개선하는 절차와 집계 시 주의점.
 tags: [ux, search, analytics, query-log, zero-results, findability, privacy]
-related: [ui-ux/search-filter-sort, ui-ux/empty-states, ui-ux/information-scent-foraging, ui-ux/information-architecture-card-sorting, ui-ux/ux-metrics-sus-heart-ab-test, ui-ux/ux-research-method-selection]
+related: [ui-ux/search-filter-sort, ui-ux/empty-states, ui-ux/information-scent-foraging, ui-ux/information-architecture-card-sorting, ui-ux/ux-metrics-sus-heart-ab-test, ui-ux/ux-research-method-selection, ui-ux/search-quality-metrics-mrr-ndcg]
 sources:
   - https://www.nngroup.com/articles/search-log-analysis/
 updatedAt: 2026-11-19

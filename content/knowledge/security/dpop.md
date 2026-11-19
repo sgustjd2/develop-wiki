@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: 액세스·리프레시 토큰을 클라이언트의 공개키에 묶고, 요청마다 개인키로 서명한 증명 JWT 를 같이 보내게 해서 토큰이 유출돼도 키 없이는 쓰지 못하게 하는 OAuth 확장(RFC 9449).
 tags: [oauth2, dpop, rfc9449, sender-constrained, token-theft, jwt, spa]
-related: [security/oauth2-oidc-pkce, security/session-vs-jwt, security/jwt-key-rotation, security/xss, security/mfa-passkeys, security/secrets-management]
+related: [security/oauth2-oidc-pkce, security/session-vs-jwt, security/jwt-key-rotation, security/xss, security/mfa-passkeys, security/secrets-management, security/dpop-resource-server-validation, security/oauth-security-bcp-rfc9700, security/fapi-2-security-profile]
 sources:
   - https://www.rfc-editor.org/rfc/rfc9449.html
 updatedAt: 2026-11-19
@@ -87,7 +87,7 @@ console.log(check(makeProof('GET', url, token), 'POST', url, token, jkt)); // ht
 console.log(check(makeProof('GET', url, 'other-token'), 'GET', url, token, jkt)); // ath mismatch
 ```
 
-실행 결과는 `ok`, `replay`, `htm/htu mismatch`, `ath mismatch` 순서다. 공격자가 훔친 토큰을 **자기 키**로 만든 증명과 같이 보내면 `key not bound to token` 으로 거절된다. 이 코드는 원리 설명용이라 `htu` 정규화, 시간 창의 clock skew, 다중 서버의 `jti` 저장소, `nonce` 는 생략했다.
+실행 결과는 `ok`, `replay`, `htm/htu mismatch`, `ath mismatch` 순서다. 공격자가 훔친 토큰을 **자기 키**로 만든 증명과 같이 보내면 `key not bound to token` 으로 거절된다. 이 코드는 원리 설명용이라 `htu` 정규화, 시간 창의 clock skew, 다중 서버의 `jti` 저장소, `nonce` 는 생략했다. 이 부분과 Bearer 다운그레이드 거부까지 넣은 검증 순서는 [DPoP 리소스 서버 검증 절차](/develop-wiki/knowledge/security/dpop-resource-server-validation/)에 있다.
 
 ## 보장하는 것과 못 하는 것
 

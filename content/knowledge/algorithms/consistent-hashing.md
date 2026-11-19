@@ -6,14 +6,14 @@ group: algorithm
 level: intermediate
 summary: 키와 서버를 같은 원형 해시 공간에 놓고 키를 시계 방향 첫 서버에 배정하는 분산 기법. 서버가 늘거나 줄 때 전체 키의 약 1/n 만 옮겨져, 캐시·분산 DB 의 샤딩에 쓴다.
 tags: [consistent-hashing, hash, distributed-systems, sharding, caching, load-balancing]
-related: [algorithms/hash-table, algorithms/binary-search, data-modeling/sharding-partitioning, performance/load-balancing, performance/caching-strategies, algorithms/lsm-tree, algorithms/rendezvous-hashing, algorithms/hash-functions-hashdos]
+related: [algorithms/hash-table, algorithms/binary-search, data-modeling/sharding-partitioning, performance/load-balancing, performance/caching-strategies, algorithms/lsm-tree, algorithms/rendezvous-hashing, algorithms/hash-functions-hashdos, algorithms/consistent-hashing-bounded-loads]
 sources:
   - https://en.wikipedia.org/wiki/Consistent_hashing
   - https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html
   - https://arxiv.org/abs/1406.2294
   - https://research.google/blog/consistent-hashing-with-bounded-loads/
   - https://arxiv.org/abs/1608.01350
-updatedAt: 2026-11-18
+updatedAt: 2026-11-19
 simulation: consistent-hashing
 ---
 
@@ -136,7 +136,7 @@ function jumpHash(key: bigint, buckets: number): number {
 // 같은 10만 키로 4 → 5 버킷: 20.2% 이동, 버킷별 19,707~20,184 개로 고르게 분포
 ```
 
-- **경계 부하 일관된 해싱**(Mirrokni, Thorup, Zadimoghaddam, SODA 2018)은 서버마다 용량을 평균 부하의 (1+ε)배로 제한하고, 꽉 찬 서버는 건너뛰어 시계 방향 다음 서버로 보낸다. Google 연구 블로그에 따르면 Google Cloud Pub/Sub 에 적용됐고, Vimeo 의 엔지니어가 HAProxy 에 구현해 캐시 대역폭을 거의 8분의 1로 줄였다.
+- **경계 부하 일관된 해싱**(Mirrokni, Thorup, Zadimoghaddam, SODA 2018)은 서버마다 용량을 평균 부하의 (1+ε)배로 제한하고, 꽉 찬 서버는 건너뛰어 시계 방향 다음 서버로 보낸다. Google 연구 블로그에 따르면 Google Cloud Pub/Sub 에 적용됐고, Vimeo 의 엔지니어가 HAProxy 에 구현해 캐시 대역폭을 거의 8분의 1로 줄였다. 상한과 이동량의 맞교환, HAProxy `hash-balance-factor`, 시뮬레이션은 [경계 부하 일관된 해싱](/develop-wiki/knowledge/algorithms/consistent-hashing-bounded-loads/)에서 다룬다.
 
 ## 언제 쓰나
 

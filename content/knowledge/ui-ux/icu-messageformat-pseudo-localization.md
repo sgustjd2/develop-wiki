@@ -6,7 +6,7 @@ group: writing
 level: intermediate
 summary: 복수형·성별·변수를 번역 가능한 한 문장으로 표현하는 ICU 메시지 문법과, 번역 전에 문자열 하드코딩·텍스트 확장·잘림을 찾아내는 의사 번역(pseudo-localization) 기법.
 tags: [i18n, l10n, icu, messageformat, formatjs, ux-writing]
-related: [ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/ux-writing-principles, ui-ux/data-table-density, ui-ux/responsive-adaptive-container-queries]
+related: [ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/ux-writing-principles, ui-ux/data-table-density, ui-ux/responsive-adaptive-container-queries, ui-ux/translation-length-truncation-testing]
 sources:
   - https://unicode-org.github.io/icu/userguide/format_parse/messages/
   - https://formatjs.github.io/docs/intl-messageformat/
@@ -63,7 +63,7 @@ new IntlMessageFormat("It''s '{'literal'}'", 'en').format(); // "It's {literal}"
 | 변환 | 찾아내는 문제 |
 | --- | --- |
 | 악센트 문자 치환(`a → á`) | 하드코딩된 영문(변환되지 않은 문자열), 폰트의 문자 지원 |
-| 길이 확장(`~` 패딩 30~40%) | 잘림·넘침·줄바꿈 붕괴([텍스트 확장](/develop-wiki/knowledge/ui-ux/i18n-ux/)) |
+| 길이 확장(`~` 패딩 30~40%) | 잘림·넘침·줄바꿈 붕괴([텍스트 확장](/develop-wiki/knowledge/ui-ux/i18n-ux/), 짧은 문자열일수록 더 늘리는 방법은 [번역 길이·잘림 검사](/develop-wiki/knowledge/ui-ux/translation-length-truncation-testing/)) |
 | 괄호 `[ … ]` 감싸기 | 문자열이 중간에 잘렸는지 |
 | 긴 단어·RTL 변종 | 줄바꿈·방향 문제 |
 

@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: 서버에서 지운 패스키가 사용자 기기·비밀번호 관리자에 계속 남는 문제를 RP 가 인증기에 "알려 주는" 세 가지 signal 메서드와, 등록부터 삭제까지 서버가 BE/BS 플래그와 함께 챙길 수명주기 규칙.
 tags: [webauthn, passkeys, signal-api, fido2, credential-lifecycle, backup-eligibility, privacy, w3c]
-related: [security/mfa-passkeys, mobile-dev/android-credential-manager-passkey-migration, mobile-dev/social-login-account-linking-deletion, mobile-dev/native-oauth-login-ux, security/password-storage, security/session-vs-jwt, security/threat-modeling-stride]
+related: [security/mfa-passkeys, mobile-dev/android-credential-manager-passkey-migration, mobile-dev/social-login-account-linking-deletion, mobile-dev/native-oauth-login-ux, security/password-storage, security/session-vs-jwt, security/threat-modeling-stride, security/webauthn-related-origin-requests, security/passkey-recovery-hints]
 sources:
   - https://www.w3.org/TR/webauthn-3/
   - https://developer.android.com/identity/credential-manager/signal-api-rp

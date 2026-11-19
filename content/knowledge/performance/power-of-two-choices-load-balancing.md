@@ -5,7 +5,7 @@ category: performance
 level: advanced
 summary: 백엔드를 무작위로 두 개만 뽑아 부하가 적은 쪽에 보내는 방식. 전체를 훑는 최소 부하 선택에 가까운 균형을 O(1) 비용으로 얻고, 부하 정보가 낡아도 쏠림(herding)이 덜하다.
 tags: [load-balancing, p2c, least-request, herding, balls-into-bins, envoy, nginx, tail-latency, randomized-algorithm]
-related: [performance/load-balancing, performance/queueing-theory-utilization-latency, performance/concurrency-limits-littles-law, performance/hedged-requests-tied-requests, performance/backpressure-load-shedding, performance/mg1-service-time-variance-tail-latency, performance/connection-pool]
+related: [performance/load-balancing, performance/queueing-theory-utilization-latency, performance/concurrency-limits-littles-law, performance/hedged-requests-tied-requests, performance/backpressure-load-shedding, performance/mg1-service-time-variance-tail-latency, performance/connection-pool, performance/peak-ewma-load-balancing, algorithms/consistent-hashing-bounded-loads]
 sources:
   - https://doi.org/10.1137/S0097539795288490
   - https://doi.org/10.1109/71.963420
@@ -96,13 +96,13 @@ d=1 은 n 이 커질수록 계속 자라고, d=2 는 거의 제자리다. d=2 �
 
 ## 주의 (비용)
 
-- **부하 신호의 질이 상한이다.** 진행 중 요청 수는 요청 비용이 균일해야 의미가 있다. 가벼운 요청 100 개와 무거운 요청 1 개를 같은 한 칸으로 센다. 비용 편차가 크면 가중 신호(예측 비용, EWMA 응답 시간)를 쓰되 신호가 낡는 문제가 되돌아온다.
+- **부하 신호의 질이 상한이다.** 진행 중 요청 수는 요청 비용이 균일해야 의미가 있다. 가벼운 요청 100 개와 무거운 요청 1 개를 같은 한 칸으로 센다. 비용 편차가 크면 가중 신호(예측 비용, EWMA 응답 시간)를 쓰되 신호가 낡는 문제가 되돌아온다. 응답 시간 신호의 대표 구현은 [P2C + Peak EWMA](/develop-wiki/knowledge/performance/peak-ewma-load-balancing/)다.
 - **관측 범위가 밸런서 인스턴스 하나다.** 인스턴스가 여럿이면 각자 자기가 보낸 요청만 센다. P2C 는 이 부분 정보에서도 쏠림이 덜하지만, 전역 정보를 가진 것과 같지는 않다.
 - **빨리 실패하는 백엔드가 끌어들인다.** 오류를 즉시 반환하는 서버는 진행 중 요청이 적어서 계속 이긴다(블랙홀). 헬스 체크·이상치 제거(outlier ejection)·오류 응답 가중이 별도로 필요하다. 이 지적은 이 노트의 추론이며 실험하지 않았다.
 - **새 서버(진행 중 0)는 한동안 이긴다.** 후보로 뽑힐 때마다 이기므로 공정 몫(1/N)의 약 두 배를 받을 수 있다. 느린 시작(slow start)·워밍업이 필요한 서버(JIT, 캐시)에는 별도 완화를 둔다. 역시 추론이다.
 - 두 후보가 같은 서버가 되지 않게 뽑는다(위 코드). 복원 추출이면 풀이 작을 때 효과가 줄어든다. 풀이 매우 작으면(2~3 대) 전체 비교가 더 싸다.
 - 후보를 늘린다고 계속 좋아지지 않는다. 위 표에서 d=3 의 개선은 d=2 대비 작았고, 더 보는 만큼 신호가 쏠릴 여지와 비용이 는다.
-- **친화성(세션 고정, 캐시 지역성)이 필요한 라우팅에는 안 맞는다.** 이 경우는 일관된 해시가 맞고, 해시에 부하 상한을 거는 변형(bounded loads)을 쓴다. 이 변형은 이 노트에서 다루지 않았다.
+- **친화성(세션 고정, 캐시 지역성)이 필요한 라우팅에는 안 맞는다.** 이 경우는 일관된 해시가 맞고, 해시에 부하 상한을 거는 변형을 쓴다 → [경계 부하 일관된 해싱](/develop-wiki/knowledge/algorithms/consistent-hashing-bounded-loads/).
 - 과부하 자체를 해결하지 않는다. 평균 이용률이 100% 근처면 P2C 도 소용없으므로 [백프레셔·로드 셰딩](/develop-wiki/knowledge/performance/backpressure-load-shedding/)과 용량이 따로 필요하다.
 
 ## 비교

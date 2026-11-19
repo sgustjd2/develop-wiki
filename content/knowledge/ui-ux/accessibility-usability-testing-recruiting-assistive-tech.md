@@ -6,7 +6,7 @@ group: accessibility
 level: intermediate
 summary: 장애가 있는 참가자와 보조기술(스크린 리더·확대기·스위치 등) 사용자를 기능적 필요 기준으로 모집·스크리닝하고, 세션 환경·시간·해석 범위를 준비하는 방법.
 tags: [accessibility, a11y, usability-testing, recruiting, assistive-technology, screen-reader, research-ethics]
-related: [ui-ux/a11y-testing-strategy, ui-ux/research-ethics-consent-recruiting, ui-ux/usability-test-tasks-think-aloud, ui-ux/usability-testing-sample-size, ui-ux/wcag-22-overview, ui-ux/screen-reader-accessible-name, ui-ux/cognitive-accessibility]
+related: [ui-ux/a11y-testing-strategy, ui-ux/research-ethics-consent-recruiting, ui-ux/usability-test-tasks-think-aloud, ui-ux/usability-testing-sample-size, ui-ux/wcag-22-overview, ui-ux/screen-reader-accessible-name, ui-ux/cognitive-accessibility, ui-ux/remote-accessibility-usability-testing]
 sources:
   - https://www.w3.org/WAI/test-evaluate/involving-users/
   - https://www.section508.gov/test/usability-testing-with-people-with-disabilities/

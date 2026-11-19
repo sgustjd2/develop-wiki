@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: 카메라와 IMU 시계가 일정한 시간 td 만큼 어긋나면 비주얼-관성 추정이 틀어진다. Qin·Shen 의 방법은 특징점의 이미지 속도로 관측을 td 만큼 밀어 재투영 잔차에 넣고, td 를 상태에 포함해 슬라이딩 윈도 최적화에서 함께 푼다.
 tags: [robotics, vio, time-offset, temporal-calibration, camera-imu, sensor-fusion, vins-mono, kalibr]
-related: [robotics/sensor-fusion-time-sync, robotics/vio-accel-bias-extrinsic-observability, robotics/vio-initialization-observability, robotics/imu-preintegration, robotics/factor-graph-slam-optimization, robotics/coordinate-frames-tf]
+related: [robotics/ekf-camera-imu-time-offset-estimation, robotics/continuous-time-spline-calibration-kalibr, robotics/rolling-shutter-vio-row-time-model, robotics/sensor-fusion-time-sync, robotics/vio-accel-bias-extrinsic-observability, robotics/vio-initialization-observability, robotics/imu-preintegration, robotics/factor-graph-slam-optimization, robotics/coordinate-frames-tf]
 sources:
   - https://arxiv.org/abs/1808.00692
   - https://ar5iv.labs.arxiv.org/html/1808.00692

@@ -6,7 +6,7 @@ group: estimation
 level: advanced
 summary: 포즈 그래프의 루프 클로저에 GNC 를 얹으면 변수 갱신(기존 PGO 솔버)과 간선 가중치 갱신(닫힌 식)을 번갈아 돌려 가짜 루프를 0 가중으로 만든다. 오도메트리가 믿을 만하고 이상치가 서로 안 맞을 때 잘 동작하지만 전역 최적은 보장하지 않는다.
 tags: [robotics, slam, pose-graph, gnc, robust-estimation, loop-closure, outliers, truncated-least-squares]
-related: [robotics/gnc-teaser-robust-estimation, robotics/loop-closure-outlier-rejection, robotics/factor-graph-slam-optimization, robotics/isam2-bayes-tree-incremental, robotics/slam-concepts, robotics/rotation-representations]
+related: [robotics/se-sync-certifiable-pose-graph, robotics/gnc-teaser-robust-estimation, robotics/loop-closure-outlier-rejection, robotics/factor-graph-slam-optimization, robotics/isam2-bayes-tree-incremental, robotics/slam-concepts, robotics/rotation-representations]
 sources:
   - https://arxiv.org/abs/1909.08605
   - https://ar5iv.labs.arxiv.org/html/1909.08605

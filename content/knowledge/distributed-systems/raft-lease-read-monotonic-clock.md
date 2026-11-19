@@ -5,7 +5,7 @@ category: distributed-systems
 level: advanced
 summary: 리스 읽기가 "어떤 시계로 얼마를 재는가"에 따라 갈리는 안전성을 etcd/raft(틱 기반)와 TiKV(단조 시계·리스 상태 3종) 코드로 비교하고, 시계 점프·속도 위반·정지를 모형과 실행으로 나눠 본다.
 tags: [raft, lease-read, monotonic-clock, clock-drift, tikv, etcd, linearizable-reads, time-assumptions]
-related: [distributed-systems/leader-lease-clock-assumptions, distributed-systems/raft-prevote-checkquorum-lease-interplay, distributed-systems/raft-read-index, distributed-systems/raft-consensus, distributed-systems/hybrid-logical-clock, distributed-systems/distributed-lock-fencing-token, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/spanner-truetime]
+related: [distributed-systems/leader-lease-clock-assumptions, distributed-systems/raft-prevote-checkquorum-lease-interplay, distributed-systems/raft-read-index, distributed-systems/raft-consensus, distributed-systems/hybrid-logical-clock, distributed-systems/distributed-lock-fencing-token, distributed-systems/cockroachdb-uncertainty-interval-read-summary, distributed-systems/spanner-truetime, distributed-systems/clock-boottime-vs-monotonic]
 sources:
   - https://github.com/etcd-io/raft/blob/main/raft.go
   - https://github.com/tikv/tikv/blob/master/components/raftstore/src/store/util.rs
@@ -51,7 +51,7 @@ Linux `clock_gettime(2)` 문서가 말하는 시계 성질은 다음과 같다. 
 | `CLOCK_MONOTONIC_RAW` | 영향 없음 | 영향 없음 | 세지 않음 |
 | `CLOCK_BOOTTIME` | 영향 없음 | 영향 받음 | **셈** |
 
-모든 단조 변형은 연속 호출 값이 거꾸로 가지 않는다고 보장하지만, 구조에 따라 같은 값이 연속으로 나올 수 있다고 문서에 적혀 있다. TiKV 가 `MONOTONIC_RAW` 를 고르는 이유를 소스에서 직접 확인하지는 못했다. 위 표로 보면 NTP 의 속도 조정에 흔들리지 않는 시계라는 점이 후보 이유일 수 있다(추정).
+모든 단조 변형은 연속 호출 값이 거꾸로 가지 않는다고 보장하지만, 구조에 따라 같은 값이 연속으로 나올 수 있다고 문서에 적혀 있다. 서스펜드 시간을 세는지에 따른 선택(리스 보유자는 BOOTTIME, 감시 타임아웃은 MONOTONIC)은 [CLOCK_BOOTTIME vs CLOCK_MONOTONIC](/develop-wiki/knowledge/distributed-systems/clock-boottime-vs-monotonic/)에서 따로 다룬다. TiKV 가 `MONOTONIC_RAW` 를 고르는 이유를 소스에서 직접 확인하지는 못했다. 위 표로 보면 NTP 의 속도 조정에 흔들리지 않는 시계라는 점이 후보 이유일 수 있다(추정).
 
 ## 직접 돌려 본 것
 

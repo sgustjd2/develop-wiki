@@ -6,7 +6,7 @@ group: accessibility
 level: advanced
 summary: 화면에 보이는 항목만 DOM 에 두는 가상화 목록에서, 전체 크기·위치를 aria-setsize/posinset 으로 알리고 포커스 항목을 유지하며 브라우저 찾기·낭독기 탐색의 빈틈을 다루는 방법.
 tags: [accessibility, virtualization, aria, listbox, focus, virtual-scroll]
-related: [ui-ux/accessible-table-vs-grid, ui-ux/pagination-vs-infinite-scroll, ui-ux/keyboard-focus-management, ui-ux/combobox-autocomplete, ui-ux/search-filter-sort, ui-ux/live-regions-announcements, ui-ux/a11y-testing-strategy, ui-ux/semantic-html-first-aria]
+related: [ui-ux/accessible-table-vs-grid, ui-ux/pagination-vs-infinite-scroll, ui-ux/keyboard-focus-management, ui-ux/combobox-autocomplete, ui-ux/search-filter-sort, ui-ux/live-regions-announcements, ui-ux/a11y-testing-strategy, ui-ux/semantic-html-first-aria, ui-ux/virtualization-library-a11y-comparison]
 sources:
   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-setsize
   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-posinset
@@ -63,7 +63,7 @@ function render(from: number, to: number, active: number | null) {
 ```
 
 - 확인한 동작(jsdom, TOTAL=5000): 창 100~104 + 활성 102 → posinset 101~105; 창을 300~304 로 옮겨도 활성 항목이 남아 `103,301..305` 로 렌더되고 `aria-activedescendant="opt-102"` 의 대상이 DOM 에 존재; 활성 해제 후에는 속성이 제거됨.
-- 확인하지 못한 것: NVDA·VoiceOver 가 이 속성을 실제로 어떻게 읽는지, 노드 교체 시 낭독기 가상 커서가 어디에 놓이는지, 가상화 라이브러리(react-window 등)의 내부 동작. 이 노트의 낭독 결과 서술은 **명세·MDN 설명 기준이며 실기기 관찰이 아니다**.
+- 확인하지 못한 것: NVDA·VoiceOver 가 이 속성을 실제로 어떻게 읽는지, 노드 교체 시 낭독기 가상 커서가 어디에 놓이는지, 가상화 라이브러리(react-window 등)의 내부 동작(라이브러리별 소스 확인 결과는 [가상화 라이브러리별 접근성 비교](/develop-wiki/knowledge/ui-ux/virtualization-library-a11y-comparison/)). 이 노트의 낭독 결과 서술은 **명세·MDN 설명 기준이며 실기기 관찰이 아니다**.
 - 포커스 항목이 화면 밖으로 밀려난 뒤 돌아오는 경로: Home/End·Page 키로 창을 이동시키고 활성 항목을 새 창 안으로 옮긴다([키보드·포커스](/develop-wiki/knowledge/ui-ux/keyboard-focus-management/)).
 
 ### 3. 검색(Ctrl+F)·전체 탐색의 빈틈

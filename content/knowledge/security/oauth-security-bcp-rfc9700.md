@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: OAuth 2.0 구현이 지킬 보안 요구를 MUST/SHOULD 강도 그대로 정리한 RFC 9700 요약. 이어서 PAR 로 요청을 백채널에 올리고 DPoP 로 코드·토큰을 키에 묶는 결합의 동작과 비용.
 tags: [oauth2, rfc9700, bcp, security, par, dpop, dpop-jkt, pkce, redirect-uri, sender-constrained]
-related: [security/oauth2-oidc-pkce, security/oauth-par-rfc9126, security/dpop, security/oauth-jar-rfc9101, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-resource-indicators-rfc8707, security/mtls-certificate-bound-tokens, security/private-key-jwt-client-authentication, security/oauth-authorization-server-metadata-rfc8414, security/token-revocation-introspection, security/csrf, security/oauth-rich-authorization-requests-rfc9396]
+related: [security/oauth2-oidc-pkce, security/oauth-par-rfc9126, security/dpop, security/oauth-jar-rfc9101, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-resource-indicators-rfc8707, security/mtls-certificate-bound-tokens, security/private-key-jwt-client-authentication, security/oauth-authorization-server-metadata-rfc8414, security/token-revocation-introspection, security/csrf, security/oauth-rich-authorization-requests-rfc9396, security/oauth-2-1-vs-rfc9700, security/fapi-2-security-profile, security/dpop-resource-server-validation]
 sources:
   - https://www.rfc-editor.org/rfc/rfc9700.html
   - https://www.rfc-editor.org/rfc/rfc9449.html
@@ -155,7 +155,7 @@ RFC 9700 4.10.1 은 송신자 제약 토큰의 보안이 **토큰과 키를 함�
 
 ## 언제 쓰나
 
-- 금융·의료처럼 요구 수준이 높은 API(FAPI 류 프로파일의 세부 요건은 이 노트에서 읽지 않았다), 또는 리치 인가 요청([RFC 9396](/develop-wiki/knowledge/security/oauth-rich-authorization-requests-rfc9396/))처럼 요청이 길고 민감한 경우의 PAR.
+- 금융·의료처럼 요구 수준이 높은 API(FAPI 2.0 의 세부 요건은 [별도 노트](/develop-wiki/knowledge/security/fapi-2-security-profile/)), 또는 리치 인가 요청([RFC 9396](/develop-wiki/knowledge/security/oauth-rich-authorization-requests-rfc9396/))처럼 요청이 길고 민감한 경우의 PAR.
 - 토큰 도난 피해가 큰 공개 클라이언트(SPA·모바일)의 DPoP. 리프레시 토큰은 회전 대신 키 바인딩으로 MUST 요건을 채울 수 있다.
 - 자체 인가 서버를 만들거나 OAuth 라이브러리를 고를 때의 **점검표**로서 RFC 9700 전체.
 
@@ -166,7 +166,7 @@ RFC 9700 4.10.1 은 송신자 제약 토큰의 보안이 **토큰과 키를 함�
 - **`dpop_jkt` 는 OPTIONAL** 이다. 인가 서버가 PAR 요청에 키를 요구하게 하려면 서버 정책으로 따로 강제해야 한다. 그렇지 않으면 6 번 경우처럼 바인딩이 비어 있을 수 있다.
 - 클라이언트가 "DPoP 쓰니까 PKCE 는 필요 없다"고 오해하기 쉽다. RFC 9700 은 PKCE 를 계속 요구하고(공개 클라이언트 MUST), RFC 9449 도 `dpop_jkt` 가 PKCE 를 대체한다고 하지 않는다.
 - RFC 9700 은 **정보성 개요가 아니라 BCP** 이므로 MUST/SHOULD 구분이 감사 항목이 된다. SHOULD 항목(송신자 제약 등)을 생략하려면 사유를 기록해 두는 편이 낫다(이 노트의 제안).
-- OAuth 2.1 초안이 이 BCP 의 내용을 흡수하는 방향이지만 아직 RFC 가 아니다. 상태는 노트 작성 시점에 다시 확인한다 → [OAuth·OIDC·PKCE](/develop-wiki/knowledge/security/oauth2-oidc-pkce/).
+- OAuth 2.1 초안이 이 BCP 의 내용을 흡수하는 방향이지만 아직 RFC 가 아니다(2026-11-19 기준 최신판 -17). 강도 차이는 [OAuth 2.1 초안과 RFC 9700 의 차이](/develop-wiki/knowledge/security/oauth-2-1-vs-rfc9700/)에, 이 결합을 필수로 묶은 프로파일은 [FAPI 2.0](/develop-wiki/knowledge/security/fapi-2-security-profile/)에, RS 쪽 DPoP 검증 순서는 [DPoP RS 검증 절차](/develop-wiki/knowledge/security/dpop-resource-server-validation/)에 있다.
 
 ## 비교
 
@@ -177,7 +177,8 @@ RFC 9700 4.10.1 은 송신자 제약 토큰의 보안이 **토큰과 키를 함�
 | RFC 7636 (PKCE) | 코드 보호 | 9700 이 공개 클라이언트 MUST, 기밀 클라이언트 RECOMMENDED |
 | RFC 9126 (PAR), 9101 (JAR) | 요청 보호 | 9700 은 선택적 강화로만 언급 |
 | RFC 9449 (DPoP), 8705 (mTLS) | 송신자 제약 | 9700 이 SHOULD |
-| OAuth 2.1 초안 | 통합 프로파일 | 이 노트의 범위 밖 |
+| OAuth 2.1 초안 | 통합 프레임워크(초안) | [별도 비교 노트](/develop-wiki/knowledge/security/oauth-2-1-vs-rfc9700/) |
+| FAPI 2.0 Security Profile | 고보안 프로파일(OIDF Final) | PAR·PKCE·송신자 제약을 shall 로 → [FAPI 2.0](/develop-wiki/knowledge/security/fapi-2-security-profile/) |
 
 ## 검증 범위
 

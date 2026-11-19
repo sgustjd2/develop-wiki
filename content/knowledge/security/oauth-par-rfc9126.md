@@ -5,7 +5,7 @@ category: security
 level: advanced
 summary: 클라이언트가 인가 파라미터를 브라우저 URL 이 아니라 인가 서버로 직접(백채널) POST 해 두고, 돌아온 짧은 request_uri 만 리다이렉트에 싣게 하는 규격(RFC 9126).
 tags: [oauth2, rfc9126, par, request_uri, authorization-request, back-channel, client-authentication, pkce]
-related: [security/oauth-jar-rfc9101, security/oauth2-oidc-pkce, security/private-key-jwt-client-authentication, security/oauth-authorization-server-metadata-rfc8414, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-resource-indicators-rfc8707, security/dpop]
+related: [security/oauth-jar-rfc9101, security/oauth2-oidc-pkce, security/private-key-jwt-client-authentication, security/oauth-authorization-server-metadata-rfc8414, security/oauth-issuer-mix-up-defense-rfc9207, security/oauth-resource-indicators-rfc8707, security/dpop, security/fapi-2-security-profile, security/dpop-resource-server-validation]
 sources:
   - https://www.rfc-editor.org/rfc/rfc9126.html
   - https://www.rfc-editor.org/rfc/rfc9101.html
@@ -71,7 +71,7 @@ function authorize(clientId: string, ru: string) {
 
 ## 언제 쓰나
 
-- 요청 무결성과 출처 인증이 필요한 고보안 환경(특정 산업 프로파일의 요구 사항은 이 노트에서 읽지 않았다).
+- 요청 무결성과 출처 인증이 필요한 고보안 환경. 예를 들어 [FAPI 2.0 Security Profile](/develop-wiki/knowledge/security/fapi-2-security-profile/)(5.3.2.2)은 AS 가 PAR 없이 온 인가 요청과 클라이언트 인증 없는 PAR 를 거부하고, `request_uri` 의 `expires_in` 을 600 초 미만으로 하도록(shall) 정한다.
 - 리치 인가 요청, 많은 scope, 큰 `claims` 같은 **긴 파라미터**.
 - 브라우저·로그에 요청 내용을 남기고 싶지 않을 때.
 - JAR 의 서명 부담 없이(대신 클라이언트 인증으로) 요청 무결성을 얻고 싶을 때.
@@ -101,4 +101,4 @@ PAR 와 JAR 는 **함께** 쓸 수 있다(요청 객체를 푸시). 자세한 �
 
 ## 검증 범위
 
-RFC 9126 전문(엔드포인트, 인증, 응답, 오류, 인가 엔드포인트 사용, 메타데이터, 보안 고려)의 요약본과 RFC 9101 의 `request_uri` 엔트로피 권고를 읽었다. 위 서버 로직은 일부 검증 규칙만 실행해 확인했고, 실제 인가 서버 구현(Keycloak·Authlete 등)의 PAR 지원 방식은 읽지 않았다. FAPI 등 프로파일의 PAR 필수 여부도 확인하지 않았다.
+RFC 9126 전문(엔드포인트, 인증, 응답, 오류, 인가 엔드포인트 사용, 메타데이터, 보안 고려)의 요약본과 RFC 9101 의 `request_uri` 엔트로피 권고를 읽었다. 위 서버 로직은 일부 검증 규칙만 실행해 확인했고, 실제 인가 서버 구현(Keycloak·Authlete 등)의 PAR 지원 방식은 읽지 않았다. FAPI 2.0 의 PAR 요구는 해당 노트에서 원문(Final, 2025-02-22) 5.3.2.2·5.3.3.2 로 확인했다.

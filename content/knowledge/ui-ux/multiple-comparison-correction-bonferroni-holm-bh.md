@@ -6,7 +6,7 @@ group: research
 level: advanced
 summary: 한 실험에서 여러 지표·변형·세그먼트를 검정할 때 FWER 을 통제하는 Bonferroni·Holm 과 FDR 을 통제하는 Benjamini–Hochberg 의 절차·차이를 예제와 시뮬레이션으로 정리한다.
 tags: [ux, ab-testing, statistics, multiple-comparisons, bonferroni, holm, benjamini-hochberg, fdr, fwer]
-related: [ui-ux/ab-test-statistics-srm-power-sequential, ui-ux/cuped-variance-reduction-guardrail-metrics, ui-ux/quantitative-usability-confidence-intervals, ui-ux/task-time-log-transform-geometric-mean, ui-ux/ux-metrics-sus-heart-ab-test]
+related: [ui-ux/ab-test-statistics-srm-power-sequential, ui-ux/cuped-variance-reduction-guardrail-metrics, ui-ux/quantitative-usability-confidence-intervals, ui-ux/task-time-log-transform-geometric-mean, ui-ux/ux-metrics-sus-heart-ab-test, ui-ux/mcnemar-test-paired-proportions]
 sources:
   - https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
   - https://www.jstor.org/stable/4615733

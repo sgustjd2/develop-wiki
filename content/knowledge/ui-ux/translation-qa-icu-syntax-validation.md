@@ -6,7 +6,7 @@ group: writing
 level: advanced
 summary: 번역본 ICU 메시지를 파서로 구문 검사하고 원문과 변수·태그를 대조하며 로캘별 복수 범주 누락을 찾는 자동 검사와, 자동으로 못 잡는 의미 오류의 수동 검수 범위.
 tags: [i18n, l10n, icu, messageformat, qa, lint, ci, plural]
-related: [ui-ux/icu-messageformat-pseudo-localization, ui-ux/translation-workflow-xliff-tm, ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/ux-writing-principles]
+related: [ui-ux/icu-messageformat-pseudo-localization, ui-ux/translation-workflow-xliff-tm, ui-ux/i18n-ux, ui-ux/korean-ui-writing-guide, ui-ux/ux-writing-principles, ui-ux/translation-length-truncation-testing]
 sources:
   - https://unicode-org.github.io/icu/userguide/format_parse/messages/
 updatedAt: 2026-11-19

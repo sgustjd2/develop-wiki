@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: ReSTIR GI·PT 는 직접 조명용 저수지 재사용을 간접광 경로 전체로 넓힌 기법이다. 한 픽셀의 표본이 이웃 경로의 것일 수 있어, 디노이저(NRD)가 요구하는 로브 안 히트 거리 hitT 를 그대로 넘기면 안 되고 받아들임·대체 규칙이 필요하다.
 tags: [rendering, ray-tracing, restir, path-tracing, global-illumination, resampling, nrd, hit-distance, denoising]
-related: [graphics-xr/restir-reservoir-resampling, graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/svgf-ray-tracing-denoising, graphics-xr/radiance-cache-sharc-nrc, graphics-xr/pbr-material-model]
+related: [graphics-xr/restir-reservoir-resampling, graphics-xr/restir-pt-shift-mapping-jacobian, graphics-xr/nrd-hit-distance-accumulation-psr, graphics-xr/nrd-reblur-relax-denoiser-inputs, graphics-xr/svgf-ray-tracing-denoising, graphics-xr/radiance-cache-sharc-nrc, graphics-xr/pbr-material-model]
 sources:
   - https://research.nvidia.com/publication/2021-06_restir-gi-path-resampling-real-time-path-tracing
   - https://research.nvidia.com/publication/2022-07_generalized-resampled-importance-sampling-foundations-restir
@@ -63,7 +63,7 @@ function denoiserHitT(s: Shade, ownLobeHitT: number, acceptProb: number, u: numb
 
 - **hitT 오염.** 재사용 표본의 거리를 그대로 넘기면 반사 디노이징의 블러 반경·리프로젝션이 틀어진다. 디노이저 설정으로는 못 고친다.
 - **상관의 대가.** 재사용은 표본 간 상관을 만들어 디노이저가 걸러야 할 노이즈의 성격이 달라진다(상관 때문에 반복 재사용의 수렴 보장이 약해진다는 것이 GRIS 가 다룬 문제).
-- **구현 난도.** 경로 재사용에는 이웃 경로의 이동 사상과 확률 보정이 필요하다. 이 노트는 그 식을 읽지 못했으므로 구현 근거로 쓰지 말고 논문 본문을 확인할 것.
+- **구현 난도.** 경로 재사용에는 이웃 경로의 이동 사상과 확률 보정이 필요하다. 이 노트는 그 식을 다루지 않는다. GRIS 논문 본문을 읽고 정리한 [이동 사상·야코비안 노트](/develop-wiki/knowledge/graphics-xr/restir-pt-shift-mapping-jacobian/)를 본다. 그 논문은 ReSTIR GI 가 첫 간접 정점 재연결을 암묵적으로 쓰면서 성능을 위해 정확성을 일부 포기했다고 평가한다.
 - **디스오클루전·빠른 움직임**에서는 재사용이 줄어 노이즈가 늘 수 있다(ReSTIR DI 논문의 한계 서술에서 외삽한 것으로 GI·PT 논문에서 직접 확인하지 않았다).
 
 ## 비교

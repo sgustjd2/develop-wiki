@@ -6,7 +6,7 @@ group: rendering
 level: advanced
 summary: 텍스처 공간 셰이딩은 래스터화와 깊이 검사는 화면 공간에서, 비싼 셰이딩은 텍스처 공간의 텍셀에서 하고 결과를 기록해 두었다 재사용한다. 스테레오 두 눈이나 연속 프레임이 셰이딩을 나눠 쓸 수 있지만 오브젝트마다 고유 텍스처 매핑이 있어야 한다.
 tags: [rendering, shading, texture-space-shading, vr, stereo, caching, variable-rate-shading, mip, turing]
-related: [graphics-xr/foveated-stereo-rendering, graphics-xr/sampler-feedback-streaming-loop, graphics-xr/virtual-texturing-page-table-feedback, graphics-xr/forward-vs-deferred-rendering, graphics-xr/rasterization-pipeline, graphics-xr/shaders-gpu-pipeline, graphics-xr/motion-to-photon-reprojection-frame-budget, graphics-xr/texture-streaming]
+related: [graphics-xr/variable-rate-shading-vrs, graphics-xr/foveated-stereo-rendering, graphics-xr/sampler-feedback-streaming-loop, graphics-xr/virtual-texturing-page-table-feedback, graphics-xr/forward-vs-deferred-rendering, graphics-xr/rasterization-pipeline, graphics-xr/shaders-gpu-pipeline, graphics-xr/motion-to-photon-reprojection-frame-budget, graphics-xr/texture-streaming]
 sources:
   - https://developer.nvidia.com/blog/texture-space-shading/
 updatedAt: 2026-11-19
@@ -77,4 +77,4 @@ updatedAt: 2026-11-19
 | 파이프라인 변경 | 없음 | 가벼움 | 큼(블로그 시사) |
 | 전제 | 없음 | 하드웨어 지원 | 표면별 고유 텍스처 매핑 |
 
-[샘플러 피드백](/develop-wiki/knowledge/graphics-xr/sampler-feedback-streaming-loop/)은 어떤 텍셀이 쓰였는지 알려 주는 기능이라 TSS 의 "요청된 텍셀" 단계와 맞닿는다(그 노트가 TSS 를 별칭으로 연결한다). 시선 기준으로 셰이딩 밀도를 줄이는 쪽은 [포비티드 스테레오](/develop-wiki/knowledge/graphics-xr/foveated-stereo-rendering/)를 본다.
+[샘플러 피드백](/develop-wiki/knowledge/graphics-xr/sampler-feedback-streaming-loop/)은 어떤 텍셀이 쓰였는지 알려 주는 기능이라 TSS 의 "요청된 텍셀" 단계와 맞닿는다(그 노트가 TSS 를 별칭으로 연결한다). 시선 기준으로 셰이딩 밀도를 줄이는 쪽은 [포비티드 스테레오](/develop-wiki/knowledge/graphics-xr/foveated-stereo-rendering/)를 본다. VRS 의 티어·결합기·타일 규칙은 D3D12 사양 기준으로 [VRS 노트](/develop-wiki/knowledge/graphics-xr/variable-rate-shading-vrs/)에 따로 정리했다.

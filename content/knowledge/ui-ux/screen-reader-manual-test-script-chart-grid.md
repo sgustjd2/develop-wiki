@@ -6,7 +6,7 @@ group: accessibility
 level: intermediate
 summary: 차트와 데이터 그리드를 NVDA·VoiceOver 로 직접 확인할 때 쓰는 단계·기대 결과·관찰 기록 양식과, 낭독 출력을 추측하지 않고 기록하는 규칙.
 tags: [accessibility, screen-reader, nvda, voiceover, testing, chart, grid, manual-testing]
-related: [ui-ux/a11y-testing-strategy, ui-ux/accessible-charts, ui-ux/accessible-table-vs-grid, ui-ux/virtualized-list-accessibility, ui-ux/keyboard-focus-management, ui-ux/live-regions-announcements, ui-ux/screen-reader-accessible-name]
+related: [ui-ux/a11y-testing-strategy, ui-ux/accessible-charts, ui-ux/accessible-table-vs-grid, ui-ux/virtualized-list-accessibility, ui-ux/keyboard-focus-management, ui-ux/live-regions-announcements, ui-ux/screen-reader-accessible-name, ui-ux/voiceover-manual-testing-keys]
 sources:
   - https://download.nvaccess.org/documentation/userGuide.html
   - https://www.w3.org/WAI/ARIA/apg/patterns/grid/
@@ -41,7 +41,7 @@ updatedAt: 2026-11-19
 | 요소 목록 | NVDA+F7 |
 | 현재 줄 읽기 / 계속 읽기 | NVDA+↑ / NVDA+↓ |
 
-- VoiceOver(macOS·iOS) 키 조합은 이 노트 작성 시 Apple 문서의 해당 절을 읽지 못해 **적지 않았다**. 팀의 테스트 환경에서 확인해 채운다.
+- VoiceOver(macOS·iOS) 키 조합과 제스처는 Apple 사용 설명서 기준으로 [VoiceOver 수동 테스트 키](/develop-wiki/knowledge/ui-ux/voiceover-manual-testing-keys/)에 따로 정리했다. 테스트 기기의 OS 버전 문서와 대조해 쓴다.
 - 키보드 기본 이동은 낭독기 모드에 따라 달라진다. 그리드에서 화살표 키가 낭독기에 먹히는지 앱에 전달되는지는 모드와 role 에 따라 다를 수 있어 직접 기록한다.
 
 ### 3. 차트 시나리오

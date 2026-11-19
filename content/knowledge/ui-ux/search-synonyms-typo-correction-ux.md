@@ -6,7 +6,7 @@ group: interaction
 level: intermediate
 summary: 0건 검색의 흔한 원인인 용어 불일치와 오타를 동의어 사전과 편집 거리 기반 교정으로 줄이되, 자동 교정과 제안(Did you mean)을 어떻게 나누고 짧은 단어의 오교정을 어떻게 막는지 정리한다.
 tags: [ux, search, synonyms, spelling-correction, fuzzy-matching, edit-distance, findability]
-related: [ui-ux/search-query-log-analysis-zero-results, ui-ux/search-filter-sort, ui-ux/empty-states, ui-ux/combobox-autocomplete, ui-ux/korean-ime-composition-input, ui-ux/information-scent-foraging, ai-patterns/hybrid-search-reranking]
+related: [ui-ux/search-query-log-analysis-zero-results, ui-ux/search-filter-sort, ui-ux/empty-states, ui-ux/combobox-autocomplete, ui-ux/korean-ime-composition-input, ui-ux/information-scent-foraging, ai-patterns/hybrid-search-reranking, ui-ux/search-quality-metrics-mrr-ndcg, ui-ux/korean-search-normalization-chosung-jamo]
 sources:
   - https://norvig.com/spell-correct.html
   - https://www.elastic.co/docs/reference/elasticsearch/rest-apis/common-options

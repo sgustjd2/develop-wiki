@@ -6,13 +6,13 @@ group: control
 level: advanced
 summary: 로봇이 사람이나 환경과 접촉할 때는 "루프가 안정한가" 보다 "시스템이 에너지를 만들어 내지 않는가(수동성)" 가 기준이 된다. 디지털 제어는 샘플링과 유지(ZOH) 때문에 에너지를 새로 만들 수 있고, 가상 벽에서는 물리 댐핑이 b > KT/2 + B 이상이어야 수동이다.
 tags: [robotics, control, passivity, contact, impedance, haptics, sampled-data, stability]
-related: [robotics/impedance-admittance-force-control, robotics/pid-control, robotics/computed-torque-control, robotics/realtime-dds-latency, robotics/emergency-stop-safety-control-design, robotics/robot-safety-iso-10218]
+related: [robotics/time-domain-passivity-observer-controller, robotics/impedance-admittance-force-control, robotics/pid-control, robotics/computed-torque-control, robotics/realtime-dds-latency, robotics/emergency-stop-safety-control-design, robotics/robot-safety-iso-10218]
 sources:
   - https://par.nsf.gov/servlets/purl/10533850
 updatedAt: 2026-11-19
 ---
 
-> 출처 메모: 직접 읽은 1차 자료는 Roberts, Moore, Colgate 의 "A New Expression for the Passivity Bound for a Class of Sampled-Data Systems"(IEEE T-RO 2024, 저자 제출본 PDF)다. 이 논문은 Colgate & Schenkel(1994·1997)의 결과를 다시 증명하고 인용한다. Colgate & Schenkel 원문과 Hannaford & Ryu 의 시간 영역 수동성 제어 논문은 접근하지 못해(초록·검색 요약 수준) 아래 해당 부분은 "원문 미확인" 으로 표시한다. 수동 시스템 상호연결의 안정성 정리 자체는 일반 이론으로 서술했고 이 노트에서 증명이나 원문 대조를 하지 않았다.
+> 출처 메모: 직접 읽은 1차 자료는 Roberts, Moore, Colgate 의 "A New Expression for the Passivity Bound for a Class of Sampled-Data Systems"(IEEE T-RO 2024, 저자 제출본 PDF)다. 이 논문은 Colgate & Schenkel(1994·1997)의 결과를 다시 증명하고 인용한다. Colgate & Schenkel 원문은 접근하지 못해(초록·검색 요약 수준) 아래 해당 부분은 "원문 미확인" 으로 표시한다. Hannaford & Ryu 의 시간 영역 수동성 제어는 저자 원고를 읽고 별도 노트로 옮겼다(2026-11-19). 수동 시스템 상호연결의 안정성 정리 자체는 일반 이론으로 서술했고 이 노트에서 증명이나 원문 대조를 하지 않았다.
 
 ## 문제
 
@@ -59,9 +59,9 @@ export const minPhysicalDamping = (K: number, B: number, T: number, delaySamples
 export const maxStiffness = (b: number, B: number, T: number) => (2 * (b - B)) / T;
 ```
 
-## 시간 영역 수동성 제어 (원문 미확인)
+## 시간 영역 수동성 제어
 
-검색 요약 수준으로만 확인한 내용이다. Hannaford & Ryu 는 수동성 관측기(PO)가 실시간으로 에너지 흐름을 누적하고, 에너지를 내놓는 것으로 판단되면 수동성 제어기(PC)가 가변 감쇠기처럼 그만큼을 소산시키는 방식을 제안했다. 가상 환경이 비선형이거나 지연이 있어 주파수 영역 한계식을 못 쓰는 경우에 유용하다. 세부 식과 가정은 읽지 않았으므로 구현 전에 원문을 확인한다.
+Hannaford & Ryu 는 수동성 관측기(PO)가 실시간으로 에너지 흐름을 누적하고, 에너지를 내놓는 것으로 판단되면 수동성 제어기(PC)가 가변 감쇠기처럼 그만큼을 소산시키는 방식을 제안했다. 가상 환경이 비선형이거나 지연이 있어 주파수 영역 한계식을 못 쓰는 경우에 쓴다. 저자 원고를 읽고 식과 실험을 정리한 내용은 [시간 영역 수동성 제어 노트](/develop-wiki/knowledge/robotics/time-domain-passivity-observer-controller/)에 있다.
 
 ## 언제 쓰나
 

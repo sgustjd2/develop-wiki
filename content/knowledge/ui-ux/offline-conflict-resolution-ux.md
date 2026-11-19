@@ -6,7 +6,7 @@ group: patterns
 level: advanced
 summary: 오프라인 편집이 서버의 새 변경과 부딪힐 때, 충돌 감지(버전·ETag)와 필드 단위 병합으로 대부분을 조용히 처리하고 진짜 충돌만 사용자에게 선택지로 보여 주는 설계.
 tags: [offline, sync, conflict, optimistic-lock, etag, merge, crdt, patterns]
-related: [ui-ux/multi-tab-sync-draft-restore, ui-ux/confirmation-vs-undo, ui-ux/error-messages, ui-ux/toast-notification-banner, ui-ux/session-timeout-ux, ui-ux/loading-states, ui-ux/live-regions-announcements]
+related: [ui-ux/multi-tab-sync-draft-restore, ui-ux/confirmation-vs-undo, ui-ux/error-messages, ui-ux/toast-notification-banner, ui-ux/session-timeout-ux, ui-ux/loading-states, ui-ux/live-regions-announcements, ui-ux/offline-outbox-background-sync, ui-ux/crdt-collaboration-history-undo-ux]
 sources:
   - https://www.inkandswitch.com/essay/local-first/
   - https://martinfowler.com/eaaCatalog/optimisticOfflineLock.html
@@ -77,7 +77,8 @@ function merge(base: R, mine: R, theirs: R) {
 
 ## 주의·비용
 
-- base 버전·변경 큐(outbox)를 클라이언트에 저장하고 재시도·순서·중복 전송을 처리해야 한다. 구현 비용이 크다.
+- base 버전·변경 큐(outbox)를 클라이언트에 저장하고 재시도·순서·중복 전송을 처리해야 한다. 구현 비용이 크다([outbox 큐와 Background Sync](/develop-wiki/knowledge/ui-ux/offline-outbox-background-sync/)).
+- 실시간 공동 편집의 변경 이력·되돌리기는 [CRDT 협업의 변경 이력 UX](/develop-wiki/knowledge/ui-ux/crdt-collaboration-history-undo-ux/)에 있다.
 - 서버 시계·클라이언트 시계로 "최신"을 판정하면 틀린다. 버전 번호·ETag 같은 논리적 비교를 쓴다.
 - 자동 병합은 값은 맞아도 **의미가 어긋날 수 있다**(예: 금액은 내가, 통화는 상대가 변경). 서로 의존하는 필드는 묶어서 충돌로 취급한다.
 - 삭제된 레코드에 대한 편집은 별도 시나리오다(복원 vs 폐기 선택).

@@ -54,7 +54,7 @@ Button { toggleFavorite() } label: { Image(systemName: "heart.fill") }
 
 - **라벨은 짧고 고유하게**. 목록 항목 라벨이 모두 같으면 낭독기가 구분하지 못한다. "버튼" 같은 역할 단어는 중복해서 쓰지 않는다(역할은 시스템이 읽는다).
 - **표준 컴포넌트를 쓴다.** `Button`, `Switch`, 네이티브 `List` 는 접근성이 기본 내장이다. 커스텀 뷰는 역할·상태를 직접 선언해야 한다.
-- **터치 영역**: Android 는 최소 48dp, Apple HIG 는 44pt 가 통상 권장이다(수치는 각 가이드라인에서 확인).
+- **터치 영역**: Android 는 최소 48dp, Apple HIG 는 iOS 컨트롤의 기본 크기를 44×44pt, 최소를 28×28pt 로 제시한다([터치 타깃 크기](/develop-wiki/knowledge/ui-ux/touch-target-size/)).
 - **색 외 단서**: 아이콘·텍스트·형태를 함께 쓴다. 명암비는 WCAG 기준(본문 4.5:1)을 목표로 한다.
 - 시간 제한이나 자동으로 사라지는 알림은 낭독기 사용자가 읽기 전에 사라지지 않게 한다. 동적 변경은 상태 알림(live region/`UIAccessibility.post`)으로 알린다.
 - 미디어에는 자막·대본 대체 수단을 제공한다.
@@ -69,4 +69,4 @@ Button { toggleFavorite() } label: { Image(systemName: "heart.fill") }
 - 자동 검사(Android Accessibility Scanner, Xcode Accessibility Inspector)는 일부만 잡는다. **실제로 VoiceOver/TalkBack 을 켜고** 핵심 흐름(가입, 결제, 설정)을 눈 감고 끝까지 해본다.
 - 큰 글씨(시스템 최대치)와 굵은 글씨, 가로 화면, 다크 모드에서 잘림·겹침을 확인한다.
 - `contentDescription` 에 "~버튼", 화면에 이미 보이는 텍스트 반복을 넣으면 오히려 소음이다.
-- 접근성은 앱 심사의 직접 반려 사유는 흔치 않지만 사용자 평점과 법적 위험에 영향을 준다. 이 노트의 Apple 수치(44pt 등)는 문서 원문을 열어 확인하지 못했다.
+- 접근성은 앱 심사의 직접 반려 사유는 흔치 않지만 사용자 평점과 법적 위험에 영향을 준다. Apple 수치(44pt 기본, 28pt 최소)는 2026-11-19 HIG 데이터로 확인했다.

@@ -58,3 +58,9 @@
 | lerobot/Cosmos3-Edge, Cosmos3-Nano, Cosmos3-{Edge,Nano}-Policy-LIBERO(_10) | models | nvidia/Cosmos3 의 LeRobot 포팅본·LIBERO 벤치마크 전용 파인튜닝 — 원본 nvidia/Cosmos3-* 로 등록 | 2026-11-19 |
 | nvidia/GR00T-H-N1.7 | models/vla | GR00T N1.7 을 수술 로봇용 Open-H 데이터로 후속 학습한 도메인 전용 파생(카드: 임상 사용 불가) — N1.7 본체만 등록 | 2026-11-19 |
 | nvidia/MotionBricks, nvidia/Metatron-v1 | models | 이미지 입력 VLA 가 아닌 휴머노이드 모션 생성·강화학습 제어 정책(상태 입력, G1·SOMA 전용) — 현 taxonomy 에 맞는 type 없음, 같은 성격 3건 이상 쌓이면 type 신설 검토 | 2026-11-19 |
+| OpenGalaxea/G05 | models/vla | 원본은 HF 에서 약관 동의가 필요한 게이트 저장소(gated=auto), 라이선스도 커스텀(g05-community-license) — 게이트 해제 후 재검토 | 2026-11-19 |
+| lerobot/lingbot_vla_v2_*, dm05_*, being_h05_*, hy_vla_*, wall-oss-0.5, fastwam_*, g05_* | models/vla | 원본 가중치를 LeRobot 형식으로 변환한 포팅본·벤치마크 전용 변형 — 원본(robbyant/lingbot-vla-v2-6b, Dexmal/DM05, BeingBeyond/Being-H05-2B, tencent/Hy-Embodied-0.5-VLA-UMI, x-square-robot/wall-oss-0.5)으로 등록 | 2026-11-19 |
+| Dexmal/DM05-libero·robotwin2·SO101-Pick-Cube·Vla-Arena·Table30v2·MEM-Robodojo-Sim, BeingBeyond/Being-H05-2B_libero·robocasa, tencent/Hy-Embodied-0.5-VLA-RoboTwin, robbyant/lingbot-vla-v2-6b-robotwin | models/vla | 벤치마크·특정 작업 전용 후속 학습 체크포인트 — 사전학습 본체만 등록 | 2026-11-19 |
+| yuanty/fastwam, amd/CAE-FastWAM(-lerobot) | models/vla | yuanty/fastwam 은 LIBERO·RoboTwin 전용 .pt 체크포인트이고 라이선스 미표기. amd/CAE-FastWAM 은 Apache-2.0 이지만 Wan2.2-TI2V-5B 를 LIBERO 용으로 파인튜닝한 벤치마크 전용 모델이고 -lerobot 은 그 포팅본 — 범용 원본으로 보기 어려움 | 2026-11-19 |
+| Refactoring UI (Adam Wathan·Steve Schoger) | frontend/learning | 유료 전자책·영상 패키지, 무료 공식 자료 기준 미달 — 대체: Laws of UX, Nielsen Norman Group 아티클 | 2026-11-19 |
+| Accessibility Insights for Windows | frontend/performance-a11y | Windows 데스크톱 앱 검사 도구라 프론트엔드 범위 밖 — 웹은 accessibility-insights 항목에서 다룸 | 2026-11-19 |

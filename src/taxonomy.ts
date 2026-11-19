@@ -16,6 +16,7 @@ export const DOMAINS = {
       'meta-framework': { label: '메타 프레임워크', desc: '라우팅·렌더링 전략을 포함한 풀스택 프레임워크' },
       styling: { label: '스타일링·CSS', desc: 'CSS 프레임워크, CSS-in-JS, 디자인 토큰' },
       'ui-kit': { label: 'UI 컴포넌트', desc: '컴포넌트 라이브러리, 헤드리스 UI' },
+      'design-tools': { label: '디자인·프로토타이핑', desc: 'Figma 같은 UI 디자인·프로토타이핑·핸드오프 도구' },
       'state-data': { label: '상태·데이터 패칭', desc: '상태 관리, 서버 상태 캐시, 폼' },
       'build-tooling': { label: '빌드·툴링', desc: '번들러, 린터, 포매터, 모노레포' },
       testing: { label: '테스트', desc: '유닛·E2E·비주얼 테스트' },
@@ -252,6 +253,20 @@ export const KNOWLEDGE = {
     label: '모바일 앱 설계',
     desc: '앱 아키텍처, 상태 관리, 생명주기, 오프라인·동기화, 푸시, 스토어 배포',
     groups: { architecture: '아키텍처', platform: '플랫폼 동작', delivery: '배포·운영' },
+  },
+  'ui-ux': {
+    label: 'UI·UX 디자인',
+    desc: 'UX 원칙·리서치, 정보 구조·인터랙션, 비주얼, 디자인 시스템, 접근성, UI 패턴, UX 라이팅',
+    groups: {
+      principles: 'UX 원칙·심리',
+      research: '리서치·검증',
+      interaction: '정보 구조·인터랙션',
+      visual: '비주얼 디자인',
+      'design-system': '디자인 시스템',
+      accessibility: '접근성',
+      patterns: 'UI 패턴',
+      writing: 'UX 라이팅',
+    },
   },
 } as const satisfies Record<string, { label: string; desc: string; groups: Record<string, string> }>;
 

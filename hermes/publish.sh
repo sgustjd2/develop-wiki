@@ -27,7 +27,7 @@ if ! npm run build >/tmp/devhub-build.log 2>&1; then
 fi
 
 git add content research
-git commit -q -m "chore(hermes): daily refresh $TODAY" -m "Automated by Hermes Agent (local model). Needs periodic fact-check by Claude Code /refresh-hub."
+git commit -q -m "${1:-chore(hermes): daily refresh $TODAY}" -m "Automated by Hermes Agent (local model). Needs periodic fact-check by Claude Code /refresh-hub."
 git push -q origin main
 echo "PUBLISH: ok — $(git rev-parse --short HEAD) pushed, Pages 배포 시작"
 git show --stat --oneline HEAD | head -30

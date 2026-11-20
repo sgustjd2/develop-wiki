@@ -15,8 +15,8 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `content/advisories/<domain>/<category>/<id>.md` | 버전별 변경·보안 권고 (resources 와 같은 경로, 구조화 frontmatter). Hermes 가 매일 5개씩 갱신 |
 | `content/languages/<id>.md` | 개발 언어 백과사전 (id = taxonomy LANGUAGES 키) |
 | `src/pages/` | 사이트. 도메인→카테고리→항목 페이지, `models/type/*`, `new/`, `data/*.json`, `search-index.json` |
-| `hermes/` | 매일 업데이트 스크립트(daily, advisories, candidates, summarize, lint, publish) |
-| `research/` | 조사 로그·백로그·제외 목록 (사이트에는 안 나감) |
+| `hermes/` | 매일 업데이트 스크립트(daily, advisories, candidates, summarize, lint, publish)와 주간 조사(weekly, research, llm) |
+| `research/` | 조사 로그·백로그·제외 목록·주간 조사 초안 `drafts/` (사이트에는 안 나감) |
 | `.claude/agents/` | 서브에이전트 정의 |
 | `.claude/skills/` | 작업 절차(스킬) |
 | `.mcp.json` | MCP 서버 (huggingface, context7, playwright) |
@@ -58,6 +58,7 @@ Astro 정적 사이트로 빌드해 GitHub Pages(https://sgustjd2.github.io/deve
 | `write-knowledge` | 지식 노트 1건 작성 |
 | `write-encyclopedia` | 라이브러리·DB·언어 백과사전 본문 작성 (템플릿 A/B/C) |
 | `validate-hub` | 스키마·타입·빌드·링크 검증 |
+| `review-drafts` | Hermes 주간 조사 초안(research/drafts) 검토 후 공개 |
 
 ## 반드시 지킬 규칙
 
@@ -89,5 +90,15 @@ Hermes cron(매일 03:00, `--no-agent`)이 `hermes/run.sh` → `hermes/daily.mjs
 - `hermes/publish.sh` 가 변경 범위(`content/`, `research/`) → `hermes/lint.mjs` → `npm run validate` → 빌드를 통과해야만 main 에 push(→ Pages 자동 배포). 실패하면 변경을 `hermes/.failed/<날짜>/` 에 보관하고 작업 트리를 되돌린다.
 - 로컬 모델 요약은 오류 가능성이 있어, `/refresh-hub` 때 `research/log/*-hermes.md` 의 변경 파일을 `fact-checker` 로 재검증한다.
 - 수동 실행: `node hermes/daily.mjs --dry` (배포 없이 결과 확인) / `hermes cron run dc7a7670bbb3`.
+
+## 매주 조사 (Hermes 주간, 로컬 모델 초안)
+
+Hermes cron(일요일 04:00, `--no-agent`)이 `hermes/run-weekly.sh` → `hermes/weekly.mjs` 를 실행한다. 일일 갱신과 같은 원칙으로 **파일은 스크립트가 쓰고, 로컬 모델은 JSON 을 돌려주는 함수로만** 쓴다.
+- `research/backlog.md` 의 knowledge 행에서 주제를 행마다 번갈아 최대 6개(`--topics N`) 고른다. 처리 상태는 `research/drafts/index.json`.
+- 출처: ddgs 웹 검색(Hermes 가 쓰는 메타검색 CLI), arXiv API, Wikipedia, 주제에 적힌 RFC 번호·arXiv id. 모델이 제안한 URL 은 실제로 내려받혀야만 쓴다. 무관한 문서는 용어 검사 + 모델 판정으로 거른다. PDF 는 읽지 못한다.
+- 사실은 **원문 인용이 내려받은 텍스트에 그대로 있을 때만** 채택하고, 초안 문단의 숫자는 인용한 근거 안에 있어야 한다(아니면 "뺀 문장"으로).
+- 결과는 `research/drafts/<category>/<id>.md` **초안**뿐이다. 사이트(content/)에는 쓰지 않는다. 공개는 Claude Code `review-drafts` 스킬이 원문 대조·팩트체크 후 한다.
+- 백로그에 주제를 넣을 때 원 논문 arXiv id·RFC 번호·공식 문서 URL 을 같이 적으면 주간 조사가 출처를 훨씬 잘 찾는다.
+- 수동 실행: `node hermes/weekly.mjs --dry --topics 2` / 한 주제: `--dry --topic "Friedman 검정" --area ui-ux`.
 
 main 브랜치에 push 하면 `.github/workflows/deploy.yml` 이 Pages 로 배포한다.

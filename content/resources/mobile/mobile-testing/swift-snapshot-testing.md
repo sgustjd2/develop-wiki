@@ -3,7 +3,7 @@ name: swift-snapshot-testing
 url: https://github.com/pointfreeco/swift-snapshot-testing
 docs: https://github.com/pointfreeco/swift-snapshot-testing
 repo: https://github.com/pointfreeco/swift-snapshot-testing
-stars: 4396
+stars: 4397
 domain: mobile
 category: mobile-testing
 description: 뷰·데이터를 스냅샷(이미지, 텍스트, JSON 등)으로 저장하고 이후 실행과 비교하는 Swift 스냅샷 테스트 라이브러리. UIKit·SwiftUI 화면 회귀 테스트에 쓴다.

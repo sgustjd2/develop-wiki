@@ -3,7 +3,7 @@ name: Neovim
 url: https://neovim.io
 docs: https://neovim.io/doc/user/
 repo: https://github.com/neovim/neovim
-stars: 103805
+stars: 103929
 domain: devtools
 category: editor-ide
 description: Vim을 계승해 Lua 설정, 내장 LSP 클라이언트, Tree-sitter를 더한 터미널 모달 에디터. 키보드 중심으로 에디터를 직접 구성하고 싶을 때 쓴다.

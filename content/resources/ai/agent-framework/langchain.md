@@ -2,7 +2,7 @@
 name: LangChain
 url: https://docs.langchain.com/oss/python/langchain/overview
 repo: https://github.com/langchain-ai/langchain
-stars: 149858
+stars: 149968
 domain: ai
 category: agent-framework
 description: 모델·도구 통합과 LangGraph 기반 에이전트 루프(create_agent)를 제공하는 LLM 앱 프레임워크. 여러 모델 공급자를 바꿔 가며 에이전트를 빠르게 만들 때 쓴다.
@@ -11,7 +11,7 @@ tags: [agent, llm, integrations]
 languages: [python, typescript]
 docs: https://docs.langchain.com/oss/python/langchain/overview
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-21
 ---
 
 ## 개요

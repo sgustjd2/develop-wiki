@@ -3,7 +3,7 @@ name: WebXR Device API
 url: https://immersive-web.github.io/webxr/
 docs: https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API
 repo: https://github.com/immersive-web/webxr
-stars: 3165
+stars: 3167
 domain: xr
 category: standards-runtimes
 description: 브라우저에서 VR·AR 기기에 접근하는 W3C 웹 표준 API. immersive-vr·immersive-ar 세션과 입력, 추적 공간을 제공한다.

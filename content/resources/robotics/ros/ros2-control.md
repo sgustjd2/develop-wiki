@@ -3,7 +3,7 @@ name: ros2_control
 url: https://control.ros.org
 docs: https://control.ros.org
 repo: https://github.com/ros-controls/ros2_control
-stars: 1064
+stars: 1068
 domain: robotics
 category: ros
 description: 로봇 하드웨어 인터페이스와 컨트롤러를 분리해 실시간 제어 루프를 구성하는 ROS 2 제어 프레임워크. 관절·그리퍼·바퀴 구동 제어에 쓴다.

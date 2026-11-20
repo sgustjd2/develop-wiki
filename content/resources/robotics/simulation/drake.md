@@ -3,7 +3,7 @@ name: Drake
 url: https://drake.mit.edu
 docs: https://drake.mit.edu/pydrake/index.html
 repo: https://github.com/RobotLocomotion/drake
-stars: 4261
+stars: 4262
 domain: robotics
 category: simulation
 description: MIT·TRI 가 만든 모델 기반 설계·제어·시뮬레이션 툴박스. 다물체 동역학, 최적화 기반 계획·제어를 C++ 과 Python(pydrake)으로 제공한다.

@@ -3,7 +3,7 @@ name: Ariadne
 url: https://ariadnegraphql.org
 docs: https://ariadnegraphql.org/server/Docs/intro
 repo: https://github.com/mirumee/ariadne
-stars: 2348
+stars: 2347
 domain: backend
 category: api
 description: SDL 로 스키마를 먼저 쓰고 파이썬 함수를 리졸버로 연결하는 스키마 우선 GraphQL 서버 라이브러리. ASGI·WSGI 와 FastAPI·Django·Flask 연동을 제공한다.

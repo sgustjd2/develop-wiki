@@ -3,7 +3,7 @@ name: Argo Events
 url: https://argoproj.github.io/argo-events/
 docs: https://argoproj.github.io/argo-events/
 repo: https://github.com/argoproj/argo-events
-stars: 2720
+stars: 2719
 domain: backend
 category: infra-devops
 description: 웹훅·메시지 큐·클라우드 이벤트를 받아 Argo Workflows 나 Kubernetes 리소스를 실행하는 이벤트 기반 자동화 프레임워크. Kubernetes 에서 이벤트 트리거를 만들 때 쓴다.

@@ -3,7 +3,7 @@ name: micro-ROS
 url: https://micro.ros.org
 docs: https://micro.ros.org
 repo: https://github.com/micro-ROS/micro_ros_setup
-stars: 530
+stars: 531
 domain: robotics
 category: embedded
 description: ROS 2 를 마이크로컨트롤러에서 쓰게 해 주는 클라이언트 스택. Micro XRCE-DDS 로 에이전트를 거쳐 MCU 노드를 ROS 2 그래프에 연결한다.

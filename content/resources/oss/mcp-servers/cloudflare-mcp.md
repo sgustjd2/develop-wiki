@@ -3,7 +3,7 @@ name: Cloudflare MCP Servers
 url: https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
 docs: https://developers.cloudflare.com/agents/model-context-protocol/mcp-servers-for-cloudflare/
 repo: https://github.com/cloudflare/mcp-server-cloudflare
-stars: 4474
+stars: 4480
 domain: oss
 category: mcp-servers
 description: Cloudflare 공식 원격 MCP 서버 모음. 전체 Cloudflare API 를 Code Mode 로 다루는 API 서버와 문서·브라우저·컨테이너 등 제품별 서버가 있다. Workers·DNS·보안 설정을 에이전트로 조회·변경할 때 쓴다.

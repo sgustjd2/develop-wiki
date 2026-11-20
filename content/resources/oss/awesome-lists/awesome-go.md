@@ -2,7 +2,7 @@
 name: Awesome Go
 url: https://awesome-go.com/
 repo: https://github.com/avelino/awesome-go
-stars: 194629
+stars: 194979
 domain: oss
 category: awesome-lists
 description: Go 프레임워크·라이브러리·도구를 분야별로 정리한 큐레이션 목록. Go 로 서버·CLI·인프라 도구를 만들 때 쓸 패키지를 찾는 데 쓴다.

@@ -3,7 +3,7 @@ name: Railway
 url: https://railway.com
 docs: https://docs.railway.com/
 repo: https://github.com/railwayapp/cli
-stars: 631
+stars: 633
 domain: cloud
 category: paas-edge
 description: 저장소나 Docker 이미지를 연결하면 빌드·배포하고 Postgres·Redis 같은 DB 를 같은 프로젝트에 붙여 주는 사용량 과금형 PaaS. 서비스 여러 개로 된 앱을 빠르게 올릴 때 쓴다.

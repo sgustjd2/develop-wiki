@@ -3,7 +3,7 @@ name: Terraform MCP Server
 url: https://developer.hashicorp.com/terraform/mcp-server
 docs: https://developer.hashicorp.com/terraform/mcp-server
 repo: https://github.com/hashicorp/terraform-mcp-server
-stars: 1562
+stars: 1561
 domain: oss
 category: mcp-servers
 description: HashiCorp 공식 Terraform MCP 서버. 레지스트리의 프로바이더·모듈·정책 문서를 조회하고 HCP Terraform·Terraform Enterprise 워크스페이스를 다룬다. IaC 코드를 최신 문서 기준으로 쓰게 할 때 쓴다.

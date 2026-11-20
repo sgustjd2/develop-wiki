@@ -3,7 +3,7 @@ name: Dev Containers
 url: https://containers.dev
 docs: https://containers.dev/implementors/json_reference/
 repo: https://github.com/devcontainers/cli
-stars: 3035
+stars: 3039
 domain: devtools
 category: environment
 description: devcontainer.json 하나로 개발에 필요한 컨테이너 이미지·도구·에디터 확장을 정의하는 개방형 명세. 팀 전체가 같은 개발 환경을 쓰게 할 때 쓴다.

@@ -3,7 +3,7 @@ name: Fly.io
 url: https://fly.io/
 docs: https://docs.fly.io/
 repo: https://github.com/superfly/flyctl
-stars: 1721
+stars: 1722
 domain: cloud
 category: paas-edge
 description: Docker 이미지를 빠르게 켜고 끄는 VM(Fly Machines)으로 여러 리전에 배포하는 앱 호스팅 플랫폼. 장시간 실행 서버·WebSocket·사용자 가까운 리전 배치가 필요한 앱에 쓴다.

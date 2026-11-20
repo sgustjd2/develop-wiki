@@ -3,7 +3,7 @@ name: Uptime Kuma
 url: https://uptime.kuma.pet
 docs: https://github.com/louislam/uptime-kuma/wiki
 repo: https://github.com/louislam/uptime-kuma
-stars: 94597
+stars: 94704
 domain: oss
 category: self-hosted
 description: HTTP·TCP·Ping·DNS·Docker 컨테이너 등을 주기적으로 확인하고 장애 시 Slack·Telegram 등으로 알리는 업타임 모니터링 도구. 상태 페이지도 만든다. MIT 라이선스.

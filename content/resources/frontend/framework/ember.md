@@ -3,7 +3,7 @@ name: Ember.js
 url: https://emberjs.com
 docs: https://guides.emberjs.com/release/
 repo: https://github.com/emberjs/ember.js
-stars: 22571
+stars: 22570
 domain: frontend
 category: framework
 description: 라우터·데이터 계층·CLI·테스트 규약을 한데 묶은 "설정보다 관례" 방식의 SPA 프레임워크. 오래 유지보수할 대규모 앱을 일관된 구조로 만들 때 쓴다.

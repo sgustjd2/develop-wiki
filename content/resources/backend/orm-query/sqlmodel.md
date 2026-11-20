@@ -3,7 +3,7 @@ name: SQLModel
 url: https://sqlmodel.tiangolo.com
 docs: https://sqlmodel.tiangolo.com/tutorial/
 repo: https://github.com/fastapi/sqlmodel
-stars: 18631
+stars: 18643
 domain: backend
 category: orm-query
 description: SQLAlchemy 와 Pydantic 을 결합해 한 클래스로 DB 테이블과 데이터 검증 모델을 함께 정의하는 Python ORM. FastAPI 앱에서 모델 중복 없이 DB 를 다룰 때 쓴다.

@@ -3,7 +3,7 @@ name: PEFT
 url: https://huggingface.co/docs/peft
 docs: https://huggingface.co/docs/peft/quicktour
 repo: https://github.com/huggingface/peft
-stars: 21907
+stars: 21908
 domain: ai
 category: fine-tuning
 description: LoRA·QLoRA 등 파라미터 효율 미세조정 기법을 Transformers 모델에 적용하는 Hugging Face 라이브러리. 작은 어댑터만 학습·저장할 때 쓴다.

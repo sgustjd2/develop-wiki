@@ -3,7 +3,7 @@ name: Biome
 url: https://biomejs.dev
 docs: https://biomejs.dev/guides/getting-started/
 repo: https://github.com/biomejs/biome
-stars: 26132
+stars: 26162
 domain: frontend
 category: build-tooling
 description: 포매터와 린터를 Rust 바이너리 하나로 묶은 웹 코드 도구. ESLint+Prettier 조합을 단일 설정·단일 명령으로 바꾸고 싶을 때 쓴다.

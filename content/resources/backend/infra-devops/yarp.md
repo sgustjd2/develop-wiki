@@ -3,7 +3,7 @@ name: YARP
 url: https://yarp.dot.net
 docs: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/yarp/yarp-overview
 repo: https://github.com/dotnet/yarp
-stars: 9659
+stars: 9660
 domain: backend
 category: infra-devops
 description: ASP.NET Core 위에서 동작하는 .NET 리버스 프록시 라이브러리. 설정 파일이나 코드로 라우트·클러스터를 정의하고 로드 밸런싱, 변환, 헬스 체크를 붙인다.

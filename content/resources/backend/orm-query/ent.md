@@ -3,7 +3,7 @@ name: ent
 url: https://entgo.io
 docs: https://entgo.io/docs/getting-started
 repo: https://github.com/ent/ent
-stars: 17237
+stars: 17242
 domain: backend
 category: orm-query
 description: Go 코드로 스키마를 정의하면 정적 타입 클라이언트를 생성하는 Go 엔티티 프레임워크. 엔티티 관계(그래프)가 많은 Go 서비스에서 타입 안전한 ORM 이 필요할 때 쓴다.

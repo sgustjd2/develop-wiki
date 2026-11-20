@@ -3,7 +3,7 @@ name: Entity Framework Core
 url: https://learn.microsoft.com/ef/core/
 docs: https://learn.microsoft.com/ef/core/
 repo: https://github.com/dotnet/efcore
-stars: 14823
+stars: 14821
 domain: backend
 category: orm-query
 description: .NET 의 공식 ORM. C# 클래스와 LINQ 로 DB 를 다루고 코드 우선 마이그레이션을 제공해 ASP.NET Core 서비스의 데이터 계층에 쓴다.

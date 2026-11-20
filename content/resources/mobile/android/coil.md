@@ -3,7 +3,7 @@ name: Coil
 url: https://coil-kt.github.io/coil/
 docs: https://coil-kt.github.io/coil/getting_started/
 repo: https://github.com/coil-kt/coil
-stars: 11959
+stars: 11962
 domain: mobile
 category: android
 description: Kotlin 코루틴 기반 이미지 로딩 라이브러리. Coil 3부터 Compose Multiplatform(Android·iOS·데스크톱·웹)을 지원하며 Compose의 AsyncImage로 쓴다.

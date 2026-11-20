@@ -3,7 +3,7 @@ name: Webots
 url: https://cyberbotics.com
 docs: https://cyberbotics.com/doc/guide/index
 repo: https://github.com/cyberbotics/webots
-stars: 4771
+stars: 4774
 domain: robotics
 category: simulation
 description: 이동 로봇·매니퓰레이터를 다루는 크로스 플랫폼 오픈소스 로봇 시뮬레이터. 컨트롤러를 여러 언어로 작성하고 ROS 2 와 연동할 수 있다.

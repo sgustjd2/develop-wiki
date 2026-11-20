@@ -3,7 +3,7 @@ name: Kestra
 url: https://kestra.io
 docs: https://kestra.io/docs
 repo: https://github.com/kestra-io/kestra
-stars: 30279
+stars: 30296
 domain: data-ml
 category: orchestration
 description: YAML 로 흐름(flow)을 선언하는 이벤트 기반 오케스트레이션 플랫폼. 언어에 상관없이 스크립트·SQL·API 호출을 묶는 데이터·인프라 자동화에 쓴다.

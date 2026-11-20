@@ -2,7 +2,7 @@
 name: Fresh
 url: https://usefresh.dev
 repo: https://github.com/freshframework/fresh
-stars: 13787
+stars: 13789
 docs: https://usefresh.dev/docs/introduction
 domain: frontend
 category: meta-framework

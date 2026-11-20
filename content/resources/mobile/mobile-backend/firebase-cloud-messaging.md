@@ -3,7 +3,7 @@ name: Firebase Cloud Messaging
 url: https://firebase.google.com/products/cloud-messaging
 docs: https://firebase.google.com/docs/cloud-messaging
 repo: https://github.com/firebase/firebase-android-sdk
-stars: 2581
+stars: 2580
 domain: mobile
 category: mobile-backend
 description: Google의 무료 푸시 메시지 전송 서비스. Android·iOS(APNs 경유)·웹 기기 토큰으로 알림·데이터 메시지를 보내며, 모바일 앱 푸시 알림의 기본 인프라로 쓴다.

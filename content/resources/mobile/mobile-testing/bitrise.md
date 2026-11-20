@@ -3,7 +3,7 @@ name: Bitrise
 url: https://bitrise.io
 docs: https://docs.bitrise.io/en/bitrise-ci
 repo: https://github.com/bitrise-io/bitrise
-stars: 904
+stars: 903
 domain: mobile
 category: mobile-testing
 description: 모바일 앱 빌드·테스트·코드 서명·배포를 워크플로(bitrise.yml)로 구성하는 호스팅 CI/CD 서비스. 오픈소스 Bitrise CLI 로 워크플로를 로컬에서도 실행한다.

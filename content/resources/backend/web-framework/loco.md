@@ -2,7 +2,7 @@
 name: Loco
 url: https://loco.rs
 repo: https://github.com/loco-rs/loco
-stars: 9647
+stars: 9653
 docs: https://loco.rs/docs/
 domain: backend
 category: web-framework

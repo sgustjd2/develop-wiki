@@ -3,7 +3,7 @@ name: Zed
 url: https://zed.dev
 docs: https://zed.dev/docs/
 repo: https://github.com/zed-industries/zed
-stars: 95281
+stars: 95421
 domain: devtools
 category: editor-ide
 description: Rust로 작성하고 GPU로 렌더링하는 코드 에디터. 실시간 협업과 AI 에이전트 패널을 내장하며 가볍고 빠른 에디터가 필요할 때 쓴다.

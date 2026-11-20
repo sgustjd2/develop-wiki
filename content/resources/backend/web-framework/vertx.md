@@ -3,7 +3,7 @@ name: Eclipse Vert.x
 url: https://vertx.io
 docs: https://vertx.io/docs/vertx-core/java/
 repo: https://github.com/eclipse-vertx/vert.x
-stars: 14686
+stars: 14684
 domain: backend
 category: web-framework
 description: JVM 위에서 동작하는 이벤트 루프 기반 리액티브 툴킷. 논블로킹 HTTP 서버·이벤트 버스·Verticle 배포 모델로 적은 스레드에서 많은 동시 연결을 처리할 때 쓴다.

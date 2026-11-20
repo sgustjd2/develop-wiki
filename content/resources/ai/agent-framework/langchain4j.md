@@ -2,7 +2,7 @@
 name: LangChain4j
 url: https://docs.langchain4j.dev
 repo: https://github.com/langchain4j/langchain4j
-stars: 13420
+stars: 13425
 domain: ai
 category: agent-framework
 description: LLM 공급자·벡터 저장소를 통합 API로 감싸고 도구 호출·에이전트·RAG를 지원하는 Java 라이브러리. Spring Boot·Quarkus 같은 JVM 앱에 LLM 기능을 넣을 때 쓴다.
@@ -11,7 +11,7 @@ tags: [agent, llm, jvm, rag]
 languages: [java]
 docs: https://docs.langchain4j.dev/get-started
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-21
 ---
 
 ## 개요

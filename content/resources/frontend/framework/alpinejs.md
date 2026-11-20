@@ -2,7 +2,7 @@
 name: Alpine.js
 url: https://alpinejs.dev
 repo: https://github.com/alpinejs/alpine
-stars: 32026
+stars: 32039
 docs: https://alpinejs.dev/start-here
 domain: frontend
 category: framework

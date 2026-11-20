@@ -3,7 +3,7 @@ name: Agent Skills (명세)
 url: https://agentskills.io
 docs: https://agentskills.io/specification
 repo: https://github.com/agentskills/agentskills
-stars: 27423
+stars: 27480
 domain: oss
 category: agent-skills
 description: SKILL.md 폴더 형식으로 에이전트에 지식·절차를 붙이는 공개 표준. Anthropic 이 만들어 공개했고 Claude Code·Codex·Gemini CLI 등이 지원한다. 스킬을 직접 만들거나 검증할 때 기준으로 본다.

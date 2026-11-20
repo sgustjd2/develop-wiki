@@ -3,7 +3,7 @@ name: nginx
 url: https://nginx.org
 docs: https://nginx.org/en/docs/
 repo: https://github.com/nginx/nginx
-stars: 32157
+stars: 32512
 domain: backend
 category: infra-devops
 description: 이벤트 기반 웹 서버이자 리버스 프록시·로드밸런서. 정적 파일 서빙, TLS 종료, 앱 서버 앞단 프록시에 쓴다. 자동 HTTPS 가 필요하면 Caddy 가 대안이다.

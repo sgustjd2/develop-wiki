@@ -3,7 +3,7 @@ name: Next.js
 url: https://nextjs.org
 docs: https://nextjs.org/docs
 repo: https://github.com/vercel/next.js
-stars: 143747
+stars: 143630
 domain: frontend
 category: meta-framework
 description: Vercel이 만드는 React 풀스택 프레임워크. App Router·서버 컴포넌트·캐시 지시어로 정적 셸과 요청 시 렌더링을 한 페이지에 섞을 때 쓴다.

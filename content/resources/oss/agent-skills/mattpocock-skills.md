@@ -3,7 +3,7 @@ name: Skills For Real Engineers (mattpocock/skills)
 url: https://github.com/mattpocock/skills
 docs: https://github.com/mattpocock/skills#readme
 repo: https://github.com/mattpocock/skills
-stars: 327334
+stars: 328705
 domain: oss
 category: agent-skills
 description: Matt Pocock 이 매일 쓰는 작고 조합 가능한 엔지니어링 스킬 모음(grill-me, tdd, to-spec, diagnosing-bugs 등). 정렬·피드백 루프·설계 품질을 에이전트 작업에 넣고 싶을 때 쓴다.

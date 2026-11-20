@@ -3,7 +3,7 @@ name: Serilog
 url: https://serilog.net
 docs: https://github.com/serilog/serilog/wiki/Getting-Started
 repo: https://github.com/serilog/serilog
-stars: 8072
+stars: 8064
 domain: backend
 category: observability
 description: 메시지 템플릿으로 속성을 보존하는 구조적 로그를 남기는 .NET 로깅 라이브러리. 싱크(sink)를 붙여 콘솔·파일·로그 서버로 보내며 ASP.NET Core 와 통합된다.

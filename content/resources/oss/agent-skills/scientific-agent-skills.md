@@ -3,7 +3,7 @@ name: Scientific Agent Skills
 url: https://github.com/K-Dense-AI/scientific-agent-skills
 docs: https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/docs/skills.md
 repo: https://github.com/K-Dense-AI/scientific-agent-skills
-stars: 57688
+stars: 57932
 domain: oss
 category: agent-skills
 description: 생물정보·화학·의학·재료·금융 데이터 분석용 스킬 177개를 담은 K-Dense 의 Agent Skills 모음. 과학 라이브러리와 공공 DB 사용법을 코딩 에이전트에 붙일 때 쓴다.

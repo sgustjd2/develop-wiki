@@ -3,7 +3,7 @@ name: pre-commit
 url: https://pre-commit.com/
 docs: https://pre-commit.com/
 repo: https://github.com/pre-commit/pre-commit
-stars: 15705
+stars: 15707
 domain: devtools
 category: version-control
 description: Git 커밋 직전에 린터·포매터 같은 훅을 YAML 설정으로 실행하는 다언어 훅 관리 프레임워크. 팀 전체에 같은 커밋 전 검사를 강제할 때 쓴다.

@@ -3,7 +3,7 @@ name: sqlc
 url: https://sqlc.dev
 docs: https://docs.sqlc.dev/en/latest/
 repo: https://github.com/sqlc-dev/sqlc
-stars: 18469
+stars: 18474
 domain: backend
 category: orm-query
 description: SQL 스키마와 쿼리 파일을 분석해 타입 안전한 Go·Kotlin·Python·TypeScript 코드를 생성하는 SQL 컴파일러. ORM 없이 SQL 을 직접 쓰면서 타입 검사를 받고 싶을 때 쓴다.

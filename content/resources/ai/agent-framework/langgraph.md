@@ -2,7 +2,7 @@
 name: LangGraph
 url: https://www.langchain.com/langgraph
 repo: https://github.com/langchain-ai/langgraph
-stars: 45117
+stars: 45198
 domain: ai
 category: agent-framework
 description: 상태 그래프로 에이전트 워크플로를 구성하는 프레임워크. 체크포인트와 사람 개입 단계를 지원한다.
@@ -11,7 +11,7 @@ tags: [agent, workflow]
 languages: [python, typescript]
 docs: https://docs.langchain.com/oss/python/langgraph/overview
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-21
 ---
 
 ## 개요

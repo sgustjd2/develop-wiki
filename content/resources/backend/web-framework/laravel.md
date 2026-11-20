@@ -2,7 +2,7 @@
 name: Laravel
 url: https://laravel.com
 repo: https://github.com/laravel/framework
-stars: 35000
+stars: 35004
 docs: https://laravel.com/framework/docs/13.x
 domain: backend
 category: web-framework

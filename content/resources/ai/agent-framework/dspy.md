@@ -3,7 +3,7 @@ name: DSPy
 url: https://dspy.ai/
 docs: https://dspy.ai/current/
 repo: https://github.com/stanfordnlp/dspy
-stars: 39126
+stars: 39155
 domain: ai
 category: agent-framework
 description: 프롬프트 문자열 대신 입출력 시그니처와 모듈로 LLM 프로그램을 짜고, 지표와 예제 데이터로 프롬프트·few-shot 예시를 자동 최적화하는 Stanford의 Python 프레임워크. 품질을 수치로 끌어올려야 하는 파이프라인에 쓴다.

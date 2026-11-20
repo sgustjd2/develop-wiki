@@ -3,7 +3,7 @@ name: Radix UI Primitives
 url: https://www.radix-ui.com/primitives
 docs: https://www.radix-ui.com/primitives/docs/overview/getting-started
 repo: https://github.com/radix-ui/primitives
-stars: 19526
+stars: 19529
 domain: frontend
 category: ui-kit
 description: 스타일 없이 접근성·키보드 동작만 제공하는 React 헤드리스 컴포넌트 모음. 다이얼로그·메뉴·팝오버를 직접 디자인한 컴포넌트로 만들 때 쓴다.

@@ -3,7 +3,7 @@ name: Serena
 url: https://oraios.github.io/serena/
 docs: https://oraios.github.io/serena/02-usage/000_intro.html
 repo: https://github.com/oraios/serena
-stars: 31507
+stars: 31554
 domain: oss
 category: mcp-servers
 description: 언어 서버(LSP)로 심볼 단위 코드 검색·참조 찾기·이름 변경·편집을 제공하는 코딩용 MCP 서버. 큰 코드베이스에서 에이전트가 grep·줄 번호 대신 구조로 코드를 다루게 할 때 쓴다.

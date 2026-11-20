@@ -3,7 +3,7 @@ name: go-oidc
 url: https://github.com/coreos/go-oidc
 docs: https://pkg.go.dev/github.com/coreos/go-oidc/v3/oidc
 repo: https://github.com/coreos/go-oidc
-stars: 2506
+stars: 2505
 domain: backend
 category: auth
 description: golang.org/x/oauth2 에 OpenID Connect 디스커버리와 ID 토큰 검증을 더하는 Go 클라이언트 라이브러리. Go 서비스에서 외부 IdP 로그인이나 OIDC 토큰 검증이 필요할 때 쓴다.

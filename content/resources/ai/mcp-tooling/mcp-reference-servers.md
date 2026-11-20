@@ -3,7 +3,7 @@ name: MCP Reference Servers
 url: https://github.com/modelcontextprotocol/servers
 docs: https://github.com/modelcontextprotocol/servers#readme
 repo: https://github.com/modelcontextprotocol/servers
-stars: 92087
+stars: 92134
 domain: ai
 category: mcp-tooling
 description: MCP 운영 그룹이 관리하는 참조 서버 모음(Filesystem, Git, Fetch, Memory 등). SDK 사용법 학습과 클라이언트 테스트용 예제로 쓴다.

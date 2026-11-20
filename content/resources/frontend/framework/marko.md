@@ -3,7 +3,7 @@ name: Marko
 url: https://markojs.com
 docs: https://markojs.com/docs/introduction/welcome-to-marko
 repo: https://github.com/marko-js/marko
-stars: 14477
+stars: 14476
 domain: frontend
 category: framework
 description: HTML을 확장한 템플릿 문법을 컴파일해 서버에서 스트리밍 렌더링하고, 상호작용이 필요한 부분의 JS만 브라우저로 보내는 UI 언어. 서버 렌더링 중심 사이트에 쓴다.

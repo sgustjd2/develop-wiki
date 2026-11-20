@@ -3,7 +3,7 @@ name: Accessibility Insights
 url: https://accessibilityinsights.io
 docs: https://accessibilityinsights.io/docs/web/overview/
 repo: https://github.com/microsoft/accessibility-insights-web
-stars: 966
+stars: 965
 domain: frontend
 category: performance-a11y
 description: Microsoft 가 만든 오픈소스 접근성 점검 도구. 웹용은 Chrome·Edge 확장으로 자동 검사와 탭 순서 시각화, WCAG 2.1 AA 단계별 수동 평가 가이드를 제공해 배포 전 접근성 점검에 쓴다.

@@ -3,7 +3,7 @@ name: pandas
 url: https://pandas.pydata.org
 docs: https://pandas.pydata.org/docs/
 repo: https://github.com/pandas-dev/pandas
-stars: 50570
+stars: 50580
 domain: data-ml
 category: processing
 description: Python 표준 격의 표 형식 데이터 분석 라이브러리. 메모리에 들어가는 데이터의 정제·집계·시계열 처리와 노트북 분석에 쓴다.

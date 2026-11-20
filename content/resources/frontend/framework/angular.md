@@ -2,7 +2,7 @@
 name: Angular
 url: https://angular.dev
 repo: https://github.com/angular/angular
-stars: 101441
+stars: 101472
 docs: https://angular.dev/overview
 domain: frontend
 category: framework

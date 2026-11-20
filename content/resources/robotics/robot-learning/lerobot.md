@@ -3,7 +3,7 @@ name: LeRobot
 url: https://huggingface.co/lerobot
 docs: https://huggingface.co/docs/lerobot
 repo: https://github.com/huggingface/lerobot
-stars: 28964
+stars: 29001
 domain: robotics
 category: robot-learning
 description: Hugging Face 의 PyTorch 기반 로봇 학습 라이브러리. 하드웨어 제어, 데이터셋 수집·공유, ACT·Diffusion·VLA 정책 학습과 평가를 한 CLI 로 묶는다.

@@ -3,7 +3,7 @@ name: Primer
 url: https://primer.style
 docs: https://primer.style/product/getting-started/react/
 repo: https://github.com/primer/react
-stars: 3939
+stars: 3941
 domain: frontend
 category: ui-kit
 description: GitHub 의 디자인 시스템 Primer 와 React 구현 @primer/react, 디자인 토큰 패키지 @primer/primitives. 개발자 도구 성격의 화면이나 GitHub 앱·확장 UI를 만들 때 쓴다.

@@ -2,7 +2,7 @@
 name: Django
 url: https://www.djangoproject.com
 repo: https://github.com/django/django
-stars: 91886
+stars: 91881
 docs: https://docs.djangoproject.com/en/6.1/
 domain: backend
 category: web-framework

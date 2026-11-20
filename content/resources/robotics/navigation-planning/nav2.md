@@ -3,7 +3,7 @@ name: Nav2
 url: https://nav2.org
 docs: https://docs.nav2.org/lyrical/index.html
 repo: https://github.com/ros-navigation/navigation2
-stars: 5077
+stars: 5090
 domain: robotics
 category: navigation-planning
 description: ROS 2 의 이동 로봇 내비게이션 스택. 지도 기반 위치 추정, 경로 계획, 장애물 회피 제어, 행동 트리 기반 복구 동작을 제공한다.

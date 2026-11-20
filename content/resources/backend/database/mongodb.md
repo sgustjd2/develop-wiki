@@ -3,7 +3,7 @@ name: MongoDB
 url: https://www.mongodb.com
 docs: https://www.mongodb.com/docs/manual/
 repo: https://github.com/mongodb/mongo
-stars: 28698
+stars: 28702
 domain: backend
 category: database
 description: JSON 형태(BSON) 문서를 컬렉션에 저장하는 문서형 DB. 스키마가 자주 바뀌는 데이터에 쓴다. Community 서버는 SSPL 로 OSI 오픈소스가 아니다.

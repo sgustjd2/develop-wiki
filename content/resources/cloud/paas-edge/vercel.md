@@ -3,7 +3,7 @@ name: Vercel
 url: https://vercel.com/
 docs: https://vercel.com/docs
 repo: https://github.com/vercel/vercel
-stars: 16622
+stars: 16637
 domain: cloud
 category: paas-edge
 description: Git 푸시마다 프리뷰 URL 을 만들어 주는 프론트엔드·풀스택 배포 플랫폼. Next.js 를 만든 회사가 운영하며, 프레임워크 기반 웹앱을 서버 관리 없이 CDN·Functions 로 배포할 때 쓴다.

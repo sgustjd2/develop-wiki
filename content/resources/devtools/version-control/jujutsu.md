@@ -3,7 +3,7 @@ name: Jujutsu (jj)
 url: https://jj-vcs.dev
 docs: https://docs.jj-vcs.dev/latest/
 repo: https://github.com/jj-vcs/jj
-stars: 32539
+stars: 32571
 domain: devtools
 category: version-control
 description: Git 저장소를 그대로 백엔드로 쓰면서 스테이징 없이 작업 사본을 커밋으로 다루는 버전 관리 도구. 잦은 히스토리 편집과 스택형 변경 관리에 쓴다.

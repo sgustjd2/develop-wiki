@@ -3,7 +3,7 @@ name: FastEndpoints
 url: https://fast-endpoints.com
 docs: https://fast-endpoints.com/docs/get-started
 repo: https://github.com/FastEndpoints/FastEndpoints
-stars: 6028
+stars: 6029
 domain: backend
 category: web-framework
 description: ASP.NET Core 위에서 엔드포인트마다 클래스 하나로 요청·응답·검증·처리를 묶는 REPR 패턴 프레임워크. 컨트롤러 대신 쓰는 .NET Web API 도구다.

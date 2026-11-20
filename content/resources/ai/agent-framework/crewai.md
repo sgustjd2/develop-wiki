@@ -2,7 +2,7 @@
 name: CrewAI
 url: https://docs.crewai.com/
 repo: https://github.com/crewAIInc/crewAI
-stars: 61077
+stars: 61130
 domain: ai
 category: agent-framework
 description: 역할과 작업을 가진 에이전트 팀(Crew)과 이벤트 기반 Flow로 멀티 에이전트 작업을 구성하는 Python 프레임워크. 역할 분담형 협업 에이전트를 만들 때 쓴다.

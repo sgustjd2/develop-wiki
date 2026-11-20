@@ -3,7 +3,7 @@ name: Dio
 url: https://pub.dev/packages/dio
 docs: https://pub.dev/documentation/dio/latest/
 repo: https://github.com/cfug/dio
-stars: 12844
+stars: 12843
 domain: mobile
 category: cross-platform
 description: Dart·Flutter 용 HTTP 클라이언트. 인터셉터, 요청 취소, 폼 데이터·파일 업로드, 타임아웃, 어댑터 교체를 지원해 http 패키지보다 많은 기능이 필요할 때 쓴다.

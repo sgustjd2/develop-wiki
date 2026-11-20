@@ -3,7 +3,7 @@ name: fastlane
 url: https://fastlane.tools
 docs: https://docs.fastlane.tools
 repo: https://github.com/fastlane/fastlane
-stars: 42401
+stars: 42409
 domain: mobile
 category: mobile-testing
 description: iOS·Android 빌드, 코드 서명, 스크린숏, 테스트, TestFlight·Google Play 업로드를 Ruby DSL 레인으로 자동화하는 오픈소스 도구. 모바일 CI/CD 파이프라인의 배포 단계에 쓴다.

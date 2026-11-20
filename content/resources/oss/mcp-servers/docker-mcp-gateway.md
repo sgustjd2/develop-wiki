@@ -3,7 +3,7 @@ name: Docker MCP Gateway
 url: https://docs.docker.com/ai/mcp-catalog-and-toolkit/
 docs: https://docs.docker.com/ai/mcp-catalog-and-toolkit/
 repo: https://github.com/docker/mcp-gateway
-stars: 1641
+stars: 1642
 domain: oss
 category: mcp-servers
 description: Docker 의 MCP Gateway 와 `docker mcp` CLI 플러그인. MCP 서버를 컨테이너로 격리해 띄우고 여러 클라이언트가 하나의 게이트웨이로 쓰게 한다. 신뢰도가 낮은 MCP 서버를 격리 실행할 때 쓴다.

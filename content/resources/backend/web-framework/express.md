@@ -2,7 +2,7 @@
 name: Express
 url: https://expressjs.com
 repo: https://github.com/expressjs/express
-stars: 69661
+stars: 69671
 docs: https://expressjs.com/en/5x/api.html
 domain: backend
 category: web-framework

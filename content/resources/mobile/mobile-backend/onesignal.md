@@ -3,7 +3,7 @@ name: OneSignal
 url: https://onesignal.com
 docs: https://documentation.onesignal.com/docs
 repo: https://github.com/OneSignal/OneSignal-Android-SDK
-stars: 631
+stars: 630
 domain: mobile
 category: mobile-backend
 description: 모바일·웹 푸시, 인앱 메시지, 이메일, SMS를 한 대시보드와 API로 보내는 고객 메시징 서비스. 세그먼트·자동화·A/B 테스트가 필요한 푸시 운영에 쓴다.

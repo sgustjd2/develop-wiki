@@ -2,7 +2,7 @@
 name: Project Based Learning
 url: https://github.com/practical-tutorials/project-based-learning
 repo: https://github.com/practical-tutorials/project-based-learning
-stars: 289977
+stars: 290092
 domain: oss
 category: learning-repos
 description: 앱을 처음부터 만들어 보는 프로젝트형 튜토리얼을 프로그래밍 언어별로 모은 목록. 문법을 익힌 뒤 무엇을 만들며 연습할지 고를 때 쓴다.

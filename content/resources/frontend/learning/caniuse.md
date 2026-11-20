@@ -3,7 +3,7 @@ name: Can I use
 url: https://caniuse.com
 docs: https://caniuse.com/about
 repo: https://github.com/Fyrd/caniuse
-stars: 5883
+stars: 5884
 domain: frontend
 category: learning
 description: HTML·CSS·JavaScript·Web API 기능의 브라우저별 지원 현황과 사용 점유율을 표로 보여 주는 사이트. 새 기능을 써도 되는지 판단할 때 쓴다.

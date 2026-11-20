@@ -3,7 +3,7 @@ name: Zod
 url: https://zod.dev
 docs: https://zod.dev/basics
 repo: https://github.com/colinhacks/zod
-stars: 44347
+stars: 44366
 domain: backend
 category: api
 description: 스키마를 한 번 정의하면 런타임 검증과 TypeScript 타입 추론을 함께 얻는 스키마 검증 라이브러리. API 요청·환경 변수·폼 입력처럼 외부에서 들어오는 데이터를 검증할 때 쓴다.

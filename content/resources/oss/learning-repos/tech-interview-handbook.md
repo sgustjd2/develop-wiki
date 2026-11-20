@@ -2,7 +2,7 @@
 name: Tech Interview Handbook
 url: https://www.techinterviewhandbook.org/
 repo: https://github.com/yangshun/tech-interview-handbook
-stars: 143326
+stars: 143383
 domain: oss
 category: learning-repos
 description: 코딩 면접 준비 계획(Grind 75), 알고리즘 주제별 요점, 이력서·행동 면접·연봉 협상까지 다루는 면접 가이드. 면접을 몇 주 앞두고 공부 범위를 압축할 때 쓴다.

@@ -3,7 +3,7 @@ name: Eclipse Cyclone DDS
 url: https://cyclonedds.io
 docs: https://cyclonedds.io/docs/
 repo: https://github.com/eclipse-cyclonedds/cyclonedds
-stars: 1366
+stars: 1370
 domain: robotics
 category: ros
 description: Eclipse 재단의 C 기반 DDS 구현. ROS 2 에서 rmw_cyclonedds_cpp 로 선택할 수 있고 가볍고 설정이 단순하다.

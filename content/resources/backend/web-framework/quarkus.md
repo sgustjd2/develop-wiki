@@ -3,7 +3,7 @@ name: Quarkus
 url: https://quarkus.io
 docs: https://quarkus.io/guides/
 repo: https://github.com/quarkusio/quarkus
-stars: 15986
+stars: 15997
 domain: backend
 category: web-framework
 description: 빌드 시점 처리로 기동 시간과 메모리를 줄인 Java 서버 프레임워크. Jakarta EE·MicroProfile API로 컨테이너·네이티브 이미지용 서비스를 만들 때 쓴다.

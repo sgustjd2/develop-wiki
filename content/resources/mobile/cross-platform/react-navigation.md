@@ -3,7 +3,7 @@ name: React Navigation
 url: https://reactnavigation.org
 docs: https://reactnavigation.org/docs/getting-started
 repo: https://github.com/react-navigation/react-navigation
-stars: 24528
+stars: 24529
 domain: mobile
 category: cross-platform
 description: React Native 용 JavaScript 기반 네비게이션 라이브러리. 스택·탭·드로어 네비게이터, 타입 안전 파라미터, 딥링크를 제공하며 Expo Router 의 기반이기도 하다.

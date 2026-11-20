@@ -3,7 +3,7 @@ name: Rspack
 url: https://rspack.rs
 docs: https://rspack.rs/guide/start/quick-start
 repo: https://github.com/web-infra-dev/rspack
-stars: 12984
+stars: 12987
 domain: frontend
 category: build-tooling
 description: Rust로 작성한 webpack 호환 번들러. 기존 webpack 설정·로더·플러그인을 대부분 유지한 채 빌드 속도를 높이고 싶을 때 쓴다.

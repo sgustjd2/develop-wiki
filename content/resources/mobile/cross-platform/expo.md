@@ -3,7 +3,7 @@ name: Expo
 url: https://expo.dev
 docs: https://docs.expo.dev
 repo: https://github.com/expo/expo
-stars: 53661
+stars: 53694
 domain: mobile
 category: cross-platform
 description: React Native 앱을 위한 프레임워크와 클라우드 서비스. 네이티브 모듈 SDK, 파일 기반 라우팅(Expo Router), EAS 빌드·제출·업데이트로 RN 앱 개발과 배포를 단순화한다.

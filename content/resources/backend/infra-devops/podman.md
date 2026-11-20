@@ -3,7 +3,7 @@ name: Podman
 url: https://podman.io
 docs: https://docs.podman.io/en/latest/
 repo: https://github.com/podman-container-tools/podman
-stars: 33323
+stars: 33347
 domain: backend
 category: infra-devops
 description: 데몬 없이 동작하고 rootless 실행을 기본으로 지원하는 OCI 컨테이너 엔진. Docker 호환 CLI 로 컨테이너·Pod 를 다루고 systemd(Quadlet)로 서비스화할 때 쓴다.

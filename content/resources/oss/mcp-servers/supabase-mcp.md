@@ -3,7 +3,7 @@ name: Supabase MCP Server
 url: https://supabase.com/mcp
 docs: https://supabase.com/docs/guides/getting-started/mcp
 repo: https://github.com/supabase/mcp
-stars: 3021
+stars: 3022
 domain: oss
 category: mcp-servers
 description: Supabase 공식 MCP 서버. 프로젝트의 테이블 조회, SQL 실행, 마이그레이션 적용, 로그·보안 권고 확인, Edge Function 배포를 에이전트 도구로 제공한다. 원격(mcp.supabase.com)으로 연결한다.

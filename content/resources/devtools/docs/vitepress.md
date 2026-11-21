@@ -3,7 +3,7 @@ name: VitePress
 url: https://vitepress.dev
 docs: https://vitepress.dev/guide/getting-started
 repo: https://github.com/vuejs/vitepress
-stars: 18515
+stars: 18517
 domain: devtools
 category: docs
 description: Vite와 Vue로 Markdown 문서를 빠르게 빌드하는 정적 사이트 생성기. 라이브러리 문서처럼 가볍고 빠른 문서 사이트에 쓴다.

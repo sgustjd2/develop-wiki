@@ -3,7 +3,7 @@ name: Jest
 url: https://jestjs.io
 docs: https://jestjs.io/docs/getting-started
 repo: https://github.com/jestjs/jest
-stars: 45486
+stars: 45487
 domain: frontend
 category: testing
 description: 테스트 러너·단언·모킹·스냅샷·커버리지를 한 패키지로 제공하는 JavaScript 테스트 프레임워크. Node 서버와 React 앱 단위 테스트에 오래 쓰여 왔다.

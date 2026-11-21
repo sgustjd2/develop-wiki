@@ -3,7 +3,7 @@ name: Appsmith
 url: https://www.appsmith.com
 docs: https://docs.appsmith.com
 repo: https://github.com/appsmithorg/appsmith
-stars: 41283
+stars: 41285
 domain: oss
 category: self-hosted
 description: 위젯을 끌어 놓고 DB·REST API 쿼리를 연결해 관리자 화면·내부 도구를 만드는 로우코드 플랫폼. Community Edition 은 Apache-2.0, 상용 기능은 별도 Commercial 이미지로 제공된다.

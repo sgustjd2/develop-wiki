@@ -3,7 +3,7 @@ name: Amazon Web Services (AWS)
 url: https://aws.amazon.com/
 docs: https://docs.aws.amazon.com/
 repo: https://github.com/aws/aws-cli
-stars: 17382
+stars: 17384
 domain: cloud
 category: hyperscaler
 description: Amazon 의 퍼블릭 클라우드. EC2·S3·RDS·IAM·VPC 를 중심으로 수백 개 관리형 서비스를 리전 단위로 제공하며, 서비스 선택지와 레퍼런스가 가장 많은 범용 인프라가 필요할 때 쓴다.

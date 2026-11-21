@@ -3,7 +3,7 @@ name: Chrome DevTools MCP
 url: https://github.com/ChromeDevTools/chrome-devtools-mcp
 docs: https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md
 repo: https://github.com/ChromeDevTools/chrome-devtools-mcp
-stars: 58497
+stars: 58658
 domain: oss
 category: mcp-servers
 description: Chrome DevTools 팀의 MCP 서버. 실행 중인 Chrome 을 조작하며 성능 트레이스, 네트워크·콘솔, 힙 스냅샷, Lighthouse 감사를 에이전트에 제공한다. 프론트엔드 디버깅·성능 분석에 쓴다.

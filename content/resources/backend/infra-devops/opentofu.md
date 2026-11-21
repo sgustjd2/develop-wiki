@@ -3,7 +3,7 @@ name: OpenTofu
 url: https://opentofu.org
 docs: https://opentofu.org/docs/
 repo: https://github.com/opentofu/opentofu
-stars: 30935
+stars: 30950
 domain: backend
 category: infra-devops
 description: Terraform 1.5 의 MPL-2.0 코드에서 갈라진 오픈소스 IaC 도구. HCL·provider 를 그대로 쓰면서 오픈소스 라이선스가 필요할 때 쓴다. CNCF Sandbox.

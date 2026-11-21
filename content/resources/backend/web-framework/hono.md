@@ -2,7 +2,7 @@
 name: Hono
 url: https://hono.dev
 repo: https://github.com/honojs/hono
-stars: 33000
+stars: 33007
 docs: https://hono.dev/docs/
 domain: backend
 category: web-framework

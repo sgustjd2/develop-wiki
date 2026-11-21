@@ -3,7 +3,7 @@ name: SQLDelight
 url: https://sqldelight.github.io/sqldelight/
 docs: https://sqldelight.github.io/sqldelight/latest/multiplatform_sqlite/
 repo: https://github.com/sqldelight/sqldelight
-stars: 6904
+stars: 6903
 domain: mobile
 category: cross-platform
 description: SQL 문에서 타입 안전한 Kotlin API 를 생성하는 라이브러리. 스키마·쿼리·마이그레이션을 컴파일 시점에 검증하고 Android·iOS·JVM·JS 를 지원하는 Kotlin Multiplatform 의 대표 DB 계층이다.

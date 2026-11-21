@@ -3,7 +3,7 @@ name: Sentry MCP
 url: https://mcp.sentry.dev
 docs: https://github.com/getsentry/toolkit#readme
 repo: https://github.com/getsentry/toolkit
-stars: 972
+stars: 973
 domain: oss
 category: mcp-servers
 description: Sentry 공식 MCP 서버. 이슈·이벤트·트레이스·릴리스를 조회하고 Seer 로 원인 분석을 요청하는 도구를 코딩 에이전트에 준다. 원격(mcp.sentry.dev) 또는 sentry CLI 로 연결한다.

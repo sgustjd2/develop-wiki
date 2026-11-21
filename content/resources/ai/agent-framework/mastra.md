@@ -2,7 +2,7 @@
 name: Mastra
 url: https://mastra.ai
 repo: https://github.com/mastra-ai/mastra
-stars: 29696
+stars: 29721
 domain: ai
 category: agent-framework
 description: 에이전트·워크플로·메모리·RAG·평가를 한데 묶은 TypeScript 프레임워크. Node.js나 Next.js 앱에 에이전트를 넣을 때 쓴다.
@@ -11,7 +11,7 @@ tags: [agent, workflow, memory]
 languages: [typescript]
 docs: https://mastra.ai/docs
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-22
 ---
 
 ## 개요

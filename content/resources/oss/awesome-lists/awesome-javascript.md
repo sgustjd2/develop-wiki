@@ -2,7 +2,7 @@
 name: Awesome JavaScript
 url: https://github.com/sorrycc/awesome-javascript
 repo: https://github.com/sorrycc/awesome-javascript
-stars: 35039
+stars: 35040
 domain: oss
 category: awesome-lists
 description: 브라우저용 JavaScript 라이브러리를 기능별(날짜, 차트, 폼, 애니메이션, 테이블 등)로 모은 목록. 특정 UI 기능을 구현할 라이브러리 후보를 찾을 때 쓴다.

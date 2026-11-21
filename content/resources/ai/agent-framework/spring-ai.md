@@ -3,7 +3,7 @@ name: Spring AI
 url: https://spring.io/projects/spring-ai
 docs: https://docs.spring.io/spring-ai/reference/
 repo: https://github.com/spring-projects/spring-ai
-stars: 9664
+stars: 9663
 domain: ai
 category: agent-framework
 description: Spring Boot 앱에서 여러 모델 공급자·벡터 저장소를 같은 추상화(ChatClient, Advisor, VectorStore)로 쓰게 해 주는 Spring 공식 AI 프레임워크. Java 백엔드에 LLM·RAG·도구 호출을 넣을 때 쓴다.
@@ -12,7 +12,7 @@ tags: [java, spring-boot, chat-client, rag, tool-calling, mcp]
 languages: [java]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-22
 ---
 
 ## 개요

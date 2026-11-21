@@ -3,7 +3,7 @@ name: Penpot
 url: https://penpot.app
 docs: https://help.penpot.app
 repo: https://github.com/penpot/penpot
-stars: 62578
+stars: 62612
 domain: oss
 category: self-hosted
 description: 웹 기반 UI 디자인·프로토타이핑 도구. SVG·CSS 표준을 쓰고 Flex·Grid 레이아웃, 디자인 토큰, 코드 Inspect 를 지원해 디자이너·개발자 협업에 쓴다. MPL-2.0 라이선스.

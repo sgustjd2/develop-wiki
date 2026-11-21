@@ -3,7 +3,7 @@ name: Notion MCP
 url: https://developers.notion.com/docs/mcp
 docs: https://developers.notion.com/guides/mcp/get-started-with-mcp
 repo: https://github.com/makenotion/notion-mcp-server
-stars: 4719
+stars: 4721
 domain: oss
 category: mcp-servers
 description: Notion 공식 원격 MCP 서버(mcp.notion.com). 워크스페이스 검색, 페이지 읽기·쓰기(Markdown), 데이터베이스 조회를 OAuth 로 연결해 쓴다. 설계 문서·회의록을 에이전트 작업에 끌어올 때 쓴다.

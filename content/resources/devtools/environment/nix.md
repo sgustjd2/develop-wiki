@@ -3,7 +3,7 @@ name: Nix
 url: https://nixos.org/
 docs: https://nix.dev/
 repo: https://github.com/NixOS/nix
-stars: 18053
+stars: 18057
 domain: devtools
 category: environment
 description: 패키지를 입력 해시로 격리된 경로에 빌드해 재현 가능한 개발 환경과 빌드를 만드는 함수형 패키지 관리자. 팀·CI 환경을 정확히 고정할 때 쓴다.

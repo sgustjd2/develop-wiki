@@ -3,7 +3,7 @@ name: Hugging Face Datasets
 url: https://huggingface.co/datasets
 docs: https://huggingface.co/docs/datasets
 repo: https://github.com/huggingface/datasets
-stars: 22175
+stars: 22178
 domain: data-ml
 category: learning
 description: Hugging Face Hub 의 공개 데이터셋 저장소와 이를 한 줄로 불러오는 datasets 라이브러리. 학습·평가용 텍스트·이미지·음성 데이터를 찾고 전처리할 때 쓴다.

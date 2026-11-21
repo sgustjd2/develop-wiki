@@ -3,7 +3,7 @@ name: LeakCanary
 url: https://square.github.io/leakcanary/
 docs: https://square.github.io/leakcanary/getting_started/
 repo: https://github.com/square/leakcanary
-stars: 30007
+stars: 30008
 domain: mobile
 category: android
 description: 디버그 빌드에서 메모리 누수를 자동 감지해 누수 경로(leak trace)를 알려 주는 Android 라이브러리. 의존성 한 줄로 Activity·Fragment·ViewModel 누수를 잡는다.

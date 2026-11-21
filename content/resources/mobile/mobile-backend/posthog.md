@@ -3,7 +3,7 @@ name: PostHog
 url: https://posthog.com
 docs: https://posthog.com/docs/libraries/android
 repo: https://github.com/PostHog/posthog
-stars: 40988
+stars: 41000
 domain: mobile
 category: mobile-backend
 description: 제품 분석, 세션 리플레이, 기능 플래그, A/B 테스트, 설문을 한 플랫폼에서 제공하는 오픈소스 제품 분석 도구. Android·iOS·Flutter·React Native SDK가 있고 클라우드 또는 셀프호스팅으로 쓴다.

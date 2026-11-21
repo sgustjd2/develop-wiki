@@ -3,7 +3,7 @@ name: Celery
 url: https://docs.celeryq.dev
 docs: https://docs.celeryq.dev/en/stable/
 repo: https://github.com/celery/celery
-stars: 29249
+stars: 29255
 domain: backend
 category: messaging
 description: Python 분산 작업 큐. RabbitMQ·Redis·SQS 를 브로커로 써서 함수를 워커 프로세스에서 비동기·예약 실행한다. Django·Flask·FastAPI 서비스의 백그라운드 작업에 쓴다.

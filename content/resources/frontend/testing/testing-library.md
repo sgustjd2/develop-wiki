@@ -3,7 +3,7 @@ name: Testing Library
 url: https://testing-library.com
 docs: https://testing-library.com/docs/
 repo: https://github.com/testing-library/react-testing-library
-stars: 19682
+stars: 19684
 domain: frontend
 category: testing
 description: 사용자가 화면을 보는 방식(역할·레이블·텍스트)으로 요소를 찾아 컴포넌트를 테스트하는 라이브러리 모음. React·Vue·Svelte 등 어댑터가 있다.

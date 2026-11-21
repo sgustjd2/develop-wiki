@@ -2,7 +2,7 @@
 name: vLLM
 url: https://docs.vllm.ai
 repo: https://github.com/vllm-project/vllm
-stars: 97272
+stars: 97313
 domain: ai
 category: inference-serving
 description: PagedAttention 기반의 고처리량 LLM 서빙 엔진. OpenAI 호환 API 서버를 제공한다.

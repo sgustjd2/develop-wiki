@@ -3,7 +3,7 @@ name: Apache Superset
 url: https://superset.apache.org
 docs: https://superset.apache.org/docs/intro
 repo: https://github.com/apache/superset
-stars: 75589
+stars: 75605
 domain: data-ml
 category: analytics-bi
 description: SQL 데이터베이스에 연결해 차트·대시보드를 만들고 SQL Lab 으로 질의하는 오픈소스 BI 플랫폼. 셀프 호스팅 사내 대시보드에 쓴다.

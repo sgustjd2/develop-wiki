@@ -3,7 +3,7 @@ name: Claude API (Anthropic)
 url: https://platform.claude.com
 docs: https://platform.claude.com/docs/en/home
 repo: https://github.com/anthropics/anthropic-sdk-python
-stars: 4088
+stars: 4092
 domain: ai
 category: model-platform
 description: Anthropic 의 Claude 모델을 호출하는 상용 API. Messages API 하나로 도구 호출·구조화 출력·프롬프트 캐싱·배치를 다룬다.

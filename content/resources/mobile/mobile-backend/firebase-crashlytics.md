@@ -3,7 +3,7 @@ name: Firebase Crashlytics
 url: https://firebase.google.com/products/crashlytics
 docs: https://firebase.google.com/docs/crashlytics
 repo: https://github.com/firebase/firebase-ios-sdk
-stars: 6994
+stars: 6995
 domain: mobile
 category: mobile-backend
 description: Firebase의 무료 모바일 크래시 리포팅 서비스. 앱 비정상 종료·ANR·비치명 오류를 수집해 심볼화된 스택 트레이스와 영향 사용자 수로 묶어 보여 준다.

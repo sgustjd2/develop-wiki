@@ -3,7 +3,7 @@ name: Gymnasium
 url: https://gymnasium.farama.org/
 docs: https://gymnasium.farama.org/
 repo: https://github.com/Farama-Foundation/Gymnasium
-stars: 12841
+stars: 12843
 domain: robotics
 category: robot-learning
 description: 강화학습 환경의 표준 API. OpenAI Gym 의 후속으로 Farama 재단이 유지하며 reset·step 인터페이스와 벤치마크 환경 모음을 제공한다.

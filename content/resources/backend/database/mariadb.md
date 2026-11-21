@@ -3,7 +3,7 @@ name: MariaDB
 url: https://mariadb.org
 docs: https://mariadb.com/kb/en/documentation/
 repo: https://github.com/MariaDB/server
-stars: 8639
+stars: 8641
 domain: backend
 category: database
 description: MySQL 에서 갈라져 나온 오픈소스 관계형 DB(GPLv2). MySQL 과 호환되는 프로토콜·SQL 에 벡터 검색, 시간 테이블, ColumnStore 같은 기능을 더했다.

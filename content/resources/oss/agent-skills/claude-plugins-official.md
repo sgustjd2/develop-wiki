@@ -3,7 +3,7 @@ name: Claude Plugins Official (claude-plugins-official)
 url: https://github.com/anthropics/claude-plugins-official
 docs: https://code.claude.com/docs/en/plugins
 repo: https://github.com/anthropics/claude-plugins-official
-stars: 47807
+stars: 47897
 domain: oss
 category: agent-skills
 description: Claude Code 기본 플러그인 마켓플레이스와 Anthropic 자체 플러그인(LSP 연동, code-review, plugin-dev 등)을 담은 저장소. 검증된 플러그인을 찾거나 플러그인 구조를 참고할 때 쓴다.

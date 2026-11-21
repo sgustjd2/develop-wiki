@@ -18,3 +18,8 @@
 | https://github.com/HelixDB/helix-foundry | resources/Go | ★2174 · license=Apache-2.0 · Connect your company's data, let an agent draft an ontology over it, and load it into HelixDB as one (Hermes 후보, 검증 전) | 2026-11-21 |
 | https://github.com/daveebbelaar/bama | resources/Swift | ★1921 · license=MIT · BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native m (Hermes 후보, 검증 전) | 2026-11-21 |
 | https://github.com/cutetailbud/ff-ruyijs | resources/C++ | ★1594 · license=AGPL-3.0 · This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) t (Hermes 후보, 검증 전) | 2026-11-21 |
+| allenai/ACE2.5-ERA5 | models/분류 미정 | https://huggingface.co/allenai/ACE2.5-ERA5 · 2026-11-19 · license=apache-2.0 · params=? · ♥1 ↓267 (Hermes 후보, 검증 전) | 2026-11-22 |
+| allenai/LitAgent-Joint-SFT-9B-lg7eae-2n | models/분류 미정 | https://huggingface.co/allenai/LitAgent-Joint-SFT-9B-lg7eae-2n · 2026-11-20 · license=? · params=? · ♥0 ↓8 (Hermes 후보, 검증 전) | 2026-11-22 |
+| https://github.com/zephyr4123/snug | resources/Swift | ★1243 · license=MIT · 让远程 Mac 在任意设备上获得原生级体验。专为 UU远程 打造的显示与触控增强：手机、平板、电脑各有专属屏幕，画面铺满、字号随屏，原生触屏手势，App 资源库。Make UU Remote nati (Hermes 후보, 검증 전) | 2026-11-22 |
+| https://github.com/hujjun/mcd-saver-strategist | resources/Python | ★1116 · license=MIT · 麦当劳省钱点餐助手（麦门精算师）｜麦当劳优惠券组合优化 Skill：拉取麦当劳菜单与全部可用优惠券，算出最省的点餐组合，巨无霸套餐 ¥47 → ¥21.9（省 53%）。McDonalds MCP（麦 (Hermes 후보, 검증 전) | 2026-11-22 |
+| https://github.com/feder-cr/git-ai | resources/Go | ★1003 · license=NOASSERTION · Git designed for AI agents. Open-source, in the spirit of Anthropic's Scion and OpenAI's Pando. Not  (Hermes 후보, 검증 전) | 2026-11-22 |

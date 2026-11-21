@@ -3,7 +3,7 @@ name: Jetpack Compose
 url: https://developer.android.com/compose
 docs: https://developer.android.com/develop/ui/compose
 repo: https://github.com/androidx/androidx
-stars: 6143
+stars: 6145
 domain: mobile
 category: android
 description: Android의 공식 선언형 UI 툴킷. Kotlin 함수(@Composable)로 화면을 기술하고 상태 변화에 따라 다시 그리며, 새 Android 앱 UI의 기본 선택지다.

@@ -3,7 +3,7 @@ name: Argo Rollouts
 url: https://argo-rollouts.readthedocs.io/
 docs: https://argo-rollouts.readthedocs.io/en/stable/
 repo: https://github.com/argoproj/argo-rollouts
-stars: 3628
+stars: 3626
 domain: backend
 category: infra-devops
 description: Kubernetes 에서 카나리·블루그린 배포와 메트릭 기반 자동 승격·롤백을 제공하는 컨트롤러. Deployment 대신 Rollout 리소스로 점진 배포할 때 쓴다.

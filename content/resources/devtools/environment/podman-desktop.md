@@ -3,7 +3,7 @@ name: Podman Desktop
 url: https://podman-desktop.io
 docs: https://podman-desktop.io/docs
 repo: https://github.com/podman-desktop/podman-desktop
-stars: 8187
+stars: 8191
 domain: devtools
 category: environment
 description: Podman 설치·업데이트와 컨테이너·이미지·Pod·Kubernetes 를 GUI 로 관리하는 오픈소스 데스크톱 앱. Docker Desktop 대안으로 로컬 컨테이너 환경을 꾸릴 때 쓴다.

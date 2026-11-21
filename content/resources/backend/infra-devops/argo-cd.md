@@ -3,7 +3,7 @@ name: Argo CD
 url: https://argo-cd.readthedocs.io
 docs: https://argo-cd.readthedocs.io/en/stable/
 repo: https://github.com/argoproj/argo-cd
-stars: 24665
+stars: 24670
 domain: backend
 category: infra-devops
 description: Git 저장소에 선언한 Kubernetes 매니페스트를 클러스터에 계속 동기화하는 GitOps 배포 도구. 배포 상태를 Git 기준으로 관리하고 드리프트를 감지할 때 쓴다.

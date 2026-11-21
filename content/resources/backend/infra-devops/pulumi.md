@@ -3,7 +3,7 @@ name: Pulumi
 url: https://www.pulumi.com
 docs: https://www.pulumi.com/docs/
 repo: https://github.com/pulumi/pulumi
-stars: 25926
+stars: 25929
 domain: backend
 category: infra-devops
 description: TypeScript·Python·Go·C#·Java 같은 범용 언어로 클라우드 인프라를 선언하는 IaC 도구. 반복문·함수·테스트 등 프로그래밍 언어 기능으로 인프라를 다루고 싶을 때 쓴다.

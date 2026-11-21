@@ -3,7 +3,7 @@ name: Ktor
 url: https://ktor.io
 docs: https://ktor.io/docs/welcome.html
 repo: https://github.com/ktorio/ktor
-stars: 14576
+stars: 14574
 domain: backend
 category: web-framework
 description: JetBrains가 만든 코루틴 기반 Kotlin 서버·클라이언트 프레임워크. 플러그인을 골라 설치하는 방식으로 가벼운 Kotlin HTTP API를 만들 때 쓴다.

@@ -2,7 +2,7 @@
 name: Awesome Rust
 url: https://github.com/rust-unofficial/awesome-rust
 repo: https://github.com/rust-unofficial/awesome-rust
-stars: 60675
+stars: 60708
 domain: oss
 category: awesome-lists
 description: Rust 로 만든 애플리케이션·개발 도구·라이브러리를 분야별로 모은 큐레이션 목록. Rust 크레이트 후보나 참고할 실제 프로젝트를 찾을 때 쓴다.

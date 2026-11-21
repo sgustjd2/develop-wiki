@@ -3,7 +3,7 @@ name: Apache Iceberg
 url: https://iceberg.apache.org
 docs: https://iceberg.apache.org/docs/latest/
 repo: https://github.com/apache/iceberg
-stars: 9445
+stars: 9446
 domain: data-ml
 category: warehouse-lake
 description: 객체 스토리지의 Parquet 파일 묶음을 ACID 트랜잭션·스키마 진화·타임 트래블이 되는 테이블로 다루게 하는 오픈 테이블 포맷. 여러 엔진이 공유하는 레이크하우스에 쓴다.

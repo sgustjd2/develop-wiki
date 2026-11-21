@@ -3,7 +3,7 @@ name: Kysely
 url: https://kysely.dev
 docs: https://kysely.dev/docs/intro
 repo: https://github.com/kysely-org/kysely
-stars: 14370
+stars: 14374
 domain: backend
 category: orm-query
 description: 데이터베이스 타입 인터페이스를 바탕으로 SQL 을 타입 안전하게 조립하는 TypeScript 쿼리 빌더. ORM 없이 SQL 그대로 쓰되 컬럼·결과 타입 검사가 필요할 때 쓴다.

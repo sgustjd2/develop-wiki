@@ -2,7 +2,7 @@
 name: Axum
 url: https://docs.rs/axum
 repo: https://github.com/tokio-rs/axum
-stars: 27888
+stars: 27899
 docs: https://docs.rs/axum/latest/axum/
 domain: backend
 category: web-framework

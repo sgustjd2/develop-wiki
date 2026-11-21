@@ -3,7 +3,7 @@ name: SWR
 url: https://swr.vercel.app
 docs: https://swr.vercel.app/docs/getting-started
 repo: https://github.com/vercel/swr
-stars: 32494
+stars: 32497
 domain: frontend
 category: state-data
 description: Vercel이 만든 React 데이터 패칭 훅. 캐시를 먼저 보여 주고 백그라운드에서 다시 검증하는 stale-while-revalidate 방식으로 동작한다.

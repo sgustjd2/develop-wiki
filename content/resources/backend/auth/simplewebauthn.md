@@ -3,7 +3,7 @@ name: SimpleWebAuthn
 url: https://simplewebauthn.dev
 docs: https://simplewebauthn.dev/docs/
 repo: https://github.com/MasterKale/SimpleWebAuthn
-stars: 2397
+stars: 2396
 domain: backend
 category: auth
 description: 패스키(WebAuthn) 등록·인증을 구현하는 TypeScript 라이브러리. 서버의 옵션 생성·응답 검증과 브라우저 측 호출을 함께 제공해 비밀번호 없는 로그인을 만들 때 쓴다.

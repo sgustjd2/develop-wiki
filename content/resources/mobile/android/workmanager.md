@@ -3,7 +3,7 @@ name: WorkManager
 url: https://developer.android.com/topic/libraries/architecture/workmanager
 docs: https://developer.android.com/topic/libraries/architecture/workmanager
 repo: https://github.com/androidx/androidx
-stars: 6143
+stars: 6145
 domain: mobile
 category: android
 description: 앱이 종료되거나 기기가 재부팅돼도 보장되어야 하는 지연 가능한 백그라운드 작업(동기화, 업로드, 정리)을 제약 조건과 함께 예약하는 Jetpack 라이브러리.

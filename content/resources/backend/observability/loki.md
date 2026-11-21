@@ -3,7 +3,7 @@ name: Grafana Loki
 url: https://grafana.com/oss/loki/
 docs: https://grafana.com/docs/loki/latest/
 repo: https://github.com/grafana/loki
-stars: 29207
+stars: 29213
 domain: backend
 category: observability
 description: 로그 본문 대신 레이블만 색인하고 압축 청크를 오브젝트 스토리지에 저장하는 로그 수집·조회 시스템. 저렴한 대량 로그 보관과 Grafana 연동에 쓴다. AGPLv3.

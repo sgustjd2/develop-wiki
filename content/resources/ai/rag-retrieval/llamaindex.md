@@ -3,7 +3,7 @@ name: LlamaIndex
 url: https://www.llamaindex.ai
 docs: https://developers.llamaindex.ai/python/framework/
 repo: https://github.com/run-llama/llama_index
-stars: 52968
+stars: 52975
 domain: ai
 category: rag-retrieval
 description: 문서 로딩·청킹·인덱싱·검색·응답 합성을 모듈로 제공하는 Python RAG 프레임워크. 300개 넘는 LLM·임베딩·벡터 저장소 연동 패키지를 갖췄다.

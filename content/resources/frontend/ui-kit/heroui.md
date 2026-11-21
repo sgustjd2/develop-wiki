@@ -3,7 +3,7 @@ name: HeroUI
 url: https://heroui.com
 docs: https://heroui.com/docs/react/getting-started
 repo: https://github.com/heroui-inc/heroui
-stars: 31270
+stars: 31275
 domain: frontend
 category: ui-kit
 description: Tailwind CSS v4와 React Aria Components 위에 만든 스타일 포함 React 컴포넌트 라이브러리(옛 NextUI). Tailwind 프로젝트에서 완성된 접근성 컴포넌트를 바로 쓸 때 쓴다.

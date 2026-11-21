@@ -2,7 +2,7 @@
 name: Coding Interview University
 url: https://github.com/jwasham/coding-interview-university
 repo: https://github.com/jwasham/coding-interview-university
-stars: 364661
+stars: 364737
 domain: oss
 category: learning-repos
 description: 대기업 소프트웨어 엔지니어 면접을 목표로 자료 구조·알고리즘·CS 기초를 몇 달에 걸쳐 공부하는 체크리스트형 학습 계획. 비전공자가 CS 기초와 코딩 면접을 준비할 때 쓴다.

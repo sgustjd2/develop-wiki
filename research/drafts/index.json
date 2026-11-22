@@ -1,11 +1,12 @@
 {
   "STRIDE 등 인증 가능 견고 추정 전용 솔버": {
-    "status": "drafted",
-    "date": "2026-11-22",
     "areas": [
       "robotics"
     ],
-    "file": "research/drafts/robotics/stride-based-certified-robustness-solvers-for-robotics.md"
+    "status": "published",
+    "date": "2026-11-24",
+    "file": "content/knowledge/robotics/stride-certifiable-outlier-robust-perception-solver.md",
+    "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
   "Epain·Jin·Zotter 2014 일정 각 퍼짐 디코딩": {
     "status": "insufficient",
@@ -29,28 +30,31 @@
     "sources": []
   },
   "RFC 9701 JWT 인트로스펙션": {
-    "status": "drafted",
-    "date": "2026-11-22",
     "areas": [
       "security"
     ],
-    "file": "research/drafts/security/rfc-9701-jwt-introspection.md"
+    "status": "published",
+    "date": "2026-11-24",
+    "file": "content/knowledge/security/rfc-9701-jwt-introspection-response.md",
+    "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
   "Envoy zone-aware routing·패닉 임계": {
-    "status": "drafted",
-    "date": "2026-11-22",
     "areas": [
       "data-modeling",
       "performance"
     ],
-    "file": "research/drafts/performance/envoy-zone-aware-routing-panic-threshold.md"
+    "status": "published",
+    "date": "2026-11-24",
+    "file": "content/knowledge/performance/envoy-zone-aware-routing-panic-threshold.md",
+    "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
   "Friedman 검정": {
-    "status": "drafted",
-    "date": "2026-11-22",
     "areas": [
       "ui-ux"
     ],
-    "file": "research/drafts/ui-ux/friedman-test-repeated-ordinal.md"
+    "status": "published",
+    "date": "2026-11-24",
+    "file": "content/knowledge/ui-ux/friedman-test-repeated-ordinal.md",
+    "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   }
 }

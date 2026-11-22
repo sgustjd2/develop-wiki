@@ -5,9 +5,9 @@
 
 | 주제 | 상태 | 파일·사유 | 날짜 |
 | --- | --- | --- | --- |
-| STRIDE 등 인증 가능 견고 추정 전용 솔버 | 초안 | research/drafts/robotics/stride-based-certified-robustness-solvers-for-robotics.md | 2026-11-22 |
+| STRIDE 등 인증 가능 견고 추정 전용 솔버 | 공개됨 | content/knowledge/robotics/stride-certifiable-outlier-robust-perception-solver.md | 2026-11-24 |
+| RFC 9701 JWT 인트로스펙션 | 공개됨 | content/knowledge/security/rfc-9701-jwt-introspection-response.md | 2026-11-24 |
+| Envoy zone-aware routing·패닉 임계 | 공개됨 | content/knowledge/performance/envoy-zone-aware-routing-panic-threshold.md | 2026-11-24 |
+| Friedman 검정 | 공개됨 | content/knowledge/ui-ux/friedman-test-repeated-ordinal.md | 2026-11-24 |
 | Epain·Jin·Zotter 2014 일정 각 퍼짐 디코딩 | 출처 부족(1회) | 관련 출처 없음 — https://link.springer.com/article/10.1007/s10489-026-07314-x: 내려받기 실패·짧음 / https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JD019648: 내려받기 실패·짧음 / https://github.com/polarch/Higher-Order-Ambisonics/blob/master/csad.m: 필수 용어 없음: Spatiotemporal decoding, Schedule-based spreading, Epstein-Jin-Zotter model | 2026-11-22 |
 | LeaseGuard(SIGMOD 2026) | 출처 부족(1회) | 관련 출처 없음 — https://portal.leaseguard.com/portal-login/?ppage=login: 내려받기 실패·짧음 / https://en.wikipedia.org/wiki/Lend-Lease: 필수 용어 없음: lease-based distributed locking, fencing tokens, distributed consensus / https://en.wikipedia.org/wiki/The_Laid-Off_Cheat-Granting_Mage_Enjoys_a_Second_Lease_on_Life: 필수 용어 없음: lease-based distributed locking, fencing tokens, distributed consensus | 2026-11-22 |
-| RFC 9701 JWT 인트로스펙션 | 초안 | research/drafts/security/rfc-9701-jwt-introspection.md | 2026-11-22 |
-| Envoy zone-aware routing·패닉 임계 | 초안 | research/drafts/performance/envoy-zone-aware-routing-panic-threshold.md | 2026-11-22 |
-| Friedman 검정 | 초안 | research/drafts/ui-ux/friedman-test-repeated-ordinal.md | 2026-11-22 |

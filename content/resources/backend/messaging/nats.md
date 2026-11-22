@@ -3,7 +3,7 @@ name: NATS
 url: https://nats.io
 docs: https://docs.nats.io
 repo: https://github.com/nats-io/nats-server
-stars: 21092
+stars: 21109
 domain: backend
 category: messaging
 description: 단일 바이너리로 동작하는 경량 메시징 시스템. subject 기반 pub/sub·요청-응답을 제공하고, JetStream 으로 영속 스트림·KV 저장소까지 쓸 수 있다. 마이크로서비스·엣지·IoT 통신에 쓴다.

@@ -3,7 +3,7 @@ name: Argo Workflows
 url: https://argoproj.github.io/workflows/
 docs: https://argo-workflows.readthedocs.io/en/latest/
 repo: https://github.com/argoproj/argo-workflows
-stars: 17108
+stars: 17109
 domain: data-ml
 category: orchestration
 description: 각 단계를 컨테이너로 실행하는 Kubernetes 네이티브 워크플로 엔진. DAG·단계형 배치 작업, ML 파이프라인, CI 작업을 클러스터 위에서 병렬로 돌릴 때 쓴다.

@@ -3,7 +3,7 @@ name: Ansible
 url: https://www.ansible.com
 docs: https://docs.ansible.com/ansible/latest/
 repo: https://github.com/ansible/ansible
-stars: 71541
+stars: 71644
 domain: backend
 category: infra-devops
 description: SSH 로 서버에 접속해 YAML 플레이북에 적은 원하는 상태를 적용하는 에이전트리스 구성 관리·자동화 도구. 서버 설정, 배포, 반복 운영 작업에 쓴다.

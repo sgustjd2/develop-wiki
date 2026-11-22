@@ -3,7 +3,7 @@ name: fzf
 url: https://junegunn.github.io/fzf/
 docs: https://junegunn.github.io/fzf/
 repo: https://github.com/junegunn/fzf
-stars: 84328
+stars: 84341
 domain: devtools
 category: terminal
 description: 표준 입력으로 받은 목록을 퍼지 검색해 고른 항목을 출력하는 명령줄 필터. 파일·히스토리·브랜치 선택을 셸에서 빠르게 할 때 쓴다.

@@ -3,7 +3,7 @@ name: ROS 2 공식 문서·튜토리얼
 url: https://docs.ros.org/en/lyrical/
 docs: https://docs.ros.org/en/lyrical/First-Steps.html
 repo: https://github.com/ros2/ros2_documentation
-stars: 1072
+stars: 1073
 domain: robotics
 category: learning
 description: Open Robotics 가 운영하는 ROS 2 공식 문서. 설치, First Steps 학습 경로, 개념, 튜토리얼, 배포판 릴리스 노트를 배포판별로 제공한다.

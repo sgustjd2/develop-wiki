@@ -23,3 +23,5 @@
 | https://github.com/zephyr4123/snug | resources/Swift | ★1243 · license=MIT · 让远程 Mac 在任意设备上获得原生级体验。专为 UU远程 打造的显示与触控增强：手机、平板、电脑各有专属屏幕，画面铺满、字号随屏，原生触屏手势，App 资源库。Make UU Remote nati (Hermes 후보, 검증 전) | 2026-11-22 |
 | https://github.com/hujjun/mcd-saver-strategist | resources/Python | ★1116 · license=MIT · 麦当劳省钱点餐助手（麦门精算师）｜麦当劳优惠券组合优化 Skill：拉取麦当劳菜单与全部可用优惠券，算出最省的点餐组合，巨无霸套餐 ¥47 → ¥21.9（省 53%）。McDonalds MCP（麦 (Hermes 후보, 검증 전) | 2026-11-22 |
 | https://github.com/feder-cr/git-ai | resources/Go | ★1003 · license=NOASSERTION · Git designed for AI agents. Open-source, in the spirit of Anthropic's Scion and OpenAI's Pando. Not  (Hermes 후보, 검증 전) | 2026-11-22 |
+| https://github.com/EL4CTEO/fast-anything | resources/Rust | ★1522 · license=MIT · Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the ho (Hermes 후보, 검증 전) | 2026-11-23 |
+| https://github.com/SonicloudTech/mouse-sdk | resources/C | ★1026 · license=MIT · Cross-platform USB HID/BLE smart mouse SDK with a C ABI for device events and audio. Windows x64/mac (Hermes 후보, 검증 전) | 2026-11-23 |

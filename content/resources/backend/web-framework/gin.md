@@ -2,7 +2,7 @@
 name: Gin
 url: https://gin-gonic.com
 repo: https://github.com/gin-gonic/gin
-stars: 89561
+stars: 89569
 docs: https://gin-gonic.com/en/docs/
 domain: backend
 category: web-framework

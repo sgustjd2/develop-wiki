@@ -3,7 +3,7 @@ name: Stripe MCP
 url: https://docs.stripe.com/mcp
 docs: https://docs.stripe.com/mcp
 repo: https://github.com/stripe/ai
-stars: 2076
+stars: 2077
 domain: oss
 category: mcp-servers
 description: Stripe 공식 원격 MCP 서버(mcp.stripe.com). 고객·결제·구독·청구서 API 호출과 문서 검색을 OAuth 로 에이전트에 연결한다. 결제 연동 코드 작성과 샌드박스 데이터 점검에 쓴다.

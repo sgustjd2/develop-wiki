@@ -3,7 +3,7 @@ name: MySQL
 url: https://www.mysql.com
 docs: https://dev.mysql.com/doc/refman/8.4/en/
 repo: https://github.com/mysql/mysql-server
-stars: 12523
+stars: 12522
 domain: backend
 category: database
 description: Oracle 이 개발하는 오픈소스 관계형 DB(Community Edition, GPLv2). 웹 서비스 OLTP 와 읽기 복제 구성에 널리 쓴다.

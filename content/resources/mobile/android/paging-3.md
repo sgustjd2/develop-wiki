@@ -3,7 +3,7 @@ name: Paging 3
 url: https://developer.android.com/topic/libraries/architecture/paging/v3-overview
 docs: https://developer.android.com/topic/libraries/architecture/paging/v3-overview
 repo: https://github.com/androidx/androidx
-stars: 6145
+stars: 6148
 domain: mobile
 category: android
 description: 대량 데이터를 필요한 만큼만 불러와 목록에 공급하는 Jetpack 라이브러리. 네트워크·DB 페이지 로딩, 캐싱, 로딩/오류 상태, 새로고침을 Flow 기반으로 처리한다.

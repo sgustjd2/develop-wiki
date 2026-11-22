@@ -3,7 +3,7 @@ name: Prettier
 url: https://prettier.io
 docs: https://prettier.io/docs/install
 repo: https://github.com/prettier/prettier
-stars: 52441
+stars: 52444
 domain: frontend
 category: build-tooling
 description: 옵션을 최소화한 코드 포매터. JS·TS·CSS·HTML·Markdown·YAML 등을 일관된 스타일로 다시 출력해 서식 논쟁을 없앨 때 쓴다.

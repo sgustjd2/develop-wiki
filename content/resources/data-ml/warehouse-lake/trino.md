@@ -3,7 +3,7 @@ name: Trino
 url: https://trino.io
 docs: https://trino.io/docs/current/
 repo: https://github.com/trinodb/trino
-stars: 13532
+stars: 13538
 domain: data-ml
 category: warehouse-lake
 description: 여러 데이터 소스를 SQL 하나로 질의하는 분산 MPP 쿼리 엔진. 데이터 레이크(Iceberg·Hive)와 운영 DB 를 옮기지 않고 함께 분석할 때 쓴다.

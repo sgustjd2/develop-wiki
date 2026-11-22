@@ -2,7 +2,7 @@
 name: TheAlgorithms/Python
 url: https://the-algorithms.com/
 repo: https://github.com/TheAlgorithms/Python
-stars: 226363
+stars: 226388
 domain: oss
 category: learning-repos
 description: 알고리즘과 자료 구조를 Python 으로 구현해 모은 커뮤니티 저장소. 정렬·그래프·DP·암호·수치 계산 등 다양한 알고리즘의 Python 구현 예를 찾아 읽을 때 쓴다.

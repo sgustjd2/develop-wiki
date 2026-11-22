@@ -2,7 +2,7 @@
 name: LLMs-from-scratch
 url: https://github.com/rasbt/LLMs-from-scratch
 repo: https://github.com/rasbt/LLMs-from-scratch
-stars: 108756
+stars: 108831
 domain: oss
 category: learning-repos
 description: GPT 계열 LLM 을 PyTorch 로 토크나이저·어텐션부터 사전 학습·파인튜닝까지 직접 구현하는 책의 공식 코드 저장소. LLM 내부 구조를 코드로 이해하고 싶을 때 쓴다.

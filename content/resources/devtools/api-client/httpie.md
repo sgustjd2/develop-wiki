@@ -3,7 +3,7 @@ name: HTTPie
 url: https://httpie.io
 docs: https://httpie.io/docs/cli
 repo: https://github.com/httpie/cli
-stars: 38724
+stars: 38729
 domain: devtools
 category: api-client
 description: key=value 형태의 짧은 문법과 색상 출력으로 HTTP API를 호출하는 명령줄 클라이언트. 터미널에서 JSON API를 사람이 읽기 쉽게 테스트할 때 쓴다.

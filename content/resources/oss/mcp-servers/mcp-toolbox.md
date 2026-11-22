@@ -3,7 +3,7 @@ name: MCP Toolbox for Databases
 url: https://mcp-toolbox.dev/
 docs: https://mcp-toolbox.dev/
 repo: https://github.com/googleapis/mcp-toolbox
-stars: 16925
+stars: 16930
 domain: oss
 category: mcp-servers
 description: Google 의 데이터베이스용 MCP 서버. PostgreSQL·MySQL·BigQuery·MongoDB 등에 바로 쓰는 prebuilt 도구와, tools.yaml 로 정해 둔 쿼리만 노출하는 커스텀 도구를 제공한다.

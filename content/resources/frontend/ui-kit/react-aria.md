@@ -3,7 +3,7 @@ name: React Aria
 url: https://react-aria.adobe.com
 docs: https://react-aria.adobe.com/getting-started
 repo: https://github.com/adobe/react-spectrum
-stars: 16057
+stars: 16059
 domain: frontend
 category: ui-kit
 description: Adobe가 만든 스타일 없는 React 접근성 컴포넌트·훅 라이브러리. 국제화·터치·키보드 동작이 중요한 디자인 시스템을 만들 때 쓴다.

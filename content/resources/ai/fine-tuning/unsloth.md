@@ -3,7 +3,7 @@ name: Unsloth
 url: https://unsloth.ai
 docs: https://unsloth.ai/docs
 repo: https://github.com/unslothai/unsloth
-stars: 79897
+stars: 79976
 domain: ai
 category: fine-tuning
 description: 커스텀 커널로 LLM 의 LoRA·QLoRA·전체 파인튜닝과 GRPO 를 적은 VRAM 으로 빠르게 돌리는 학습 라이브러리. 단일 GPU 파인튜닝에 주로 쓴다.

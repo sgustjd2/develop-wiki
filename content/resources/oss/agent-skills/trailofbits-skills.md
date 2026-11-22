@@ -3,7 +3,7 @@ name: trailofbits/skills
 url: https://github.com/trailofbits/skills
 docs: https://github.com/trailofbits/skills#readme
 repo: https://github.com/trailofbits/skills
-stars: 8332
+stars: 8346
 domain: oss
 category: agent-skills
 description: 보안 감사 기업 Trail of Bits 의 스킬·플러그인 마켓플레이스. 코드 감사, 취약점 변종 분석, Semgrep·CodeQL, 퍼징·뮤테이션 테스트, 스마트 컨트랙트 보안 워크플로를 담았다. 에이전트로 보안 리뷰를 할 때 쓴다.

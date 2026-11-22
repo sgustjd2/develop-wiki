@@ -3,7 +3,7 @@ name: IntelliJ IDEA (JetBrains IDEs)
 url: https://www.jetbrains.com/idea/
 docs: https://www.jetbrains.com/help/idea/getting-started.html
 repo: https://github.com/JetBrains/intellij-community
-stars: 20748
+stars: 20749
 domain: devtools
 category: editor-ide
 description: 정적 분석·리팩터링·빌드 도구 연동이 강한 JetBrains의 Java·Kotlin 개발 환경. 같은 플랫폼의 PyCharm·WebStorm·GoLand 등과 사용법이 같다.

@@ -3,7 +3,7 @@ name: roadmap.sh
 url: https://roadmap.sh
 docs: https://roadmap.sh/backend
 repo: https://github.com/nilbuild/developer-roadmap
-stars: 372498
+stars: 372561
 domain: backend
 category: learning
 description: 백엔드·DevOps·시스템 설계 등 직군·기술별 학습 순서를 인터랙티브 로드맵으로 보여 주는 사이트. 무엇을 어떤 순서로 배울지 정하고 진도를 표시할 때 쓴다.

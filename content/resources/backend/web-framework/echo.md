@@ -3,7 +3,7 @@ name: Echo
 url: https://echo.labstack.com
 docs: https://echo.labstack.com/guide/quickstart/
 repo: https://github.com/labstack/echo
-stars: 32821
+stars: 32827
 domain: backend
 category: web-framework
 description: net/http 위에 라디스 트리 라우터·바인딩·중앙 에러 처리를 얹은 Go 웹 프레임워크. 핸들러가 error 를 반환하는 구조로 REST API를 만들 때 쓴다.

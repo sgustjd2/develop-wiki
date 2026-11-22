@@ -3,7 +3,7 @@ name: Ktorm
 url: https://www.ktorm.org
 docs: https://www.ktorm.org/en/quick-start.html
 repo: https://github.com/kotlin-orm/ktorm
-stars: 2343
+stars: 2342
 domain: backend
 category: orm-query
 description: JDBC 위에서 동작하는 경량 Kotlin ORM. 타입 안전 SQL DSL 과 컬렉션처럼 쓰는 엔티티 시퀀스 API 를 제공해, 설정 없이 Kotlin 코드로 쿼리를 쓸 때 쓴다.

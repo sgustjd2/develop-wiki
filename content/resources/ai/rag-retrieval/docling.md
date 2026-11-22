@@ -3,7 +3,7 @@ name: Docling
 url: https://docling-project.github.io/docling/
 docs: https://docling-project.github.io/docling/
 repo: https://github.com/docling-project/docling
-stars: 70847
+stars: 70876
 domain: ai
 category: rag-retrieval
 description: PDF·Office·HTML·이미지 등을 레이아웃·표·읽기 순서를 살려 마크다운·JSON 으로 변환하는 문서 파싱 라이브러리. RAG 전처리에 쓴다.

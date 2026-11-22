@@ -3,7 +3,7 @@ name: ToolJet
 url: https://www.tooljet.com
 docs: https://docs.tooljet.com
 repo: https://github.com/ToolJet/ToolJet
-stars: 41274
+stars: 41279
 domain: oss
 category: self-hosted
 description: 위젯을 배치하고 90개 이상의 데이터 소스를 연결해 관리자 화면·대시보드를 만드는 로우코드 플랫폼. 커뮤니티 에디션은 AGPL-3.0 이고 AI 앱 생성 등은 엔터프라이즈 기능이다.

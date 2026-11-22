@@ -3,7 +3,7 @@ name: Oh My Zsh
 url: https://ohmyz.sh
 docs: https://github.com/ohmyzsh/ohmyzsh/wiki
 repo: https://github.com/ohmyzsh/ohmyzsh
-stars: 190720
+stars: 190831
 domain: devtools
 category: terminal
 description: zsh 설정을 플러그인·테마 단위로 관리하는 커뮤니티 프레임워크. macOS 기본 셸인 zsh에 Git 별칭·자동 완성을 빠르게 갖출 때 쓴다.

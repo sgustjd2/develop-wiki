@@ -3,7 +3,7 @@ name: NVIDIA Isaac Lab
 url: https://isaac-sim.github.io/IsaacLab/main/
 docs: https://isaac-sim.github.io/IsaacLab/main/
 repo: https://github.com/isaac-sim/IsaacLab
-stars: 8694
+stars: 8701
 domain: robotics
 category: robot-learning
 description: GPU 가속 로봇 학습 프레임워크. 강화·모방학습 환경을 대량 병렬로 돌리며 Newton·PhysX(Isaac Sim) 등 여러 물리 백엔드를 지원한다.

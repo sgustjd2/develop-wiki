@@ -3,7 +3,7 @@ name: OpenXR
 url: https://www.khronos.org/openxr/
 docs: https://registry.khronos.org/OpenXR/specs/1.1/html/xrspec.html
 repo: https://github.com/KhronosGroup/OpenXR-SDK
-stars: 1171
+stars: 1172
 domain: xr
 category: standards-runtimes
 description: Khronos의 로열티 프리 XR 표준 API. 하나의 앱이 여러 헤드셋 런타임에서 동작하도록 로더, 확장, API 레이어를 정의한다.

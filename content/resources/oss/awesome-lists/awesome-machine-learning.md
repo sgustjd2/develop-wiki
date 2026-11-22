@@ -2,7 +2,7 @@
 name: Awesome Machine Learning
 url: https://github.com/josephmisiti/awesome-machine-learning
 repo: https://github.com/josephmisiti/awesome-machine-learning
-stars: 74870
+stars: 74880
 domain: oss
 category: awesome-lists
 description: 머신러닝 프레임워크·라이브러리·도구를 프로그래밍 언어별로 정리한 목록. Python 외 언어(Go, Rust, Java 등)에서 ML 라이브러리를 찾을 때 특히 쓸모 있다.

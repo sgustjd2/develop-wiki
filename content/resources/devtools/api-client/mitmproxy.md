@@ -3,7 +3,7 @@ name: mitmproxy
 url: https://mitmproxy.org
 docs: https://docs.mitmproxy.org/stable/
 repo: https://github.com/mitmproxy/mitmproxy
-stars: 47121
+stars: 47139
 domain: devtools
 category: api-client
 description: HTTP(S) 트래픽을 가로채 보고 수정·재전송하는 대화형 프록시. 모바일 앱·브라우저의 API 통신을 디버깅하거나 Python 애드온으로 요청을 조작할 때 쓴다.

@@ -3,7 +3,7 @@ name: Bun
 url: https://bun.com
 docs: https://bun.com/docs
 repo: https://github.com/oven-sh/bun
-stars: 96817
+stars: 96826
 domain: backend
 category: runtime-language
 description: JavaScriptCore 기반의 JS·TS 런타임으로 패키지 매니저, 번들러, 테스트 러너를 한 바이너리에 담았다. Node 호환을 유지하면서 빠른 시작·설치가 필요할 때 쓴다.

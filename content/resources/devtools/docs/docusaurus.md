@@ -3,7 +3,7 @@ name: Docusaurus
 url: https://docusaurus.io
 docs: https://docusaurus.io/docs
 repo: https://github.com/facebook/docusaurus
-stars: 66780
+stars: 66784
 domain: devtools
 category: docs
 description: Markdown·MDX로 문서·블로그 사이트를 만드는 React 기반 정적 사이트 생성기. 버전별 문서와 다국어가 필요한 제품 문서 사이트에 쓴다.

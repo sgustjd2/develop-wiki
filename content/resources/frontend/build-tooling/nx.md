@@ -3,7 +3,7 @@ name: Nx
 url: https://nx.dev
 docs: https://nx.dev/docs/getting-started/intro
 repo: https://github.com/nrwl/nx
-stars: 29484
+stars: 29490
 domain: frontend
 category: build-tooling
 description: 프로젝트 의존 그래프를 분석해 작업을 순서대로 병렬 실행하고 결과를 캐시하는 모노레포 빌드 시스템. 플러그인·코드 생성기·affected 실행이 필요한 큰 모노레포에 쓴다.

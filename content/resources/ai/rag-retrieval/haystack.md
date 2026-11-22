@@ -3,7 +3,7 @@ name: Haystack
 url: https://haystack.deepset.ai
 docs: https://docs.haystack.deepset.ai/docs/intro
 repo: https://github.com/deepset-ai/haystack
-stars: 27072
+stars: 27076
 domain: ai
 category: rag-retrieval
 description: 컴포넌트를 연결한 파이프라인과 에이전트로 RAG·검색·질의응답을 만드는 deepset 의 Python 오케스트레이션 프레임워크.

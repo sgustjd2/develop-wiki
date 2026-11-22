@@ -3,7 +3,7 @@ name: Turborepo
 url: https://turborepo.dev
 docs: https://turborepo.dev/docs
 repo: https://github.com/vercel/turborepo
-stars: 31386
+stars: 31387
 domain: frontend
 category: build-tooling
 description: JavaScript·TypeScript 모노레포의 작업 실행기. 패키지 의존 그래프 순서로 build·test를 병렬 실행하고 결과를 로컬·원격에 캐시한다.

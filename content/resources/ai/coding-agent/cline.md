@@ -3,7 +3,7 @@ name: Cline
 url: https://cline.bot
 docs: https://docs.cline.bot/cline-overview
 repo: https://github.com/cline/cline
-stars: 71805
+stars: 71822
 domain: ai
 category: coding-agent
 description: VS Code 확장·CLI·SDK로 쓰는 오픈소스 코딩 에이전트. 모델 공급자를 직접 고르고, Plan/Act 모드와 단계별 승인으로 파일 편집·명령 실행을 진행한다.
@@ -12,7 +12,7 @@ tags: [agent, cli, vscode, byok, mcp]
 languages: []
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-23
 ---
 
 ## 개요

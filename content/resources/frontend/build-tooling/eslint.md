@@ -3,7 +3,7 @@ name: ESLint
 url: https://eslint.org
 docs: https://eslint.org/docs/latest/use/getting-started
 repo: https://github.com/eslint/eslint
-stars: 27640
+stars: 27643
 domain: frontend
 category: build-tooling
 description: JavaScript·TypeScript 코드의 버그 패턴과 규칙 위반을 찾는 플러그인형 린터. 팀 규칙을 자동으로 강제하고 싶을 때 쓴다.

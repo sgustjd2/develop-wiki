@@ -3,7 +3,7 @@ name: Three.js
 url: https://threejs.org
 docs: https://threejs.org/manual/#en/fundamentals
 repo: https://github.com/mrdoob/three.js
-stars: 119081
+stars: 119148
 domain: frontend
 category: animation
 description: 장면·카메라·메시·조명으로 브라우저 3D 그래픽을 만드는 JavaScript 라이브러리. WebGL과 WebGPU 렌더러를 제공한다.

@@ -2,7 +2,7 @@
 name: Vue
 url: https://vuejs.org
 repo: https://github.com/vuejs/core
-stars: 55060
+stars: 55135
 docs: https://vuejs.org/guide/introduction.html
 domain: frontend
 category: framework

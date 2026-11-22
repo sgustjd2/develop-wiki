@@ -3,7 +3,7 @@ name: Milvus
 url: https://milvus.io
 docs: https://milvus.io/docs
 repo: https://github.com/milvus-io/milvus
-stars: 46712
+stars: 46718
 domain: ai
 category: vector-db
 description: 대규모 분산 환경을 겨냥한 오픈소스 벡터 데이터베이스. 다양한 ANN 인덱스, BM25 전문 검색, 하이브리드 검색, 레이크하우스 연동을 지원한다.

@@ -3,7 +3,7 @@ name: Docker
 url: https://www.docker.com
 docs: https://docs.docker.com/
 repo: https://github.com/moby/moby
-stars: 72305
+stars: 72304
 domain: backend
 category: infra-devops
 description: 애플리케이션과 실행 환경을 이미지로 묶어 컨테이너로 실행하는 도구. 로컬 개발 환경 통일, CI 빌드, 서버 배포의 기본 단위로 쓴다.

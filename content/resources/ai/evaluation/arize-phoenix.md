@@ -3,7 +3,7 @@ name: Arize Phoenix
 url: https://phoenix.arize.com
 docs: https://arize.com/docs/phoenix
 repo: https://github.com/Arize-ai/phoenix
-stars: 12369
+stars: 12373
 domain: ai
 category: evaluation
 description: OpenTelemetry·OpenInference 기반으로 LLM 트레이스를 수집하고 평가·데이터셋 실험·프롬프트 관리를 하는 셀프 호스팅형 관측 도구. 로컬에서 바로 띄울 수 있다.

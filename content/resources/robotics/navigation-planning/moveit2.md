@@ -3,7 +3,7 @@ name: MoveIt 2
 url: https://moveit.ros.org
 docs: https://moveit.picknik.ai/main/index.html
 repo: https://github.com/moveit/moveit2
-stars: 2129
+stars: 2130
 domain: robotics
 category: navigation-planning
 description: ROS 2 로봇 팔 모션 플래닝 프레임워크. 역기구학, 충돌 회피 경로 계획, 궤적 생성, 파지·Planning Scene 관리를 제공한다.

@@ -3,7 +3,7 @@ name: The Composable Architecture
 url: https://github.com/pointfreeco/swift-composable-architecture
 docs: https://swiftpackageindex.com/pointfreeco/swift-composable-architecture/documentation/composablearchitecture
 repo: https://github.com/pointfreeco/swift-composable-architecture
-stars: 15035
+stars: 15037
 domain: mobile
 category: ios
 description: Point-Free의 Swift 상태 관리·앱 아키텍처 라이브러리(TCA). 단방향 데이터 흐름, 부수 효과, 의존성 주입, 테스트를 한 틀로 묶어 SwiftUI 앱의 기능 단위를 조합한다.

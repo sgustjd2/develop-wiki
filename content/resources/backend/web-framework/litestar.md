@@ -2,7 +2,7 @@
 name: Litestar
 url: https://litestar.dev
 repo: https://github.com/litestar-org/litestar
-stars: 8565
+stars: 8567
 docs: https://docs.litestar.dev/latest/
 domain: backend
 category: web-framework

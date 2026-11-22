@@ -3,7 +3,7 @@ name: OpenAI API
 url: https://developers.openai.com/api/docs
 docs: https://developers.openai.com/api/docs
 repo: https://github.com/openai/openai-python
-stars: 32208
+stars: 32213
 domain: ai
 category: model-platform
 description: OpenAI 의 GPT 계열 모델을 호출하는 상용 API. Responses API 를 중심으로 도구 호출, 임베딩, 배치, 실시간 음성을 제공한다.

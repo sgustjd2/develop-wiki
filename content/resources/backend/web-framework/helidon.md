@@ -2,7 +2,7 @@
 name: Helidon
 url: https://helidon.io
 repo: https://github.com/helidon-io/helidon
-stars: 3845
+stars: 3847
 docs: https://helidon.io/docs/latest
 domain: backend
 category: web-framework

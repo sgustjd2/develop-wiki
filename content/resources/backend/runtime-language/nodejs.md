@@ -3,7 +3,7 @@ name: Node.js
 url: https://nodejs.org
 docs: https://nodejs.org/docs/latest/api/
 repo: https://github.com/nodejs/node
-stars: 123813
+stars: 123917
 domain: backend
 category: runtime-language
 description: V8 엔진 기반 JavaScript·TypeScript 서버 런타임. 이벤트 루프 위의 비동기 I/O 로 API 서버, CLI, 빌드 도구를 실행할 때 쓴다.

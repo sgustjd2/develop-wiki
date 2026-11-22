@@ -3,7 +3,7 @@ name: Buf
 url: https://buf.build
 docs: https://buf.build/docs/
 repo: https://github.com/bufbuild/buf
-stars: 11534
+stars: 11535
 domain: backend
 category: api
 description: Protocol Buffers 스키마의 린트, 깨지는 변경 검사, 포맷, 코드 생성을 하나로 묶은 CLI. protoc 를 대신해 gRPC·Connect 스키마를 관리할 때 쓴다.

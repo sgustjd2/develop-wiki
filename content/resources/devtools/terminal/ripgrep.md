@@ -3,7 +3,7 @@ name: ripgrep
 url: https://github.com/BurntSushi/ripgrep
 docs: https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md
 repo: https://github.com/BurntSushi/ripgrep
-stars: 70121
+stars: 70139
 domain: devtools
 category: terminal
 description: .gitignore를 존중하며 디렉터리를 재귀적으로 정규식 검색하는 Rust 명령줄 검색 도구(rg). 코드베이스 전체에서 문자열·패턴을 빠르게 찾을 때 쓴다.

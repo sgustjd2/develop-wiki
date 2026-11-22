@@ -3,7 +3,7 @@ name: scikit-learn
 url: https://scikit-learn.org
 docs: https://scikit-learn.org/stable/
 repo: https://github.com/scikit-learn/scikit-learn
-stars: 68277
+stars: 68292
 domain: data-ml
 category: ml
 description: 분류·회귀·군집·전처리·모델 평가를 일관된 API 로 제공하는 Python 머신러닝 라이브러리. 표 형식 데이터의 전통적 ML 과 베이스라인 모델에 쓴다.

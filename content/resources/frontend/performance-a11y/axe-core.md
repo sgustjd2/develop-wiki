@@ -3,7 +3,7 @@ name: axe-core
 url: https://www.deque.com/axe/
 docs: https://github.com/dequelabs/axe-core/blob/develop/doc/API.md
 repo: https://github.com/dequelabs/axe-core
-stars: 7868
+stars: 7870
 domain: frontend
 category: performance-a11y
 description: DOM을 WCAG 규칙으로 검사해 접근성 위반을 찾는 Deque의 자동 접근성 검사 엔진. Playwright·Cypress·Storybook·Lighthouse 등에 내장돼 쓰인다.

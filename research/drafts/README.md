@@ -6,8 +6,8 @@
 | 주제 | 상태 | 파일·사유 | 날짜 |
 | --- | --- | --- | --- |
 | STRIDE 등 인증 가능 견고 추정 전용 솔버 | 공개됨 | content/knowledge/robotics/stride-certifiable-outlier-robust-perception-solver.md | 2026-11-24 |
+| Epain·Jin·Zotter 2014 일정 각 퍼짐 디코딩 | 공개됨 | content/knowledge/graphics-xr/ambisonic-decoding-constant-angular-spread.md | 2026-11-24 |
 | LeaseGuard(SIGMOD 2026) | 공개됨 | content/knowledge/distributed-systems/leaseguard-raft-lease-read-optimization.md | 2026-11-24 |
 | RFC 9701 JWT 인트로스펙션 | 공개됨 | content/knowledge/security/rfc-9701-jwt-introspection-response.md | 2026-11-24 |
 | Envoy zone-aware routing·패닉 임계 | 공개됨 | content/knowledge/performance/envoy-zone-aware-routing-panic-threshold.md | 2026-11-24 |
 | Friedman 검정 | 공개됨 | content/knowledge/ui-ux/friedman-test-repeated-ordinal.md | 2026-11-24 |
-| Epain·Jin·Zotter 2014 일정 각 퍼짐 디코딩 | 출처 부족(1회) | 관련 출처 없음 — https://link.springer.com/article/10.1007/s10489-026-07314-x: 내려받기 실패·짧음 / https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JD019648: 내려받기 실패·짧음 / https://github.com/polarch/Higher-Order-Ambisonics/blob/master/csad.m: 필수 용어 없음: Spatiotemporal decoding, Schedule-based spreading, Epstein-Jin-Zotter model | 2026-11-22 |

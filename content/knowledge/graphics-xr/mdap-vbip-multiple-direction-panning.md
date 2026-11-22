@@ -6,12 +6,12 @@ group: xr
 level: intermediate
 summary: VBAP 는 음원이 스피커 방향에 오면 스피커 하나만 울려 음상 폭과 음색이 위치마다 달라진다. MDAP 는 같은 신호를 원하는 방향 주변 여러 방향으로 동시에 패닝해 폭을 고르게 만들고, VBIP 는 이득의 제곱으로 벡터식을 풀어 에너지 벡터 방향을 맞춘다.
 tags: [spatial-audio, panning, mdap, vbip, vbap, loudspeaker, amplitude-panning, xr]
-related: [graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio]
+related: [graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio, graphics-xr/ambisonic-decoding-constant-angular-spread]
 sources:
   - https://research.aalto.fi/en/publications/uniform-spreading-of-amplitude-panned-virtual-sources/
   - https://aaltodoc.aalto.fi/items/454e38fc-4bbc-4be6-ab8b-3f30b0f7fba0
   - https://link.springer.com/book/10.1007/978-3-030-17207-7
-updatedAt: 2026-11-19
+updatedAt: 2026-11-24
 ---
 
 > 출처 메모: Pulkki, "Uniform Spreading of Amplitude Panned Virtual Sources"(IEEE WASPAA 1999, pp. 187–190)는 Pulkki 박사논문(2001) 묶음에 실린 사본의 텍스트판을 Aaltodoc 에서 받아 전체를 읽었다(식 기호 일부가 깨져 구조만 옮겼다). VBIP·MDAP 의 정리와 청취 실험 결과는 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) 2.2절(rV·rE 벡터)과 3.1~3.3절을 읽었다. **VBIP 를 처음 제안한 문헌은 읽지 않았다**(책 3.1절은 출처를 달지 않는다). 아래 비교표는 내가 직접 계산한 것이다.
@@ -110,7 +110,7 @@ const mdap = (phi: number, spk: number[], alpha: number) => {
 ## 주의/비용
 
 - **폭이 넓어지는 대가.** 책 요약대로 MDAP 는 방향 독립성을 얻는 대신 음상이 넓어지고, 중심 밖 위치의 정위 정확도가 떨어진다.
-- **불규칙 배치에서는 최적화가 필요하다.** 책 3.2절은 3D 불규칙 배치에서 가상 음원들의 rV 길이가 서로 달라 합성 벡터가 길이가 긴 쪽으로 휘므로, 방향마다 가상 음원의 각도·가중을 다시 최적화해야 정확하다고 하며 Epain 등의 논문을 가리킨다(그 논문은 읽지 않았다).
+- **불규칙 배치에서는 최적화가 필요하다.** 책 3.2절은 3D 불규칙 배치에서 가상 음원들의 rV 길이가 서로 달라 합성 벡터가 길이가 긴 쪽으로 휘므로, 방향마다 가상 음원의 각도·가중을 다시 최적화해야 정확하다고 하며 Epain 등의 논문을 가리킨다. 그 논문은 [일정 각 퍼짐 앰비소닉 디코딩](/develop-wiki/knowledge/graphics-xr/ambisonic-decoding-constant-angular-spread/) 노트에서 다룬다(논문이 최적화하는 것은 방향별 창 구경 α 이고 보조 방향은 동심 고리로 고정이라, 책의 "방향·가중 최적화" 요약과 정확히 같지는 않다).
 - **계산량.** 패닝 방향 수만큼 VBAP 를 반복한다(2D 2회, 3D 예시는 9회). 이득은 미리 표로 만들어 둘 수 있다.
 - **아래쪽 구멍은 그대로.** 책은 아래쪽 스피커가 없는 반구 배치에서 VBAP·VBIP·MDAP 모두 아래 방향 패닝이 수치적으로 불안정하고 의미가 없다고 적는다. [상상의 스피커](/develop-wiki/knowledge/graphics-xr/vbap-dbap-amplitude-panning/)를 넣어 메운다.
 - **합산 방식 미확인.** MDAP 가상 음원 이득을 진폭으로 더한 뒤 정규화할지, 다른 방식으로 합칠지 Pulkki 1999 본문은 명시하지 않는다. 위 표의 결과는 내 선택에 의존한다.
@@ -130,4 +130,4 @@ const mdap = (phi: number, spk: number[], alpha: number) => {
 
 - 읽은 것: Pulkki 1999 WASPAA 논문 전문(텍스트판), Zotter·Frank 책 2.2.7~2.2.8절, 3.1~3.3절.
 - 직접 계산: 위 6채널 링 표(Python, `‖g‖ = 1` 정규화, MDAP 합산 방식은 내 가정).
-- 미확인: VBIP 의 원 제안 문헌과 연도, 책이 인용한 청취 실험 논문들의 원문, Epain 등의 불규칙 배치 최적화, Pulkki 1999 의 바이노럴 모형 수치(그림 값은 읽지 못함).
+- 미확인: VBIP 의 원 제안 문헌과 연도, 책이 인용한 청취 실험 논문들의 원문, Epain 등 논문 본문의 그림 값, Pulkki 1999 의 바이노럴 모형 수치(그림 값은 읽지 못함).

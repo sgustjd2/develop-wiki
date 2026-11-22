@@ -19,15 +19,14 @@
     "sources": []
   },
   "LeaseGuard(SIGMOD 2026)": {
-    "status": "insufficient",
-    "date": "2026-11-22",
     "areas": [
       "distributed-systems",
       "algorithms"
     ],
-    "attempts": 1,
-    "reason": "관련 출처 없음 — https://portal.leaseguard.com/portal-login/?ppage=login: 내려받기 실패·짧음 / https://en.wikipedia.org/wiki/Lend-Lease: 필수 용어 없음: lease-based distributed locking, fencing tokens, distributed consensus / https://en.wikipedia.org/wiki/The_Laid-Off_Cheat-Granting_Mage_Enjoys_a_Second_Lease_on_Life: 필수 용어 없음: lease-based distributed locking, fencing tokens, distributed consensus",
-    "sources": []
+    "status": "published",
+    "date": "2026-11-24",
+    "file": "content/knowledge/distributed-systems/leaseguard-raft-lease-read-optimization.md",
+    "note": "출처 부족 판정 후 arXiv 2512.15659 를 직접 읽고 작성"
   },
   "RFC 9701 JWT 인트로스펙션": {
     "areas": [

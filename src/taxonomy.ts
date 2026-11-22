@@ -268,6 +268,33 @@ export const KNOWLEDGE = {
       writing: 'UX 라이팅',
     },
   },
+  'data-analytics': {
+    label: '데이터 분석·빅데이터',
+    desc: '빅데이터 이해, 분석 기획·방법론, 통계 분석, 전처리·탐색, 빅데이터 기술, 시각화, 품질·개인정보 (ADsP·ADP·빅데이터분석기사 범위 포함)',
+    groups: {
+      understanding: '데이터·빅데이터 이해',
+      planning: '분석 기획·방법론',
+      statistics: '통계 분석',
+      preprocessing: '전처리·탐색',
+      platform: '빅데이터 기술',
+      visualization: '시각화·활용',
+      governance: '품질·개인정보',
+    },
+  },
+  'machine-learning': {
+    label: '머신러닝·딥러닝 기초',
+    desc: '학습 방식, 지도·비지도 모델, 앙상블, 모델 평가·개선, 딥러닝, 텍스트·네트워크 분석, 모델 운영',
+    groups: {
+      paradigm: '학습 방식·개념',
+      supervised: '지도학습 모델',
+      unsupervised: '비지도·패턴 발견',
+      ensemble: '앙상블',
+      evaluation: '평가·개선',
+      'deep-learning': '딥러닝',
+      unstructured: '텍스트·네트워크 분석',
+      operations: '해석·운영',
+    },
+  },
 } as const satisfies Record<string, { label: string; desc: string; groups: Record<string, string> }>;
 
 export type KnowledgeCategory = keyof typeof KNOWLEDGE;

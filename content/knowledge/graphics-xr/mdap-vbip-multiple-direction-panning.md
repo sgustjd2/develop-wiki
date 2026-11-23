@@ -6,7 +6,7 @@ group: xr
 level: intermediate
 summary: VBAP 는 음원이 스피커 방향에 오면 스피커 하나만 울려 음상 폭과 음색이 위치마다 달라진다. MDAP 는 같은 신호를 원하는 방향 주변 여러 방향으로 동시에 패닝해 폭을 고르게 만들고, VBIP 는 이득의 제곱으로 벡터식을 풀어 에너지 벡터 방향을 맞춘다.
 tags: [spatial-audio, panning, mdap, vbip, vbap, loudspeaker, amplitude-panning, xr]
-related: [graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio, graphics-xr/ambisonic-decoding-constant-angular-spread]
+related: [graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio, graphics-xr/ambisonic-decoding-constant-angular-spread, graphics-xr/vbip-vector-base-intensity-panning-origin]
 sources:
   - https://research.aalto.fi/en/publications/uniform-spreading-of-amplitude-panned-virtual-sources/
   - https://aaltodoc.aalto.fi/items/454e38fc-4bbc-4be6-ab8b-3f30b0f7fba0
@@ -14,7 +14,7 @@ sources:
 updatedAt: 2026-11-24
 ---
 
-> 출처 메모: Pulkki, "Uniform Spreading of Amplitude Panned Virtual Sources"(IEEE WASPAA 1999, pp. 187–190)는 Pulkki 박사논문(2001) 묶음에 실린 사본의 텍스트판을 Aaltodoc 에서 받아 전체를 읽었다(식 기호 일부가 깨져 구조만 옮겼다). VBIP·MDAP 의 정리와 청취 실험 결과는 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) 2.2절(rV·rE 벡터)과 3.1~3.3절을 읽었다. **VBIP 를 처음 제안한 문헌은 읽지 않았다**(책 3.1절은 출처를 달지 않는다). 아래 비교표는 내가 직접 계산한 것이다.
+> 출처 메모: Pulkki, "Uniform Spreading of Amplitude Panned Virtual Sources"(IEEE WASPAA 1999, pp. 187–190)는 Pulkki 박사논문(2001) 묶음에 실린 사본의 텍스트판을 Aaltodoc 에서 받아 전체를 읽었다(식 기호 일부가 깨져 구조만 옮겼다). VBIP·MDAP 의 정리와 청취 실험 결과는 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) 2.2절(rV·rE 벡터)과 3.1~3.3절을 읽었다. 책 3.1절은 VBIP 의 출처를 달지 않는다. VBIP 를 도입했다고 쓰는 문헌(Pernaux·Boussard·Jot, DAFx-98)은 [별도 노트](/develop-wiki/knowledge/graphics-xr/vbip-vector-base-intensity-panning-origin/)에서 원문 기준으로 다뤘다(그 논문은 VBIP 를 700 Hz 위 전용 고주파 법칙으로 정의하고 3D 식은 주지 않는다). 아래 비교표는 내가 직접 계산한 것이다.
 
 ## 문제
 
@@ -130,4 +130,4 @@ const mdap = (phi: number, spk: number[], alpha: number) => {
 
 - 읽은 것: Pulkki 1999 WASPAA 논문 전문(텍스트판), Zotter·Frank 책 2.2.7~2.2.8절, 3.1~3.3절.
 - 직접 계산: 위 6채널 링 표(Python, `‖g‖ = 1` 정규화, MDAP 합산 방식은 내 가정).
-- 미확인: VBIP 의 원 제안 문헌과 연도, 책이 인용한 청취 실험 논문들의 원문, Epain 등 논문 본문의 그림 값, Pulkki 1999 의 바이노럴 모형 수치(그림 값은 읽지 못함).
+- 미확인: VBIP 의 원 제안 문헌이 최초인지(DAFx-98 논문이 도입했다고 쓰는 것까지 확인), 책이 인용한 청취 실험 논문들의 원문, Epain 등 논문 본문의 그림 값, Pulkki 1999 의 바이노럴 모형 수치(그림 값은 읽지 못함).

@@ -99,6 +99,10 @@ Hermes cron(일요일 04:00, `--no-agent`)이 `hermes/run-weekly.sh` → `hermes
 - 사실은 **원문 인용이 내려받은 텍스트에 그대로 있을 때만** 채택하고, 초안 문단의 숫자는 인용한 근거 안에 있어야 한다(아니면 "뺀 문장"으로).
 - 결과는 `research/drafts/<category>/<id>.md` **초안**뿐이다. 사이트(content/)에는 쓰지 않는다. 공개는 Claude Code `review-drafts` 스킬이 원문 대조·팩트체크 후 한다.
 - 백로그에 주제를 넣을 때 원 논문 arXiv id·RFC 번호·공식 문서 URL 을 같이 적으면 주간 조사가 출처를 훨씬 잘 찾는다.
-- 수동 실행: `node hermes/weekly.mjs --dry --topics 2` / 한 주제: `--dry --topic "Friedman 검정" --area ui-ux`.
+- 수동 실행: `node hermes/weekly.mjs --dry --topics 2` / 한 주제: `--dry --topic "Friedman 검정" --area ui-ux`. / 주제 목록 일괄: `--dry --list 파일.json`(`[{"topic":"…","areas":["ui-ux"]}, …]`).
+
+## 노트 예시 그림
+
+`scripts/figures.mjs` 가 UI 컴포넌트 예시를 인라인 SVG 로 그린다(스위치·토스트·모달·진행 막대 등 22종, 사이트 테마 변수를 따라 라이트·다크 모두 맞음). 스타일은 `src/styles/global.css` 의 `.fig` 블록. 출력(한 줄짜리 `<figure class="fig">…</figure>`)을 노트 본문에 붙여 넣는다 — 앞뒤에 빈 줄을 두고 내부에 빈 줄·들여쓰기를 넣지 않는다. 그림은 직접 그린 도식이며 실제 제품 화면이라고 쓰지 않고, 글이 같은 정보를 담아야 한다(접근성). 외부 이미지(인스타그램 등)는 저작물이라 가져오지 않는다.
 
 main 브랜치에 push 하면 `.github/workflows/deploy.yml` 이 Pages 로 배포한다.

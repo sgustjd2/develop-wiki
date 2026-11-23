@@ -208,3 +208,22 @@ code { font-family: var(--mono); font-size: 0.88em; }
   .prose { font-size: 16px; }
   .facts { grid-template-columns: 84px 1fr; }
 }
+
+/* ── 노트 예시 그림 (scripts/figures.mjs 가 만드는 인라인 SVG) ── */
+.fig { --fig-blue: #2f6fed; --fig-green: #1f9d55; --fig-red: #d64545; --fig-amber: #f3b73d; --fig-gray: #d9d9de; --fig-dark: #2b2b31; --fig-scrim: rgb(0 0 0 / 0.28); margin: 22px 0; }
+[data-theme='dark'] .fig { --fig-blue: #6b9bff; --fig-green: #4cc27f; --fig-red: #ff7a7a; --fig-amber: #e0a83a; --fig-gray: #3a3a42; --fig-dark: #e4e4e8; --fig-scrim: rgb(0 0 0 / 0.5); }
+.fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.fig-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 8px 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.fig-item svg { width: 100%; height: auto; max-width: 180px; }
+.fig-item span { font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.35; }
+.fig figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); }
+.fig .f-text { fill: var(--text); } .fig .f-muted { fill: var(--muted); } .fig .f-on { fill: #fff; } [data-theme='dark'] .fig .f-on { fill: #0d0d0f; }
+.fig .f-err { fill: var(--fig-red); } .fig .f-blue-on-dark { fill: #8fb0ff; } [data-theme='dark'] .fig .f-blue-on-dark { fill: #2f5bd8; }
+.fig .f-card, .fig .f-btn { fill: var(--surface); stroke: var(--line); stroke-width: 1; } .fig .f-btn { fill: var(--surface-2); }
+.fig .f-screen { fill: var(--surface-2); stroke: var(--line); stroke-width: 1; }
+.fig .f-box { fill: var(--surface); stroke: var(--muted); stroke-width: 1.4; } .fig .f-input { fill: var(--surface); stroke: var(--muted); stroke-width: 1; } .fig .f-input-err { fill: var(--surface); stroke: var(--fig-red); stroke-width: 1.4; }
+.fig .f-line { stroke: var(--line); stroke-width: 1.2; } .fig .f-tick { stroke: #fff; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; } [data-theme='dark'] .fig .f-tick { stroke: #0d0d0f; }
+.fig .f-fill-blue { fill: var(--fig-blue); } .fig .f-fill-red { fill: var(--fig-red); } .fig .f-fill-amber { fill: var(--fig-amber); } .fig .f-fill-gray { fill: var(--fig-gray); }
+.fig .f-dark { fill: var(--fig-dark); } .fig .f-scrim { fill: var(--fig-scrim); } .fig .f-knob { fill: #fff; } .fig .f-seg { fill: var(--fig-gray); }
+.fig .f-ring { fill: none; stroke: var(--muted); stroke-width: 1.6; } .fig .f-ring-blue { fill: none; stroke: var(--fig-blue); stroke-width: 1.8; } .fig .f-arc { fill: none; stroke: var(--fig-blue); stroke-width: 3; stroke-linecap: round; }
+.fig .f-outline { fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linejoin: round; }

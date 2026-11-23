@@ -4,7 +4,7 @@
 //  2) 로컬 모델로 원문을 읽고 노트 "초안"을 research/drafts/ 에 쓴다 (사이트에는 공개하지 않음)
 //  3) research/drafts/index.json·README.md, 로그 갱신 → publish.sh (research/ 만 바뀌므로 사이트는 그대로)
 // 공개는 Claude Code 의 `review-drafts` 스킬이 원문 대조 후 content/knowledge 로 옮겨서 한다.
-// 옵션: --dry (pull·배포 없이 결과만 남김)  --topics N (기본 6)  --topic "주제" --area 카테고리 (한 주제만 시험)
+// 옵션: --dry (pull·배포 없이 결과만 남김)  --topics N (기본 6)  --topic "주제" --area 카테고리 (한 주제만 시험)  --list 파일.json (주제 목록 일괄)
 import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -34,7 +34,9 @@ const INDEX = join(DRAFTS, 'index.json');
 mkdirSync(DRAFTS, { recursive: true });
 const index = existsSync(INDEX) ? JSON.parse(readFileSync(INDEX, 'utf8')) : {};
 
-const topics = opt('--topic') ? [{ topic: opt('--topic'), areas: [opt('--area') ?? 'principles'] }] : pickTopics(index, N);
+// --list <json>: [{ "topic": "...", "areas": ["ui-ux"] }, …] 를 그대로 조사(수동 일괄 실행용). 이미 공개됨·초안인 주제는 건너뛴다
+const fromList = opt('--list') ? JSON.parse(readFileSync(opt('--list'), 'utf8')).filter((t) => !['published', 'drafted', 'duplicate'].includes(index[t.topic]?.status)) : null;
+const topics = fromList ?? (opt('--topic') ? [{ topic: opt('--topic'), areas: [opt('--area') ?? 'principles'] }] : pickTopics(index, N));
 say(`\n## 주제 ${topics.length}개`);
 if (!topics.length) say('- 백로그에 남은 knowledge 주제 없음');
 

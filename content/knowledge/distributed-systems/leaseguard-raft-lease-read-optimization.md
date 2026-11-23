@@ -13,7 +13,7 @@ sources:
   - https://github.com/muratdem/RaftLeaderLeases
   - https://github.com/mongodb-labs/logcabin/tree/leaseguard
   - https://web.stanford.edu/~ouster/cgi-bin/papers/OngaroPhD.pdf
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 [리더 리스와 시계 가정](/develop-wiki/knowledge/distributed-systems/leader-lease-clock-assumptions/)은 "하트비트로 얻은 시간 약속"에 기대는 전통 리스를, [Raft 리스 읽기와 단조 시계](/develop-wiki/knowledge/distributed-systems/raft-lease-read-monotonic-clock/)는 그 구현을 다뤘다. 이 노트는 같은 문제를 다르게 푸는 논문 한 편이다. 리스를 하트비트가 아니라 **로그 항목의 타임스탬프**로 표현한다.

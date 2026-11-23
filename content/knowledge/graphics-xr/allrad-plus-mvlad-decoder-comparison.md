@@ -9,7 +9,7 @@ tags: [spatial-audio, ambisonics, decoder, allrad, epad, vbap, energy-vector, lo
 related: [graphics-xr/ambisonics-speaker-decoders-maxre-allrad, graphics-xr/epad-energy-preserving-ambisonic-decoding, graphics-xr/ambisonic-decoding-constant-angular-spread, graphics-xr/vbap-dbap-amplitude-panning, graphics-xr/ambisonics-sound-field, graphics-xr/spatial-audio]
 sources:
   - https://ambisonics-symposium.org/Members/zotter/publications/decoder_comparison.pdf
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 > 출처 메모: F. Zotter, M. Frank, H. Pomberger, "Comparison of energy-preserving and all-round Ambisonic decoders" (IEM 그라츠, 4쪽, 저자 공개 PDF, ambisonics-symposium.org 의 Zotter 디렉터리)를 내려받아 **처음부터 끝까지** 읽었다. 텍스트 추출이 깨진 식 (14) 등은 PDF 페이지를 이미지로 렌더링해 직접 확인했다. 이 PDF 에는 학회명·연도가 인쇄되어 있지 않다(본문에 "AIA-DAGA" 대화가 언급될 뿐). "Fortschritte der Akustik AIA-DAGA 2013, Merano" 라는 서지는 요청받은 정보이며 PDF 로는 확인하지 못했다. **AllRAD 원전(Zotter·Frank, JAES 60(10), 2012)은 읽지 못했고**, AllRAD 의 설명은 이 논문이 요약한 범위로 한정한다. 아래 계산 표는 내가 직접 계산한 것이다.

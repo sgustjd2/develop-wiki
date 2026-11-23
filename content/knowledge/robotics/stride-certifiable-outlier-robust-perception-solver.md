@@ -13,10 +13,10 @@ sources:
   - https://arxiv.org/abs/2006.06769
   - https://github.com/MIT-SPARK/CertifiablyRobustPerception
   - https://github.com/MIT-SPARK/STRIDE
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
-> 출처 메모: Yang·Carlone, "Certifiably Optimal Outlier-Robust Geometric Perception: Semidefinite Relaxations and Scalable Global Optimization"(IEEE T-PAMI 2022, arXiv 2109.03349v2)의 PDF 를 텍스트로 추출해 1~6장(서론, 예비지식, 다항식 최적화 변환, 희소 SDP 완화, STRIDE, 실험), 7·8장 일부를 직접 읽었다(2026-11-24). 증명·보충 자료(부록 대부분)는 읽지 않았다. 논문 표 2(시간 비교)는 추출 시 칸이 섞여 개별 수치를 읽지 못했다. 저장소는 GitHub API 와 README 로만 확인했고 코드를 실행하지 않았다.
+> 출처 메모: Yang·Carlone, "Certifiably Optimal Outlier-Robust Geometric Perception: Semidefinite Relaxations and Scalable Global Optimization"(IEEE T-PAMI 2022, arXiv 2109.03349v2)의 PDF 를 텍스트로 추출해 1~6장(서론, 예비지식, 다항식 최적화 변환, 희소 SDP 완화, STRIDE, 실험), 7·8장 일부를 직접 읽었다(2026-11-23). 증명·보충 자료(부록 대부분)는 읽지 않았다. 논문 표 2(시간 비교)는 추출 시 칸이 섞여 개별 수치를 읽지 못했다. 저장소는 GitHub API 와 README 로만 확인했고 코드를 실행하지 않았다.
 
 ## 문제
 

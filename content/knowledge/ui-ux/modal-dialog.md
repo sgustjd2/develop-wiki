@@ -12,7 +12,7 @@ sources:
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
   - https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element
   - https://www.nngroup.com/articles/modal-nonmodal-dialog/
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -32,12 +32,16 @@ updatedAt: 2026-11-19
 | 완료·정보 알림 | 토스트·배너 → [토스트](/develop-wiki/knowledge/ui-ux/toast-notification-banner/) |
 | 긴 폼·여러 단계 | 별도 페이지 |
 
-### 2. APG 모달 다이얼로그 요구 사항
+아래 그림은 위 표의 모달(정보성 1버튼, 확인 2버튼)과 배경을 막지 않는 사이드 패널을 나란히 놓은 것이다.
+
+<figure class="fig" role="group" aria-label="정보성 모달, 확인 모달, 비모달 사이드 패널 비교 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="정보성 모달(버튼 1개)"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="0" y="0" width="120" height="80" rx="5" class="f-scrim"/><rect x="22" y="18" width="76" height="44" rx="4" class="f-card"/><text x="60" y="32" class="f-text" text-anchor="middle" font-size="7.5">세션 만료</text><line x1="32" y1="38" x2="88" y2="38" class="f-line"/><rect x="46" y="46" width="28" height="11" rx="3" class="f-fill-blue"/><text x="60" y="54" class="f-on" text-anchor="middle" font-size="6.5">확인</text></svg><span>정보성 모달(버튼 1개)</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="확인 모달(버튼 2개)"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="0" y="0" width="120" height="80" rx="5" class="f-scrim"/><rect x="22" y="18" width="76" height="44" rx="4" class="f-card"/><text x="60" y="32" class="f-text" text-anchor="middle" font-size="7.5">삭제할까요?</text><line x1="32" y1="38" x2="88" y2="38" class="f-line"/><rect x="30" y="46" width="28" height="11" rx="3" class="f-btn"/><text x="44" y="54" class="f-text" text-anchor="middle" font-size="6.5">취소</text><rect x="62" y="46" width="28" height="11" rx="3" class="f-fill-blue"/><text x="76" y="54" class="f-on" text-anchor="middle" font-size="6.5">삭제</text></svg><span>확인 모달(버튼 2개)</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="비모달 사이드 패널"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="14" y="10" width="52" height="56" rx="3" class="f-card"/><line x1="20" y1="22" x2="60" y2="22" class="f-line"/><line x1="20" y1="32" x2="56" y2="32" class="f-line"/><line x1="20" y1="42" x2="60" y2="42" class="f-line"/><rect x="72" y="10" width="34" height="56" rx="3" class="f-fill-gray"/><text x="89" y="24" class="f-text" text-anchor="middle" font-size="6">패널</text></svg><span>비모달 사이드 패널</span></div></div><figcaption>모달 두 가지와 배경을 막지 않는 대안. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
+
+### 2. APG 모달 다이얼로그 권고·요구
 
 - 컨테이너 `role="dialog"`(응답이 필요한 경고는 `alertdialog`), `aria-modal="true"`.
 - 이름: 보이는 제목을 `aria-labelledby` 로 참조(또는 `aria-label`). 설명은 선택적으로 `aria-describedby` — 내용이 길거나 구조가 있으면 생략.
 - **열릴 때 포커스**: 기본은 첫 포커스 가능 요소. 내용이 길면 맨 위 정적 요소(`tabindex="-1"`), **되돌릴 수 없는 동작이면 가장 덜 파괴적인 버튼**, 정보성이면 가장 가능성 높은 동작(확인).
-- **Tab/Shift+Tab** 이 다이얼로그 안에서 순환한다. **Esc** 로 닫힌다. 보이는 닫기 버튼이 있다.
+- **Tab/Shift+Tab** 이 다이얼로그 안에서 순환한다. **Esc** 로 닫힌다. 보이는 닫기 버튼을 두는 것을 APG 가 강하게 권장한다.
 - **닫힐 때** 연 요소로 포커스 복귀. 그 요소가 사라졌다면 논리적인 다음 위치.
 
 ### 3. 네이티브 `<dialog>` 로 대부분 해결

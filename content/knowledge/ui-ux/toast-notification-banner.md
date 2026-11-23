@@ -12,7 +12,7 @@ sources:
   - https://design-system.service.gov.uk/components/notification-banner/
   - https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html
   - https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -35,6 +35,10 @@ NN/g(Flaherty, 2024)는 **인디케이터**(요소 옆 수동적 표시), **검�
 | **토스트/스낵바** | 방금 한 동작의 결과 | 불필요(선택적 단일 동작) | "메일 보냄 · 실행 취소" |
 | **배너** | 페이지·서비스 전체 | 확인·조치 가능 | 점검 예정, 결제 수단 만료 |
 | 모달·alertdialog | 진행 차단 | 필수 | 세션 만료, 파괴적 동작 확인 → [모달](/develop-wiki/knowledge/ui-ux/modal-dialog/) |
+
+아래 그림은 위 표의 인라인 메시지, 토스트/스낵바, 배너를 나란히 놓은 것이다. 스낵바에는 선택적 동작이 붙는다(하나로 제한하는 것은 필자 규칙).
+
+<figure class="fig" role="group" aria-label="인라인 메시지, 토스트, 동작이 붙은 스낵바, 배너를 나란히 비교한 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="인라인 메시지"><rect x="14" y="22" width="92" height="18" rx="3" class="f-input-err"/><text x="20" y="34" class="f-text" text-anchor="start" font-size="7">user@</text><text x="14" y="54" class="f-err" text-anchor="start" font-size="6.5">필드 아래 오류 문구</text></svg><span>인라인 메시지</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="토스트"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="20" y="54" width="80" height="14" rx="7" class="f-dark"/><text x="60" y="63.5" class="f-on" text-anchor="middle" font-size="6.5">보냈어요</text></svg><span>토스트</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="스낵바(동작 1개)"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="14" y="54" width="92" height="16" rx="3" class="f-dark"/><text x="20" y="64" class="f-on" text-anchor="start" font-size="6.5">보냈어요</text><text x="100" y="64" class="f-blue-on-dark" text-anchor="end" font-size="6.5">실행 취소</text></svg><span>스낵바(동작 1개)</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="배너"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="8" y="4" width="104" height="16" rx="5" class="f-fill-amber"/><text x="16" y="14.5" class="f-text" text-anchor="start" font-size="6.5">점검 예정</text><line x1="20" y1="34" x2="100" y2="34" class="f-line"/><line x1="20" y1="46" x2="100" y2="46" class="f-line"/><line x1="20" y1="58" x2="80" y2="58" class="f-line"/></svg><span>배너</span></div></div><figcaption>인라인 메시지·토스트·스낵바·배너의 위치와 범위 비교. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
 
 ### 2. 토스트 규칙
 
@@ -74,7 +78,7 @@ NN/g(Flaherty, 2024)는 **인디케이터**(요소 옆 수동적 표시), **검�
 - 토스트가 포커스 요소·고정 하단 바를 가리지 않는다.
 - 호버·포커스 시 타이머가 멈춘다.
 - 동시에 여러 개가 쌓이지 않는다.
-- 배너는 페이지당 하나, 닫으면 다시 뜨지 않는다(조건이 바뀌지 않는 한).
+- 배너는 페이지당 하나(GOV.UK). 닫으면 다시 뜨지 않는다(필자 규칙, GOV.UK 는 닫기 허용 여부를 연구 중이라고 함).
 
 ## 흔한 실수·주의
 

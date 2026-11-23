@@ -215,6 +215,7 @@ code { font-family: var(--mono); font-size: 0.88em; }
 .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
 .fig-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 8px 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .fig-item svg { width: 100%; height: auto; max-width: 180px; }
+.fig svg, .fig svg text { font-family: var(--font); } /* 사이트 본문과 같은 Pretendard Variable (Base.astro 에서 불러옴) */
 .fig-item span { font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.35; }
 .fig figcaption { margin-top: 8px; font-size: 13px; color: var(--muted); }
 .fig .f-text { fill: var(--text); } .fig .f-muted { fill: var(--muted); } .fig .f-on { fill: #fff; } [data-theme='dark'] .fig .f-on { fill: #0d0d0f; }

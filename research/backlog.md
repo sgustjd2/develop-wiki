@@ -4,11 +4,11 @@
 
 | 항목 | 영역/카테고리 | 메모 | 날짜 |
 | --- | --- | --- | --- |
-| GP 사전 연속시간 추정(Barfoot·Tong·Anderson), Hedborg 롤링 셔터 BA, 파동 변수 원격 조작 vs TDPA, TDPA 위치 드리프트 보상(arXiv 1909.01603, 2002.02296), 에너지 경계 햅틱 | knowledge/robotics | TCST 2005 기준 에너지·IJRR 2015 본문 여전히 미확인 | 2026-11-19 |
-| AllRAD2(AES 2018), 그래디언트 영역 양방향 경로 추적, volumetric ReSTIR, DDGI 다중 볼륨·무한 스크롤, Metal rasterization rate map | knowledge/graphics-xr | AllRAD 2012 원문 미확인 | 2026-11-19 |
-| CockroachDB linearizable 모드, Store Liveness TLA+, 클라우드 VM 유지보수 이벤트와 시계(ClockBound·PTP), minimal k-perfect hashing | knowledge/distributed-systems·algorithms | 다음 노트 | 2026-11-19 |
-| FAPI 2.0 구현·배포 권고와 x-fapi-* 헤더, RFC 8628 vs CIBA, RFC 9530 Digest Fields, OpenID Federation 과 Audience Injection, Grant Management, Play App Signing 과 앱 출처 | knowledge/security | 다음 노트 | 2026-11-19 |
-| 변경 시 연결 변동이 작은 서브세팅(rendezvous 등), PG18 가상 생성 열, CREATE INDEX CONCURRENTLY 실패·INVALID 인덱스, PgBouncer transaction 모드와 세션 상태, Envoy retry_budget | knowledge/data-modeling·performance | 다음 노트 | 2026-11-19 |
+| 파동 변수 원격 조작 vs TDPA(원논문 Niemeyer·Slotine 미확보 — 보류 초안 research/drafts/robotics/wave-variable-teleoperation-HOLD.md), TDPA 위치 드리프트 보상(arXiv 1909.01603, 2002.02296), 에너지 경계 햅틱 | knowledge/robotics | TCST 2005 기준 에너지·IJRR 2015 본문 여전히 미확인 | 2026-11-19 |
+| AllRAD2(AES 2018), DDGI 다중 볼륨·무한 스크롤, Metal rasterization rate map | knowledge/graphics-xr | AllRAD 2012 원문 미확인 | 2026-11-19 |
+| Store Liveness TLA+, 클라우드 VM 유지보수 이벤트와 시계(ClockBound·PTP), minimal k-perfect hashing | knowledge/distributed-systems·algorithms | 다음 노트 | 2026-11-19 |
+| OpenID Federation 과 Audience Injection, Grant Management, Play App Signing 과 앱 출처 | knowledge/security | 다음 노트 | 2026-11-19 |
+| 변경 시 연결 변동이 작은 서브세팅(rendezvous 등), PG18 가상 생성 열, CREATE INDEX CONCURRENTLY 실패·INVALID 인덱스 | knowledge/data-modeling·performance | 다음 노트 | 2026-11-19 |
 | JAWS 키와 가상 커서, edge n-gram·search_as_you_type 한국어 자동완성, 판정자 간 일치도(Cohen·Fleiss kappa), Yjs·Automerge 저장 계층 압축, 멀티리빙 | knowledge/ui-ux | 다음 노트 | 2026-11-19 |
 | tencent/WeMM-Video-2B | models/text-llm 또는 vlm | https://huggingface.co/tencent/WeMM-Video-2B · 2026-11-17 · license=apache-2.0 · params=3.3B · ♥9 ↓11 (Hermes 후보, 검증 전) | 2026-11-21 |
 | lerobot/RynnValue-8B | models/vla (로보틱스 정책 모델; modalities.output 에 action) | https://huggingface.co/lerobot/RynnValue-8B · 2026-11-19 · license=apache-2.0 · params=9.6B · ♥0 ↓140 (Hermes 후보, 검증 전) | 2026-11-21 |
@@ -25,6 +25,4 @@
 | https://github.com/feder-cr/git-ai | resources/Go | ★1003 · license=NOASSERTION · Git designed for AI agents. Open-source, in the spirit of Anthropic's Scion and OpenAI's Pando. Not  (Hermes 후보, 검증 전) | 2026-11-22 |
 | https://github.com/EL4CTEO/fast-anything | resources/Rust | ★1522 · license=MIT · Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the ho (Hermes 후보, 검증 전) | 2026-11-23 |
 | https://github.com/SonicloudTech/mouse-sdk | resources/C | ★1026 · license=MIT · Cross-platform USB HID/BLE smart mouse SDK with a C ABI for device events and audio. Windows x64/mac (Hermes 후보, 검증 전) | 2026-11-23 |
-| 정규성 검정·Q-Q 그림, 검정력 분석(표본 크기), 부트스트랩·순열검정, 이원·반복측정 ANOVA, GLM·포아송 회귀, 릿지·라쏘 공선성 대응, 요인분석 실무(회전·KMO), STL·Holt-Winters·ETS, GMM·EM 군집, K-medoids·SOM, 확률 보정(calibration), 신용평가 스코어카드(WOE·IV), 스트리밍 람다·카파 구조, Kafka 이벤트 스트리밍, Parquet·ORC·Iceberg, 데이터 카탈로그·리니지, Kubernetes, 차분 프라이버시 ML(DP-SGD), 가명정보 결합·반출 절차, LSTM·GRU·트랜스포머 심화, 드리프트 탐지(DDM·ADWIN), SHAP 알고리즘·ALE | knowledge/data-analytics·machine-learning | 11차 작성자들이 제안한 다음 노트. 시험 출제기준이 2027년 이후 바뀌면 official-scope 재확인 | 2026-11-23 |
-| 알림·피드백 컴포넌트(토스트·스낵바·배너·모달·바텀시트), 모달·팝업·다이얼로그·알럿 구분, 토글·체크박스·라디오·세그먼트, 진행 표시·스켈레톤, 빈 화면·온보딩, 좋아요·찜·공유·별점, 날짜 선택 UI, AI 응답 액션 버튼 | knowledge/ui-ux | 주제 출처: 인스타그램 uxwoodytips 게시물 제목(주제 발굴용이며 사실 근거가 아님). 사실은 Material·Apple HIG·WAI-ARIA APG·NN/g 같은 1차 출처로 확인 | 2026-11-24 |
-| 테스트 종류·성능 테스트 용어·테스트 7원칙·설계 기법(동등 분할·경계값)·버그 리포트·테스트 지표·테스트 문서·프로세스·인앱 대 웹뷰·테스트 환경 | knowledge/testing-practice | 주제 출처: 인스타그램 qaonetop 게시물 제목(주제 발굴용이며 사실 근거가 아님). 사실은 ISTQB 용어집·ISO/IEC/IEEE 29119 같은 1차 출처로 확인 | 2026-11-24 |
+| 이원·반복측정 ANOVA, GLM·포아송 회귀, 릿지·라쏘 공선성 대응, 요인분석 실무(회전·KMO), STL·Holt-Winters·ETS, GMM·EM 군집, K-medoids·SOM, 신용평가 스코어카드(WOE·IV), 스트리밍 람다·카파 구조, Kafka 이벤트 스트리밍, Parquet·ORC·Iceberg, 데이터 카탈로그·리니지, Kubernetes, 차분 프라이버시 ML(DP-SGD), 가명정보 결합·반출 절차, LSTM·GRU·트랜스포머 심화, 드리프트 탐지(DDM·ADWIN), SHAP 알고리즘·ALE | knowledge/data-analytics·machine-learning | 11차 작성자들이 제안한 다음 노트. 시험 출제기준이 2027년 이후 바뀌면 official-scope 재확인 | 2026-11-23 |

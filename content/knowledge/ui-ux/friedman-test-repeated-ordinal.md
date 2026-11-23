@@ -13,7 +13,7 @@ sources:
   - https://en.wikipedia.org/wiki/Friedman_test
   - https://en.wikipedia.org/wiki/Kendall%27s_W
   - https://doi.org/10.1080/01621459.1937.10503522
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 이진 결과(성공/실패)는 [Cochran's Q](/develop-wiki/knowledge/ui-ux/cochrans-q-test-paired-binary/), 이 노트는 그 서열·연속 대응판이다. 조건이 둘이면 [Wilcoxon 부호순위(또는 이진이면 McNemar)](/develop-wiki/knowledge/ui-ux/mcnemar-test-paired-proportions/)로 충분하다.

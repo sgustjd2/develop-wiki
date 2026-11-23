@@ -11,7 +11,7 @@ sources:
   - https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/
   - https://design-system.service.gov.uk/components/date-input/
   - https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/date
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -31,6 +31,10 @@ updatedAt: 2026-11-19
 | 기간(체크인~체크아웃) | 범위 선택 달력. 시작·끝을 각각 텍스트로도 입력 가능하게 |
 | 브라우저 기본으로 충분 | `<input type="date">`. 형식·달력 UI 는 브라우저가 맡지만 스타일 제약이 크고 환경별 차이가 있다 |
 
+아래 그림은 위 표의 분리 텍스트 필드, 달력 선택, 입력과 달력 버튼의 결합을 나란히 놓은 것이다.
+
+<figure class="fig" role="group" aria-label="분리 필드 직접 입력, 달력 선택, 입력과 달력 버튼 결합 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="직접 입력(분리 필드)"><text x="35" y="24" class="f-muted" text-anchor="middle" font-size="6.5">년</text><rect x="22" y="28" width="26" height="16" rx="3" class="f-input"/><text x="63" y="24" class="f-muted" text-anchor="middle" font-size="6.5">월</text><rect x="54" y="28" width="18" height="16" rx="3" class="f-input"/><text x="89" y="24" class="f-muted" text-anchor="middle" font-size="6.5">일</text><rect x="80" y="28" width="18" height="16" rx="3" class="f-input"/><text x="24" y="40" class="f-text" text-anchor="start" font-size="7">2026</text><text x="57" y="40" class="f-text" text-anchor="start" font-size="7">11</text><text x="83" y="40" class="f-text" text-anchor="start" font-size="7">24</text></svg><span>직접 입력(분리 필드)</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="달력 선택"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><text x="60" y="16" class="f-text" text-anchor="middle" font-size="7">2026년 11월</text><text x="20" y="28" class="f-muted" text-anchor="middle" font-size="6">1</text><text x="33.3" y="28" class="f-muted" text-anchor="middle" font-size="6">2</text><text x="46.6" y="28" class="f-muted" text-anchor="middle" font-size="6">3</text><text x="59.900000000000006" y="28" class="f-muted" text-anchor="middle" font-size="6">4</text><text x="73.2" y="28" class="f-muted" text-anchor="middle" font-size="6">5</text><text x="86.5" y="28" class="f-muted" text-anchor="middle" font-size="6">6</text><text x="99.80000000000001" y="28" class="f-muted" text-anchor="middle" font-size="6">7</text><text x="20" y="42" class="f-muted" text-anchor="middle" font-size="6">8</text><text x="33.3" y="42" class="f-muted" text-anchor="middle" font-size="6">9</text><text x="46.6" y="42" class="f-muted" text-anchor="middle" font-size="6">10</text><circle cx="59.900000000000006" cy="39.5" r="5.5" class="f-fill-blue"/><text x="59.900000000000006" y="42" class="f-on" text-anchor="middle" font-size="6">11</text><text x="73.2" y="42" class="f-muted" text-anchor="middle" font-size="6">12</text><text x="86.5" y="42" class="f-muted" text-anchor="middle" font-size="6">13</text><text x="99.80000000000001" y="42" class="f-muted" text-anchor="middle" font-size="6">14</text><text x="20" y="56" class="f-muted" text-anchor="middle" font-size="6">15</text><text x="33.3" y="56" class="f-muted" text-anchor="middle" font-size="6">16</text><text x="46.6" y="56" class="f-muted" text-anchor="middle" font-size="6">17</text><text x="59.900000000000006" y="56" class="f-muted" text-anchor="middle" font-size="6">18</text><text x="73.2" y="56" class="f-muted" text-anchor="middle" font-size="6">19</text><text x="86.5" y="56" class="f-muted" text-anchor="middle" font-size="6">20</text><text x="99.80000000000001" y="56" class="f-muted" text-anchor="middle" font-size="6">21</text></svg><span>달력 선택</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="입력 + 달력 버튼 결합"><rect x="12" y="28" width="70" height="16" rx="3" class="f-input"/><text x="18" y="39" class="f-muted" text-anchor="start" font-size="6.5">날짜</text><rect x="86" y="28" width="22" height="16" rx="3" class="f-btn"/><rect x="91" y="33" width="12" height="9" rx="1.5" class="f-outline"/><line x1="91" y1="36" x2="103" y2="36" class="f-line"/></svg><span>입력 + 달력 버튼 결합</span></div></div><figcaption>날짜를 받는 세 방식. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
+
 ### 2. 달력 그리드 키 조작 (APG datepicker-dialog 예제)
 
 | 키 | 동작 |
@@ -44,7 +48,7 @@ updatedAt: 2026-11-19
 | Esc | 선택 없이 닫고 버튼으로 복귀 |
 
 - 그리드 칸 중 하나만 Tab 순서에 두는 roving tabindex, 선택된 칸에 `aria-selected`, 월·연 제목은 `aria-live="polite"` 로 변경을 알린다. 열기 버튼 이름은 선택 후 "날짜 변경, 2026년 11월 19일" 식으로 현재 값을 포함한다.
-- 달력은 모달 다이얼로그로 구현한다. 포커스는 열릴 때 현재 값(없으면 오늘)에 두고 닫히면 버튼으로 돌려준다([모달](/develop-wiki/knowledge/ui-ux/modal-dialog/)).
+- APG 날짜 선택 예제는 달력을 모달 다이얼로그로 구현한다(combobox 형태의 별도 예제도 있다). 포커스는 열릴 때 현재 값(없으면 오늘)에 두고 닫히면 버튼으로 돌려준다([모달](/develop-wiki/knowledge/ui-ux/modal-dialog/)).
 
 ### 3. 날짜 계산 코드 (node 로 실행해 확인)
 
@@ -63,7 +67,7 @@ const parse = (y: number, m: number, d: number) => {
 ```
 
 - 실행 결과: 2026-01-31 에서 다음 달 → 2026-02-28, 2028-02-29 에서 다음 해 → 2029-02-28, `parse(2026, 2, 30)` → `null`. 날짜는 시간대 이동을 피하려고 UTC 로 다뤘다.
-- 표시는 `Intl.DateTimeFormat('ko-KR', { dateStyle: 'full' })` → "2026년 1월 31일 토요일" 처럼 로캘에 맡긴다. 요일 약어 열에는 전체 요일명을 `abbr`/`aria-label` 로 준다.
+- 표시는 `Intl.DateTimeFormat('ko-KR', { dateStyle: 'full' })` → "2026년 1월 31일 토요일" 처럼 로캘에 맡긴다. 요일 약어 열에는 전체 요일명을 `abbr` 로 준다(APG 예제는 `abbr` 를 쓴다).
 
 ### 4. 검증·오류 문구 (GOV.UK 날짜 입력 지침 요지)
 

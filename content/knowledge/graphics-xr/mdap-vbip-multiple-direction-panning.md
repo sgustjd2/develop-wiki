@@ -11,7 +11,7 @@ sources:
   - https://research.aalto.fi/en/publications/uniform-spreading-of-amplitude-panned-virtual-sources/
   - https://aaltodoc.aalto.fi/items/454e38fc-4bbc-4be6-ab8b-3f30b0f7fba0
   - https://link.springer.com/book/10.1007/978-3-030-17207-7
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 > 출처 메모: Pulkki, "Uniform Spreading of Amplitude Panned Virtual Sources"(IEEE WASPAA 1999, pp. 187–190)는 Pulkki 박사논문(2001) 묶음에 실린 사본의 텍스트판을 Aaltodoc 에서 받아 전체를 읽었다(식 기호 일부가 깨져 구조만 옮겼다). VBIP·MDAP 의 정리와 청취 실험 결과는 Zotter·Frank, *Ambisonics*(Springer 2019, CC BY 4.0) 2.2절(rV·rE 벡터)과 3.1~3.3절을 읽었다. 책 3.1절은 VBIP 의 출처를 달지 않는다. VBIP 를 도입했다고 쓰는 문헌(Pernaux·Boussard·Jot, DAFx-98)은 [별도 노트](/develop-wiki/knowledge/graphics-xr/vbip-vector-base-intensity-panning-origin/)에서 원문 기준으로 다뤘다(그 논문은 VBIP 를 700 Hz 위 전용 고주파 법칙으로 정의하고 3D 식은 주지 않는다). 아래 비교표는 내가 직접 계산한 것이다.
@@ -90,7 +90,7 @@ const mdap = (phi: number, spk: number[], alpha: number) => {
 
 방위 0°, 60°, …, 300° 스피커 6대, 패닝 방향 1° 간격 360개. MDAP 는 ±27°(= 0.9 × 30°)의 두 VBAP 이득을 **더한 뒤 ‖g‖ = 1 로 정규화**했다(Pulkki 1999 그림이 `‖g‖ = 1` 로 그렸다는 것만 확인했고, 합치는 식은 논문에 없어 내가 정했다).
 
-| 방식 | 폭 `arccos‖rE‖` 최소~최대 | rE 방향 오차 평균 / 최대 | 켜지는 스피커 수 |
+| 방식 | 반각 `arccos‖rE‖`(폭 `2·arccos‖rE‖` 의 절반) 최소~최대 | rE 방향 오차 평균 / 최대 | 켜지는 스피커 수 |
 | --- | --- | --- | --- |
 | VBAP | 0.6° ~ 30.0° | 5.70° / 8.81° | 1~2 |
 | VBIP | 5.7° ~ 30.0° | 0.00° / 0.00° | 1~2 |

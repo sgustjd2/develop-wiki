@@ -12,7 +12,7 @@ sources:
   - https://www.dafx.de/paper-archive/search?q=Pernaux&w=author&s=relevance
   - https://doi.org/10.3813/AAA.918772
   - https://dael.euracoustics.org/bin/EAA/aaua_dl?document_id=51959
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 > 출처 메모: J.-M. Pernaux, P. Boussard, J.-M. Jot, "Virtual Sound Source Positioning and Mixing in 5.1 Implementation on the Real-Time System Genesis", DAFx-98(Barcelona, 1998)를 DAFx 논문 아카이브가 공개한 PDF(5쪽)로 **전문** 읽었다. 텍스트 추출은 식이 깨져, 식이 있는 쪽을 이미지로 렌더링해 눈으로 확인했다. 서지는 아카이브 검색 결과와 Epain·Jin·Zotter 2014 참고문헌 [17] 로 대조했다. 아래 계산은 내가 직접 한 것이다.

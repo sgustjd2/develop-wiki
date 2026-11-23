@@ -11,7 +11,7 @@ sources:
   - https://www.nngroup.com/articles/mobile-app-onboarding/
   - https://www.nngroup.com/articles/empty-state-interface-design/
   - https://developer.apple.com/design/human-interface-guidelines/onboarding
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -38,14 +38,22 @@ NN/g 는 카드형(deck-of-cards) 튜토리얼이 단순한 앱을 더 복잡해
 - **맥락 속 도움(Just-in-time)**: 기능을 처음 만날 때 한 줄 팁. 닫을 수 있고 다시 볼 수 있게.
 - **빈 상태 활용**: 처음 비어 있는 화면에서 기능 설명 + 첫 행동 버튼. → [빈 상태](/develop-wiki/knowledge/ui-ux/empty-states/)
 - **샘플 데이터·체험 모드**: 실제 데이터를 넣기 전에 가치를 보여 준다.
-- **권한은 필요한 순간에** 이유와 함께 요청. → [권한·프라이버시](/develop-wiki/knowledge/mobile-dev/permissions-privacy/)
-- **가입은 가치를 본 뒤**: 둘러보기를 허용하고, 저장·구매 시점에 계정을 요구.
+- **권한은 기능을 처음 쓰는 시점에** 이유와 함께 요청. 앱이 권한 없이는 동작하지 않으면 온보딩 안에서 요청해도 된다(HIG). → [권한·프라이버시](/develop-wiki/knowledge/mobile-dev/permissions-privacy/)
+- **가입은 가치를 본 뒤**(필자 지침): 둘러보기를 허용하고, 저장·구매 시점에 계정을 요구.
+
+아래 그림은 NN/g 가 문제 삼은 카드형 튜토리얼과 위 대안 중 맥락 속 도움, 빈 상태 활용을 나란히 놓은 것이다.
+
+<figure class="fig" role="group" aria-label="카드형 튜토리얼, 맥락 속 도움, 빈 상태 활용 비교 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="카드형 튜토리얼"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="20" y="12" width="80" height="40" rx="4" class="f-card"/><text x="60" y="34" class="f-text" text-anchor="middle" font-size="7">기능 소개 1/5</text><circle cx="44" cy="60" r="1.8" class="f-fill-blue"/><circle cx="52" cy="60" r="1.8" class="f-fill-gray"/><circle cx="60" cy="60" r="1.8" class="f-fill-gray"/><circle cx="68" cy="60" r="1.8" class="f-fill-gray"/><circle cx="76" cy="60" r="1.8" class="f-fill-gray"/><text x="98" y="70" class="f-muted" text-anchor="end" font-size="5.5">건너뛰기</text></svg><span>카드형 튜토리얼</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="맥락 속 도움"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="30" y="16" width="60" height="14" rx="3" class="f-dark"/><path d="M56 30 l4 5 l4 -5 z" class="f-dark"/><rect x="44" y="36" width="32" height="14" rx="7" class="f-fill-blue"/><text x="60" y="46" class="f-on" text-anchor="middle" font-size="6.5">버튼</text><text x="60" y="25.5" class="f-on" text-anchor="middle" font-size="6.5">처음이면 한 줄 팁</text></svg><span>맥락 속 도움</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="빈 상태 활용"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="44" y="14" width="32" height="22" rx="4" class="f-fill-gray"/><text x="60" y="49" class="f-text" text-anchor="middle" font-size="7">아직 없어요</text><rect x="44" y="54" width="32" height="11" rx="5" class="f-fill-blue"/><text x="60" y="62" class="f-on" text-anchor="middle" font-size="6.5">시작하기</text></svg><span>빈 상태 활용</span></div></div><figcaption>카드형 튜토리얼과 대안 두 가지(맥락 속 도움, 빈 상태 활용). 카드형의 "건너뛰기"는 눈에 띄지 않게 그린 나쁜 예이며 NN/g 는 눈에 띄는 건너뛰기를 권한다. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
 
 ### 3. 복잡하거나 낯선 제품이라면
 
 - 설정에 꼭 필요한 정보(조직 연결, 데이터 소스)만 단계형으로. 진행 단계 표시, 나중에 하기 허용.
 - 체크리스트형 시작 가이드(“3단계 중 1단계 완료”)는 강제 투어보다 통제권을 준다.
 - 이미 입력한 정보는 다시 묻지 않는다(WCAG 3.3.7). → [인지 접근성](/develop-wiki/knowledge/ui-ux/cognitive-accessibility/)
+
+아래 그림은 위의 단계형 설정과 체크리스트형 시작 가이드를 그린 것이다.
+
+<figure class="fig" role="group" aria-label="체크리스트형 시작 가이드와 단계형 설정 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="체크리스트형 시작 가이드"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><text x="60" y="16" class="f-text" text-anchor="middle" font-size="7">시작 가이드 1/3</text><rect x="20" y="24" width="9" height="9" rx="2" class="f-fill-blue"/><path d="M22 28.5 l2 2.5 l4 -5" class="f-tick"/><line x1="36" y1="28.5" x2="70" y2="28.5" class="f-line"/><rect x="20" y="40" width="9" height="9" rx="2" class="f-box"/><line x1="36" y1="44.5" x2="96" y2="44.5" class="f-line"/><rect x="20" y="56" width="9" height="9" rx="2" class="f-box"/><line x1="36" y1="60.5" x2="96" y2="60.5" class="f-line"/></svg><span>체크리스트형 시작 가이드</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="단계형 설정"><line x1="22" y1="36" x2="98" y2="36" class="f-line"/><circle cx="22" cy="36" r="6" class="f-fill-blue"/><text x="22" y="52" class="f-muted" text-anchor="middle" font-size="7">1</text><circle cx="60" cy="36" r="6" class="f-ring-blue"/><text x="60" y="52" class="f-muted" text-anchor="middle" font-size="7">2</text><circle cx="98" cy="36" r="6" class="f-ring"/><text x="98" y="52" class="f-muted" text-anchor="middle" font-size="7">3</text><text x="60" y="20" class="f-text" text-anchor="middle" font-size="6.5">설정 단계</text></svg><span>단계형 설정</span></div></div><figcaption>복잡한 제품의 두 가지 시작 방식. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
 
 ## 언제 쓰나
 
@@ -64,6 +72,6 @@ NN/g 는 카드형(deck-of-cards) 튜토리얼이 단순한 앱을 더 복잡해
 ## 흔한 실수·주의
 
 - **온보딩으로 나쁜 UI 덮기.** 튜토리얼이 길수록 인터페이스를 고칠 신호다.
-- **첫 화면에 권한 요청 묶음.** 거부율이 높아지고 다시 요청하기 어렵다.
+- **첫 화면에 권한 요청 묶음.** (필자 판단, 거부율 근거는 읽지 못했다)
 - **개인화 질문 과다.** 이유를 설명하고 짧게. 답하지 않아도 진행되게 한다.
-- **온보딩 성과를 완료율로만 측정.** 넘기기만 해도 완료된다. 이후 핵심 행동 수행률·유지율로 본다.
+- **온보딩 성과를 완료율로만 측정**(필자 지침). 넘기기만 해도 완료된다. 이후 핵심 행동 수행률·유지율로 본다.

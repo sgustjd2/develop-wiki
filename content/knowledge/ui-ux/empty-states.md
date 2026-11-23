@@ -10,7 +10,7 @@ related: [ui-ux/loading-states, ui-ux/error-messages, ui-ux/search-filter-sort, 
 sources:
   - https://www.nngroup.com/articles/empty-state-interface-design/
   - https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -41,6 +41,10 @@ type ListState<T> =
 | 결과 없음(no-results) | 검색어·필터가 너무 좁음 | 적용된 조건 표시, 필터 해제·철자 확인·연관 검색 제안 → [검색·필터](/develop-wiki/knowledge/ui-ux/search-filter-sort/) |
 | 모두 처리(all-done) | 할 일·알림을 다 비움 | 완료 확인 문구. 굳이 행동을 강요하지 않음 |
 | 권한·설정 없음 | 연동·권한이 아직 없음 | 왜 비었는지 + 설정 경로 |
+
+아래 그림은 위 표의 네 종류를 나란히 놓은 것이다. 모두 처리 화면에는 행동 버튼이 없다.
+
+<figure class="fig" role="group" aria-label="처음 사용, 결과 없음, 모두 처리, 권한·설정 없음 빈 상태 비교. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="처음 사용"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="48" y="12" width="24" height="18" rx="4" class="f-fill-gray"/><text x="60" y="45" class="f-text" text-anchor="middle" font-size="6.5">아직 없어요</text><rect x="34" y="53" width="52" height="12" rx="5" class="f-fill-blue"/><text x="60" y="61.5" class="f-on" text-anchor="middle" font-size="6.5">첫 항목 만들기</text></svg><span>처음 사용</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="결과 없음"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><circle cx="60" cy="22" r="9" class="f-ring"/><line x1="67" y1="29" x2="74" y2="36" class="f-line"/><text x="60" y="45" class="f-text" text-anchor="middle" font-size="6.5">결과 없음</text><rect x="34" y="53" width="52" height="12" rx="5" class="f-fill-blue"/><text x="60" y="61.5" class="f-on" text-anchor="middle" font-size="6.5">필터 해제</text></svg><span>결과 없음</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="모두 처리"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><path d="M50 22 l7 7 l13 -15" class="f-outline"/><text x="60" y="45" class="f-text" text-anchor="middle" font-size="6.5">모두 처리했어요</text></svg><span>모두 처리</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="권한·설정 없음"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><rect x="48" y="12" width="24" height="18" rx="4" class="f-fill-gray"/><text x="60" y="45" class="f-text" text-anchor="middle" font-size="6.5">연동 없음</text><rect x="34" y="53" width="52" height="12" rx="5" class="f-fill-blue"/><text x="60" y="61.5" class="f-on" text-anchor="middle" font-size="6.5">설정 열기</text></svg><span>권한·설정 없음</span></div></div><figcaption>빈 상태의 네 종류. 원인에 따라 보여 줄 문구와 다음 행동이 다르다. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
 
 NN/g(Kaplan, 2021)는 복잡한 애플리케이션의 빈 상태 지침으로 **시스템 상태 전달**, **학습 가능성 향상**(맥락 속 설명), **핵심 과업으로 가는 직접 경로**(링크·버튼) 세 가지를 든다.
 

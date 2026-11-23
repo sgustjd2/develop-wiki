@@ -18,7 +18,7 @@ sources:
   - https://www.envoyproxy.io/docs/envoy/latest/api-v3/config/endpoint/v3/endpoint.proto
   - https://www.envoyproxy.io/docs/envoy/latest/configuration/upstream/cluster_manager/cluster_runtime
   - https://github.com/envoyproxy/envoy/blob/main/source/extensions/load_balancing_policies/common/load_balancer_impl.cc
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -198,4 +198,4 @@ P=1 이 100% 건강할 때, 직접 계산한 P=0 의 부하:
 
 ## 검증 범위
 
-Envoy 공식 문서(최신판, 페이지에 표시된 버전 1.41.0-dev-331b8c)의 Zone aware routing, Locality weighted load balancing, Panic threshold, Overprovisioning factor, Priority levels, `cluster.proto`·`endpoint.proto` API 문서, 클러스터 런타임 문서를 2026-11-24 에 읽었다. 분배 계산·패닉 판정·`min_cluster_size` 비교·로컬 클러스터 패닉 처리는 envoyproxy/envoy main 의 `source/extensions/load_balancing_policies/common/load_balancer_impl.cc`(2026-11-24 조회)에서 읽어 문서와 대조했다. 이 파일은 예전의 `source/common/upstream/` 아래에서 옮겨진 위치다. `thread_aware_lb_impl` 은 읽지 않았다. 숫자 예는 문서의 식과 소스의 정수 계산을 Python 으로 직접 계산한 것이며, Envoy 를 실행해 재현하지 않았다. 미확인: `fail_traffic_on_panic`·`routing_enabled` 외 필드의 정확한 기본값 표기, 패닉 임계 근처 히스테리시스, 문서 대비 이전 버전의 차이.
+Envoy 공식 문서(최신판, 페이지에 표시된 버전 1.41.0-dev-331b8c)의 Zone aware routing, Locality weighted load balancing, Panic threshold, Overprovisioning factor, Priority levels, `cluster.proto`·`endpoint.proto` API 문서, 클러스터 런타임 문서를 2026-11-23 에 읽었다. 분배 계산·패닉 판정·`min_cluster_size` 비교·로컬 클러스터 패닉 처리는 envoyproxy/envoy main 의 `source/extensions/load_balancing_policies/common/load_balancer_impl.cc`(2026-11-23 조회)에서 읽어 문서와 대조했다. 이 파일은 예전의 `source/common/upstream/` 아래에서 옮겨진 위치다. `thread_aware_lb_impl` 은 읽지 않았다. 숫자 예는 문서의 식과 소스의 정수 계산을 Python 으로 직접 계산한 것이며, Envoy 를 실행해 재현하지 않았다. 미확인: `fail_traffic_on_panic`·`routing_enabled` 외 필드의 정확한 기본값 표기, 패닉 임계 근처 히스테리시스, 문서 대비 이전 버전의 차이.

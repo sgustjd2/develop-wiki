@@ -8,7 +8,7 @@ tags: [oauth2, rfc9701, rfc7662, introspection, jwt, resource-server, jws, jwe, 
 related: [security/token-revocation-introspection, security/jwt-access-token-profile-rfc9068, security/oauth-authorization-server-metadata-rfc8414, security/oauth-protected-resource-metadata-rfc9728, security/jwt-algorithm-confusion, security/private-key-jwt-client-authentication, security/oauth-security-bcp-rfc9700, security/jwt-key-rotation, security/dpop-resource-server-validation, security/fapi-2-security-profile]
 sources:
   - https://www.rfc-editor.org/rfc/rfc9701.txt
-updatedAt: 2026-11-24
+updatedAt: 2026-11-23
 ---
 
 ## 문제

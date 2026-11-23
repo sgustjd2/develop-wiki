@@ -52,7 +52,7 @@ class ExtractEvent(dspy.Signature):
     date: str = dspy.OutputField(desc="YYYY-MM-DD")
 
 extract = dspy.ChainOfThought(ExtractEvent)
-pred = extract(email="다음 주 화요일(2026-11-24) 오후 3시에 분기 리뷰 회의가 있습니다.")
+pred = extract(email="다음 주 화요일(2026-11-23) 오후 3시에 분기 리뷰 회의가 있습니다.")
 print(pred.event_name, pred.date)
 ```
 모델 id 는 사용하는 공급자 목록에서 확인해 바꾼다.

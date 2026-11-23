@@ -12,7 +12,7 @@ sources:
   - https://www.nngroup.com/articles/skeleton-screens/
   - https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html
   - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-busy
-updatedAt: 2026-11-19
+updatedAt: 2026-11-23
 ---
 
 ## 문제
@@ -43,6 +43,10 @@ NN/g 의 스켈레톤 가이드(Tankala, 2023)는 이를 이렇게 적용한다:
 | **스피너** | 카드·버튼·모듈 하나의 짧은 대기 | 10초 이상, 진행률을 알 수 있는 작업 |
 | **진행 막대(확정)** | 업로드·다운로드·내보내기·다단계 처리 | 양을 모르는 작업에 가짜 진행률 |
 | **낙관적 UI** | 좋아요·체크·이름 변경처럼 성공률이 높고 되돌리기 쉬운 동작 | 결제·송금처럼 실패 시 되돌릴 수 없는 동작 → [낙관적 UI 설계](/develop-wiki/knowledge/mobile-dev/optimistic-ui-eventual-consistency/) |
+
+아래 그림은 위 표의 스켈레톤, 스피너, 진행 막대(확정)를 나란히 놓은 것이다. 낙관적 UI 는 화면 표시가 아니라 갱신 방식이라 그리지 않았다.
+
+<figure class="fig" role="group" aria-label="스켈레톤, 스피너, 진행 막대 비교 도식. 직접 그린 도식이며 실제 제품 화면이 아니다."><div class="fig-grid"><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="스켈레톤"><rect x="8" y="4" width="104" height="72" rx="5" class="f-screen"/><circle cx="24" cy="24" r="8" class="f-fill-gray"/><rect x="38" y="18" width="54" height="5" rx="2.5" class="f-fill-gray"/><rect x="38" y="28" width="38" height="5" rx="2.5" class="f-fill-gray"/><rect x="16" y="44" width="88" height="5" rx="2.5" class="f-fill-gray"/><rect x="16" y="54" width="70" height="5" rx="2.5" class="f-fill-gray"/><rect x="16" y="64" width="80" height="5" rx="2.5" class="f-fill-gray"/></svg><span>스켈레톤</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="스피너"><circle cx="60" cy="36" r="14" class="f-ring"/><path d="M60 22 a14 14 0 0 1 14 14" class="f-arc"/><text x="60" y="66" class="f-muted" text-anchor="middle" font-size="7">불확정</text></svg><span>스피너</span></div><div class="fig-item"><svg viewBox="0 0 120 80" role="img" aria-label="진행 막대(확정)"><rect x="14" y="34" width="92" height="8" rx="4" class="f-fill-gray"/><rect x="14" y="34" width="55.2" height="8" rx="4" class="f-fill-blue"/><text x="60" y="58" class="f-muted" text-anchor="middle" font-size="7">60%</text></svg><span>진행 막대(확정)</span></div></div><figcaption>스켈레톤은 레이아웃을, 스피너는 짧은 대기를, 진행 막대는 진행률을 보여 준다. 직접 그린 도식이며 실제 제품 화면이 아니다.</figcaption></figure>
 
 ### 3. 깜박임 방지: 지연 표시
 

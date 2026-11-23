@@ -4,7 +4,7 @@
       "robotics"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/robotics/stride-certifiable-outlier-robust-perception-solver.md",
     "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
@@ -13,7 +13,7 @@
       "graphics-xr"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/graphics-xr/ambisonic-decoding-constant-angular-spread.md",
     "note": "출처 부족 판정 후 EAA DAEL(document_id=51959)에서 원문을 받아 작성"
   },
@@ -23,7 +23,7 @@
       "algorithms"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/distributed-systems/leaseguard-raft-lease-read-optimization.md",
     "note": "출처 부족 판정 후 arXiv 2512.15659 를 직접 읽고 작성"
   },
@@ -32,7 +32,7 @@
       "security"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/security/rfc-9701-jwt-introspection-response.md",
     "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
@@ -42,7 +42,7 @@
       "performance"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/performance/envoy-zone-aware-routing-panic-threshold.md",
     "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
   },
@@ -51,8 +51,293 @@
       "ui-ux"
     ],
     "status": "published",
-    "date": "2026-11-24",
+    "date": "2026-11-23",
     "file": "content/knowledge/ui-ux/friedman-test-repeated-ordinal.md",
     "note": "초안은 원문 대조 후 새로 작성해 공개(초안 파일 삭제)"
+  },
+  "정규성 검정과 Q-Q 그림 (Shapiro-Wilk, normality test)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "data-analytics"
+    ],
+    "file": "content/knowledge/data-analytics/shapiro-wilk-normality-test-qq-plot.md"
+  },
+  "검정력 분석과 표본 크기 계산 (statistical power analysis, sample size)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "data-analytics"
+    ],
+    "file": "content/knowledge/data-analytics/power-analysis-sample-size.md"
+  },
+  "부트스트랩과 순열검정 (bootstrap, permutation test)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "data-analytics"
+    ],
+    "file": "content/knowledge/data-analytics/bootstrap-permutation-test.md"
+  },
+  "확률 보정 (probability calibration, Platt scaling, isotonic regression, Brier score)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "machine-learning"
+    ],
+    "file": "content/knowledge/machine-learning/probability-calibration.md"
+  },
+  "FAPI 2.0 구현·배포 권고와 x-fapi 헤더 (FAPI 2.0 Implementation and Deployment Advice)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "security"
+    ],
+    "file": "content/knowledge/security/fapi-2-implementation-deployment-advice.md"
+  },
+  "OAuth 2.0 Device Authorization Grant RFC 8628 와 CIBA 비교": {
+    "status": "duplicate",
+    "date": "2026-11-23",
+    "areas": [
+      "security"
+    ],
+    "duplicateOf": "security/openid-ciba-poll-ping-push"
+  },
+  "RFC 9530 Digest Fields Content-Digest Repr-Digest": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "security"
+    ],
+    "file": "content/knowledge/security/rfc-9530-digest-fields.md"
+  },
+  "CockroachDB linearizable 모드와 causal reverse (strict serializability)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "distributed-systems"
+    ],
+    "file": "content/knowledge/distributed-systems/cockroachdb-linearizable-causal-reverse.md"
+  },
+  "PgBouncer transaction pooling 모드와 세션 상태 (prepared statements, SET, advisory lock)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "data-modeling",
+      "performance"
+    ],
+    "file": "content/knowledge/performance/pgbouncer-transaction-pooling-session-state.md"
+  },
+  "Envoy retry budget 과 retry_host_predicate 재시도 정책": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "performance"
+    ],
+    "file": "content/knowledge/performance/envoy-retry-budget-host-predicate.md"
+  },
+  "가우시안 과정 사전 연속시간 궤적 추정 (Barfoot Tong Särkkä, exactly sparse Gaussian process regression, continuous-time SLAM)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "robotics"
+    ],
+    "file": "content/knowledge/robotics/gp-continuous-time-trajectory-estimation.md"
+  },
+  "Hedborg 롤링 셔터 번들 조정 (rolling shutter bundle adjustment, Hedborg Forssén)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "robotics"
+    ],
+    "file": "content/knowledge/robotics/rolling-shutter-bundle-adjustment-hedborg.md"
+  },
+  "파동 변수 원격 조작 (wave variables, Niemeyer Slotine teleoperation passivity)": {
+    "status": "insufficient",
+    "date": "2026-11-23",
+    "areas": [
+      "robotics"
+    ],
+    "attempts": 1,
+    "reason": "원논문(Niemeyer·Slotine) 미확보 — 특허·후속 논문만으로 쓴 보류 초안 research/drafts/robotics/wave-variable-teleoperation-HOLD.md",
+    "sources": []
+  },
+  "그래디언트 영역 양방향 경로 추적 (gradient-domain bidirectional path tracing, Manzi EGSR 2015)": {
+    "status": "duplicate",
+    "date": "2026-11-23",
+    "areas": [
+      "graphics-xr"
+    ],
+    "duplicateOf": "graphics-xr/gradient-domain-path-tracing"
+  },
+  "볼류메트릭 ReSTIR (volumetric ReSTIR, Lin Wyman Yuksel 2021 resampled importance sampling in participating media)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "graphics-xr"
+    ],
+    "file": "content/knowledge/graphics-xr/volumetric-restir.md"
+  },
+  "Frank 소스 폭 지각 연구 (source width of frontal phantom sources perception measurement modeling, Matthias Frank)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "graphics-xr"
+    ],
+    "file": "content/knowledge/graphics-xr/frank-source-width-perception.md"
+  },
+  "AllRAD2 (Zotter Frank 2018, All-round ambisonic decoding and panning with loudness and spread preservation)": {
+    "status": "insufficient",
+    "date": "2026-11-23",
+    "areas": [
+      "graphics-xr"
+    ],
+    "attempts": 1,
+    "reason": "AES 2018 원문 미확보(공개 사본 없음)",
+    "sources": []
+  },
+  "알림·피드백 UI 컴포넌트 비교: 토스트·스낵바·배너·모달·바텀시트·인라인 오류·툴팁·코치마크 (toast, snackbar, banner, bottom sheet, tooltip)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/ui-component-lookalikes-naming.md"
+  },
+  "모달·팝업·다이얼로그·알럿·컨펌 구분 (modal dialog, alert dialog, popover, WAI-ARIA dialog alertdialog)": {
+    "status": "duplicate",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "duplicateOf": "ui-ux/modal-dialog"
+  },
+  "토글·체크박스·라디오·세그먼티드 컨트롤 구분 (switch vs checkbox, radio group, segmented control, WAI-ARIA)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/ui-component-lookalikes-naming.md"
+  },
+  "진행 표시와 로딩 패턴: 프로그레스 바·스피너·스켈레톤 (determinate indeterminate progress indicator, skeleton screen)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/loading-states.md"
+  },
+  "빈 화면(empty state)과 온보딩 첫 화면 유형 (empty states, onboarding, first-run experience)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/empty-states.md"
+  },
+  "좋아요·찜(북마크)·공유·별점 같은 액션 UI의 의미 구분 (like, bookmark, share, rating interaction patterns)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/like-bookmark-share-rating-ui.md"
+  },
+  "날짜 선택 UI 유형: 캘린더·피커·직접 입력 (date picker, date input pattern GOV.UK)": {
+    "status": "duplicate",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "duplicateOf": "ui-ux/date-picker-ux"
+  },
+  "AI 응답 아래 액션 버튼: 복사·재생성·좋아요·싫어요·공유 (chat response actions, feedback controls, regenerate)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "ui-ux"
+    ],
+    "file": "content/knowledge/ui-ux/ai-response-action-buttons.md"
+  },
+  "테스트 종류 분류: 기능·비기능·스모크·새니티·회귀·탐색적 (ISTQB test types levels)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/test-types-classification.md"
+  },
+  "성능 테스트 용어: 응답 시간·TPS·동시 사용자·로드·스트레스·스파이크·소크 (performance testing load stress spike soak)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/performance-testing-types-and-metrics.md"
+  },
+  "ISTQB 테스트 7원칙: 결함 집중·살충제 역설·완전한 테스트 불가 (seven testing principles)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/seven-testing-principles.md"
+  },
+  "테스트 설계 기법: 동등 분할·경계값 분석·결정 테이블·상태 전이 (equivalence partitioning, boundary value analysis, decision table, state transition)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/black-box-test-design-techniques.md"
+  },
+  "좋은 버그 리포트 작성: 재현 절차·기대 결과·실제 결과·환경·심각도와 우선순위 (bug report, severity vs priority)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/effective-bug-report-writing.md"
+  },
+  "테스트 지표: 결함 밀도·결함 누출·테스트 커버리지·수정률 (test metrics defect density defect leakage test coverage)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/test-metrics-defect-density-leakage.md"
+  },
+  "테스트 문서: 테스트 계획·시나리오·케이스·결과 보고 (test plan, test case, test scenario, IEEE 829 ISO 29119)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/test-documentation-types.md"
+  },
+  "테스트 프로세스 단계: 계획·분석·설계·구현·실행·완료 (ISTQB test process, test planning, test monitoring and control)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/test-process-stages.md"
+  },
+  "인앱(네이티브) 대 웹뷰 앱 테스트 차이 (native app vs WebView hybrid testing)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/webview-vs-native-app-testing.md"
+  },
+  "테스트 환경과 테스트 데이터 (test environment, staging, test data management)": {
+    "status": "published",
+    "date": "2026-11-23",
+    "areas": [
+      "testing-practice"
+    ],
+    "file": "content/knowledge/testing-practice/test-environment-test-data-management.md"
   }
 }

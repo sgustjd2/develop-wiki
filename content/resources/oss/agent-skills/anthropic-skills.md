@@ -3,7 +3,7 @@ name: anthropics/skills
 url: https://github.com/anthropics/skills
 docs: https://support.claude.com/en/articles/12512180-using-skills-in-claude
 repo: https://github.com/anthropics/skills
-stars: 198901
+stars: 199372
 domain: oss
 category: agent-skills
 description: Anthropic 이 공개한 Agent Skills 예제 저장소. docx·pdf·pptx·xlsx 문서 스킬과 skill-creator·mcp-builder 등을 담고 있어 스킬 작성법을 익히거나 Claude Code 에 바로 설치할 때 쓴다.

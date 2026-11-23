@@ -3,7 +3,7 @@ name: Agno
 url: https://www.agno.com
 docs: https://docs.agno.com/
 repo: https://github.com/agno-agi/agno
-stars: 43260
+stars: 43269
 domain: ai
 category: agent-framework
 description: 에이전트·팀·워크플로를 만드는 Python SDK와, 이를 API·MCP 서버로 띄우는 런타임 AgentOS를 함께 제공하는 프레임워크. 사내용 에이전트를 서비스로 운영할 때 쓴다.

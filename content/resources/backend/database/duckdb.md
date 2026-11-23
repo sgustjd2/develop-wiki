@@ -3,7 +3,7 @@ name: DuckDB
 url: https://duckdb.org
 docs: https://duckdb.org/docs/stable/
 repo: https://github.com/duckdb/duckdb
-stars: 43238
+stars: 43272
 domain: backend
 category: database
 description: 프로세스 안에서 실행되는 컬럼형 분석(OLAP) SQL DB. Parquet·CSV·JSON 파일을 바로 질의해 로컬 데이터 분석과 ETL 에 쓴다.

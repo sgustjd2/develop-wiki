@@ -2,7 +2,7 @@
 name: Awesome Docker
 url: https://github.com/veggiemonk/awesome-docker
 repo: https://github.com/veggiemonk/awesome-docker
-stars: 37285
+stars: 37287
 domain: oss
 category: awesome-lists
 description: Docker 를 위한 프로젝트(빌더, 린터, 이미지 스캐너, 레지스트리, 모니터링)와 학습 자료를 정리한 목록. 컨테이너 빌드·보안·운영 도구를 찾을 때 쓴다.

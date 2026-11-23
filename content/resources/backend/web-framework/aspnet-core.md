@@ -2,7 +2,7 @@
 name: ASP.NET Core
 url: https://dotnet.microsoft.com/apps/aspnet
 repo: https://github.com/dotnet/aspnetcore
-stars: 38543
+stars: 38539
 docs: https://learn.microsoft.com/aspnet/core/
 domain: backend
 category: web-framework

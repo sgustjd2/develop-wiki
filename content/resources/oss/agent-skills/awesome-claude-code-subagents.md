@@ -3,7 +3,7 @@ name: Awesome Claude Code Subagents
 url: https://github.com/VoltAgent/awesome-claude-code-subagents
 docs: https://github.com/VoltAgent/awesome-claude-code-subagents#readme
 repo: https://github.com/VoltAgent/awesome-claude-code-subagents
-stars: 26725
+stars: 26746
 domain: oss
 category: agent-skills
 description: 언어 전문가·인프라·보안·데이터 등 10개 분류의 Claude Code 서브에이전트 정의 161개를 모은 VoltAgent 저장소. 분류별 플러그인으로 설치하거나 .md 파일을 골라 복사해 쓴다.

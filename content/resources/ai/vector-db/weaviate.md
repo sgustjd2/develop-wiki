@@ -3,7 +3,7 @@ name: Weaviate
 url: https://weaviate.io
 docs: https://docs.weaviate.io/weaviate
 repo: https://github.com/weaviate/weaviate
-stars: 16958
+stars: 16959
 domain: ai
 category: vector-db
 description: Go 로 작성된 벡터 데이터베이스. 임베딩 모델 연동 모듈, BM25+벡터 하이브리드 검색, 멀티테넌시를 내장한다. 코어는 BSD-3, 일부 엔터프라이즈 기능은 별도 라이선스.

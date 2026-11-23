@@ -3,7 +3,7 @@ name: MDN Web Docs
 url: https://developer.mozilla.org
 docs: https://developer.mozilla.org/ko/docs/Web
 repo: https://github.com/mdn/content
-stars: 11165
+stars: 11169
 domain: frontend
 category: learning
 description: Mozilla가 운영하는 HTML·CSS·JavaScript·Web API 레퍼런스와 학습 가이드. 표준 동작과 브라우저 호환성을 확인하는 기본 문서다.

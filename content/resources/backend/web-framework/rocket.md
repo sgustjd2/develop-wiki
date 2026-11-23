@@ -2,7 +2,7 @@
 name: Rocket
 url: https://rocket.rs
 repo: https://github.com/rwf2/Rocket
-stars: 25812
+stars: 25814
 docs: https://rocket.rs/guide/v0.5/
 domain: backend
 category: web-framework

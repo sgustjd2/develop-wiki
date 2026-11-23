@@ -3,7 +3,7 @@ name: Matplotlib
 url: https://matplotlib.org
 docs: https://matplotlib.org/stable/
 repo: https://github.com/matplotlib/matplotlib
-stars: 23496
+stars: 23498
 domain: data-ml
 category: analytics-bi
 description: Python 의 기본 2D 시각화 라이브러리. 논문·보고서용 정적 그래프와 세밀한 그림 제어가 필요할 때 쓰며, pandas·seaborn 의 그리기 백엔드이기도 하다.

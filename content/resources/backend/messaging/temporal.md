@@ -3,7 +3,7 @@ name: Temporal
 url: https://temporal.io
 docs: https://docs.temporal.io
 repo: https://github.com/temporalio/temporal
-stars: 24544
+stars: 24571
 domain: backend
 category: messaging
 description: 코드로 작성한 워크플로의 실행 상태를 서버가 기록해 장애·재시작 뒤에도 이어서 실행하는 내구성 실행(durable execution) 엔진. 결제·주문·온보딩처럼 길고 여러 단계인 업무 흐름에 쓴다.

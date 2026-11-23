@@ -3,7 +3,7 @@ name: esbuild
 url: https://esbuild.github.io
 docs: https://esbuild.github.io/getting-started/
 repo: https://github.com/evanw/esbuild
-stars: 40166
+stars: 40170
 domain: frontend
 category: build-tooling
 description: Go로 작성한 JavaScript·TypeScript 번들러 겸 변환기. 설정이 거의 없는 스크립트·라이브러리·서버 코드 번들링에 쓴다.

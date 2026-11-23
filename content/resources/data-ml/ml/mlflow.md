@@ -3,7 +3,7 @@ name: MLflow
 url: https://mlflow.org
 docs: https://mlflow.org/docs/latest/
 repo: https://github.com/mlflow/mlflow
-stars: 28931
+stars: 28941
 domain: data-ml
 category: ml
 description: 실험 추적, 모델 패키징·레지스트리, 배포를 다루는 오픈소스 MLOps 플랫폼. 학습 파라미터·지표·모델 버전을 기록하고 관리할 때 쓴다.

@@ -3,7 +3,7 @@ name: Umami
 url: https://umami.is
 docs: https://docs.umami.is
 repo: https://github.com/umami-software/umami
-stars: 40297
+stars: 40308
 domain: oss
 category: self-hosted
 description: PostgreSQL 하나로 운영하는 경량·쿠키리스 웹 분석 도구. 페이지뷰·유입·커스텀 이벤트를 집계하며 Next.js 로 만들어졌다. MIT 라이선스, 유료 Umami Cloud 도 있다.

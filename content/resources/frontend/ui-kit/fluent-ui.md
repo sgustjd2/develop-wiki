@@ -3,7 +3,7 @@ name: Fluent UI
 url: https://fluent2.microsoft.design
 docs: https://react.fluentui.dev
 repo: https://github.com/microsoft/fluentui
-stars: 20426
+stars: 20430
 domain: frontend
 category: ui-kit
 description: Microsoft 디자인 시스템 Fluent 2 와 그 웹 구현 Fluent UI React v9(@fluentui/react-components). Microsoft 365·Teams 와 어울리는 화면이나 Teams 앱, 사내 업무 도구를 만들 때 쓴다.

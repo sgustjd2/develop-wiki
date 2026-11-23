@@ -3,7 +3,7 @@ name: Hot Chocolate
 url: https://chillicream.com/docs/hotchocolate/
 docs: https://chillicream.com/docs/hotchocolate/v16/get-started-with-graphql-in-net-core
 repo: https://github.com/ChilliCream/graphql-platform
-stars: 5767
+stars: 5768
 domain: backend
 category: api
 description: ChilliCream 이 만든 .NET 용 GraphQL 서버 라이브러리. ASP.NET Core 에서 C# 클래스로 GraphQL 스키마를 정의하고 API 를 제공할 때 쓴다.

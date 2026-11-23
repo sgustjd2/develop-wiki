@@ -3,7 +3,7 @@ name: Underactuated Robotics (MIT)
 url: https://underactuated.mit.edu
 docs: https://underactuated.mit.edu/index.html
 repo: https://github.com/RussTedrake/underactuated
-stars: 1047
+stars: 1048
 domain: robotics
 category: learning
 description: Russ Tedrake 의 MIT 강의 노트. 비선형 동역학, 궤적 최적화, LQR, 모션 플래닝을 웹으로 무료 공개하며 Drake 기반 노트북 예제를 제공한다.

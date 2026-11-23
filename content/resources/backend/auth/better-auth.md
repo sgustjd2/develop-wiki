@@ -3,7 +3,7 @@ name: Better Auth
 url: https://better-auth.com
 docs: https://better-auth.com/docs/introduction
 repo: https://github.com/better-auth/better-auth
-stars: 30826
+stars: 30845
 domain: backend
 category: auth
 description: 프레임워크에 묶이지 않는 TypeScript 인증 라이브러리. 이메일·비밀번호, 소셜 로그인, 세션, 2FA·패스키·조직을 플러그인으로 앱 DB 위에 직접 구현할 때 쓴다.

@@ -3,7 +3,7 @@ name: NVIDIA Isaac Sim
 url: https://developer.nvidia.com/isaac/sim
 docs: https://docs.isaacsim.omniverse.nvidia.com/latest/index.html
 repo: https://github.com/isaac-sim/IsaacSim
-stars: 4523
+stars: 4528
 domain: robotics
 category: simulation
 description: Omniverse·OpenUSD 기반 NVIDIA 로봇 시뮬레이터. RTX 센서 렌더링과 합성 데이터, ROS 2 연동을 제공하며 RTX GPU 가 필요하다.

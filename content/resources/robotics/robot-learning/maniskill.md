@@ -3,7 +3,7 @@ name: ManiSkill
 url: https://maniskill.readthedocs.io/en/latest/
 docs: https://maniskill.readthedocs.io/en/latest/
 repo: https://github.com/mani-skill/ManiSkill
-stars: 3535
+stars: 3540
 domain: robotics
 category: robot-learning
 description: SAPIEN 기반 GPU 병렬 로봇 조작 시뮬레이션 프레임워크. 수천 환경을 병렬로 돌리는 조작 벤치마크와 학습 기준 구현을 제공한다.

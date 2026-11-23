@@ -3,7 +3,7 @@ name: curl
 url: https://curl.se/
 docs: https://curl.se/docs/manpage.html
 repo: https://github.com/curl/curl
-stars: 43669
+stars: 43653
 domain: devtools
 category: api-client
 description: 명령줄에서 HTTP를 비롯한 여러 프로토콜로 데이터를 주고받는 도구이자 libcurl 라이브러리. API 호출 확인, 스크립트 다운로드, 연결 문제 진단에 쓴다.

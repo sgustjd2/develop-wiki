@@ -3,7 +3,7 @@ name: Keycloak
 url: https://www.keycloak.org
 docs: https://www.keycloak.org/documentation
 repo: https://github.com/keycloak/keycloak
-stars: 38001
+stars: 38014
 domain: backend
 category: auth
 description: OIDC·OAuth 2.0·SAML 을 지원하는 오픈소스 ID·접근 관리(IAM) 서버. 자체 호스팅 SSO, 사용자 관리, 소셜·LDAP 연동이 필요할 때 쓴다.

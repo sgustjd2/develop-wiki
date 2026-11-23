@@ -3,7 +3,7 @@ name: http4k
 url: https://www.http4k.org
 docs: https://www.http4k.org/guide/reference/core/
 repo: https://github.com/http4k/http4k
-stars: 2789
+stars: 2790
 domain: backend
 category: web-framework
 description: 서버와 클라이언트를 모두 'Request 를 받아 Response 를 돌려주는 함수'로 다루는 Kotlin HTTP 툴킷. 서버 엔진을 바꿔 끼우고 인메모리로 테스트하기 쉬운 함수형 스타일이다.

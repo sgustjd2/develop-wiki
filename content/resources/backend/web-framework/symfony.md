@@ -3,7 +3,7 @@ name: Symfony
 url: https://symfony.com
 docs: https://symfony.com/doc/current/index.html
 repo: https://github.com/symfony/symfony
-stars: 31459
+stars: 31454
 domain: backend
 category: web-framework
 description: 재사용 가능한 PHP 컴포넌트 모음이자 풀스택 웹 프레임워크. 라우팅·DI 컨테이너·HttpFoundation 등을 조합해 웹앱과 API 를 만든다.

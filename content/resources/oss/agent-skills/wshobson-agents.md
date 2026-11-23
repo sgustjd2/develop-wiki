@@ -3,7 +3,7 @@ name: wshobson/agents
 url: https://github.com/wshobson/agents
 docs: https://github.com/wshobson/agents/blob/main/docs/plugins.md
 repo: https://github.com/wshobson/agents
-stars: 42790
+stars: 42837
 domain: oss
 category: agent-skills
 description: 94개 플러그인에 서브에이전트 202개·스킬 185개·명령 105개를 담은 마켓플레이스. Claude Code 형식으로 한 번 작성해 Codex·Cursor·OpenCode·Copilot 등 형식으로 변환해 준다.

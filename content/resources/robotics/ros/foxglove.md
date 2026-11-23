@@ -3,7 +3,7 @@ name: Foxglove
 url: https://foxglove.dev
 docs: https://docs.foxglove.dev/docs/introduction
 repo: https://github.com/foxglove/foxglove-sdk
-stars: 326
+stars: 327
 domain: robotics
 category: ros
 description: 로봇·피지컬 AI 데이터를 실시간 스트리밍하거나 MCAP 로 기록해 보는 시각화·디버깅 플랫폼. ROS 2 는 foxglove_bridge 로, 자체 코드는 SDK(Python·Rust·C++)로 연결한다.

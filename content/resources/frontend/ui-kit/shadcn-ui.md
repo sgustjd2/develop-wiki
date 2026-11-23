@@ -3,7 +3,7 @@ name: shadcn/ui
 url: https://ui.shadcn.com
 docs: https://ui.shadcn.com/docs
 repo: https://github.com/shadcn-ui/ui
-stars: 128748
+stars: 128849
 domain: frontend
 category: ui-kit
 description: npm 패키지가 아니라 CLI로 컴포넌트 소스 코드를 프로젝트에 복사해 넣는 React 컴포넌트 모음. Tailwind CSS와 헤드리스 프리미티브 위에서 직접 고쳐 쓰고 싶을 때 쓴다.

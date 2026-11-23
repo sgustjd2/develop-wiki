@@ -3,7 +3,7 @@ name: Embassy
 url: https://embassy.dev
 docs: https://embassy.dev/book/
 repo: https://github.com/embassy-rs/embassy
-stars: 10139
+stars: 10143
 domain: robotics
 category: embedded
 description: Rust 임베디드용 async/await 프레임워크. 협력형 실행기, 타이머, STM32·nRF·RP 하드웨어 추상화와 네트워크·USB 스택을 제공한다.

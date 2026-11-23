@@ -3,7 +3,7 @@ name: Grafana
 url: https://grafana.com/oss/grafana/
 docs: https://grafana.com/docs/grafana/latest/
 repo: https://github.com/grafana/grafana
-stars: 78035
+stars: 78051
 domain: backend
 category: observability
 description: Prometheus·Loki·Tempo·SQL DB 등 여러 데이터 소스를 연결해 대시보드와 알림을 만드는 시각화 플랫폼. AGPLv3 오픈소스이며 매니지드 Grafana Cloud 도 있다.

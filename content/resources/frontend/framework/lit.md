@@ -2,7 +2,7 @@
 name: Lit
 url: https://lit.dev
 repo: https://github.com/lit/lit
-stars: 21898
+stars: 21901
 docs: https://lit.dev/docs/
 domain: frontend
 category: framework

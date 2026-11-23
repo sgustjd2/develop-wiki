@@ -3,7 +3,7 @@ name: slam_toolbox
 url: https://github.com/SteveMacenski/slam_toolbox
 docs: https://docs.ros.org/en/ros2_packages/lyrical/api/slam_toolbox/
 repo: https://github.com/SteveMacenski/slam_toolbox
-stars: 2726
+stars: 2729
 domain: robotics
 category: perception
 description: 2D 라이다 SLAM ROS 2 패키지. 온라인(async/sync) 매핑, 지도 저장·재개, 루프 클로저, 로컬라이제이션 모드를 제공하며 Nav2 문서에서 SLAM 으로 쓰는 패키지다.

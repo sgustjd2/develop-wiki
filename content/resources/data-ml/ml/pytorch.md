@@ -3,7 +3,7 @@ name: PyTorch
 url: https://pytorch.org
 docs: https://docs.pytorch.org/docs/stable/
 repo: https://github.com/pytorch/pytorch
-stars: 105821
+stars: 105799
 domain: data-ml
 category: ml
 description: 텐서 연산과 자동 미분을 제공하는 딥러닝 프레임워크. 연구용 모델 구현부터 LLM 학습·추론까지 GPU 기반 신경망 개발 전반에 쓴다.

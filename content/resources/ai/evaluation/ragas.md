@@ -3,7 +3,7 @@ name: Ragas
 url: https://docs.ragas.io
 docs: https://docs.ragas.io/en/stable/getstarted/quickstart/
 repo: https://github.com/vibrantlabsai/ragas
-stars: 16400
+stars: 16408
 domain: ai
 category: evaluation
 description: RAG·에이전트 출력을 충실도·문맥 정밀도·재현율 같은 지표로 점수화하는 Python 평가 라이브러리. 데이터셋과 실험 단위로 결과를 비교한다.

@@ -3,7 +3,7 @@ name: Swift Concurrency
 url: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/
 docs: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/
 repo: https://github.com/swiftlang/swift
-stars: 70604
+stars: 70605
 domain: mobile
 category: ios
 description: Swift 언어에 내장된 동시성 모델. async/await, 구조적 동시성(Task), 액터, Sendable 로 비동기 코드를 쓰고 Swift 6 언어 모드에서 데이터 경합을 컴파일 시점에 잡는다.

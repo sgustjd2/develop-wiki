@@ -3,7 +3,7 @@ name: Zephyr RTOS
 url: https://zephyrproject.org
 docs: https://docs.zephyrproject.org/latest/develop/getting_started/index.html
 repo: https://github.com/zephyrproject-rtos/zephyr
-stars: 17165
+stars: 17170
 domain: robotics
 category: embedded
 description: Linux Foundation 이 관리하는 오픈소스 RTOS. 수백 종 보드를 Devicetree·Kconfig·west 로 통일해 지원하며 로봇 펌웨어 개발에 쓴다.

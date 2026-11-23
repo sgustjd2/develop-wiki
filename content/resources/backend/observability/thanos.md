@@ -3,7 +3,7 @@ name: Thanos
 url: https://thanos.io
 docs: https://thanos.io/tip/thanos/getting-started.md/
 repo: https://github.com/thanos-io/thanos
-stars: 14286
+stars: 14288
 domain: backend
 category: observability
 description: Prometheus 를 여러 대 묶어 전역 조회하고 오브젝트 스토리지에 장기 보관하는 CNCF 인큐베이팅 프로젝트. 고가용성·다운샘플링이 필요한 메트릭 환경에서 쓴다.

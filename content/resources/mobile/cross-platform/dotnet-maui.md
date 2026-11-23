@@ -3,7 +3,7 @@ name: .NET MAUI
 url: https://dotnet.microsoft.com/apps/maui
 docs: https://learn.microsoft.com/dotnet/maui/
 repo: https://github.com/dotnet/maui
-stars: 23322
+stars: 23318
 domain: mobile
 category: cross-platform
 description: C#과 XAML로 Android·iOS·macOS(Mac Catalyst)·Windows 앱을 하나의 프로젝트에서 만드는 Microsoft의 크로스플랫폼 UI 프레임워크. Xamarin.Forms의 후속이다.

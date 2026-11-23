@@ -3,7 +3,7 @@ name: Godot Engine
 url: https://godotengine.org
 docs: https://docs.godotengine.org/en/stable/tutorials/xr/index.html
 repo: https://github.com/godotengine/godot
-stars: 120580
+stars: 120629
 domain: xr
 category: engines
 description: MIT 라이선스의 오픈소스 게임 엔진. OpenXR을 내장해 GDScript·C#으로 VR·AR 앱을 만들고 헤드셋 벤더 플러그인을 선택적으로 붙인다.

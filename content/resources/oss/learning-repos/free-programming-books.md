@@ -2,7 +2,7 @@
 name: Free Programming Books
 url: https://ebookfoundation.github.io/free-programming-books/
 repo: https://github.com/EbookFoundation/free-programming-books
-stars: 402079
+stars: 402132
 domain: oss
 category: learning-repos
 description: 무료로 공개된 프로그래밍 책·강의·치트시트·연습 문제를 언어별·주제별로 모은 목록. 한국어 무료 자료 목록도 있어 특정 언어를 책으로 공부할 때 쓴다.

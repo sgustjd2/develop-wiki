@@ -3,7 +3,7 @@ name: Apache Kafka
 url: https://kafka.apache.org
 docs: https://kafka.apache.org/documentation/
 repo: https://github.com/apache/kafka
-stars: 34251
+stars: 34252
 domain: backend
 category: messaging
 description: 파티션으로 나뉜 로그에 이벤트를 쌓고 여러 소비자가 각자 위치에서 읽는 분산 이벤트 스트리밍 플랫폼. 대용량 이벤트 파이프라인, CDC, 서비스 간 비동기 통합에 쓴다.

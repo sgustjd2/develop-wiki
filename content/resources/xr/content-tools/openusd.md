@@ -3,7 +3,7 @@ name: OpenUSD
 url: https://openusd.org
 docs: https://openusd.org/release/index.html
 repo: https://github.com/PixarAnimationStudios/OpenUSD
-stars: 7665
+stars: 7667
 domain: xr
 category: content-tools
 description: Pixar의 Universal Scene Description. 레이어·컴포지션으로 대규모 3D 장면을 협업 편집하는 개방 프레임워크로 USDZ가 Apple 플랫폼 AR에 쓰인다.

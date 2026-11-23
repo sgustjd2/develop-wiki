@@ -3,7 +3,7 @@ name: Gazebo
 url: https://gazebosim.org
 docs: https://gazebosim.org/docs/latest/getstarted/
 repo: https://github.com/gazebosim/gz-sim
-stars: 1590
+stars: 1592
 domain: robotics
 category: simulation
 description: ROS 2와 함께 가장 널리 쓰이는 오픈소스 로봇 시뮬레이터. SDFormat 월드·센서·플러그인 기반이며 ros_gz 로 ROS 2 와 연결한다.

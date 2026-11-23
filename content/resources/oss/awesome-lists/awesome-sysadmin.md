@@ -2,7 +2,7 @@
 name: Awesome Sysadmin
 url: https://github.com/awesome-foss/awesome-sysadmin
 repo: https://github.com/awesome-foss/awesome-sysadmin
-stars: 35793
+stars: 35801
 domain: oss
 category: awesome-lists
 description: 시스템 관리·운영에 쓰는 자유·오픈소스 소프트웨어를 분야별로 정리한 목록. 모니터링, 백업, 설정 관리, 로그, VPN 같은 운영 도구 후보를 찾을 때 쓴다.

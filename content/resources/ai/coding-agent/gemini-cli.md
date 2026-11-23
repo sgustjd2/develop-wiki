@@ -3,7 +3,7 @@ name: Gemini CLI
 url: https://geminicli.com
 docs: https://geminicli.com/docs/
 repo: https://github.com/google-gemini/gemini-cli
-stars: 108996
+stars: 109023
 domain: ai
 category: coding-agent
 description: Gemini 모델로 동작하는 Google의 오픈소스 터미널 코딩 에이전트. 2026년 6월부터 Gemini Code Assist 기업 라이선스·유료 API 키 사용자 대상으로 유지된다.
@@ -12,7 +12,7 @@ tags: [agent, cli, gemini, google, mcp]
 languages: []
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-24
 ---
 
 ## 개요

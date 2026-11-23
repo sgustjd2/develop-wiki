@@ -3,7 +3,7 @@ name: DeepEval
 url: https://deepeval.com
 docs: https://deepeval.com/docs/getting-started
 repo: https://github.com/confident-ai/deepeval
-stars: 19592
+stars: 19607
 domain: ai
 category: evaluation
 description: pytest 처럼 테스트 케이스와 지표로 LLM 출력을 검증하는 오픈소스 평가 프레임워크. RAG·에이전트·대화·안전성 지표를 기본 제공한다.
@@ -12,7 +12,7 @@ tags: [evals, llm-as-judge, pytest, rag, g-eval]
 languages: [python, typescript]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-24
 ---
 
 ## 개요

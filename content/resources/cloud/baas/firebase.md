@@ -3,7 +3,7 @@ name: Firebase
 url: https://firebase.google.com/
 docs: https://firebase.google.com/docs
 repo: https://github.com/firebase/firebase-tools
-stars: 4490
+stars: 4492
 domain: cloud
 category: baas
 description: Google 의 앱 개발 플랫폼. Authentication·Cloud Firestore·Cloud Storage·Cloud Functions·Hosting·SQL Connect 를 클라이언트 SDK 로 바로 쓰며, 모바일·웹 앱 백엔드를 서버 없이 만들 때 쓴다.

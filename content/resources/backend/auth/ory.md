@@ -3,7 +3,7 @@ name: Ory
 url: https://www.ory.com
 docs: https://www.ory.com/docs/
 repo: https://github.com/ory/kratos
-stars: 13962
+stars: 13964
 domain: backend
 category: auth
 description: Go 로 만든 헤드리스 ID 인프라 모음. Kratos(사용자·로그인), Hydra(OAuth2·OIDC 서버), Keto(권한), Oathkeeper(프록시)를 API 로 조합해 쓴다.

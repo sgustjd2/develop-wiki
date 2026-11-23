@@ -3,7 +3,7 @@ name: Render
 url: https://render.com/
 docs: https://render.com/docs
 repo: https://github.com/render-oss/cli
-stars: 141
+stars: 142
 domain: cloud
 category: paas-edge
 description: 웹 서비스·백그라운드 워커·크론·정적 사이트와 관리형 Postgres·Key Value 를 한 대시보드에서 운영하는 PaaS. Heroku 같은 git push 배포로 풀스택 앱 전체를 올릴 때 쓴다.

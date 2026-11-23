@@ -3,7 +3,7 @@ name: Zustand
 url: https://zustand.docs.pmnd.rs
 docs: https://zustand.docs.pmnd.rs/learn/getting-started/introduction
 repo: https://github.com/pmndrs/zustand
-stars: 58982
+stars: 58986
 domain: frontend
 category: state-data
 description: 훅 하나로 전역 상태 스토어를 만드는 작은 React 상태 관리 라이브러리. Provider 없이 필요한 조각만 구독한다.

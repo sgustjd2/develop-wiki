@@ -3,7 +3,7 @@ name: ContextForge
 url: https://ibm.github.io/mcp-context-forge/
 docs: https://ibm.github.io/mcp-context-forge/overview/
 repo: https://github.com/IBM/mcp-context-forge
-stars: 4875
+stars: 4876
 domain: ai
 category: mcp-tooling
 description: 여러 MCP 서버·REST·gRPC API 를 하나의 MCP 엔드포인트로 묶는 IBM 의 오픈소스 게이트웨이·레지스트리. 인증, 속도 제한, 관측성을 중앙에서 관리할 때 쓴다.

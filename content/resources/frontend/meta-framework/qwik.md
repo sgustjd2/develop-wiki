@@ -3,7 +3,7 @@ name: Qwik
 url: https://qwik.dev
 docs: https://qwik.dev/docs/
 repo: https://github.com/QwikDev/qwik
-stars: 22076
+stars: 22074
 domain: frontend
 category: meta-framework
 description: 하이드레이션 대신 서버에서 직렬화한 상태를 이어받아(resumability) 필요한 코드만 지연 로드하는 프레임워크와 라우터(Qwik City). 초기 JS를 최소화해야 하는 사이트에 쓴다.

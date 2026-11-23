@@ -2,7 +2,7 @@
 name: Micronaut
 url: https://micronaut.io
 repo: https://github.com/micronaut-projects/micronaut-core
-stars: 6437
+stars: 6438
 docs: https://docs.micronaut.io/latest/guide/
 domain: backend
 category: web-framework

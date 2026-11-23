@@ -3,7 +3,7 @@ name: XState
 url: https://stately.ai/docs/xstate
 docs: https://stately.ai/docs/xstate
 repo: https://github.com/statelyai/xstate
-stars: 30531
+stars: 30533
 domain: frontend
 category: state-data
 description: 상태 머신·상태차트와 액터 모델로 복잡한 UI 흐름과 비동기 로직을 명시적으로 모델링하는 라이브러리. 프레임워크와 무관하게 동작한다.

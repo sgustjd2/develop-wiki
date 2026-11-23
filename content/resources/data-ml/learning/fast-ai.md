@@ -3,7 +3,7 @@ name: fast.ai
 url: https://www.fast.ai
 docs: https://docs.fast.ai/
 repo: https://github.com/fastai/fastai
-stars: 28277
+stars: 28278
 domain: data-ml
 category: learning
 description: 코드를 먼저 돌려 보는 하향식 무료 딥러닝 강좌(Practical Deep Learning for Coders)와 PyTorch 기반 fastai 라이브러리. 실무 개발자가 딥러닝을 입문할 때 쓴다.

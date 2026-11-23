@@ -3,7 +3,7 @@ name: GSAP
 url: https://gsap.com
 docs: https://gsap.com/docs/v3/
 repo: https://github.com/greensock/GSAP
-stars: 31062
+stars: 31144
 domain: frontend
 category: animation
 description: 트윈·타임라인으로 CSS·SVG·캔버스·객체 속성을 애니메이션하는 프레임워크 독립 JavaScript 라이브러리. ScrollTrigger 등 플러그인까지 무료다.

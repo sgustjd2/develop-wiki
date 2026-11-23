@@ -3,7 +3,7 @@ name: Tuist
 url: https://tuist.dev
 docs: https://docs.tuist.dev
 repo: https://github.com/tuist/tuist
-stars: 5870
+stars: 5869
 domain: mobile
 category: ios
 description: Swift 로 Xcode 프로젝트를 선언해 생성하는 도구. Project.swift 매니페스트에서 .xcodeproj 를 만들어 머지 충돌을 없애고, 모듈화·빌드 캐시·의존성 관리를 지원한다.

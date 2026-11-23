@@ -3,7 +3,7 @@ name: Cypress
 url: https://www.cypress.io
 docs: https://docs.cypress.io/app/get-started/why-cypress
 repo: https://github.com/cypress-io/cypress
-stars: 51042
+stars: 51046
 domain: frontend
 category: testing
 description: 브라우저 안에서 테스트를 실행하며 명령 단위 스냅샷으로 디버깅하는 E2E·컴포넌트 테스트 도구. 테스트 러너 앱은 오픈소스, 기록·병렬화 서비스는 유료다.

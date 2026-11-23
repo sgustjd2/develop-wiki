@@ -3,7 +3,7 @@ name: Firebase Remote Config
 url: https://firebase.google.com/products/remote-config
 docs: https://firebase.google.com/docs/remote-config
 repo: https://github.com/firebase/firebase-android-sdk
-stars: 2580
+stars: 2581
 domain: mobile
 category: mobile-backend
 description: 앱 업데이트 없이 서버에서 설정값을 바꾸는 Firebase 무료 서비스. 기능 플래그, 단계적 출시, 사용자 조건별 값, A/B 테스트에 쓴다.

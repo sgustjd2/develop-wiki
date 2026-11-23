@@ -3,7 +3,7 @@ name: Alamofire
 url: https://github.com/Alamofire/Alamofire
 docs: https://alamofire.github.io/Alamofire/
 repo: https://github.com/Alamofire/Alamofire
-stars: 42398
+stars: 42397
 domain: mobile
 category: ios
 description: Swift용 HTTP 네트워킹 라이브러리. URLSession 위에서 요청 체이닝, 응답 검증, Codable 디코딩, 인터셉터(재시도·인증), 업로드·다운로드를 제공한다.

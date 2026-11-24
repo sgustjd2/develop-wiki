@@ -2,7 +2,7 @@
 name: htmx
 url: https://htmx.org
 repo: https://github.com/bigskysoftware/htmx
-stars: 49653
+stars: 49655
 docs: https://htmx.org/docs/
 domain: frontend
 category: framework

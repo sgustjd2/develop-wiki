@@ -3,7 +3,7 @@ name: Jupyter (JupyterLab·Notebook)
 url: https://jupyter.org
 docs: https://docs.jupyter.org/en/latest/
 repo: https://github.com/jupyterlab/jupyterlab
-stars: 15416
+stars: 15420
 domain: data-ml
 category: analytics-bi
 description: 코드·실행 결과·그래프·설명을 한 문서(.ipynb)에 담는 대화형 노트북 환경. 데이터 탐색, 분석 보고, ML 실험 기록에 쓴다.

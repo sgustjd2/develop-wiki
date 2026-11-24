@@ -3,7 +3,7 @@ name: Dagster
 url: https://dagster.io
 docs: https://dagster.io/docs
 repo: https://github.com/dagster-io/dagster
-stars: 16465
+stars: 16467
 domain: data-ml
 category: orchestration
 description: 테이블·모델 같은 데이터 자산(asset)을 중심으로 파이프라인을 정의하는 Python 오케스트레이터. 계보 추적과 로컬 개발·테스트가 중요한 데이터 플랫폼에 쓴다.

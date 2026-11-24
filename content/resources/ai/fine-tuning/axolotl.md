@@ -3,7 +3,7 @@ name: Axolotl
 url: https://axolotl.ai
 docs: https://docs.axolotl.ai
 repo: https://github.com/axolotl-ai-cloud/axolotl
-stars: 12747
+stars: 12748
 domain: ai
 category: fine-tuning
 description: YAML 설정 하나로 LLM 의 전체·LoRA·QLoRA 파인튜닝, DPO·GRPO, 다중 GPU·멀티노드 학습을 실행하는 오픈소스 학습 프레임워크.
@@ -12,7 +12,7 @@ tags: [yaml, lora, qlora, fsdp, deepspeed, post-training]
 languages: [python]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-25
 ---
 
 ## 개요

@@ -2,7 +2,7 @@
 name: Preact
 url: https://preactjs.com
 repo: https://github.com/preactjs/preact
-stars: 39013
+stars: 39011
 docs: https://preactjs.com/guide/v11/getting-started
 domain: frontend
 category: framework

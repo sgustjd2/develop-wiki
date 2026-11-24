@@ -3,7 +3,7 @@ name: Carbon Design System
 url: https://carbondesignsystem.com
 docs: https://carbondesignsystem.com/developing/frameworks/react/
 repo: https://github.com/carbon-design-system/carbon
-stars: 9638
+stars: 9643
 domain: frontend
 category: ui-kit
 description: IBM의 오픈소스 디자인 시스템으로, 가이드라인·디자인 키트와 React·Web Components 구현(@carbon/react 등)을 함께 제공한다. 데이터 테이블이 많은 업무용·엔터프라이즈 화면을 만들 때 쓴다.

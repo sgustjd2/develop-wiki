@@ -3,7 +3,7 @@ name: Oxlint
 url: https://oxc.rs
 docs: https://oxc.rs/docs/guide/usage/linter.html
 repo: https://github.com/oxc-project/oxc
-stars: 23573
+stars: 23591
 domain: frontend
 category: build-tooling
 description: Rust로 만든 Oxc 프로젝트의 JavaScript·TypeScript 린터. ESLint 핵심·주요 플러그인 규칙을 내장해 대규모 저장소의 린트 시간을 줄일 때 쓴다.

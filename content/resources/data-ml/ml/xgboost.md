@@ -3,7 +3,7 @@ name: XGBoost
 url: https://xgboost.ai
 docs: https://xgboost.readthedocs.io/en/stable/
 repo: https://github.com/dmlc/xgboost
-stars: 29015
+stars: 29012
 domain: data-ml
 category: ml
 description: 그래디언트 부스팅 결정 트리 라이브러리. 표 형식 데이터의 분류·회귀·순위 예측에서 높은 성능을 내며 CPU·GPU·분산 학습을 지원한다.

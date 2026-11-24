@@ -3,7 +3,7 @@ name: Paparazzi
 url: https://cashapp.github.io/paparazzi/
 docs: https://cashapp.github.io/paparazzi/
 repo: https://github.com/cashapp/paparazzi
-stars: 2641
+stars: 2642
 domain: mobile
 category: mobile-testing
 description: 에뮬레이터·실기기 없이 JVM 에서 Android 뷰·Compose 화면을 렌더링해 스냅샷을 찍고 기준 이미지와 비교하는 Cash App 의 스크린샷 테스트 라이브러리.

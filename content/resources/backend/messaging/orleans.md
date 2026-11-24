@@ -3,7 +3,7 @@ name: Orleans
 url: https://learn.microsoft.com/dotnet/orleans/overview
 docs: https://learn.microsoft.com/dotnet/orleans/quickstarts/build-your-first-orleans-app
 repo: https://github.com/dotnet/orleans
-stars: 10929
+stars: 10932
 domain: backend
 category: messaging
 description: .NET 용 가상 액터(Grain) 기반 분산 애플리케이션 프레임워크. 상태를 가진 객체를 클러스터에 자동 배치해, 게임·채팅·세션처럼 엔티티 단위 상태 서비스를 확장할 때 쓴다.

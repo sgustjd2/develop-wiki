@@ -3,7 +3,7 @@ name: openid-client
 url: https://github.com/panva/openid-client
 docs: https://github.com/panva/openid-client/blob/main/docs/README.md
 repo: https://github.com/panva/openid-client
-stars: 2452
+stars: 2451
 domain: backend
 category: auth
 description: Filip Skokan(panva)이 만든 OAuth 2 / OpenID Connect 클라이언트 라이브러리. Node.js 외 Deno·Bun·Cloudflare Workers 에서 인가 코드·DPoP·PAR 흐름을 구현할 때 쓴다.

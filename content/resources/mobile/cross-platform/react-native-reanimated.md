@@ -3,7 +3,7 @@ name: React Native Reanimated
 url: https://docs.swmansion.com/react-native-reanimated/
 docs: https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/
 repo: https://github.com/software-mansion/react-native-reanimated
-stars: 11091
+stars: 11094
 domain: mobile
 category: cross-platform
 description: React Native 용 고성능 애니메이션 라이브러리. UI 스레드에서 실행되는 워클릿 기반 공유 값·애니메이티드 스타일과 CSS 스타일 전환·애니메이션 API 를 제공한다.

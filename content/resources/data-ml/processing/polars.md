@@ -3,7 +3,7 @@ name: Polars
 url: https://pola.rs
 docs: https://docs.pola.rs/
 repo: https://github.com/pola-rs/polars
-stars: 40458
+stars: 40479
 domain: data-ml
 category: processing
 description: Rust 로 작성된 컬럼형 DataFrame 라이브러리. 지연 실행과 멀티스레드 엔진으로 단일 머신에서 수십 GB 데이터를 빠르게 가공할 때 쓴다.

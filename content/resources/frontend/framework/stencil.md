@@ -3,7 +3,7 @@ name: Stencil
 url: https://stenciljs.com
 docs: https://stenciljs.com/docs/introduction
 repo: https://github.com/stenciljs/core
-stars: 13154
+stars: 13153
 domain: frontend
 category: framework
 description: 데코레이터와 JSX로 작성한 컴포넌트를 표준 Web Components로 컴파일하는 도구. 여러 프레임워크에서 공통으로 쓸 디자인 시스템 컴포넌트를 만들 때 쓴다.

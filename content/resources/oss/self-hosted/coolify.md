@@ -3,7 +3,7 @@ name: Coolify
 url: https://coolify.io
 docs: https://coolify.io/docs
 repo: https://github.com/coollabsio/coolify
-stars: 66384
+stars: 66424
 domain: oss
 category: self-hosted
 description: 내 서버에 설치해 Git 저장소·Docker Compose 앱·DB 를 배포하고 도메인·HTTPS·백업을 관리하는 셀프 호스팅 PaaS. Heroku·Vercel 대안으로 쓴다. Apache-2.0 라이선스.

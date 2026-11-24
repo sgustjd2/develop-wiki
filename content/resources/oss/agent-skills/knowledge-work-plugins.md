@@ -3,7 +3,7 @@ name: anthropics/knowledge-work-plugins
 url: https://github.com/anthropics/knowledge-work-plugins
 docs: https://github.com/anthropics/knowledge-work-plugins#readme
 repo: https://github.com/anthropics/knowledge-work-plugins
-stars: 36736
+stars: 36787
 domain: oss
 category: agent-skills
 description: Anthropic 이 공개한 직무별 플러그인 마켓플레이스. 영업·재무·법무·데이터·엔지니어링 등 역할별 스킬·슬래시 명령·MCP 커넥터를 묶었다. 개발자보다 비개발 직군 업무를 Claude 에 맡기는 구성을 참고할 때 쓴다.

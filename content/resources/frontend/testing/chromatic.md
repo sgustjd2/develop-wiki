@@ -3,7 +3,7 @@ name: Chromatic
 url: https://www.chromatic.com
 docs: https://www.chromatic.com/docs/
 repo: https://github.com/chromaui/chromatic-cli
-stars: 344
+stars: 345
 domain: frontend
 category: testing
 description: Storybook 스토리(또는 Playwright·Cypress 테스트)를 클라우드 브라우저에서 스냅샷으로 찍어 이전 기준과 비교하는 시각 회귀 테스트·UI 리뷰 서비스. 컴포넌트 화면 변경을 PR 단계에서 검토할 때 쓴다.

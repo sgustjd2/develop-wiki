@@ -2,7 +2,7 @@
 name: OpenAI Agents SDK
 url: https://openai.github.io/openai-agents-python/
 repo: https://github.com/openai/openai-agents-python
-stars: 30841
+stars: 30854
 domain: ai
 category: agent-framework
 description: 에이전트·핸드오프·가드레일·트레이싱 같은 적은 기본 요소로 멀티 에이전트 워크플로를 만드는 OpenAI의 SDK. 가벼운 코드 중심 에이전트가 필요할 때 쓴다.

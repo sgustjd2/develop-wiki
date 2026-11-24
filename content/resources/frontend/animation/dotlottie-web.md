@@ -3,7 +3,7 @@ name: dotLottie Web
 url: https://lottiefiles.com/dotlottie
 docs: https://developers.lottiefiles.com/docs/dotlottie-player/dotlottie-web/
 repo: https://github.com/LottieFiles/dotlottie-web
-stars: 958
+stars: 959
 domain: frontend
 category: animation
 description: After Effects 등에서 만든 Lottie(.json)·dotLottie(.lottie) 벡터 애니메이션을 캔버스에 재생하는 LottieFiles 공식 웹 플레이어. React·Vue 래퍼가 있다.

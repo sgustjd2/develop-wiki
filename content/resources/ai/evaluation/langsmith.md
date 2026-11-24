@@ -3,7 +3,7 @@ name: LangSmith
 url: https://www.langchain.com/langsmith
 docs: https://docs.langchain.com/langsmith/home
 repo: https://github.com/langchain-ai/langsmith-python
-stars: 28
+stars: 29
 domain: ai
 category: evaluation
 description: LangChain 사의 LLM 앱 트레이싱·평가·프롬프트 관리 SaaS. LangChain 없이도 SDK 데코레이터로 계측해 데이터셋 기반 실험을 돌린다.
@@ -12,7 +12,7 @@ tags: [observability, tracing, evals, llm-as-judge, prompt-management]
 languages: [python, typescript]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-25
 ---
 
 ## 개요

@@ -2,7 +2,7 @@
 name: Eino
 url: https://www.cloudwego.io/docs/eino/
 repo: https://github.com/cloudwego/eino
-stars: 13704
+stars: 13713
 domain: ai
 category: agent-framework
 description: CloudWeGo(ByteDance)의 Go용 LLM 앱·에이전트 프레임워크. 컴포넌트 추상화와 그래프 오케스트레이션으로 Go 서비스에 에이전트를 넣을 때 쓴다.

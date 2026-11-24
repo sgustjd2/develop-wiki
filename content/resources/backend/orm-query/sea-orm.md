@@ -3,7 +3,7 @@ name: SeaORM
 url: https://www.sea-ql.org/SeaORM/
 docs: https://www.sea-ql.org/SeaORM/docs/index/
 repo: https://github.com/SeaQL/sea-orm
-stars: 9982
+stars: 9984
 domain: backend
 category: orm-query
 description: SQLx 위에서 동작하는 Rust 비동기 ORM. 엔티티·관계·ActiveModel 로 CRUD 를 다루므로, Rust 웹 서비스에서 SQL 을 일일이 쓰지 않고 관계형 데이터를 다루고 싶을 때 쓴다.

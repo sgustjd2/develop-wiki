@@ -3,7 +3,7 @@ name: Panda CSS
 url: https://panda-css.com
 docs: https://panda-css.com/docs/overview/getting-started
 repo: https://github.com/chakra-ui/panda
-stars: 6259
+stars: 6258
 domain: frontend
 category: styling
 description: 타입 안전한 css() 함수·레시피·토큰으로 스타일을 쓰고 빌드 시 원자 CSS로 추출하는 CSS-in-JS 엔진. Chakra UI 팀이 만든다.

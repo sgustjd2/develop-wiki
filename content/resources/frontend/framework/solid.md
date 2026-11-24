@@ -2,7 +2,7 @@
 name: Solid
 url: https://www.solidjs.com
 repo: https://github.com/solidjs/solid
-stars: 36934
+stars: 36948
 docs: https://docs.solidjs.com
 domain: frontend
 category: framework

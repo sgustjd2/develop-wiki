@@ -3,7 +3,7 @@ name: CocoaPods
 url: https://cocoapods.org
 docs: https://guides.cocoapods.org
 repo: https://github.com/CocoaPods/CocoaPods
-stars: 14833
+stars: 14832
 domain: mobile
 category: ios
 description: Xcode 프로젝트용 의존성 관리자. Podfile 에 라이브러리를 적고 pod install 로 워크스페이스를 구성한다. 공식 README 가 유지보수 모드임을 밝히고 있어 신규는 SwiftPM 이 권장된다.

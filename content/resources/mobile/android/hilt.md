@@ -3,7 +3,7 @@ name: Hilt
 url: https://dagger.dev/hilt/
 docs: https://developer.android.com/training/dependency-injection/hilt-android
 repo: https://github.com/google/dagger
-stars: 17684
+stars: 17686
 domain: mobile
 category: android
 description: Dagger 위에 Android 구성요소(Application·Activity·ViewModel)별 컴포넌트를 미리 정의해 둔 공식 의존성 주입 라이브러리. 컴파일 타임에 그래프를 검증하며 Koin 같은 런타임 DI와 비교된다.

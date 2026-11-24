@@ -2,7 +2,7 @@
 name: Generative AI for Beginners
 url: https://microsoft.github.io/generative-ai-for-beginners/
 repo: https://github.com/microsoft/generative-ai-for-beginners
-stars: 124077
+stars: 124117
 domain: oss
 category: learning-repos
 description: Microsoft 의 생성형 AI 애플리케이션 입문 강의(21개 레슨). 프롬프트, 채팅·검색 앱, RAG, 함수 호출, 에이전트, 파인튜닝을 Python·TypeScript 예제로 익힐 때 쓴다.

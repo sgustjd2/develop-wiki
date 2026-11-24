@@ -3,7 +3,7 @@ name: Transformers
 url: https://huggingface.co/docs/transformers
 docs: https://huggingface.co/docs/transformers/training
 repo: https://github.com/huggingface/transformers
-stars: 169373
+stars: 169250
 domain: ai
 category: fine-tuning
 description: Hugging Face 의 모델 정의·로딩 라이브러리. Trainer 로 사전학습 모델을 파인튜닝하며 PEFT·TRL·Unsloth 등 학습 도구가 공통으로 기반한다.

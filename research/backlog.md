@@ -31,3 +31,6 @@
 | upstage/solar-mini-4-5-tokenizer | models/분류 미정 | https://huggingface.co/upstage/solar-mini-4-5-tokenizer · 2026-11-20 · license=other · params=? · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-24 |
 | lerobot/MolmoAct2-LeRobot | models/분류 미정 | https://huggingface.co/lerobot/MolmoAct2-LeRobot · 2026-11-22 · license=? · params=? · ♥0 ↓3 (Hermes 후보, 검증 전) | 2026-11-24 |
 | https://github.com/pierridotite/mobile-agent-testers | resources/Python | ★1352 · license=MIT · 20 AI testers on 20 different phones, in parallel, on GitHub's free runners: Claude Code agents on i (Hermes 후보, 검증 전) | 2026-11-24 |
+| baidu/ERNIE-5.5-Flash-Preview | models/language(text/code/reasoning) | https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview · 2026-11-23 · license=apache-2.0 · params=299.6B · ♥215 ↓75 (Hermes 후보, 검증 전) | 2026-11-25 |
+| baidu/ERNIE-5.5-Flash-Preview-BF16 | models/language(text/code/reasoning) | https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview-BF16 · 2026-11-23 · license=apache-2.0 · params=299.6B · ♥23 ↓27 (Hermes 후보, 검증 전) | 2026-11-25 |
+| tencent/OmniEVIE-4B | models/embedding | https://huggingface.co/tencent/OmniEVIE-4B · 2026-11-24 · license=apache-2.0 · params=4.5B · ♥8 ↓7 (Hermes 후보, 검증 전) | 2026-11-25 |

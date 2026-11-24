@@ -3,7 +3,7 @@ name: Figma MCP Server
 url: https://developers.figma.com/docs/figma-mcp-server/
 docs: https://developers.figma.com/docs/figma-mcp-server/
 repo: https://github.com/figma/mcp-server-guide
-stars: 2227
+stars: 2230
 domain: oss
 category: mcp-servers
 description: Figma 공식 원격 MCP 서버(mcp.figma.com). 선택한 프레임의 디자인 컨텍스트·변수·Code Connect 매핑을 에이전트에 주고 캔버스 쓰기도 지원한다. 디자인을 코드로 옮길 때 쓴다.

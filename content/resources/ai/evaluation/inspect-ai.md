@@ -3,7 +3,7 @@ name: Inspect AI
 url: https://inspect.aisi.org.uk/
 docs: https://inspect.aisi.org.uk/
 repo: https://github.com/UKGovernmentBEIS/inspect_ai
-stars: 3315
+stars: 3328
 domain: ai
 category: evaluation
 description: 영국 AI Security Institute가 만든 LLM·에이전트 평가 프레임워크. 데이터셋·솔버·스코어러로 평가를 코드로 정의하고, Docker 샌드박스에서 도구 쓰는 에이전트까지 벤치마크할 때 쓴다.

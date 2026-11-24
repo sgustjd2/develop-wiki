@@ -3,7 +3,7 @@ name: jOOQ
 url: https://www.jooq.org
 docs: https://www.jooq.org/doc/latest/manual/
 repo: https://github.com/jOOQ/jOOQ
-stars: 6803
+stars: 6804
 domain: backend
 category: orm-query
 description: DB 스키마에서 코드를 생성해 SQL 을 타입 안전한 Java DSL 로 쓰는 쿼리 빌더. 오픈소스판은 Apache-2.0 이고 상용 DB 지원은 유료 에디션이다.

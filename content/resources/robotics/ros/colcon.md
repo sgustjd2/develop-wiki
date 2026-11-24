@@ -3,7 +3,7 @@ name: colcon
 url: https://colcon.readthedocs.io
 docs: https://colcon.readthedocs.io/en/released/
 repo: https://github.com/colcon/colcon-core
-stars: 134
+stars: 135
 domain: robotics
 category: ros
 description: 여러 패키지로 이뤄진 ROS 2 워크스페이스를 한 번에 빌드·테스트하는 CLI. ament_cmake·ament_python·CMake 패키지를 의존성 순서대로 처리한다.

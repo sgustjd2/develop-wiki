@@ -2,7 +2,7 @@
 name: Chi
 url: https://go-chi.io
 repo: https://github.com/go-chi/chi
-stars: 23145
+stars: 23152
 docs: https://go-chi.io
 domain: backend
 category: web-framework

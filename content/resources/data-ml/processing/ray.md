@@ -3,7 +3,7 @@ name: Ray
 url: https://www.ray.io
 docs: https://docs.ray.io/en/latest/
 repo: https://github.com/ray-project/ray
-stars: 44368
+stars: 44371
 domain: data-ml
 category: processing
 description: Python 함수와 클래스를 클러스터로 분산 실행하는 컴퓨팅 프레임워크. 분산 데이터 처리, 모델 학습·튜닝, 배치 추론과 서빙에 쓴다.

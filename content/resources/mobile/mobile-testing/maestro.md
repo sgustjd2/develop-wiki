@@ -3,7 +3,7 @@ name: Maestro
 url: https://maestro.dev
 docs: https://docs.maestro.dev
 repo: https://github.com/mobile-dev-inc/Maestro
-stars: 16494
+stars: 16504
 domain: mobile
 category: mobile-testing
 description: YAML로 사용자 흐름을 적어 실행하는 모바일·웹 UI 자동화 도구. iOS·Android 네이티브와 React Native·Flutter 앱을 같은 문법으로 블랙박스 테스트할 때 쓴다.

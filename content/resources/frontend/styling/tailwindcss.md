@@ -2,7 +2,7 @@
 name: Tailwind CSS
 url: https://tailwindcss.com
 repo: https://github.com/tailwindlabs/tailwindcss
-stars: 98694
+stars: 98750
 docs: https://tailwindcss.com/docs/installation/using-vite
 domain: frontend
 category: styling

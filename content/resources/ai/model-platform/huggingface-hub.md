@@ -3,7 +3,7 @@ name: Hugging Face Hub
 url: https://huggingface.co
 docs: https://huggingface.co/docs/hub
 repo: https://github.com/huggingface/huggingface_hub
-stars: 4067
+stars: 4074
 domain: ai
 category: model-platform
 description: 오픈 웨이트 모델·데이터셋·Spaces 를 공유하는 허브. hf CLI·Python 라이브러리로 다운로드·업로드하고 Inference Providers 로 모델을 호출한다.

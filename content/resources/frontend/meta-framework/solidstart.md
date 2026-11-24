@@ -3,7 +3,7 @@ name: SolidStart
 url: https://start.solidjs.com
 docs: https://v1.solidjs.com/solid-start/v2/
 repo: https://github.com/solidjs/solid-start
-stars: 5927
+stars: 5926
 domain: frontend
 category: meta-framework
 description: Solid 기반 풀스택 메타 프레임워크. Vite 플러그인으로 파일 라우팅·SSR·서버 함수를 붙여 Solid 앱을 서버까지 확장할 때 쓴다.

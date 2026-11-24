@@ -3,7 +3,7 @@ name: 모던 JavaScript 튜토리얼 (javascript.info)
 url: https://ko.javascript.info
 docs: https://ko.javascript.info
 repo: https://github.com/javascript-tutorial/ko.javascript.info
-stars: 1979
+stars: 1980
 domain: frontend
 category: learning
 description: JavaScript 기초 문법부터 프로토타입·비동기·브라우저 DOM·이벤트까지 순서대로 설명하는 무료 온라인 튜토리얼. 한국어 번역판이 있다.

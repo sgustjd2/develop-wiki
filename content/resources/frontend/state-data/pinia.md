@@ -3,7 +3,7 @@ name: Pinia
 url: https://pinia.vuejs.org
 docs: https://pinia.vuejs.org/introduction.html
 repo: https://github.com/vuejs/pinia
-stars: 14770
+stars: 14773
 domain: frontend
 category: state-data
 description: Vue 공식 상태 관리 라이브러리. defineStore로 상태·getter·action을 묶은 스토어를 만들고 Vue DevTools로 추적한다.

@@ -3,7 +3,7 @@ name: JAX
 url: https://docs.jax.dev
 docs: https://docs.jax.dev/en/latest/
 repo: https://github.com/jax-ml/jax
-stars: 36676
+stars: 36679
 domain: data-ml
 category: ml
 description: NumPy 호환 API 에 자동 미분·JIT 컴파일·벡터화 변환을 더한 고성능 수치 계산 라이브러리. GPU·TPU 대규모 모델 학습과 과학 계산에 쓴다.

@@ -3,7 +3,7 @@ name: Roborazzi
 url: https://takahirom.github.io/roborazzi/
 docs: https://github.com/takahirom/roborazzi
 repo: https://github.com/takahirom/roborazzi
-stars: 1086
+stars: 1087
 domain: mobile
 category: mobile-testing
 description: Robolectric 위에서 에뮬레이터 없이 Android·Compose 화면의 스크린샷을 찍고 기준 이미지와 비교하는 스크린샷 테스트 도구. Gradle 플러그인이 record·verify·compare 작업을 제공한다.

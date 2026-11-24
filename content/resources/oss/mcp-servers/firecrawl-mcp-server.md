@@ -3,7 +3,7 @@ name: Firecrawl MCP Server
 url: https://www.firecrawl.dev
 docs: https://github.com/firecrawl/firecrawl-mcp-server#readme
 repo: https://github.com/firecrawl/firecrawl-mcp-server
-stars: 7890
+stars: 7900
 domain: oss
 category: mcp-servers
 description: Firecrawl 공식 MCP 서버. 웹 검색, URL 을 마크다운으로 긁기, 사이트 크롤·맵, PDF 파싱, 페이지 상호작용을 에이전트 도구로 제공한다. 웹 조사·자료 수집에 쓴다.

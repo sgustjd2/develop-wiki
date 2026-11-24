@@ -3,7 +3,7 @@ name: UnoCSS
 url: https://unocss.dev
 docs: https://unocss.dev/guide/
 repo: https://github.com/unocss/unocss
-stars: 18993
+stars: 18992
 domain: frontend
 category: styling
 description: 규칙과 프리셋을 조합해 쓰는 온디맨드 원자 CSS 엔진. Tailwind 호환 프리셋, 아이콘, 속성 모드 등을 골라 쓴다.

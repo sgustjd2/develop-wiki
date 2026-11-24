@@ -2,7 +2,7 @@
 name: The Art of Command Line
 url: https://github.com/jlevy/the-art-of-command-line
 repo: https://github.com/jlevy/the-art-of-command-line
-stars: 162834
+stars: 162835
 domain: oss
 category: learning-repos
 description: Linux·Bash 커맨드라인 사용 요령을 한 페이지에 압축한 가이드. 터미널 작업(파일 처리, 디버깅, 원라이너)을 빠르게 익히고 싶을 때 쓴다.

@@ -2,7 +2,7 @@
 name: Awesome Node.js
 url: https://github.com/sindresorhus/awesome-nodejs
 repo: https://github.com/sindresorhus/awesome-nodejs
-stars: 67619
+stars: 67626
 domain: oss
 category: awesome-lists
 description: Node.js 패키지와 학습 자료를 용도별로 엄선한 목록. 서버·CLI·빌드 스크립트에 쓸 npm 패키지 후보를 찾을 때 쓴다.

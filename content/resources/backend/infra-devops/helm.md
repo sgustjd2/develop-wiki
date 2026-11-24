@@ -3,7 +3,7 @@ name: Helm
 url: https://helm.sh
 docs: https://helm.sh/docs/
 repo: https://github.com/helm/helm
-stars: 30467
+stars: 30477
 domain: backend
 category: infra-devops
 description: Kubernetes 매니페스트를 템플릿 차트로 묶어 설치·업그레이드·롤백하는 패키지 매니저. 서드파티 소프트웨어 설치와 자체 서비스 배포 템플릿에 쓴다.

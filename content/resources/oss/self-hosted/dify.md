@@ -3,7 +3,7 @@ name: Dify
 url: https://dify.ai
 docs: https://docs.dify.ai
 repo: https://github.com/langgenius/dify
-stars: 161750
+stars: 161839
 domain: oss
 category: self-hosted
 description: 챗봇·RAG·에이전트·LLM 워크플로를 화면에서 만들고 API 로 배포하는 LLM 앱 플랫폼. 수정된 Apache 2.0 라 멀티테넌트 서비스 운영과 로고 제거는 상용 라이선스가 필요하다.

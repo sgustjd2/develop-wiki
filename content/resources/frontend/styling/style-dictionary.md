@@ -3,7 +3,7 @@ name: Style Dictionary
 url: https://styledictionary.com
 docs: https://styledictionary.com/getting-started/installation/
 repo: https://github.com/style-dictionary/style-dictionary
-stars: 4891
+stars: 4894
 domain: frontend
 category: styling
 description: JSON 등으로 정의한 디자인 토큰을 CSS 변수·SCSS·JS·iOS·Android 형식으로 변환해 내보내는 빌드 도구. 색·간격·타이포그래피 값을 여러 플랫폼에 한 원천으로 배포할 때 쓴다.

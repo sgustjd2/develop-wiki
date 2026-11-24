@@ -2,7 +2,7 @@
 name: Astro
 url: https://astro.build
 repo: https://github.com/withastro/astro
-stars: 64151
+stars: 64174
 docs: https://docs.astro.build/en/getting-started/
 domain: frontend
 category: meta-framework

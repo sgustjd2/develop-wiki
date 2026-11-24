@@ -3,7 +3,7 @@ name: Wolverine
 url: https://wolverinefx.net
 docs: https://wolverinefx.net/introduction/getting-started.html
 repo: https://github.com/JasperFx/wolverine
-stars: 2427
+stars: 2429
 domain: backend
 category: messaging
 description: 메서드 이름 규칙으로 핸들러를 찾는 .NET 메시징·메디에이터 프레임워크. 로컬 큐와 RabbitMQ 등 외부 브로커, 영속 인박스·아웃박스를 한 모델로 다룬다.

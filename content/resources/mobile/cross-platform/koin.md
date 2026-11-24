@@ -3,7 +3,7 @@ name: Koin
 url: https://insert-koin.io
 docs: https://insert-koin.io/docs/quickstart/kotlin
 repo: https://github.com/InsertKoinIO/koin
-stars: 10026
+stars: 10028
 domain: mobile
 category: cross-platform
 description: Kotlin 용 경량 의존성 주입 프레임워크. 코드 생성 없이 DSL 로 모듈을 선언하며 Android, Compose, Ktor, Kotlin Multiplatform 을 지원한다.

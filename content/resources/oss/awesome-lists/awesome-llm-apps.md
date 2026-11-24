@@ -2,7 +2,7 @@
 name: Awesome LLM Apps
 url: https://github.com/Shubhamsaboo/awesome-llm-apps
 repo: https://github.com/Shubhamsaboo/awesome-llm-apps
-stars: 145509
+stars: 145582
 domain: oss
 category: awesome-lists
 description: 링크 목록이 아니라 실행 가능한 AI 에이전트·RAG·멀티에이전트·MCP 앱 예제 코드 100여 개를 담은 저장소. LLM 앱 구조를 코드로 배우거나 시작 템플릿을 찾을 때 쓴다.

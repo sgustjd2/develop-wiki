@@ -3,7 +3,7 @@ name: MCP Registry
 url: https://registry.modelcontextprotocol.io
 docs: https://modelcontextprotocol.io/registry/about
 repo: https://github.com/modelcontextprotocol/registry
-stars: 7493
+stars: 7496
 domain: ai
 category: mcp-tooling
 description: 공개 MCP 서버의 메타데이터(server.json)를 모으는 공식 레지스트리와 REST API, 게시용 mcp-publisher CLI. 서버 배포와 마켓플레이스 구축에 쓴다.

@@ -3,7 +3,7 @@ name: Claude Agent SDK
 url: https://code.claude.com/docs/en/agent-sdk/overview
 docs: https://code.claude.com/docs/en/agent-sdk/overview
 repo: https://github.com/anthropics/claude-agent-sdk-python
-stars: 8632
+stars: 8636
 domain: ai
 category: agent-framework
 description: Claude Code의 에이전트 루프·내장 도구·권한·훅을 Python·TypeScript 라이브러리로 가져다 쓰는 Anthropic SDK. 파일·셸을 다루는 자율 에이전트를 자체 앱에 넣을 때 쓴다.

@@ -3,7 +3,7 @@ name: Plausible Analytics
 url: https://plausible.io
 docs: https://plausible.io/docs
 repo: https://github.com/plausible/analytics
-stars: 29916
+stars: 29929
 domain: oss
 category: self-hosted
 description: 쿠키 없이 페이지뷰·유입·이벤트를 집계하는 경량 웹 분석 도구. Google Analytics 대안으로 쓰며 셀프 호스팅판(Community Edition)은 AGPL-3.0, 유료 클라우드도 있다.

@@ -3,7 +3,7 @@ name: BehaviorTree.CPP
 url: https://www.behaviortree.dev
 docs: https://www.behaviortree.dev/docs/intro
 repo: https://github.com/BehaviorTree/BehaviorTree.CPP
-stars: 4311
+stars: 4313
 domain: robotics
 category: navigation-planning
 description: 로봇 행동 로직을 XML 행동 트리로 기술하고 C++ 노드를 틱으로 실행하는 라이브러리. Nav2 의 행동 트리 엔진으로 쓰인다.

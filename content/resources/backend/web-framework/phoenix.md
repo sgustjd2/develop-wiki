@@ -3,7 +3,7 @@ name: Phoenix
 url: https://www.phoenixframework.org
 docs: https://phoenix.hexdocs.pm/overview.html
 repo: https://github.com/phoenixframework/phoenix
-stars: 23225
+stars: 23228
 domain: backend
 category: web-framework
 description: Erlang VM(BEAM) 위에서 동작하는 Elixir 웹 프레임워크. 동시 접속이 많은 실시간 웹 앱·API를 LiveView·Channels로 만들 때 쓴다.

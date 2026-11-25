@@ -2,7 +2,7 @@
 name: Drizzle ORM
 url: https://orm.drizzle.team
 repo: https://github.com/drizzle-team/drizzle-orm
-stars: 36376
+stars: 36387
 docs: https://orm.drizzle.team/docs/overview
 domain: backend
 category: orm-query

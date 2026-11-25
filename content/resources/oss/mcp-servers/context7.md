@@ -3,7 +3,7 @@ name: Context7
 url: https://context7.com
 docs: https://context7.com/docs
 repo: https://github.com/upstash/context7
-stars: 65394
+stars: 65451
 domain: oss
 category: mcp-servers
 description: Upstash 의 라이브러리 문서 검색 MCP 서버. 버전별 최신 공식 문서·코드 예제를 에이전트 컨텍스트에 넣어 없는 API 를 지어내는 문제를 줄인다. 무료 키로 쓰고 백엔드는 비공개다.

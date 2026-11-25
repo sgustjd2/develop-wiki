@@ -3,7 +3,7 @@ name: React Native
 url: https://reactnative.dev
 docs: https://reactnative.dev/docs/getting-started
 repo: https://github.com/react/react-native
-stars: 126994
+stars: 127000
 domain: mobile
 category: cross-platform
 description: React로 iOS·Android 네이티브 앱을 만드는 프레임워크. JavaScript/TypeScript 컴포넌트가 실제 플랫폼 뷰로 렌더링되며, 웹 React 팀이 모바일 앱을 낼 때 주로 쓴다.

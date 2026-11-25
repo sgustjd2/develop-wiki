@@ -3,7 +3,7 @@ name: .NET
 url: https://dotnet.microsoft.com
 docs: https://learn.microsoft.com/dotnet/core/
 repo: https://github.com/dotnet/runtime
-stars: 18462
+stars: 18464
 domain: backend
 category: runtime-language
 description: C#·F# 코드를 실행하는 Microsoft 의 크로스 플랫폼 런타임(CLR)과 SDK. ASP.NET Core 웹 서버, 워커 서비스, Native AOT 실행 파일을 만들 때 쓴다.

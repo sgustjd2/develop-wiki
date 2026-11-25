@@ -3,7 +3,7 @@ name: uv
 url: https://docs.astral.sh/uv/
 docs: https://docs.astral.sh/uv/
 repo: https://github.com/astral-sh/uv
-stars: 92587
+stars: 92645
 domain: backend
 category: runtime-language
 description: Rust 로 만든 Python 패키지·프로젝트 관리자. pip, venv, pip-tools, pyenv, pipx 역할을 하나로 합쳐 Python 버전 설치부터 의존성 잠금까지 처리한다.

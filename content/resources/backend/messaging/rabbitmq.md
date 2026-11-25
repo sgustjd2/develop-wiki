@@ -3,7 +3,7 @@ name: RabbitMQ
 url: https://www.rabbitmq.com
 docs: https://www.rabbitmq.com/docs
 repo: https://github.com/rabbitmq/rabbitmq-server
-stars: 13982
+stars: 13983
 domain: backend
 category: messaging
 description: exchange 와 queue 로 메시지를 라우팅하는 범용 메시지 브로커. AMQP 0-9-1·AMQP 1.0·MQTT·STOMP 를 지원하며 작업 큐, 라우팅이 복잡한 비동기 통신에 쓴다.

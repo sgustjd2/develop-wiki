@@ -3,7 +3,7 @@ name: Metabase
 url: https://www.metabase.com
 docs: https://www.metabase.com/docs/latest/
 repo: https://github.com/metabase/metabase
-stars: 50505
+stars: 50530
 domain: data-ml
 category: analytics-bi
 description: 비개발자도 질문 빌더로 데이터를 조회하고 대시보드를 만드는 BI 도구. 사내 지표 공유와 간단한 셀프서비스 분석에 쓴다.

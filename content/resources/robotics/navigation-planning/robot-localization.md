@@ -3,7 +3,7 @@ name: robot_localization
 url: https://docs.ros.org/en/lyrical/p/robot_localization/
 docs: https://docs.ros.org/en/lyrical/p/robot_localization/
 repo: https://github.com/cra-ros-pkg/robot_localization
-stars: 1990
+stars: 1991
 domain: robotics
 category: navigation-planning
 description: 오도메트리·IMU·GPS 등 여러 센서를 칼만 필터(EKF/UKF)로 융합해 로봇의 위치·자세를 추정하는 ROS 패키지.

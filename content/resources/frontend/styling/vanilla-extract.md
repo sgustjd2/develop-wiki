@@ -3,7 +3,7 @@ name: vanilla-extract
 url: https://vanilla-extract.style
 docs: https://vanilla-extract.style/documentation/getting-started/
 repo: https://github.com/vanilla-extract-css/vanilla-extract
-stars: 10457
+stars: 10455
 domain: frontend
 category: styling
 description: TypeScript 파일(.css.ts)에 스타일을 쓰고 빌드 시 정적 CSS로 뽑아내는 제로 런타임 CSS-in-TS 라이브러리.

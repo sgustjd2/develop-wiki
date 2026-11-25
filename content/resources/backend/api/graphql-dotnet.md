@@ -3,7 +3,7 @@ name: GraphQL.NET
 url: https://graphql-dotnet.github.io
 docs: https://graphql-dotnet.github.io/docs/getting-started/introduction/
 repo: https://github.com/graphql-dotnet/graphql-dotnet
-stars: 5983
+stars: 5984
 domain: backend
 category: api
 description: .NET 용 GraphQL 실행 엔진. 코드 우선·스키마 우선·타입 우선 방식을 모두 지원하며 ASP.NET Core 서버 패키지와 함께 GraphQL API 를 만들 때 쓴다.

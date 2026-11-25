@@ -3,7 +3,7 @@ name: Android Jetpack
 url: https://developer.android.com/jetpack
 docs: https://developer.android.com/jetpack/androidx/explorer
 repo: https://github.com/androidx/androidx
-stars: 6149
+stars: 6150
 domain: mobile
 category: android
 description: Google이 제공하는 AndroidX 라이브러리 모음. ViewModel·Lifecycle, Room, Navigation 등 Android 앱 아키텍처의 기본 부품을 버전별로 독립 배포한다.

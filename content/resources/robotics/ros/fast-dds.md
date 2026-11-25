@@ -3,7 +3,7 @@ name: Fast DDS
 url: https://www.eprosima.com/middleware/fast-dds
 docs: https://fast-dds.docs.eprosima.com/en/latest/
 repo: https://github.com/eProsima/Fast-DDS
-stars: 2959
+stars: 2960
 domain: robotics
 category: ros
 description: eProsima 가 만든 C++ DDS(RTPS) 구현. ROS 2 의 기본 RMW(rmw_fastrtps)로 쓰이며 공유 메모리·디스커버리 서버 등을 제공한다.

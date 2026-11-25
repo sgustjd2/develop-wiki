@@ -3,7 +3,7 @@ name: OpenIddict
 url: https://openiddict.com
 docs: https://documentation.openiddict.com/
 repo: https://github.com/openiddict/openiddict-core
-stars: 5307
+stars: 5308
 domain: backend
 category: auth
 description: ASP.NET Core 앱 안에 OAuth 2.0·OpenID Connect 서버를 구현하는 .NET 프레임워크. 별도 IdP 제품 없이 자체 토큰 발급 서버가 필요할 때 쓴다.

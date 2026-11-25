@@ -3,7 +3,7 @@ name: TRL
 url: https://huggingface.co/docs/trl
 docs: https://huggingface.co/docs/trl/index
 repo: https://github.com/huggingface/trl
-stars: 19814
+stars: 19826
 domain: ai
 category: fine-tuning
 description: SFT·DPO·GRPO 등 LLM 후처리 학습(post-training) 트레이너를 제공하는 Hugging Face 라이브러리. 채팅 모델 지도학습과 선호·강화학습에 쓴다.
@@ -12,7 +12,7 @@ tags: [huggingface, sft, dpo, grpo, rlhf, post-training]
 languages: [python]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-26
 ---
 
 ## 개요

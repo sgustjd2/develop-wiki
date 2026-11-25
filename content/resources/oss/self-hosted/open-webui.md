@@ -3,7 +3,7 @@ name: Open WebUI
 url: https://openwebui.com
 docs: https://docs.openwebui.com
 repo: https://github.com/open-webui/open-webui
-stars: 159434
+stars: 159539
 domain: oss
 category: self-hosted
 description: Ollama 와 OpenAI 호환 API 에 붙여 쓰는 ChatGPT 형태의 셀프 호스팅 채팅 UI. BSD-3 에 브랜딩 유지 조항이 추가된 자체 라이선스라 50명 초과 배포에서 로고 변경이 제한된다.

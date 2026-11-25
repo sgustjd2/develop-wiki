@@ -3,7 +3,7 @@ name: TanStack Start
 url: https://tanstack.com/start
 docs: https://tanstack.com/start/latest/docs/framework/react/overview
 repo: https://github.com/TanStack/router
-stars: 15357
+stars: 15367
 domain: frontend
 category: meta-framework
 description: TanStack Router 위에 SSR·스트리밍·서버 함수를 더한 풀스택 프레임워크. 타입 안전한 라우팅과 RPC를 클라이언트 중심 React 앱에 붙일 때 쓴다.

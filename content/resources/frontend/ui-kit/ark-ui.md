@@ -3,7 +3,7 @@ name: Ark UI
 url: https://ark-ui.com
 docs: https://ark-ui.com/docs/overview/getting-started
 repo: https://github.com/chakra-ui/ark
-stars: 5485
+stars: 5486
 domain: frontend
 category: ui-kit
 description: Zag.js 상태 머신 위에 만든 스타일 없는 접근성 컴포넌트 모음. React·Solid·Vue·Svelte에서 같은 API로 헤드리스 컴포넌트를 쓸 때 쓴다.

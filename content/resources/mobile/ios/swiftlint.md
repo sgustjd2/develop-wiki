@@ -3,7 +3,7 @@ name: SwiftLint
 url: https://realm.github.io/SwiftLint/
 docs: https://realm.github.io/SwiftLint/
 repo: https://github.com/realm/SwiftLint
-stars: 19795
+stars: 19794
 domain: mobile
 category: ios
 description: Swift 코드 스타일·관례를 검사하고 일부를 자동 수정하는 린터. .swiftlint.yml 로 규칙을 켜고 끄며 Xcode 빌드 단계나 CI 에서 실행한다.

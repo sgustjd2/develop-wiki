@@ -2,7 +2,7 @@
 name: OSSU Computer Science
 url: https://github.com/ossu/computer-science
 repo: https://github.com/ossu/computer-science
-stars: 211499
+stars: 211552
 domain: oss
 category: learning-repos
 description: 공개 대학 강의만으로 컴퓨터공학 학부 과정을 독학하도록 짠 무료 커리큘럼. 비전공자가 CS 전반을 체계적으로 공부할 때 쓴다.

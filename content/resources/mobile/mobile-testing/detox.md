@@ -3,7 +3,7 @@ name: Detox
 url: https://wix.github.io/Detox/
 docs: https://wix.github.io/Detox/docs/introduction/getting-started
 repo: https://github.com/wix/Detox
-stars: 12056
+stars: 12055
 domain: mobile
 category: mobile-testing
 description: React Native 앱용 그레이박스 E2E 테스트 프레임워크. 앱의 JS·네트워크·애니메이션이 유휴 상태가 될 때까지 자동 동기화한 뒤 시뮬레이터·에뮬레이터에서 UI를 조작한다.

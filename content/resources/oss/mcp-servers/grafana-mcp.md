@@ -3,7 +3,7 @@ name: Grafana MCP Server
 url: https://github.com/grafana/mcp-grafana
 docs: https://grafana.com/docs/grafana/latest/developer-resources/mcp/
 repo: https://github.com/grafana/mcp-grafana
-stars: 3700
+stars: 3699
 domain: oss
 category: mcp-servers
 description: Grafana Labs 공식 MCP 서버. 대시보드 검색·수정, Prometheus·Loki·Tempo 질의, 알림·인시던트·OnCall 조회를 에이전트 도구로 준다. 장애 조사 때 지표와 로그를 에이전트가 직접 읽게 할 때 쓴다.

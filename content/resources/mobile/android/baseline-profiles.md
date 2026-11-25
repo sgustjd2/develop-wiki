@@ -3,7 +3,7 @@ name: Baseline Profiles & Macrobenchmark
 url: https://developer.android.com/topic/performance/baselineprofiles/overview
 docs: https://developer.android.com/topic/performance/baselineprofiles/overview
 repo: https://github.com/androidx/androidx
-stars: 6149
+stars: 6150
 domain: mobile
 category: android
 description: 앱 시작·스크롤 경로의 코드를 설치 시 미리 컴파일하게 하는 Baseline Profile과, 그 효과를 실기기에서 측정하는 Macrobenchmark. Android 앱 성능 최적화의 공식 도구 쌍이다.

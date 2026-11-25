@@ -3,7 +3,7 @@ name: huggingface/skills
 url: https://github.com/huggingface/skills
 docs: https://huggingface.co/docs/hub/agents-cli
 repo: https://github.com/huggingface/skills
-stars: 11394
+stars: 11399
 domain: oss
 category: agent-skills
 description: Hugging Face 가 공개한 Agent Skills 모음. Hub CLI(hf-cli)부터 모델 학습·평가, Spaces·Gradio 배포, 데이터셋 조회, SageMaker 배포까지 25개 스킬을 담았다. 코딩 에이전트가 Hugging Face 생태계를 다루게 할 때 쓴다.

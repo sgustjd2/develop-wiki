@@ -3,7 +3,7 @@ name: Zenoh (rmw_zenoh)
 url: https://zenoh.io
 docs: https://zenoh.io/docs/getting-started/first-app/
 repo: https://github.com/eclipse-zenoh/zenoh
-stars: 3369
+stars: 3374
 domain: robotics
 category: ros
 description: pub/sub·쿼리·저장을 통합한 저지연 네트워크 프로토콜. ROS 2 에서는 rmw_zenoh 로 DDS 를 대체해 광역망·무선·클라우드 연결에 쓴다.

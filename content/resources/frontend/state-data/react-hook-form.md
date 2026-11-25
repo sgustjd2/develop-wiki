@@ -3,7 +3,7 @@ name: React Hook Form
 url: https://react-hook-form.com
 docs: https://react-hook-form.com/get-started
 repo: https://github.com/react-hook-form/react-hook-form
-stars: 44925
+stars: 44926
 domain: frontend
 category: state-data
 description: 비제어 입력과 ref 기반으로 리렌더를 줄이는 React 폼 상태·검증 라이브러리. Zod 같은 스키마 검증 라이브러리와 연결해 쓴다.

@@ -3,7 +3,7 @@ name: GitHub Actions
 url: https://github.com/features/actions
 docs: https://docs.github.com/en/actions
 repo: https://github.com/actions/runner
-stars: 6419
+stars: 6422
 domain: backend
 category: infra-devops
 description: GitHub 저장소 이벤트로 YAML 워크플로를 실행하는 CI/CD 서비스. 테스트·빌드·배포 자동화에 쓰며, 공개 저장소는 무료이고 실행기(runner)는 MIT 오픈소스다.

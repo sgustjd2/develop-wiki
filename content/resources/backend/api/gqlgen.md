@@ -3,7 +3,7 @@ name: gqlgen
 url: https://gqlgen.com
 docs: https://gqlgen.com/getting-started/
 repo: https://github.com/99designs/gqlgen
-stars: 10774
+stars: 10773
 domain: backend
 category: api
 description: GraphQL 스키마(SDL)에서 Go 타입과 리졸버 뼈대를 생성하는 스키마 우선 GraphQL 서버 라이브러리. Go 로 타입 안전한 GraphQL API 를 만들 때 쓴다.

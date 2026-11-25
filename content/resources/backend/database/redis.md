@@ -3,7 +3,7 @@ name: Redis
 url: https://redis.io
 docs: https://redis.io/docs/latest/
 repo: https://github.com/redis/redis
-stars: 77652
+stars: 77739
 domain: backend
 category: database
 description: 메모리 기반 키-값 저장소. 캐시, 세션, 랭킹, 레이트 리밋, 큐에 쓴다. Redis 8 부터 AGPLv3·SSPL·RSALv2 중 택일 라이선스이며, BSD 포크로 Valkey 가 있다.

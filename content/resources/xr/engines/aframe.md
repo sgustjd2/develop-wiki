@@ -3,7 +3,7 @@ name: A-Frame
 url: https://aframe.io
 docs: https://aframe.io/docs/
 repo: https://github.com/aframevr/aframe
-stars: 17716
+stars: 17720
 domain: xr
 category: engines
 description: HTML 태그와 엔티티-컴포넌트 구조로 WebXR VR·AR 장면을 선언하는 MIT 웹 프레임워크. Three.js 위에서 동작한다.

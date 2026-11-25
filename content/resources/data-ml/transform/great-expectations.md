@@ -3,7 +3,7 @@ name: Great Expectations (GX Core)
 url: https://greatexpectations.io
 docs: https://docs.greatexpectations.io/docs/core/introduction/
 repo: https://github.com/fivetran/great_expectations
-stars: 11947
+stars: 11948
 domain: data-ml
 category: transform
 description: 데이터에 대한 기대(Expectation)를 코드로 선언하고 검증 결과를 기록하는 Python 데이터 품질 라이브러리. 파이프라인 단계마다 데이터 검사를 넣을 때 쓴다.

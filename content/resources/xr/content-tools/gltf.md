@@ -3,7 +3,7 @@ name: glTF 2.0
 url: https://www.khronos.org/gltf/
 docs: https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html
 repo: https://github.com/KhronosGroup/glTF
-stars: 7903
+stars: 7907
 domain: xr
 category: content-tools
 description: Khronos의 3D 전송 포맷. PBR 머티리얼과 씬을 JSON+바이너리로 담고 Draco·meshopt·KTX2 확장으로 용량을 줄인다.

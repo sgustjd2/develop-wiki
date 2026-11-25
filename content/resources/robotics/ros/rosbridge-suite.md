@@ -3,7 +3,7 @@ name: rosbridge_suite
 url: https://robotwebtools.github.io
 docs: https://github.com/RobotWebTools/rosbridge_suite/blob/ros2/ROSBRIDGE_PROTOCOL.md
 repo: https://github.com/RobotWebTools/rosbridge_suite
-stars: 1257
+stars: 1258
 domain: robotics
 category: ros
 description: ROS 에 JSON API 를 열어 주는 rosbridge v2 프로토콜 서버. WebSocket 으로 웹 브라우저·비 ROS 프로그램이 토픽 발행·구독과 서비스 호출을 할 수 있다.

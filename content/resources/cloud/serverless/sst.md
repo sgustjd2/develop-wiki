@@ -3,7 +3,7 @@ name: SST
 url: https://sst.dev/
 docs: https://sst.dev/docs/
 repo: https://github.com/anomalyco/sst
-stars: 26465
+stars: 26467
 domain: cloud
 category: serverless
 description: TypeScript 설정 파일 하나로 Lambda·API·버킷·DB·프론트엔드를 내 AWS·Cloudflare 계정에 배포하는 오픈소스 IaC 프레임워크. 리소스를 코드에 연결(link)하고 로컬에서 라이브 개발할 때 쓴다.

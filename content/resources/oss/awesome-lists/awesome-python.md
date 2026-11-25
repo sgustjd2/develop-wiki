@@ -2,7 +2,7 @@
 name: Awesome Python
 url: https://awesome-python.com/
 repo: https://github.com/vinta/awesome-python
-stars: 336885
+stars: 337095
 domain: oss
 category: awesome-lists
 description: Python 프레임워크·라이브러리·도구를 용도별로 고른 큐레이션 목록. 웹, 데이터, AI, CLI 등에서 쓸 Python 패키지 후보를 찾을 때 쓴다.

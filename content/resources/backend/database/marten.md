@@ -3,7 +3,7 @@ name: Marten
 url: https://martendb.io
 docs: https://martendb.io/getting-started
 repo: https://github.com/JasperFx/marten
-stars: 3471
+stars: 3472
 domain: backend
 category: database
 description: PostgreSQL 의 JSONB 위에서 .NET 문서 DB 와 이벤트 스토어 기능을 제공하는 라이브러리. 관계형 DB 하나로 문서 저장과 이벤트 소싱을 함께 쓸 때 쓴다.

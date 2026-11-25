@@ -3,7 +3,7 @@ name: Actix Web
 url: https://actix.rs
 docs: https://actix.rs/docs/
 repo: https://github.com/actix/actix-web
-stars: 24994
+stars: 24996
 domain: backend
 category: web-framework
 description: Tokio 기반 런타임 위에서 extractor·매크로 라우팅으로 핸들러를 작성하는 Rust 웹 프레임워크. 처리량이 중요한 Rust HTTP 서버에 쓴다.

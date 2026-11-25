@@ -2,7 +2,7 @@
 name: Spring Boot
 url: https://spring.io/projects/spring-boot
 repo: https://github.com/spring-projects/spring-boot
-stars: 81934
+stars: 81975
 docs: https://docs.spring.io/spring-boot/index.html
 domain: backend
 category: web-framework

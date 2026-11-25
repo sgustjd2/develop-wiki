@@ -3,7 +3,7 @@ name: Genkit
 url: https://genkit.dev/
 docs: https://genkit.dev/docs/get-started/
 repo: https://github.com/genkit-ai/genkit
-stars: 6620
+stars: 6622
 domain: ai
 category: agent-framework
 description: Google이 만든 AI 앱·에이전트 프레임워크(TypeScript·Go·Python·Dart). 타입 있는 flow, 도구 호출, 로컬 Developer UI를 갖춰 기존 웹·서버 앱에 생성형 AI 기능을 넣을 때 쓴다.

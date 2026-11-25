@@ -3,7 +3,7 @@ name: GitHub
 url: https://github.com
 docs: https://docs.github.com/en
 repo: https://github.com/cli/cli
-stars: 47181
+stars: 47204
 domain: devtools
 category: version-control
 description: Git 저장소 호스팅에 Pull Request 코드 리뷰, Issues, Actions CI, 패키지 레지스트리를 묶은 협업 플랫폼. 오픈소스와 팀 개발의 기본 협업 공간으로 쓴다.

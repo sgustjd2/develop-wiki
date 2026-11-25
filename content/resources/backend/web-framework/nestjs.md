@@ -3,7 +3,7 @@ name: NestJS
 url: https://nestjs.com
 docs: https://docs.nestjs.com
 repo: https://github.com/nestjs/nest
-stars: 77140
+stars: 77165
 domain: backend
 category: web-framework
 description: 모듈·컨트롤러·프로바이더와 의존성 주입으로 구조를 잡는 Node.js 서버 프레임워크. 규모가 큰 TypeScript 백엔드나 팀 단위 API 서버에 쓴다.

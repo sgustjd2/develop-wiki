@@ -3,7 +3,7 @@ name: Caddy
 url: https://caddyserver.com
 docs: https://caddyserver.com/docs/
 repo: https://github.com/caddyserver/caddy
-stars: 79492
+stars: 79534
 domain: backend
 category: infra-devops
 description: Go 로 작성된 웹 서버·리버스 프록시로, 도메인만 적으면 HTTPS 인증서를 자동 발급·갱신한다. 짧은 설정으로 TLS 가 붙은 프록시나 정적 사이트를 띄울 때 쓴다.

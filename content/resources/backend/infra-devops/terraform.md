@@ -3,7 +3,7 @@ name: Terraform
 url: https://developer.hashicorp.com/terraform
 docs: https://developer.hashicorp.com/terraform/docs
 repo: https://github.com/hashicorp/terraform
-stars: 50320
+stars: 50323
 domain: backend
 category: infra-devops
 description: HCL 로 클라우드·SaaS 인프라를 선언하고 plan·apply 로 변경하는 IaC 도구. 1.6 부터 BSL 1.1(IBM 소유)이며 MPL-2.0 포크로 OpenTofu 가 있다.

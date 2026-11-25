@@ -3,7 +3,7 @@ name: Robolectric
 url: https://robolectric.org
 docs: https://robolectric.org/getting-started/
 repo: https://github.com/robolectric/robolectric
-stars: 6105
+stars: 6110
 domain: mobile
 category: mobile-testing
 description: 에뮬레이터 없이 JVM 로컬 단위 테스트에서 Android 프레임워크(Activity, Resources, Context)를 시뮬레이션해 UI·Android 의존 코드를 빠르게 검증하는 테스트 프레임워크.

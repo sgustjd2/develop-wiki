@@ -3,7 +3,7 @@ name: Authlib
 url: https://authlib.org
 docs: https://docs.authlib.org/en/latest/
 repo: https://github.com/lepture/authlib
-stars: 5463
+stars: 5464
 domain: backend
 category: auth
 description: OAuth 1.0·OAuth 2.0·OpenID Connect 클라이언트와 서버를 모두 구현하는 Python 라이브러리. Flask·Django·FastAPI 앱에 소셜 로그인을 붙이거나 직접 인가 서버를 만들 때 쓴다.

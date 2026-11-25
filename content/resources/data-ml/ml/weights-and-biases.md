@@ -3,7 +3,7 @@ name: Weights & Biases
 url: https://wandb.ai
 docs: https://docs.wandb.ai/
 repo: https://github.com/wandb/wandb
-stars: 11334
+stars: 11333
 domain: data-ml
 category: ml
 description: ML 실험의 지표·설정·아티팩트를 기록해 웹 대시보드로 비교하는 실험 관리 서비스. 팀 단위 모델 학습 추적과 하이퍼파라미터 스윕에 쓴다.

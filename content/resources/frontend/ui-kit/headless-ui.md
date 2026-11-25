@@ -3,7 +3,7 @@ name: Headless UI
 url: https://headlessui.com
 docs: https://headlessui.com/react/menu
 repo: https://github.com/tailwindlabs/headlessui
-stars: 28846
+stars: 28847
 domain: frontend
 category: ui-kit
 description: Tailwind Labs가 만든 스타일 없는 접근성 컴포넌트 모음. 메뉴·리스트박스·다이얼로그 같은 소수 컴포넌트를 Tailwind 클래스로 직접 꾸밀 때 쓴다.

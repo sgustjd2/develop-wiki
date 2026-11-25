@@ -2,7 +2,7 @@
 name: React
 url: https://react.dev
 repo: https://github.com/react/react
-stars: 252819
+stars: 252940
 docs: https://react.dev/learn
 domain: frontend
 category: framework

@@ -3,7 +3,7 @@ name: Diesel
 url: https://diesel.rs
 docs: https://diesel.rs/guides/
 repo: https://github.com/diesel-rs/diesel
-stars: 14281
+stars: 14283
 domain: backend
 category: orm-query
 description: 컴파일 타임에 쿼리와 스키마 타입을 검증하는 Rust 동기식 ORM·쿼리 빌더. PostgreSQL·MySQL·SQLite 를 타입 안전하게 다루고 싶을 때 쓴다.

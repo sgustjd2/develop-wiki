@@ -3,7 +3,7 @@ name: Angular Material
 url: https://material.angular.dev
 docs: https://material.angular.dev/guide/getting-started
 repo: https://github.com/angular/components
-stars: 25048
+stars: 25046
 domain: frontend
 category: ui-kit
 description: Angular 팀이 관리하는 Material Design 3 컴포넌트 라이브러리와 CDK. Angular 앱에 공식 지원되는 폼·테이블·다이얼로그 컴포넌트가 필요할 때 쓴다.

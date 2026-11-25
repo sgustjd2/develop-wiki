@@ -3,7 +3,7 @@ name: Prefect
 url: https://www.prefect.io
 docs: https://www.prefect.io/docs/v3/
 repo: https://github.com/PrefectHQ/prefect
-stars: 24227
+stars: 24241
 domain: data-ml
 category: orchestration
 description: 일반 Python 함수에 데코레이터를 붙여 재시도·캐싱·스케줄이 있는 워크플로로 만드는 오케스트레이터. Python 중심 데이터·ML 파이프라인에 쓴다.

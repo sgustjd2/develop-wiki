@@ -2,7 +2,7 @@
 name: Ollama
 url: https://ollama.com
 repo: https://github.com/ollama/ollama
-stars: 187984
+stars: 188112
 domain: ai
 category: inference-serving
 description: 오픈 웨이트 모델을 로컬에서 명령 한 줄로 내려받아 실행하는 도구.

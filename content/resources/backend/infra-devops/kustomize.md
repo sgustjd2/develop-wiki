@@ -3,7 +3,7 @@ name: Kustomize
 url: https://kustomize.io
 docs: https://kubectl.docs.kubernetes.io/references/kustomize/
 repo: https://github.com/kubernetes-sigs/kustomize
-stars: 12216
+stars: 12218
 domain: backend
 category: infra-devops
 description: 템플릿 없이 기본 YAML 에 패치·오버레이를 겹쳐 환경별 Kubernetes 매니페스트를 만드는 도구. kubectl 에 내장돼 있어 dev·prod 차이를 순수 YAML 로 관리할 때 쓴다.

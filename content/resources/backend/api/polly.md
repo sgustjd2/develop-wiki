@@ -3,7 +3,7 @@ name: Polly
 url: https://www.pollydocs.org
 docs: https://www.pollydocs.org/getting-started.html
 repo: https://github.com/App-vNext/Polly
-stars: 14256
+stars: 14258
 domain: backend
 category: api
 description: 재시도·타임아웃·서킷 브레이커·폴백 같은 복원력 전략을 파이프라인으로 조합하는 .NET 라이브러리. 외부 API 호출과 HttpClient 의 일시적 장애 처리에 쓴다.

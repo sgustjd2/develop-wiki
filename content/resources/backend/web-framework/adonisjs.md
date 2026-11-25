@@ -2,7 +2,7 @@
 name: AdonisJS
 url: https://adonisjs.com
 repo: https://github.com/adonisjs/core
-stars: 19193
+stars: 19195
 docs: https://docs.adonisjs.com
 domain: backend
 category: web-framework

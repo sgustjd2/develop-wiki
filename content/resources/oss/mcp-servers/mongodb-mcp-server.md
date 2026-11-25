@@ -3,7 +3,7 @@ name: MongoDB MCP Server
 url: https://www.mongodb.com/docs/mcp-server/get-started/
 docs: https://www.mongodb.com/docs/mcp-server/get-started/
 repo: https://github.com/mongodb-js/mongodb-mcp-server
-stars: 1164
+stars: 1165
 domain: oss
 category: mcp-servers
 description: MongoDB 공식 MCP 서버. 컬렉션 조회·집계·인덱스 확인 같은 DB 도구와 Atlas 클러스터·프로젝트 관리 도구를 제공한다. 에이전트가 MongoDB 스키마와 데이터를 보며 쿼리를 짜게 할 때 쓴다.

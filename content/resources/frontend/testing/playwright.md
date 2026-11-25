@@ -2,7 +2,7 @@
 name: Playwright
 url: https://playwright.dev
 repo: https://github.com/microsoft/playwright
-stars: 100980
+stars: 101056
 docs: https://playwright.dev/docs/intro
 domain: frontend
 category: testing

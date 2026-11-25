@@ -3,7 +3,7 @@ name: gRPC
 url: https://grpc.io
 docs: https://grpc.io/docs/
 repo: https://github.com/grpc/grpc
-stars: 45456
+stars: 45459
 domain: backend
 category: api
 description: Protocol Buffers 로 서비스를 정의하고 HTTP/2 위에서 호출하는 RPC 프레임워크. 여러 언어로 된 마이크로서비스 간 저지연 통신과 스트리밍에 쓴다.

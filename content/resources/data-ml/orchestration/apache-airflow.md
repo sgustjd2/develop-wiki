@@ -3,7 +3,7 @@ name: Apache Airflow
 url: https://airflow.apache.org
 docs: https://airflow.apache.org/docs/apache-airflow/stable/
 repo: https://github.com/apache/airflow
-stars: 47651
+stars: 47668
 domain: data-ml
 category: orchestration
 description: Python 코드로 작업 흐름(Dag)을 정의하고 스케줄링·모니터링하는 워크플로 오케스트레이터. 배치 ETL 과 정기 데이터 파이프라인 운영에 쓴다.

@@ -3,7 +3,7 @@ name: WAI-ARIA Authoring Practices Guide (APG)
 url: https://www.w3.org/WAI/ARIA/apg/
 docs: https://www.w3.org/WAI/ARIA/apg/patterns/
 repo: https://github.com/w3c/aria-practices
-stars: 1366
+stars: 1368
 domain: frontend
 category: learning
 description: W3C WAI 가 만든 접근성 위젯 구현 가이드. 탭·콤보박스·모달 같은 30개 패턴의 키보드 동작, ARIA 역할·속성, 동작하는 예제를 제공해 커스텀 컴포넌트를 만들 때 기준으로 쓴다.

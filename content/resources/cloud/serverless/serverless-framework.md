@@ -3,7 +3,7 @@ name: Serverless Framework
 url: https://www.serverless.com/
 docs: https://www.serverless.com/framework/docs
 repo: https://github.com/serverless/serverless
-stars: 46933
+stars: 46935
 domain: cloud
 category: serverless
 description: serverless.yml 하나로 AWS Lambda 함수와 이벤트·리소스를 정의해 배포하는 CLI. v4 부터 로그인이 필요하고 연 매출 200만 달러 초과 조직은 유료 구독 대상이다.

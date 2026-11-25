@@ -3,7 +3,7 @@ name: Dapper
 url: https://github.com/DapperLib/Dapper
 docs: https://www.learndapper.com/
 repo: https://github.com/DapperLib/Dapper
-stars: 18418
+stars: 18417
 domain: backend
 category: orm-query
 description: ADO.NET DbConnection 에 Query·Execute 확장 메서드를 더해 SQL 결과를 객체로 매핑하는 .NET 마이크로 ORM. SQL 을 직접 쓰되 매핑 코드는 줄이고 싶을 때 쓴다.

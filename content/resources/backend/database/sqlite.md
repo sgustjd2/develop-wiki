@@ -3,7 +3,7 @@ name: SQLite
 url: https://www.sqlite.org
 docs: https://www.sqlite.org/docs.html
 repo: https://github.com/sqlite/sqlite
-stars: 11122
+stars: 11133
 domain: backend
 category: database
 description: 서버 없이 애플리케이션에 내장되는 단일 파일 관계형 DB(퍼블릭 도메인). 모바일·데스크톱 앱, 로컬 캐시, 테스트, 소규모 서비스에 쓴다.

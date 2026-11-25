@@ -3,7 +3,7 @@ name: Hera
 url: https://hera.readthedocs.io/en/stable/
 docs: https://hera.readthedocs.io/en/stable/
 repo: https://github.com/argoproj-labs/hera
-stars: 950
+stars: 952
 domain: data-ml
 category: orchestration
 description: Argo Workflows 를 파이썬 코드로 정의하고 제출하는 SDK. 파이썬 함수를 컨테이너 템플릿으로 바꿔 DAG 를 구성하며, Argo 기반 데이터·ML 파이프라인에 쓴다.

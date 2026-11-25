@@ -3,7 +3,7 @@ name: PCL (Point Cloud Library)
 url: https://pointclouds.org
 docs: https://pointclouds.org/documentation/
 repo: https://github.com/PointCloudLibrary/pcl
-stars: 11232
+stars: 11234
 domain: robotics
 category: perception
 description: 3D 포인트 클라우드 필터링, 정합(ICP), 세그멘테이션, 특징 추출을 제공하는 C++ 템플릿 라이브러리. ROS 의 점군 처리 기반이다.

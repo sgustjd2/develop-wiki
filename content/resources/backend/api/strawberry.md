@@ -3,7 +3,7 @@ name: Strawberry
 url: https://strawberry.rocks
 docs: https://strawberry.rocks/docs
 repo: https://github.com/strawberry-graphql/strawberry
-stars: 4732
+stars: 4733
 domain: backend
 category: api
 description: Python 타입 힌트와 dataclass 로 GraphQL 스키마를 정의하는 코드 우선 GraphQL 라이브러리. FastAPI·Django 등 Python 백엔드에 GraphQL API 를 붙일 때 쓴다.

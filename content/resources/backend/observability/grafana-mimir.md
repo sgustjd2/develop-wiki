@@ -3,7 +3,7 @@ name: Grafana Mimir
 url: https://grafana.com/oss/mimir/
 docs: https://grafana.com/docs/mimir/latest/
 repo: https://github.com/grafana/mimir
-stars: 5289
+stars: 5290
 domain: backend
 category: observability
 description: Prometheus 메트릭을 수평 확장·멀티테넌트로 장기 저장하는 시계열 데이터베이스. 여러 Prometheus 를 remote write 로 모아 PromQL 로 조회할 때 쓴다. AGPLv3.

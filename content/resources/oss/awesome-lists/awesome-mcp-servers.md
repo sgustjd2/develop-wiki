@@ -2,7 +2,7 @@
 name: Awesome MCP Servers
 url: https://github.com/punkpeye/awesome-mcp-servers
 repo: https://github.com/punkpeye/awesome-mcp-servers
-stars: 98458
+stars: 98497
 domain: oss
 category: awesome-lists
 description: 직접 설치해 쓰는 MCP(Model Context Protocol) 서버를 분야별로 모은 목록. Claude Code·Cursor 같은 MCP 클라이언트에 붙일 DB·브라우저·개발 도구 서버를 찾을 때 쓴다.

@@ -3,7 +3,7 @@ name: Starship
 url: https://starship.rs
 docs: https://starship.rs/guide/
 repo: https://github.com/starship/starship
-stars: 60906
+stars: 60941
 domain: devtools
 category: terminal
 description: 셸 종류와 무관하게 같은 설정으로 Git 상태·언어 버전·실행 시간 등을 보여 주는 크로스 셸 프롬프트. 프롬프트를 TOML 하나로 관리할 때 쓴다.

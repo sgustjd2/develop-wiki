@@ -3,7 +3,7 @@ name: OpenAPI Specification
 url: https://www.openapis.org
 docs: https://spec.openapis.org/oas/latest.html
 repo: https://github.com/OAI/OpenAPI-Specification
-stars: 31335
+stars: 31338
 domain: backend
 category: api
 description: HTTP API 의 경로, 요청·응답 스키마, 인증 방식을 YAML/JSON 으로 기술하는 표준 명세. API 문서 생성, 클라이언트·서버 코드 생성, 계약 검증에 쓴다.

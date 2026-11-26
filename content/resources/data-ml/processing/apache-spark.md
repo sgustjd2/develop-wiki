@@ -3,7 +3,7 @@ name: Apache Spark
 url: https://spark.apache.org
 docs: https://spark.apache.org/docs/latest/
 repo: https://github.com/apache/spark
-stars: 44620
+stars: 44632
 domain: data-ml
 category: processing
 description: 클러스터에서 대용량 데이터를 배치·스트리밍으로 처리하는 분산 처리 엔진. SQL·DataFrame·ML API 로 TB 이상 데이터의 ETL 과 분석에 쓴다.

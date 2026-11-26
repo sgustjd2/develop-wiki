@@ -3,7 +3,7 @@ name: Sentry
 url: https://sentry.io
 docs: https://docs.sentry.io
 repo: https://github.com/getsentry/sentry
-stars: 45882
+stars: 45890
 domain: backend
 category: observability
 description: 애플리케이션 예외·성능 트레이스·로그를 모아 이슈 단위로 묶어 보여 주는 에러 추적 플랫폼. 서버는 FSL(2년 뒤 Apache-2.0 전환)로 셀프 호스팅 가능, SDK 는 대부분 MIT.

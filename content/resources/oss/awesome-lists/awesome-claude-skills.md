@@ -2,7 +2,7 @@
 name: Awesome Claude Skills (ComposioHQ)
 url: https://github.com/ComposioHQ/awesome-claude-skills
 repo: https://github.com/ComposioHQ/awesome-claude-skills
-stars: 80291
+stars: 80381
 domain: oss
 category: awesome-lists
 description: Composio 가 관리하는 Claude 스킬 모음 겸 목록. 문서 처리·개발·업무 자동화 스킬과 Composio 연동 스킬을 담았다. Anthropic 스킬 일부를 복제했고 GitHub 상 라이선스가 없다는 점에 주의한다.

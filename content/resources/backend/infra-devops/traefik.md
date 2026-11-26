@@ -3,7 +3,7 @@ name: Traefik Proxy
 url: https://traefik.io/traefik/
 docs: https://doc.traefik.io/traefik/
 repo: https://github.com/traefik/traefik
-stars: 65699
+stars: 65724
 domain: backend
 category: infra-devops
 description: Docker·Kubernetes 같은 오케스트레이터를 감시해 라우팅 규칙을 자동으로 구성하는 클라우드 네이티브 리버스 프록시·인그레스 컨트롤러. 컨테이너 라벨로 라우팅과 TLS 를 관리할 때 쓴다.

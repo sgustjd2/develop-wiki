@@ -3,7 +3,7 @@ name: StyleX
 url: https://stylexjs.com
 docs: https://stylexjs.com/docs/learn/
 repo: https://github.com/meta/stylex
-stars: 10526
+stars: 10530
 domain: frontend
 category: styling
 description: Meta가 만든 컴파일 타임 원자 CSS 라이브러리. JS 객체로 스타일을 정의하고 빌드 시 원자 클래스로 바꿔 대규모 앱에서 스타일 충돌을 줄인다.

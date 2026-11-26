@@ -3,7 +3,7 @@ name: pgvector
 url: https://github.com/pgvector/pgvector
 docs: https://github.com/pgvector/pgvector/blob/master/README.md
 repo: https://github.com/pgvector/pgvector
-stars: 23817
+stars: 23831
 domain: ai
 category: vector-db
 description: PostgreSQL 에 vector 자료형과 HNSW·IVFFlat 인덱스를 추가하는 확장. 기존 Postgres 안에서 벡터 검색을 SQL 로 할 때 쓴다.

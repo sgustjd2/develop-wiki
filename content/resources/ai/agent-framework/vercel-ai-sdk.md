@@ -3,7 +3,7 @@ name: Vercel AI SDK
 url: https://ai-sdk.dev/
 docs: https://ai-sdk.dev/docs/introduction
 repo: https://github.com/vercel/ai
-stars: 28203
+stars: 28235
 domain: ai
 category: agent-framework
 description: 여러 모델 공급자를 같은 API로 호출하고 도구 루프 에이전트·채팅 UI 훅까지 제공하는 TypeScript 툴킷(npm 패키지 ai). Next.js·React 등 웹 앱에 스트리밍 AI 기능을 넣을 때 쓴다.

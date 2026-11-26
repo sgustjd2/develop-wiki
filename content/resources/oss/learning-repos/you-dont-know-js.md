@@ -2,7 +2,7 @@
 name: You Don't Know JS Yet
 url: https://github.com/getify/You-Dont-Know-JS
 repo: https://github.com/getify/You-Dont-Know-JS
-stars: 184858
+stars: 184847
 domain: oss
 category: learning-repos
 description: JavaScript 언어의 동작 원리(스코프, 클로저, this, 객체, 타입 변환)를 깊이 파고드는 Kyle Simpson 의 책 시리즈를 무료로 읽을 수 있는 저장소. 문법을 아는 개발자가 언어를 제대로 이해하려 할 때 쓴다.

@@ -3,7 +3,7 @@ name: MuJoCo
 url: https://mujoco.org
 docs: https://mujoco.readthedocs.io/en/stable/
 repo: https://github.com/google-deepmind/mujoco
-stars: 18482
+stars: 18502
 domain: robotics
 category: simulation
 description: Google DeepMind 의 접촉 중심 물리 엔진. 빠른 C 라이브러리에 Python 바인딩과 JAX(MJX)·Warp GPU 백엔드를 제공하며 로봇 학습에 널리 쓰인다.

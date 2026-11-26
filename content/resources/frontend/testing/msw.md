@@ -3,7 +3,7 @@ name: Mock Service Worker
 url: https://mswjs.io
 docs: https://mswjs.io/docs/
 repo: https://github.com/mswjs/msw
-stars: 18363
+stars: 18365
 domain: frontend
 category: testing
 description: 네트워크 수준에서 요청을 가로채 가짜 응답을 주는 API 모킹 라이브러리. 같은 핸들러를 브라우저 개발·Node 테스트·Storybook에서 재사용한다.

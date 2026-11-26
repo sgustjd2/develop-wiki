@@ -3,7 +3,7 @@ name: LM Studio
 url: https://lmstudio.ai
 docs: https://lmstudio.ai/docs/developer
 repo: https://github.com/lmstudio-ai/lmstudio-js
-stars: 1818
+stars: 1819
 domain: ai
 category: inference-serving
 description: 로컬 모델을 내려받아 실행하고 OpenAI·Anthropic 호환 로컬 서버와 lms CLI, TypeScript·Python SDK 를 제공하는 로컬 LLM 실행 환경.
@@ -12,7 +12,7 @@ tags: [local, gguf, mlx, openai-compatible, sdk]
 languages: [typescript, python]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-27
 ---
 
 ## 개요

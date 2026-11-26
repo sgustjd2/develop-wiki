@@ -3,7 +3,7 @@ name: Appwrite
 url: https://appwrite.io/
 docs: https://appwrite.io/docs
 repo: https://github.com/appwrite/appwrite
-stars: 58622
+stars: 58662
 domain: cloud
 category: baas
 description: Docker 로 셀프 호스팅하거나 Appwrite Cloud 로 쓰는 오픈소스 BaaS. Auth·Databases(TablesDB 등)·Storage·Functions·Messaging·Realtime·Sites 를 여러 언어 SDK 로 제공한다.

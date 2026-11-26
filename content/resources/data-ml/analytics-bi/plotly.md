@@ -3,7 +3,7 @@ name: Plotly (+ Dash)
 url: https://plotly.com/python/
 docs: https://plotly.com/python/
 repo: https://github.com/plotly/plotly.py
-stars: 18935
+stars: 18942
 domain: data-ml
 category: analytics-bi
 description: plotly.js 기반의 상호작용 차트 라이브러리와, 같은 회사의 Python 웹 대시보드 프레임워크 Dash. 확대·호버가 되는 웹 차트나 Python 만으로 분석 앱을 만들 때 쓴다.

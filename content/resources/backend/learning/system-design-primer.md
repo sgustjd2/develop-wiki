@@ -3,7 +3,7 @@ name: The System Design Primer
 url: https://github.com/donnemartin/system-design-primer
 docs: https://github.com/donnemartin/system-design-primer#index-of-system-design-topics
 repo: https://github.com/donnemartin/system-design-primer
-stars: 379218
+stars: 379349
 domain: backend
 category: learning
 description: 대규모 시스템 설계의 기본 주제(확장성, CAP, 캐시, 로드 밸런서, DB 복제·샤딩)와 면접 예제 풀이를 모은 GitHub 학습 자료. 시스템 설계 입문과 면접 준비에 쓴다.

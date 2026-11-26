@@ -3,7 +3,7 @@ name: Qdrant
 url: https://qdrant.tech
 docs: https://qdrant.tech/documentation/
 repo: https://github.com/qdrant/qdrant
-stars: 35708
+stars: 35728
 domain: ai
 category: vector-db
 description: Rust 로 작성된 오픈소스 벡터 검색 엔진. 페이로드 필터링, 희소·멀티 벡터, 하이브리드 검색, 양자화를 지원한다.

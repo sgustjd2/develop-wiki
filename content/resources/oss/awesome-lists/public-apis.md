@@ -2,7 +2,7 @@
 name: Public APIs
 url: https://github.com/public-apis/public-apis
 repo: https://github.com/public-apis/public-apis
-stars: 501383
+stars: 501642
 domain: oss
 category: awesome-lists
 description: 무료로 쓸 수 있는 공개 API 를 분야별 표(인증 방식·HTTPS·CORS 표시)로 정리한 저장소. 토이 프로젝트·데모·학습용 데이터 소스를 찾을 때 쓴다.

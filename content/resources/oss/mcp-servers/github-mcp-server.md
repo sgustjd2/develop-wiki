@@ -3,7 +3,7 @@ name: GitHub MCP Server
 url: https://github.com/github/github-mcp-server
 docs: https://github.com/github/github-mcp-server#readme
 repo: https://github.com/github/github-mcp-server
-stars: 34748
+stars: 34782
 domain: oss
 category: mcp-servers
 description: GitHub 공식 MCP 서버. 저장소·이슈·PR·Actions·코드 스캔 결과를 에이전트가 읽고 다루게 한다. 원격 서버(api.githubcopilot.com)나 Docker 로컬 서버로 연결한다.

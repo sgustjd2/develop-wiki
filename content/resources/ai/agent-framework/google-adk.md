@@ -2,7 +2,7 @@
 name: Agent Development Kit (ADK)
 url: https://adk.dev/
 repo: https://github.com/google/adk-python
-stars: 22352
+stars: 22364
 domain: ai
 category: agent-framework
 description: 에이전트 정의, 그래프·멀티 에이전트 워크플로, 평가, 배포까지 다루는 Google의 코드 중심 에이전트 툴킷. Gemini·Google Cloud 환경에서 에이전트를 만들 때 쓴다.

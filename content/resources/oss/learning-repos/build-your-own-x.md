@@ -2,7 +2,7 @@
 name: Build Your Own X
 url: https://github.com/codecrafters-io/build-your-own-x
 repo: https://github.com/codecrafters-io/build-your-own-x
-stars: 565490
+stars: 565732
 domain: oss
 category: learning-repos
 description: Git, Docker, 데이터베이스, 셸, 인터프리터 같은 기술을 처음부터 직접 만들어 보는 튜토리얼을 주제·언어별로 모은 목록. 도구의 내부 동작을 구현하며 이해하고 싶을 때 쓴다.

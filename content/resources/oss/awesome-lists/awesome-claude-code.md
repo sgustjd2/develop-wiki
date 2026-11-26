@@ -2,7 +2,7 @@
 name: Awesome Claude Code
 url: https://github.com/hesreallyhim/awesome-claude-code
 repo: https://github.com/hesreallyhim/awesome-claude-code
-stars: 58789
+stars: 58850
 domain: oss
 category: awesome-lists
 description: Claude Code 용 스킬·서브에이전트·훅·상태 표시줄·플러그인·가이드를 큐레이션한 목록. Claude Code 확장 자료와 학습 글을 찾을 때 쓴다. 라이선스가 CC BY-NC-ND 4.0 이다.

@@ -3,7 +3,7 @@ name: GraalVM
 url: https://www.graalvm.org
 docs: https://www.graalvm.org/latest/docs/
 repo: https://github.com/oracle/graal
-stars: 21762
+stars: 21764
 domain: backend
 category: runtime-language
 description: Native Image 로 Java 앱을 AOT 컴파일해 빠르게 시작하는 네이티브 실행 파일을 만드는 JDK. 서버리스·컨테이너에서 JVM 시작 시간과 메모리를 줄일 때 쓴다.

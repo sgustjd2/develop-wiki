@@ -3,7 +3,7 @@ name: Kotlin Coroutines (kotlinx.coroutines)
 url: https://kotlinlang.org/docs/coroutines-overview.html
 docs: https://kotlinlang.org/docs/coroutines-guide.html
 repo: https://github.com/Kotlin/kotlinx.coroutines
-stars: 13816
+stars: 13817
 domain: mobile
 category: android
 description: Kotlin의 구조적 동시성 라이브러리. suspend 함수·코루틴 스코프·Flow로 비동기 작업과 데이터 스트림을 다루며, Android의 Jetpack 라이브러리가 기본 비동기 모델로 쓴다.

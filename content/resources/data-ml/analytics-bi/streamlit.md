@@ -3,7 +3,7 @@ name: Streamlit
 url: https://streamlit.io
 docs: https://docs.streamlit.io/
 repo: https://github.com/streamlit/streamlit
-stars: 46503
+stars: 46512
 domain: data-ml
 category: analytics-bi
 description: Python 스크립트만으로 데이터 대시보드·ML 데모 웹앱을 만드는 프레임워크. 프론트엔드 코드 없이 내부 도구와 분석 앱을 빠르게 공유할 때 쓴다.

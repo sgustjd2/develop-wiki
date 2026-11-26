@@ -3,7 +3,7 @@ name: skills CLI (npx skills)
 url: https://skills.sh
 docs: https://github.com/vercel-labs/skills/blob/main/docs/commands.md
 repo: https://github.com/vercel-labs/skills
-stars: 40866
+stars: 41006
 domain: oss
 category: agent-skills
 description: GitHub 저장소의 Agent Skills 를 Claude Code·Codex·Cursor 등 여러 에이전트 디렉터리에 설치·갱신하는 Vercel Labs CLI. skills.sh 디렉터리와 함께 스킬 배포 표준 도구로 쓰인다.

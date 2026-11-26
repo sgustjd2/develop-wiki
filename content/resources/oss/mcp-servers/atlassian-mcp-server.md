@@ -3,7 +3,7 @@ name: Atlassian MCP Server
 url: https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/
 docs: https://support.atlassian.com/atlassian-rovo-mcp-server/docs/getting-started-with-the-atlassian-remote-mcp-server/
 repo: https://github.com/atlassian/atlassian-mcp-server
-stars: 1190
+stars: 1192
 domain: oss
 category: mcp-servers
 description: Atlassian 공식 원격 MCP 서버(mcp.atlassian.com/v2/mcp). Jira·Confluence·Bitbucket·Compass 등을 OAuth 2.1 또는 API 토큰으로 연결한다. 이슈 검색·생성과 문서 요약을 에이전트에 맡길 때 쓴다.

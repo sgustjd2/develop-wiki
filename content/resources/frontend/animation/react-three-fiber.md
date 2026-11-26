@@ -3,7 +3,7 @@ name: React Three Fiber
 url: https://r3f.docs.pmnd.rs
 docs: https://r3f.docs.pmnd.rs/getting-started/introduction
 repo: https://github.com/pmndrs/react-three-fiber
-stars: 33935
+stars: 33961
 domain: frontend
 category: animation
 description: Three.js 장면을 JSX 컴포넌트로 선언하는 React 렌더러. 상태·이벤트·Suspense 같은 React 방식으로 3D를 만든다.

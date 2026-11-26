@@ -34,3 +34,9 @@
 | baidu/ERNIE-5.5-Flash-Preview | models/language(text/code/reasoning) | https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview · 2026-11-23 · license=apache-2.0 · params=299.6B · ♥215 ↓75 (Hermes 후보, 검증 전) | 2026-11-25 |
 | baidu/ERNIE-5.5-Flash-Preview-BF16 | models/language(text/code/reasoning) | https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview-BF16 · 2026-11-23 · license=apache-2.0 · params=299.6B · ♥23 ↓27 (Hermes 후보, 검증 전) | 2026-11-25 |
 | tencent/OmniEVIE-4B | models/embedding | https://huggingface.co/tencent/OmniEVIE-4B · 2026-11-24 · license=apache-2.0 · params=4.5B · ♥8 ↓7 (Hermes 후보, 검증 전) | 2026-11-25 |
+| nvidia/Nemotron-3.5-Rerank-1B-BF16 | models/reranker | https://huggingface.co/nvidia/Nemotron-3.5-Rerank-1B-BF16 · 2026-11-13 · license=other · params=1.6B · ♥4 ↓894 (Hermes 후보, 검증 전) | 2026-11-27 |
+| BAAI/Innata-0-WAM-RoboDojo | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-WAM-RoboDojo · 2026-11-26 · license=? · params=16.2B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
+| BAAI/Innata-0-WAM-RoboCasa365 | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-WAM-RoboCasa365 · 2026-11-26 · license=? · params=16.2B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
+| BAAI/Innata-0-Understanding | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-Understanding · 2026-11-26 · license=? · params=8.8B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
+| BAAI/Innata-0-ACWM | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-ACWM · 2026-11-26 · license=? · params=15.7B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
+| https://github.com/kubai087/kubai-icons | resources/JavaScript | ★1262 · license=NOASSERTION · An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other c (Hermes 후보, 검증 전) | 2026-11-27 |

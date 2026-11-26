@@ -3,7 +3,7 @@ name: Drift
 url: https://drift.simonbinder.eu
 docs: https://drift.simonbinder.eu/setup/
 repo: https://github.com/simolus3/drift
-stars: 3304
+stars: 3305
 domain: mobile
 category: cross-platform
 description: Dart·Flutter 용 반응형 SQLite 영속성 라이브러리. Dart 로 테이블을 정의하고 타입 안전 쿼리·스트림 감시·마이그레이션을 코드 생성으로 제공한다. 이전 이름은 Moor.

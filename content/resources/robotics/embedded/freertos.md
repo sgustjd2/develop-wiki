@@ -3,7 +3,7 @@ name: FreeRTOS
 url: https://www.freertos.org
 docs: https://www.freertos.org/Documentation/00-Overview
 repo: https://github.com/FreeRTOS/FreeRTOS-Kernel
-stars: 4681
+stars: 4685
 domain: robotics
 category: embedded
 description: 가장 널리 쓰이는 소형 실시간 OS 커널. 태스크·큐·세마포어·타이머를 제공하며 ESP-IDF 등 많은 MCU SDK 의 기반이다.

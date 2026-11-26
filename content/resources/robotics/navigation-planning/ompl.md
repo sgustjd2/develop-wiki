@@ -3,7 +3,7 @@ name: OMPL
 url: https://ompl.kavrakilab.org
 docs: https://ompl.kavrakilab.org/geometricPlanningSE3.html
 repo: https://github.com/ompl/ompl
-stars: 2210
+stars: 2211
 domain: robotics
 category: navigation-planning
 description: 샘플링 기반 모션 플래닝 알고리즘(RRT, PRM 등)을 모은 C++ 라이브러리. 충돌 검사는 사용자가 제공하며 MoveIt 의 기본 플래너로 쓰인다.

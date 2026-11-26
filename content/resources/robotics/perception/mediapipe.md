@@ -3,7 +3,7 @@ name: MediaPipe
 url: https://ai.google.dev/edge/mediapipe
 docs: https://developers.google.com/edge/mediapipe/solutions/guide
 repo: https://github.com/google-ai-edge/mediapipe
-stars: 37847
+stars: 37878
 domain: robotics
 category: perception
 description: Google 의 온디바이스 ML 솔루션 모음. 손·얼굴·자세 랜드마크, 객체 탐지, 분류 등을 Python·웹·Android·iOS 에서 사전 학습 모델(.task)로 실행한다.

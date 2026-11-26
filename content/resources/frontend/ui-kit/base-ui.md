@@ -3,7 +3,7 @@ name: Base UI
 url: https://base-ui.com
 docs: https://base-ui.com/react/overview/quick-start
 repo: https://github.com/mui/base-ui
-stars: 11489
+stars: 11497
 domain: frontend
 category: ui-kit
 description: Radix·Floating UI·Material UI 개발진이 만든 React 헤드리스 컴포넌트 라이브러리. 스타일 없는 접근성 컴포넌트로 자체 디자인 시스템을 만들 때 쓴다.

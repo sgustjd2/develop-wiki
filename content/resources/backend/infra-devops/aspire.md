@@ -3,7 +3,7 @@ name: Aspire
 url: https://aspire.dev
 docs: https://aspire.dev/get-started/what-is-aspire/
 repo: https://github.com/microsoft/aspire
-stars: 6454
+stars: 6455
 domain: backend
 category: infra-devops
 description: 서비스·DB·컨테이너 구성을 코드(AppHost)로 정의하고 aspire run 으로 로컬 실행·관측하는 분산 앱 툴체인. C#과 TypeScript 로 정의하며 여러 언어 앱을 오케스트레이션한다.

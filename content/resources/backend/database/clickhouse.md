@@ -3,7 +3,7 @@ name: ClickHouse
 url: https://clickhouse.com
 docs: https://clickhouse.com/docs
 repo: https://github.com/ClickHouse/ClickHouse
-stars: 51134
+stars: 51168
 domain: backend
 category: database
 description: 대용량 실시간 분석용 컬럼형 OLAP DB(Apache-2.0). 로그·이벤트·지표 데이터를 빠르게 집계할 때 쓴다.

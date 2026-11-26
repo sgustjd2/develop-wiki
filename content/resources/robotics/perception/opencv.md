@@ -3,7 +3,7 @@ name: OpenCV
 url: https://opencv.org
 docs: https://docs.opencv.org/5.x/
 repo: https://github.com/opencv/opencv
-stars: 91725
+stars: 91740
 domain: robotics
 category: perception
 description: 이미지·영상 처리, 특징점, 카메라 캘리브레이션, 스테레오, 객체 검출을 제공하는 컴퓨터 비전 라이브러리. C++ 이 기본이고 Python 바인딩이 널리 쓰인다.

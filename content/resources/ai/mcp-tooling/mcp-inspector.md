@@ -3,7 +3,7 @@ name: MCP Inspector
 url: https://modelcontextprotocol.io/docs/tools/inspector
 docs: https://github.com/modelcontextprotocol/inspector#readme
 repo: https://github.com/modelcontextprotocol/inspector
-stars: 11356
+stars: 11369
 domain: ai
 category: mcp-tooling
 description: MCP 서버에 직접 붙어 도구·리소스·프롬프트를 호출해 보는 공식 디버깅 도구. 웹 UI, 스크립트용 CLI, 터미널 UI 를 한 패키지로 제공한다.

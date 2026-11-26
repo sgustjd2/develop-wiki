@@ -3,7 +3,7 @@ name: Javalin
 url: https://javalin.io
 docs: https://javalin.io/documentation
 repo: https://github.com/javalin/javalin
-stars: 8378
+stars: 8379
 domain: backend
 category: web-framework
 description: Jetty 위에 얹은 가벼운 Java·Kotlin 웹 프레임워크. 어노테이션 대신 람다 핸들러로 라우트를 정의하며 JSON·WebSocket·테스트 도구를 라이브러리 형태로 제공한다.

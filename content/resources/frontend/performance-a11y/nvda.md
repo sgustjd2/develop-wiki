@@ -3,7 +3,7 @@ name: NVDA
 url: https://www.nvaccess.org/about-nvda/
 docs: https://download.nvaccess.org/documentation/userGuide.html
 repo: https://github.com/nvaccess/nvda
-stars: 2696
+stars: 2697
 domain: frontend
 category: performance-a11y
 description: Windows 용 무료·오픈소스 스크린 리더. 자동 검사로는 알 수 없는 읽기 순서, 접근 가능한 이름, 라이브 영역 안내를 실제 보조기술로 확인하는 수동 접근성 테스트에 쓴다.

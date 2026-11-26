@@ -3,7 +3,7 @@ name: Hangfire
 url: https://www.hangfire.io
 docs: https://docs.hangfire.io/en/latest/
 repo: https://github.com/HangfireIO/Hangfire
-stars: 10159
+stars: 10160
 domain: backend
 category: messaging
 description: 별도 메시지 브로커 없이 SQL Server·Redis 같은 저장소에 작업을 저장해 백그라운드·예약·반복 작업을 실행하는 .NET 작업 큐 라이브러리. 대시보드를 내장한다.

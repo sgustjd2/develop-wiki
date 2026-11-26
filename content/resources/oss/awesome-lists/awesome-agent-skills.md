@@ -2,7 +2,7 @@
 name: Awesome Agent Skills
 url: https://github.com/VoltAgent/awesome-agent-skills
 repo: https://github.com/VoltAgent/awesome-agent-skills
-stars: 37544
+stars: 37568
 domain: oss
 category: awesome-lists
 description: 공식 개발팀과 커뮤니티가 만든 에이전트 스킬 1,000여 개를 모은 목록. Claude Code·Codex·Gemini CLI·Cursor 등에서 쓸 스킬을 회사·언어별로 찾을 때 쓴다.

@@ -3,7 +3,7 @@ name: Arduino
 url: https://www.arduino.cc
 docs: https://docs.arduino.cc/arduino-cli/getting-started/
 repo: https://github.com/arduino/arduino-cli
-stars: 5099
+stars: 5102
 domain: robotics
 category: embedded
 description: 스케치(C++) 기반 MCU 개발 생태계. arduino-cli 로 코어·라이브러리를 설치하고 빌드·업로드하며 IDE 2 와 보드 코어가 같은 도구를 쓴다.

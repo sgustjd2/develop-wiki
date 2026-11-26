@@ -3,7 +3,7 @@ name: Cloudflare Developer Platform (Workers·Pages·R2)
 url: https://workers.cloudflare.com/
 docs: https://developers.cloudflare.com/workers/
 repo: https://github.com/cloudflare/workers-sdk
-stars: 4749
+stars: 4752
 domain: cloud
 category: paas-edge
 description: Cloudflare 전 세계 네트워크에서 코드를 실행하는 Workers 와 정적 자산·R2 객체 스토리지·KV·D1 을 묶은 개발 플랫폼. 지연이 짧은 엣지 API·웹앱과 S3 호환 스토리지가 필요할 때 쓴다.

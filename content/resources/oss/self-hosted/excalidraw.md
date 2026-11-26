@@ -3,7 +3,7 @@ name: Excalidraw
 url: https://excalidraw.com
 docs: https://docs.excalidraw.com
 repo: https://github.com/excalidraw/excalidraw
-stars: 136294
+stars: 136358
 domain: oss
 category: self-hosted
 description: 손그림 느낌의 다이어그램을 그리는 웹 화이트보드. 아키텍처 스케치에 많이 쓰고 React 컴포넌트(@excalidraw/excalidraw)로 앱에 넣을 수 있다. MIT 라이선스.

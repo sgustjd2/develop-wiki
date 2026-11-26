@@ -3,7 +3,7 @@ name: rollup-plugin-visualizer
 url: https://github.com/btd/rollup-plugin-visualizer
 docs: https://github.com/btd/rollup-plugin-visualizer#readme
 repo: https://github.com/btd/rollup-plugin-visualizer
-stars: 2428
+stars: 2429
 domain: frontend
 category: performance-a11y
 description: Rollup·Vite·Rolldown 빌드 결과에서 어떤 모듈이 번들 용량을 차지하는지 트리맵 등으로 시각화하는 플러그인.

@@ -3,7 +3,7 @@ name: Material Design 3
 url: https://m3.material.io
 docs: https://m3.material.io/foundations
 repo: https://github.com/material-components/material-components-android
-stars: 17478
+stars: 17480
 domain: mobile
 category: learning
 description: Google의 오픈 디자인 시스템 Material 3(Material You) 공식 가이드. 색·타이포그래피·모양 토큰과 컴포넌트 사용 지침을 담으며, Android 앱 UI 설계와 Compose 테마 구성의 기준으로 쓴다.

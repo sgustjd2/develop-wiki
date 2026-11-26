@@ -2,7 +2,7 @@
 name: Awesome
 url: https://github.com/sindresorhus/awesome
 repo: https://github.com/sindresorhus/awesome
-stars: 542714
+stars: 543301
 domain: oss
 category: awesome-lists
 description: 주제별 "awesome-*" 큐레이션 리스트들을 다시 모아 둔 목록의 목록. 새 언어·분야를 공부할 때 믿을 만한 링크 모음을 찾는 출발점으로 쓴다.

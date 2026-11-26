@@ -3,7 +3,7 @@ name: Lighthouse
 url: https://developer.chrome.com/docs/lighthouse/overview
 docs: https://developer.chrome.com/docs/lighthouse/overview
 repo: https://github.com/GoogleChrome/lighthouse
-stars: 31204
+stars: 31211
 domain: frontend
 category: performance-a11y
 description: 웹 페이지의 성능·접근성·모범 사례·SEO를 실험실 환경에서 측정하고 개선 항목을 알려 주는 Google의 자동 감사 도구. Chrome DevTools, CLI, Node API로 쓴다.

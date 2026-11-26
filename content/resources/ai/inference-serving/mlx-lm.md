@@ -3,7 +3,7 @@ name: MLX LM
 url: https://github.com/ml-explore/mlx-lm
 docs: https://github.com/ml-explore/mlx-lm/blob/main/README.md
 repo: https://github.com/ml-explore/mlx-lm
-stars: 7757
+stars: 7767
 domain: ai
 category: inference-serving
 description: Apple 의 MLX 위에서 LLM 을 실행·양자화·LoRA 파인튜닝하는 Python 패키지. Apple Silicon Mac 에서 로컬 추론할 때 쓴다.
@@ -12,7 +12,7 @@ tags: [apple-silicon, mlx, local, quantization, lora]
 languages: [python]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-27
 ---
 
 ## 개요

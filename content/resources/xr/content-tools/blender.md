@@ -3,7 +3,7 @@ name: Blender
 url: https://www.blender.org
 docs: https://docs.blender.org/api/current/
 repo: https://github.com/blender/blender
-stars: 22534
+stars: 22586
 domain: xr
 category: content-tools
 description: GPL 오픈소스 3D 제작 도구. 모델링·리깅·애니메이션·렌더링을 지원하고 Python API(bpy)와 glTF·USD 내보내기로 XR 에셋 파이프라인에 쓴다.

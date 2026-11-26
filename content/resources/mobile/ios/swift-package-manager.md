@@ -3,7 +3,7 @@ name: Swift Package Manager
 url: https://www.swift.org/documentation/package-manager/
 docs: https://www.swift.org/documentation/package-manager/
 repo: https://github.com/swiftlang/swift-package-manager
-stars: 10254
+stars: 10255
 domain: mobile
 category: ios
 description: Swift 툴체인에 포함된 공식 패키지 매니저·빌드 도구. Package.swift 매니페스트로 의존성과 타깃을 선언하며, Xcode 프로젝트의 라이브러리 의존성 관리에도 쓴다.

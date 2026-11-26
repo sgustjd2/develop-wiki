@@ -3,7 +3,7 @@ name: Modern Robotics (Lynch & Park)
 url: https://modernrobotics.northwestern.edu
 docs: https://hades.mech.northwestern.edu/index.php/Modern_Robotics
 repo: https://github.com/NxRLab/ModernRobotics
-stars: 3084
+stars: 3085
 domain: robotics
 category: learning
 description: Lynch·Park 의 로봇 기구학·동역학·제어 교재. 무료 프리프린트 PDF, 강의 영상, 연습문제, 코드 라이브러리, Coursera 온라인 강좌가 있다.

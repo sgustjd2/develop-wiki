@@ -3,7 +3,7 @@ name: Analog
 url: https://analogjs.org
 docs: https://analogjs.org/docs
 repo: https://github.com/analogjs/analog
-stars: 3215
+stars: 3214
 domain: frontend
 category: meta-framework
 description: Angular용 풀스택 메타 프레임워크. Vite 위에서 파일 기반 라우팅·SSR·API 라우트·마크다운 콘텐츠를 Angular 앱에 붙일 때 쓴다.

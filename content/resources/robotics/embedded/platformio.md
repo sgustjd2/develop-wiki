@@ -3,7 +3,7 @@ name: PlatformIO
 url: https://platformio.org
 docs: https://docs.platformio.org/en/latest/
 repo: https://github.com/platformio/platformio-core
-stars: 9632
+stars: 9636
 domain: robotics
 category: embedded
 description: 임베디드 빌드·패키지·디버그를 통합한 크로스 플랫폼 CLI 와 VS Code 확장. platformio.ini 한 파일로 보드·프레임워크·라이브러리를 관리한다.

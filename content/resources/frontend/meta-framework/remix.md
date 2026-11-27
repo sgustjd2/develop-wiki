@@ -3,7 +3,7 @@ name: Remix 3
 url: https://remix.run
 docs: https://docs.remix.run
 repo: https://github.com/remix-run/remix
-stars: 33478
+stars: 33495
 domain: frontend
 category: meta-framework
 description: React에 의존하지 않는 웹 표준 기반 풀스택 TypeScript 프레임워크. 라우팅·미들웨어·자체 컴포넌트 모델·DB·인증을 remix 패키지 하나로 쓸 때 쓴다.

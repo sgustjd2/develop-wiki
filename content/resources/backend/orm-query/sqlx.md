@@ -3,7 +3,7 @@ name: SQLx
 url: https://github.com/transact-rs/sqlx
 docs: https://docs.rs/sqlx/latest/sqlx/
 repo: https://github.com/transact-rs/sqlx
-stars: 17763
+stars: 17768
 domain: backend
 category: orm-query
 description: 컴파일 시점에 실제 DB 로 SQL 을 검사하는 Rust 비동기 SQL 툴킷. ORM 없이 SQL 을 직접 쓰면서 타입 안전성을 얻고 싶을 때 쓴다.

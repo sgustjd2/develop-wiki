@@ -3,7 +3,7 @@ name: Jotai
 url: https://jotai.pmnd.rs
 docs: https://jotai.pmnd.rs/docs
 repo: https://github.com/pmndrs/jotai
-stars: 21354
+stars: 21363
 domain: frontend
 category: state-data
 description: 작은 상태 단위(atom)를 조합해 쓰는 React 상태 관리 라이브러리. 파생 상태와 비동기 상태를 atom 의존 관계로 표현한다.

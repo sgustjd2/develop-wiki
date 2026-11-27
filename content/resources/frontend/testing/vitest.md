@@ -3,7 +3,7 @@ name: Vitest
 url: https://vitest.dev
 docs: https://vitest.dev/guide/
 repo: https://github.com/vitest-dev/vitest
-stars: 17473
+stars: 17498
 domain: frontend
 category: testing
 description: Vite 설정과 변환 파이프라인을 그대로 쓰는 유닛·컴포넌트 테스트 러너. Jest와 비슷한 API에 ESM·TypeScript를 기본 지원한다.

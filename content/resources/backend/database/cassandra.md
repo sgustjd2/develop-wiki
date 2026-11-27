@@ -3,7 +3,7 @@ name: Apache Cassandra
 url: https://cassandra.apache.org
 docs: https://cassandra.apache.org/doc/latest/
 repo: https://github.com/apache/cassandra
-stars: 10163
+stars: 10164
 domain: backend
 category: database
 description: 마스터 없는 분산 wide-column DB(Apache-2.0). 여러 데이터센터에 걸친 대량 쓰기와 고가용성이 필요할 때 쓴다.

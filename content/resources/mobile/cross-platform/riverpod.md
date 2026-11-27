@@ -3,7 +3,7 @@ name: Riverpod
 url: https://riverpod.dev
 docs: https://riverpod.dev/docs/introduction/getting_started
 repo: https://github.com/rrousselGit/riverpod
-stars: 7428
+stars: 7431
 domain: mobile
 category: cross-platform
 description: Flutter·Dart 용 반응형 상태 관리·의존성 주입 라이브러리. Provider 의 후속으로 컴파일 타임 안전성, 비동기 상태(AsyncValue), 캐싱, 테스트 용이성을 제공한다.

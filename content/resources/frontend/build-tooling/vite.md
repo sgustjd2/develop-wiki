@@ -3,7 +3,7 @@ name: Vite
 url: https://vite.dev
 docs: https://vite.dev/guide/
 repo: https://github.com/vitejs/vite
-stars: 84121
+stars: 84152
 domain: frontend
 category: build-tooling
 description: 네이티브 ES 모듈 기반 개발 서버와 Rolldown 기반 프로덕션 빌드를 묶은 프론트엔드 빌드 도구. 대부분의 메타 프레임워크가 기반으로 쓴다.

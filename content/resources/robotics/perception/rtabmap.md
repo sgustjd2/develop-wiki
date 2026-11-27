@@ -3,7 +3,7 @@ name: RTAB-Map
 url: https://introlab.github.io/rtabmap/
 docs: https://introlab.github.io/rtabmap/
 repo: https://github.com/introlab/rtabmap
-stars: 4128
+stars: 4129
 domain: robotics
 category: perception
 description: RGB-D·스테레오·라이다 입력을 쓰는 그래프 기반 SLAM. 외관 기반 루프 클로저와 메모리 관리로 대규모 장시간 매핑에 쓰고 ROS 2 래퍼를 제공한다.

@@ -3,7 +3,7 @@ name: Claude Cookbooks
 url: https://platform.claude.com/cookbook
 docs: https://platform.claude.com/cookbook
 repo: https://github.com/anthropics/claude-cookbooks
-stars: 55273
+stars: 55334
 domain: ai
 category: learning
 description: Anthropic 이 관리하는 Claude API 예제 노트북 모음. 도구 사용·에이전트·평가·RAG·스킬 같은 기능을 실제 코드로 따라 해 볼 때 쓴다.
@@ -12,7 +12,7 @@ tags: [cookbook, claude, notebooks, tool-use, agents]
 languages: [python]
 koreanDocs: false
 addedAt: 2026-11-18
-verifiedAt: 2026-11-18
+verifiedAt: 2026-11-28
 ---
 
 ## 개요

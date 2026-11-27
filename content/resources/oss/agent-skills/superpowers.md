@@ -3,7 +3,7 @@ name: Superpowers
 url: https://github.com/obra/superpowers
 docs: https://github.com/obra/superpowers#readme
 repo: https://github.com/obra/superpowers
-stars: 327279
+stars: 328143
 domain: oss
 category: agent-skills
 description: 브레인스토밍 → 계획 → 서브에이전트 구현 → TDD → 코드 리뷰로 이어지는 개발 절차를 스킬로 묶은 라이브러리. 코딩 에이전트에 일관된 작업 방식을 강제하고 싶을 때 쓴다.

@@ -3,7 +3,7 @@ name: Redux Toolkit
 url: https://redux.js.org/toolkit
 docs: https://redux.js.org/toolkit/introduction/getting-started
 repo: https://github.com/reduxjs/redux-toolkit
-stars: 11248
+stars: 11249
 domain: frontend
 category: state-data
 description: Redux 공식 권장 도구 모음. createSlice·configureStore로 보일러플레이트를 줄이고, RTK Query로 서버 데이터 캐시까지 다룬다.

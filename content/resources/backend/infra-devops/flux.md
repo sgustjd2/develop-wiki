@@ -3,7 +3,7 @@ name: Flux
 url: https://fluxcd.io
 docs: https://fluxcd.io/flux/
 repo: https://github.com/fluxcd/flux2
-stars: 8545
+stars: 8550
 domain: backend
 category: infra-devops
 description: Git·OCI 저장소의 매니페스트를 Kubernetes 클러스터에 계속 맞춰 주는 CNCF 졸업 GitOps 도구. 컨트롤러 조합과 CLI 중심으로 지속적 배포(CD)를 구성할 때 쓴다.

@@ -3,7 +3,7 @@ name: Ruby on Rails
 url: https://rubyonrails.org
 docs: https://guides.rubyonrails.org
 repo: https://github.com/rails/rails
-stars: 59153
+stars: 59157
 domain: backend
 category: web-framework
 description: 설정보다 관례를 따르는 Ruby 풀스택 웹 프레임워크. ORM·마이그레이션·뷰·잡·메일까지 포함해 웹 서비스를 빠르게 만들 때 쓴다.

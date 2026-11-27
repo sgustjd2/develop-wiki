@@ -3,7 +3,7 @@ name: robosuite
 url: https://robosuite.ai
 docs: https://robosuite.ai/docs/overview.html
 repo: https://github.com/ARISE-Initiative/robosuite
-stars: 2723
+stars: 2725
 domain: robotics
 category: robot-learning
 description: MuJoCo 기반 로봇 조작 학습 시뮬레이션 프레임워크. 표준 벤치마크 환경과 다양한 로봇·컨트롤러·원격조종 장치를 제공해 재현 가능한 연구에 쓴다.

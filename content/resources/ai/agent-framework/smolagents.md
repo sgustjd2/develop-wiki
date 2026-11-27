@@ -3,7 +3,7 @@ name: smolagents
 url: https://huggingface.co/docs/smolagents
 docs: https://huggingface.co/docs/smolagents/index
 repo: https://github.com/huggingface/smolagents
-stars: 30551
+stars: 30569
 domain: ai
 category: agent-framework
 description: 에이전트가 JSON 대신 Python 코드로 행동을 작성하는 CodeAgent 중심의 Hugging Face 경량 에이전트 라이브러리. 오픈 모델로 도구 사용 에이전트를 빠르게 실험할 때 쓴다.

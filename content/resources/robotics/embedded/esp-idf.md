@@ -3,7 +3,7 @@ name: ESP-IDF
 url: https://docs.espressif.com/projects/esp-idf/en/stable/
 docs: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html
 repo: https://github.com/espressif/esp-idf
-stars: 19607
+stars: 19622
 domain: robotics
 category: embedded
 description: Espressif 의 ESP32 계열 공식 개발 프레임워크. FreeRTOS 기반 C/C++ SDK 와 idf.py 빌드 도구, Wi-Fi·BLE 스택을 제공한다.

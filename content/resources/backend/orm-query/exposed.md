@@ -3,7 +3,7 @@ name: Exposed
 url: https://www.jetbrains.com/exposed/
 docs: https://www.jetbrains.com/help/exposed/home.html
 repo: https://github.com/JetBrains/Exposed
-stars: 9303
+stars: 9304
 domain: backend
 category: orm-query
 description: JetBrains 가 만든 Kotlin SQL 라이브러리로, 타입 안전 SQL DSL 과 경량 DAO API 를 함께 제공한다. Kotlin 서버(Ktor·Spring)에서 JPA 대신 Kotlin 다운 DB 접근을 원할 때 쓴다.

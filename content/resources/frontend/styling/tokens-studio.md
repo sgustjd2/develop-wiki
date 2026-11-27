@@ -3,7 +3,7 @@ name: Tokens Studio for Figma
 url: https://tokens.studio
 docs: https://docs.tokens.studio/
 repo: https://github.com/tokens-studio/figma-plugin
-stars: 1631
+stars: 1633
 domain: frontend
 category: styling
 description: Figma 안에서 디자인 토큰을 정의·적용하고 GitHub 등 저장소와 JSON으로 동기화하는 플러그인. 디자이너가 관리한 토큰을 Style Dictionary 로 코드에 넘기는 워크플로에 쓴다.

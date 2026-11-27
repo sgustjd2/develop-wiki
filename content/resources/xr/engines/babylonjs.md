@@ -3,7 +3,7 @@ name: Babylon.js
 url: https://www.babylonjs.com
 docs: https://doc.babylonjs.com/features/featuresDeepDive/webXR
 repo: https://github.com/BabylonJS/Babylon.js
-stars: 26458
+stars: 26463
 domain: xr
 category: engines
 description: Microsoft가 시작한 Apache-2.0 웹 3D 엔진. WebXR 헬퍼로 브라우저에서 VR·AR 세션, 컨트롤러, 핸드 트래킹을 다룬다.

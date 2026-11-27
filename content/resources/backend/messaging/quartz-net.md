@@ -3,7 +3,7 @@ name: Quartz.NET
 url: https://www.quartz-scheduler.net
 docs: https://www.quartz-scheduler.net/documentation/quartz-4.x/quick-start.html
 repo: https://github.com/quartznet/quartznet
-stars: 7115
+stars: 7114
 domain: backend
 category: messaging
 description: .NET 용 작업 스케줄러 라이브러리. 크론 표현식·반복 트리거로 작업을 예약하고, 데이터베이스 저장소와 클러스터링으로 여러 인스턴스에서 안정적으로 실행한다.

@@ -3,7 +3,7 @@ name: web-vitals
 url: https://web.dev/articles/vitals
 docs: https://github.com/GoogleChrome/web-vitals
 repo: https://github.com/GoogleChrome/web-vitals
-stars: 8701
+stars: 8702
 domain: frontend
 category: performance-a11y
 description: 실제 사용자 브라우저에서 LCP·INP·CLS 등 Core Web Vitals를 Chrome 도구와 같은 방식으로 측정하는 Google의 작은 JavaScript 라이브러리.

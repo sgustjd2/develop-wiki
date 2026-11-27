@@ -3,7 +3,7 @@ name: Appium
 url: https://appium.io
 docs: https://appium.io/docs/en/latest/
 repo: https://github.com/appium/appium
-stars: 22264
+stars: 22269
 domain: mobile
 category: mobile-testing
 description: WebDriver 프로토콜로 iOS·Android(및 데스크톱) 앱을 자동화하는 오픈소스 크로스플랫폼 UI 테스트 서버. 드라이버(UiAutomator2, XCUITest 등)를 설치해 쓰며 클라이언트는 여러 언어를 지원한다.

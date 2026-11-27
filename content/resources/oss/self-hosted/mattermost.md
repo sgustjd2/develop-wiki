@@ -3,7 +3,7 @@ name: Mattermost
 url: https://mattermost.com
 docs: https://docs.mattermost.com
 repo: https://github.com/mattermost/mattermost
-stars: 39713
+stars: 39726
 domain: oss
 category: self-hosted
 description: 채널·스레드·통화·웹훅·봇을 갖춘 셀프 호스팅 팀 메신저. Slack 대안으로 개발·운영 알림 채널에 많이 쓴다. 소스는 AGPL-3.0, 공식 빌드는 MIT 이며 Enterprise 기능은 유료다.

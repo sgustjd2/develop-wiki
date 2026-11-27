@@ -3,7 +3,7 @@ name: Claude Code Templates
 url: https://www.aitmpl.com
 docs: https://docs.aitmpl.com
 repo: https://github.com/davila7/claude-code-templates
-stars: 34224
+stars: 34243
 domain: oss
 category: agent-skills
 description: Claude Code 용 스킬·서브에이전트·명령·훅·MCP 설정 등 약 2천 개 구성 요소를 모은 카탈로그와 설치 CLI. npx 한 줄로 필요한 조각만 프로젝트에 넣을 때 쓴다.

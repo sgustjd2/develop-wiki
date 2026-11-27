@@ -3,7 +3,7 @@ name: GraphQL
 url: https://graphql.org
 docs: https://graphql.org/learn/
 repo: https://github.com/graphql/graphql-spec
-stars: 14596
+stars: 14595
 domain: backend
 category: api
 description: 클라이언트가 필요한 필드를 쿼리로 지정해 받는 API 쿼리 언어와 타입 시스템 명세. 여러 화면·클라이언트가 같은 데이터를 다르게 조합할 때 쓴다.

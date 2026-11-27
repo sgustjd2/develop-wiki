@@ -3,7 +3,7 @@ name: Kotlin Multiplatform (Compose Multiplatform)
 url: https://kotlinlang.org/multiplatform/
 docs: https://kotlinlang.org/docs/multiplatform/get-started.html
 repo: https://github.com/JetBrains/compose-multiplatform
-stars: 19502
+stars: 19501
 domain: mobile
 category: cross-platform
 description: Kotlin 코드를 Android·iOS·데스크톱·웹에서 공유하는 JetBrains 기술. 비즈니스 로직만 공유하거나 Compose Multiplatform으로 UI까지 공유할 수 있다.

@@ -3,7 +3,7 @@ name: GORM
 url: https://gorm.io
 docs: https://gorm.io/docs/
 repo: https://github.com/go-gorm/gorm
-stars: 40001
+stars: 40002
 domain: backend
 category: orm-query
 description: Go 의 대표 ORM. 구조체를 테이블에 매핑하고 연관관계, 훅, 트랜잭션, 자동 마이그레이션을 제공하며 v1.30 부터 제네릭 API 를 지원한다.

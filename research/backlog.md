@@ -40,3 +40,5 @@
 | BAAI/Innata-0-Understanding | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-Understanding · 2026-11-26 · license=? · params=8.8B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
 | BAAI/Innata-0-ACWM | models/분류 미정 | https://huggingface.co/BAAI/Innata-0-ACWM · 2026-11-26 · license=? · params=15.7B · ♥1 ↓0 (Hermes 후보, 검증 전) | 2026-11-27 |
 | https://github.com/kubai087/kubai-icons | resources/JavaScript | ★1262 · license=NOASSERTION · An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other c (Hermes 후보, 검증 전) | 2026-11-27 |
+| tencent/Hy-Embodied-Apexio-1.0 | models/분류 미정 | https://huggingface.co/tencent/Hy-Embodied-Apexio-1.0 · 2026-11-27 · license=? · params=? · ♥0 ↓0 (Hermes 후보, 검증 전) | 2026-11-28 |
+| https://github.com/sybil-solutions/inference-optimisation-skill | resources/Python | ★2870 · license=MIT · Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, st (Hermes 후보, 검증 전) | 2026-11-28 |

@@ -3,7 +3,7 @@ name: styled-components
 url: https://styled-components.com
 docs: https://styled-components.com/docs
 repo: https://github.com/styled-components/styled-components
-stars: 41045
+stars: 41048
 domain: frontend
 category: styling
 description: 태그드 템플릿 리터럴로 React 컴포넌트에 CSS를 붙이는 런타임 CSS-in-JS 라이브러리. props에 따라 스타일이 바뀌는 컴포넌트를 만들 때 쓴다.

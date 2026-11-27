@@ -3,7 +3,7 @@ name: Flutter
 url: https://flutter.dev
 docs: https://docs.flutter.dev
 repo: https://github.com/flutter/flutter
-stars: 181526
+stars: 181533
 domain: mobile
 category: cross-platform
 description: Google의 크로스플랫폼 UI 프레임워크. Dart로 위젯 트리를 작성하고 자체 렌더링 엔진으로 그려 iOS·Android·웹·데스크톱에서 같은 화면을 낸다.

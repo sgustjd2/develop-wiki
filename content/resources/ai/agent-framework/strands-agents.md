@@ -3,7 +3,7 @@ name: Strands Agents
 url: https://strandsagents.com/
 docs: https://strandsagents.com/docs/user-guide/sdk/quickstart/overview/
 repo: https://github.com/strands-agents/harness-sdk
-stars: 9291
+stars: 9300
 domain: ai
 category: agent-framework
 description: 모델이 계획·도구 선택을 주도하는 "모델 주도" 방식의 오픈소스 에이전트 SDK(Python·TypeScript). AWS가 시작했고 Bedrock 외 여러 공급자를 지원하며, 자체 프로세스에서 도는 에이전트 루프가 필요할 때 쓴다.

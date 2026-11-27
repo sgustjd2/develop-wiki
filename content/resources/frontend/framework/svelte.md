@@ -2,7 +2,7 @@
 name: Svelte
 url: https://svelte.dev
 repo: https://github.com/sveltejs/svelte
-stars: 89950
+stars: 89943
 docs: https://svelte.dev/docs/svelte/overview
 domain: frontend
 category: framework

@@ -3,7 +3,7 @@ name: FlashList
 url: https://shopify.github.io/flash-list/
 docs: https://shopify.github.io/flash-list/docs/
 repo: https://github.com/Shopify/flash-list
-stars: 7252
+stars: 7253
 domain: mobile
 category: cross-platform
 description: Shopify 의 React Native 리스트 컴포넌트. 화면 밖 셀을 재활용해 FlatList 보다 빠르게 긴 목록을 렌더링하며, FlatList 와 거의 같은 props 로 바꿔 쓸 수 있다.

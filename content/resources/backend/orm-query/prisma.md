@@ -3,7 +3,7 @@ name: Prisma ORM
 url: https://www.prisma.io/orm
 docs: https://www.prisma.io/docs/orm/v7
 repo: https://github.com/prisma/orm
-stars: 47776
+stars: 47763
 domain: backend
 category: orm-query
 description: 스키마 파일에서 타입 안전한 클라이언트를 생성하는 TypeScript ORM. 선언형 마이그레이션과 관계 중심 CRUD 가 필요한 Node 백엔드에 쓴다.

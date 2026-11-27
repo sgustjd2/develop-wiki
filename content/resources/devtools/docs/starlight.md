@@ -3,7 +3,7 @@ name: Starlight
 url: https://starlight.astro.build
 docs: https://starlight.astro.build/getting-started/
 repo: https://github.com/withastro/starlight
-stars: 9660
+stars: 9666
 domain: devtools
 category: docs
 description: Astro 위에서 동작하는 문서 사이트 테마·통합. 검색·다국어·접근성을 기본 제공해 프레임워크 제약 없는 빠른 정적 문서 사이트를 만들 때 쓴다.

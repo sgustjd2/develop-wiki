@@ -3,7 +3,7 @@ name: Kubernetes
 url: https://kubernetes.io
 docs: https://kubernetes.io/docs/home/
 repo: https://github.com/kubernetes/kubernetes
-stars: 129374
+stars: 129338
 domain: backend
 category: infra-devops
 description: 여러 노드에 컨테이너를 배포·확장·복구하는 오케스트레이션 플랫폼. 선언형 매니페스트로 서비스를 운영할 때 쓰는 사실상 표준이다.

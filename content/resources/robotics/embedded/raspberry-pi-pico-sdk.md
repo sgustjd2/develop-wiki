@@ -3,7 +3,7 @@ name: Raspberry Pi Pico SDK
 url: https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html
 docs: https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html
 repo: https://github.com/raspberrypi/pico-sdk
-stars: 5033
+stars: 5034
 domain: robotics
 category: embedded
 description: RP2040·RP2350 용 공식 C/C++ SDK. CMake 빌드와 하드웨어 API, PIO·멀티코어·USB·Wi-Fi 라이브러리를 제공한다.

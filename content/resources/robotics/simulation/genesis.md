@@ -3,7 +3,7 @@ name: Genesis
 url: https://genesis-world.readthedocs.io/en/latest/
 docs: https://genesis-world.readthedocs.io/en/latest/
 repo: https://github.com/Genesis-Embodied-AI/genesis-world
-stars: 30322
+stars: 30329
 domain: robotics
 category: simulation
 description: 강체·FEM·MPM·입자 등 다중 물리를 하나의 Python API 로 다루는 GPU 병렬 로봇 시뮬레이션 플랫폼. 로봇 학습 환경 구축에 쓴다.

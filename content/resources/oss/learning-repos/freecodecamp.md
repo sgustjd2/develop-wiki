@@ -2,7 +2,7 @@
 name: freeCodeCamp
 url: https://www.freecodecamp.org/learn
 repo: https://github.com/freeCodeCamp/freeCodeCamp
-stars: 459675
+stars: 459697
 domain: oss
 category: learning-repos
 description: 웹 개발·Python·관계형 DB 등을 브라우저 안에서 실습하며 배우는 무료 학습 플랫폼과 그 오픈소스 코드베이스. 입문자가 인증 과정을 따라 기초를 쌓을 때 쓴다.

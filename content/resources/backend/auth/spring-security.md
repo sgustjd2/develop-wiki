@@ -3,7 +3,7 @@ name: Spring Security
 url: https://spring.io/projects/spring-security
 docs: https://docs.spring.io/spring-security/reference/
 repo: https://github.com/spring-projects/spring-security
-stars: 9668
+stars: 9670
 domain: backend
 category: auth
 description: Spring 애플리케이션의 인증·인가 프레임워크. 서블릿 필터 체인으로 폼 로그인, OAuth2 로그인, JWT 리소스 서버, 메서드 권한 검사를 구성할 때 쓴다.

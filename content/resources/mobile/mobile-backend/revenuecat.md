@@ -3,7 +3,7 @@ name: RevenueCat
 url: https://www.revenuecat.com
 docs: https://www.revenuecat.com/docs/getting-started/quickstart
 repo: https://github.com/RevenueCat/purchases-ios
-stars: 3099
+stars: 3100
 domain: mobile
 category: mobile-backend
 description: iOS·Android 인앱 구독과 결제를 SDK 하나와 서버로 통합 관리하는 서비스. 영수증 검증, 권한(entitlement), 페이월, 구독 분석을 대신해 주며 월 추적 매출 구간까지 무료다.

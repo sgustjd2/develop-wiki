@@ -3,7 +3,7 @@ name: OpenJDK
 url: https://openjdk.org
 docs: https://dev.java/learn/
 repo: https://github.com/openjdk/jdk
-stars: 23584
+stars: 23585
 domain: backend
 category: runtime-language
 description: Java SE 의 오픈소스 참조 구현(JDK·JVM). Temurin·Corretto 같은 배포판으로 받아 Java·Kotlin 서버를 실행하고 빌드할 때 쓴다.

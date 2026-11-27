@@ -3,7 +3,7 @@ name: Gitea
 url: https://about.gitea.com
 docs: https://docs.gitea.com
 repo: https://github.com/go-gitea/gitea
-stars: 59271
+stars: 59317
 domain: oss
 category: self-hosted
 description: Go 단일 바이너리로 도는 가벼운 Git 호스팅 서비스. 저장소·이슈·PR·패키지 레지스트리·GitHub Actions 호환 CI 를 제공한다. MIT 라이선스.

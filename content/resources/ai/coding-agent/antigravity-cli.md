@@ -3,7 +3,7 @@ name: Antigravity CLI
 url: https://antigravity.google/product/antigravity-cli
 docs: https://antigravity.google/docs/getting-started?tab=cli
 repo: https://github.com/google-antigravity/antigravity-cli
-stars: 3150
+stars: 3188
 domain: ai
 category: coding-agent
 description: Google Antigravity 에이전트 하네스를 터미널에서 쓰는 코딩 에이전트 CLI(agy). Gemini CLI의 개인 사용자 후속 도구로, 코드 편집·명령 실행·헤드리스 자동화에 쓴다.

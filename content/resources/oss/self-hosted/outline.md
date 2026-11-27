@@ -3,7 +3,7 @@ name: Outline
 url: https://www.getoutline.com
 docs: https://docs.getoutline.com
 repo: https://github.com/outline/outline
-stars: 41396
+stars: 41404
 domain: oss
 category: self-hosted
 description: 실시간 공동 편집과 검색을 갖춘 팀 지식 베이스·위키. Notion·Confluence 대안으로 쓰며 BSL 1.1 이라 문서 서비스 상업 제공이 금지되고 4년 뒤 Apache 2.0 으로 전환된다.

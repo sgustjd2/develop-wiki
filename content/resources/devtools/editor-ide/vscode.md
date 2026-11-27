@@ -3,7 +3,7 @@ name: Visual Studio Code
 url: https://code.visualstudio.com
 docs: https://code.visualstudio.com/docs
 repo: https://github.com/microsoft/vscode
-stars: 195833
+stars: 195795
 domain: devtools
 category: editor-ide
 description: 확장으로 언어 지원·디버거·AI 기능을 붙이는 Microsoft의 크로스 플랫폼 코드 에디터. 웹·스크립트 언어 개발의 기본 에디터로 널리 쓴다.

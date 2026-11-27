@@ -3,7 +3,7 @@ name: Material for MkDocs
 url: https://squidfunk.github.io/mkdocs-material/
 docs: https://squidfunk.github.io/mkdocs-material/getting-started/
 repo: https://github.com/squidfunk/mkdocs-material
-stars: 27650
+stars: 27653
 domain: devtools
 category: docs
 description: Python 정적 사이트 생성기 MkDocs용 문서 테마. 2027년 5월 지원 종료가 예정되어 후속 도구 Zensical로 이전 중이며, 기존 Python 프로젝트 문서에 쓴다.

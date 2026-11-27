@@ -3,7 +3,7 @@ name: Elasticsearch
 url: https://www.elastic.co/elasticsearch
 docs: https://www.elastic.co/docs
 repo: https://github.com/elastic/elasticsearch
-stars: 78840
+stars: 78817
 domain: backend
 category: database
 description: Lucene 기반 분산 검색·분석 엔진. 전문 검색, 로그 분석, 벡터 검색에 쓴다. 소스는 AGPLv3·SSPL·ELv2 중 택일이고, Apache-2.0 포크로 OpenSearch 가 있다.

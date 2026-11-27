@@ -3,7 +3,7 @@ name: llama.cpp
 url: https://github.com/ggml-org/llama.cpp
 docs: https://github.com/ggml-org/llama.cpp/tree/master/docs
 repo: https://github.com/ggml-org/llama.cpp
-stars: 136364
+stars: 136491
 domain: ai
 category: inference-serving
 description: GGUF 형식 모델을 CPU·GPU·Apple Silicon 에서 돌리는 C/C++ 추론 엔진. 로컬 실행과 OpenAI 호환 서버(llama-server)에 쓴다.

@@ -3,7 +3,7 @@ name: VictoriaMetrics
 url: https://victoriametrics.com
 docs: https://docs.victoriametrics.com/
 repo: https://github.com/VictoriaMetrics/VictoriaMetrics
-stars: 18214
+stars: 18225
 domain: backend
 category: observability
 description: Prometheus 호환 시계열 DB. 단일 바이너리 또는 클러스터로 메트릭을 저장하고 MetricsQL 로 조회하며, Prometheus 장기 저장소로 많이 쓴다.

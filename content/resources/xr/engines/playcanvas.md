@@ -3,7 +3,7 @@ name: PlayCanvas
 url: https://playcanvas.com
 docs: https://developer.playcanvas.com/user-manual/xr/
 repo: https://github.com/playcanvas/engine
-stars: 17382
+stars: 17384
 domain: xr
 category: engines
 description: WebGPU·WebGL2 기반 MIT 웹 그래픽 엔진. 클라우드 에디터와 함께 WebXR VR·AR 세션을 API로 제공한다.

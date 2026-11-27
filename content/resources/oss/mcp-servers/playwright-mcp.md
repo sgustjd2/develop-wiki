@@ -3,7 +3,7 @@ name: Playwright MCP
 url: https://github.com/microsoft/playwright-mcp
 docs: https://github.com/microsoft/playwright-mcp#readme
 repo: https://github.com/microsoft/playwright-mcp
-stars: 40176
+stars: 40216
 domain: oss
 category: mcp-servers
 description: Microsoft 의 브라우저 자동화 MCP 서버. 스크린샷 대신 접근성 트리 스냅샷으로 페이지를 읽고 클릭·입력·탐색한다. 에이전트로 웹앱을 시험하거나 화면 동작을 확인할 때 쓴다.

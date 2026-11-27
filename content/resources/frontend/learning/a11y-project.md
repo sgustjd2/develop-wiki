@@ -3,7 +3,7 @@ name: The A11Y Project
 url: https://www.a11yproject.com
 docs: https://www.a11yproject.com/checklist/
 repo: https://github.com/a11yproject/a11yproject.com
-stars: 3914
+stars: 3913
 domain: frontend
 category: learning
 description: 커뮤니티가 운영하는 오픈소스 웹 접근성 학습 사이트. WCAG 2.2 기준에 연결된 체크리스트와 실무 글, 도구·자료 목록을 제공해 접근성 입문과 출시 전 점검에 쓴다.

@@ -3,7 +3,7 @@ name: Homebrew
 url: https://brew.sh
 docs: https://docs.brew.sh/
 repo: https://github.com/Homebrew/brew
-stars: 50453
+stars: 50455
 domain: devtools
 category: environment
 description: macOS와 Linux에서 CLI 도구·라이브러리(formula)와 GUI 앱(cask)을 설치·업데이트하는 패키지 관리자. 개발 머신 초기 설정과 도구 관리에 쓴다.

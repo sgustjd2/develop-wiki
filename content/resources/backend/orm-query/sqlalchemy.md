@@ -3,7 +3,7 @@ name: SQLAlchemy
 url: https://www.sqlalchemy.org
 docs: https://docs.sqlalchemy.org/en/21/
 repo: https://github.com/sqlalchemy/sqlalchemy
-stars: 12312
+stars: 12313
 domain: backend
 category: orm-query
 description: Python 의 표준적인 SQL 툴킷이자 ORM. Core(SQL 식 빌더)와 ORM(Unit of Work·관계 매핑)을 함께 제공하며 Alembic 으로 마이그레이션한다.

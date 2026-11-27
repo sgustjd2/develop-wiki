@@ -3,7 +3,7 @@ name: Chroma
 url: https://www.trychroma.com
 docs: https://docs.trychroma.com
 repo: https://github.com/chroma-core/chroma
-stars: 29791
+stars: 29797
 domain: ai
 category: vector-db
 description: 파이썬·JS 에서 임베디드 또는 서버 모드로 쓰는 오픈소스 임베딩 데이터베이스. 기본 임베딩 함수가 있어 RAG 프로토타입에 많이 쓴다.

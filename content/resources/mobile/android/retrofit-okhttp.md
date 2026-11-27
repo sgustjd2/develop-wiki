@@ -3,7 +3,7 @@ name: Retrofit + OkHttp
 url: https://lysine.dev/retrofit/
 docs: https://lysine.dev/retrofit/
 repo: https://github.com/square/retrofit
-stars: 43947
+stars: 43946
 domain: mobile
 category: android
 description: OkHttp는 HTTP 클라이언트, Retrofit은 그 위에서 REST API를 어노테이션 인터페이스로 선언하게 해 주는 타입 안전 래퍼. Android 네트워킹의 사실상 표준 조합이다.

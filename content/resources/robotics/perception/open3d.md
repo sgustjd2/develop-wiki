@@ -3,7 +3,7 @@ name: Open3D
 url: https://www.open3d.org
 docs: https://www.open3d.org/docs/release/
 repo: https://github.com/isl-org/Open3D
-stars: 14256
+stars: 14258
 domain: robotics
 category: perception
 description: 3D 데이터 처리 라이브러리. 포인트 클라우드·메시·RGB-D 처리, 정합(ICP), 재구성, 시각화를 Python·C++ 로 제공한다.

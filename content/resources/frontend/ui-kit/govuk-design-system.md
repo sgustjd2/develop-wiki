@@ -3,7 +3,7 @@ name: GOV.UK Design System
 url: https://design-system.service.gov.uk
 docs: https://frontend.design-system.service.gov.uk/
 repo: https://github.com/alphagov/govuk-frontend
-stars: 1483
+stars: 1484
 domain: frontend
 category: ui-kit
 description: 영국 정부 디지털 서비스(GDS)가 공개한 디자인 시스템과 코드 패키지 govuk-frontend. 사용자 조사로 검증된 폼·질문 페이지 패턴과 접근성 근거를 참고하거나 공공 서비스 UI를 만들 때 쓴다.

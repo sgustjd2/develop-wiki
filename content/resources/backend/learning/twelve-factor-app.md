@@ -3,7 +3,7 @@ name: The Twelve-Factor App
 url: https://12factor.net
 docs: https://12factor.net/ko/
 repo: https://github.com/twelve-factor/twelve-factor
-stars: 2876
+stars: 2879
 domain: backend
 category: learning
 description: 클라우드에 배포하는 웹 서비스가 지켜야 할 12가지 원칙(설정은 환경 변수, 무상태 프로세스, 로그는 스트림 등)을 정리한 문서. 배포·운영하기 쉬운 서비스 구조를 잡을 때 기준으로 쓴다.
